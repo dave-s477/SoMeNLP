@@ -1,0 +1,57 @@
+#!/usr/bin/env python
+
+import os
+import argparse
+
+from pathlib import Path
+
+from somenlp.utils import get_time_marker
+from somenlp.word_embedding import train_embedding, resume_training_embedding
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description = "Calculate a word embedding (currently only W2V skipgram) based on a corpus.")
+    parser.add_argument("--in-path", required=True, help="Path to input dir.")
+    parser.add_argument("--out-path", required=True, help="Path to output folder (will be created if it does not exist).")
+    parser.add_argument("--name", default='Emb', help="Name of the embedding output. Time marker will be added.")
+    parser.add_argument("--ncores", default=8, help="Number of workers for parallel execution.")
+    parser.add_argument("--emb-dim", default=200, help="Embedding Dimension")
+    parser.add_argument("--window-size", default=5, help="Embedding training window size")
+    parser.add_argument("--min-count", default=5, help="Minimal number of occurrences for a word to be taken into the embedding.")
+    parser.add_argument("--epochs", default=1, help="Number of dataset iterations")
+    parser.add_argument("--checkpoint", default='', help="Training state to resume training")
+    parser.add_argument("--remove", default=False, help="Remove old checkpoint when training")
+    parser.add_argument("--format", default=2, help="Output format: 0 -- bin, used for downstream applications, 1 -- model, used for retraining, >= 2, both.")
+    parser.add_argument("--seed", default=42, help="Seed for shuffling training files.")
+    args = parser.parse_args()
+
+    args.in_path = args.in_path.rstrip('/')
+    args.out_path = args.out_path.rstrip('/')
+
+    if not os.path.isdir(args.in_path):
+        raise(RuntimeError("Input path does not exist"))
+    if not os.path.isdir(args.out_path):
+        os.makedirs(args.out_path)
+
+    current_time = get_time_marker()
+    print(RuntimeWarning("NOTE: word embedding generation assumes a preprocessed input where sentences are split by newline and tokens by whitespace. Preprocessing has to be handled separately because it slows down training too much.\n"))
+    print("Start training a word embedding at {}\n".format(current_time))
+
+    print("Loading files")
+    all_files = list(Path(args.in_path).rglob('*.txt'))
+
+    if args.checkpoint:
+        print("Resuming training for embedding {}".format(args.checkpoint))
+        if not os.path.isfile(args.checkpoint):
+            raise(RuntimeError("Checkpoint {} does not exist".format(args.checkpoint)))
+        resume_training_embedding(args.checkpoint, all_files, args.out_path, int(args.epochs), bool(int(args.remove)), int(args.format), int(args.seed), int(args.ncores))
+    else: 
+        model_name = '{}_{}_dim-{}_win-{}_min-{}_ep-{}'.format(
+            args.name, 
+            current_time, 
+            args.emb_dim,
+            args.window_size,
+            args.min_count,
+            args.epochs
+        )
+        print("Training new embedding: {}".format(model_name))
+        train_embedding(model_name, all_files, args.out_path, int(args.emb_dim), int(args.window_size), int(args.min_count), int(args.epochs), int(args.format), int(args.seed), int(args.ncores))

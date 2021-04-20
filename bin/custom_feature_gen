@@ -1,0 +1,58 @@
+#!/usr/bin/env python
+
+import os
+import argparse
+import time
+import random
+
+from pathlib import Path
+
+from somenlp.utils import get_time_marker
+from somenlp.feature_engineering import calculate_features_parallel
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description = "Generate manually engineered custom features for software recognition.")
+    parser.add_argument("--in-path", required=True, help="Path to input dir.")
+    parser.add_argument("--out-path", required=True, help="Path to output folder (will be created if it does not exist).")
+    parser.add_argument("--file-extension", default='.data.txt', help="Files in the input directory are selected by their extension.")
+    parser.add_argument("--distant-supervision-features", default='data/distant_supervision/automatic_generation/distant_supervision_03-03-2021.json', help="Distant supervision dictionary features to use.")
+    parser.add_argument("--max-token-length", default=6, help="Max token length to consider for all dict entries. Should be consistent with distant supervision from before.")
+    parser.add_argument("--pos-tag", default='configurations/POS_tagging/pos_tag_encoding.json', help="POS tag encoding to use.")
+    parser.add_argument("--max-files", default=-1, help="Max files to process. Can be used for debugging and generating a smaller corpus.")
+    parser.add_argument("--ncores", default=8, help="Number of cores for parallel execution. Single core is used if not provided.")
+    args = parser.parse_args()
+
+    args.in_path = args.in_path.rstrip('/')
+    args.out_path = args.out_path.rstrip('/')
+
+    if not os.path.isdir(args.in_path):
+        raise(RuntimeError("Input path does not exist"))
+    if not os.path.isdir(args.out_path):
+        os.mkdir(args.out_path)
+
+    print("Loading files")
+    all_files = list(Path(args.in_path).rglob('*{}'.format(args.file_extension)))
+    all_files = [[p, Path(str(p).replace(args.in_path, args.out_path) + '.features')] for p in all_files]
+    print("Setting up output paths")
+    subpaths = [str(p).rsplit('/', 1)[0] for _, p in all_files]
+    for p in subpaths:
+        if not os.path.isdir(p):
+            os.makedirs(p)
+
+    max_samples = int(args.max_files)
+    if max_samples > 0:
+        print("Working on a reduces sample set of {} out of {}".format(max_samples, len(all_files)))
+        random.seed(42)
+        all_files = random.sample(all_files, max_samples)
+
+    n_cores = int(args.ncores)
+    if not n_cores or n_cores <= 0:
+        print("Running calculations only on a single node. This is not recommended as it takes a very long time.")
+    elif n_cores < 16:
+        print("Consider using a higher number of cores (if available) because for a large file number this computation takes quite some time.")
+
+    print("Generating features for {} articles on {} cores".format(len(all_files), n_cores))
+    start = time.time()
+    calculate_features_parallel(all_files, int(args.max_token_length), Path(args.distant_supervision_features), Path(args.pos_tag), n_cores)
+    end = time.time()
+    print("Feature generation took: {}s".format(round(end-start, 2)))

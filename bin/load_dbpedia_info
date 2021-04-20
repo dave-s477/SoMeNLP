@@ -1,0 +1,124 @@
+#!/usr/bin/env python
+
+import os
+import math
+import argparse
+import pandas as pd
+
+from SPARQLWrapper import SPARQLWrapper, JSON
+
+def perform_count_query():
+    sparql = SPARQLWrapper("http://dbpedia.org/sparql")
+    sparql.setQuery("""
+        select count(?s) where { {
+        ?s rdf:type dbo:Software.
+        FILTER NOT EXISTS {?s rdf:type dbo:VideoGame}
+        OPTIONAL {?red dbo:wikiPageRedirects ?s. OPTIONAL {?red rdfs:label ?red_name.} }
+        OPTIONAL {?s rdfs:label ?l. FILTER (LANG(?l) = 'de' or LANG(?l) = 'fr' or LANG(?l) = 'es') .}
+        ?s rdfs:label ?u. FILTER (LANG(?u) = 'en').
+        OPTIONAL {?s foaf:name ?n.}
+        OPTIONAL {?wiki_dis dbo:wikiPageDisambiguates ?s. ?wiki_dis rdfs:label ?w_l. FILTER ( LANG( ?w_l) ='en').}
+        OPTIONAL {?s dbo:developer ?d. OPTIONAL {?d foaf:name ?d_foaf_name.} OPTIONAL {?d rdfs:label ?d_label. FILTER(LANG(?d_label) = 'en').} OPTIONAL {?d dbp:name ?d_dbp_name.} OPTIONAL {?d dbo:wikiPageRedirects ?d_ori. ?d_ori rdfs:label ?d_label_ori. FILTER (LANG(?d_label_ori)='en')} } 
+        } UNION {
+        ?s rdf:type dbo:ProgrammingLanguage. 
+        ?s rdfs:label ?u. 
+        FILTER(LANG(?u)='en')
+        }
+        }
+    """)
+    sparql.setReturnFormat(JSON)
+    results = sparql.query().convert()
+
+    for result in results["results"]["bindings"]:
+        result_count = int(result['callret-0']['value'])
+        print("In total we want to query {} rows".format(result_count))
+        return result_count
+
+def perform_load_query(result_count):
+    result_list = []
+    chunk_size = 10000
+    chunks = math.ceil(result_count/chunk_size)
+    sparql = SPARQLWrapper("http://dbpedia.org/sparql")
+    for chunk in range(chunks):
+        print("Working on chunk {}".format(chunk))
+        sparql.setQuery("""
+            select distinct ?u ?l ?n ?red_name ?w_l ?s ?d ?d_foaf_name ?d_label ?d_dbp_name ?d_label_ori where { {
+            ?s rdf:type dbo:Software.
+            FILTER NOT EXISTS {?s rdf:type dbo:VideoGame}
+            OPTIONAL {?red dbo:wikiPageRedirects ?s. OPTIONAL {?red rdfs:label ?red_name.} }
+            OPTIONAL {?s rdfs:label ?l. FILTER (LANG(?l) = 'de' or LANG(?l) = 'fr' or LANG(?l) = 'es') .}
+            ?s rdfs:label ?u. FILTER (LANG(?u) = 'en').
+            OPTIONAL {?s foaf:name ?n.}
+            OPTIONAL {?wiki_dis dbo:wikiPageDisambiguates ?s. ?wiki_dis rdfs:label ?w_l. FILTER ( LANG( ?w_l) ='en').}
+            OPTIONAL {?s dbo:developer ?d. OPTIONAL {?d foaf:name ?d_foaf_name.} OPTIONAL {?d rdfs:label ?d_label. FILTER(LANG(?d_label) = 'en').} OPTIONAL {?d dbp:name ?d_dbp_name.} OPTIONAL {?d dbo:wikiPageRedirects ?d_ori. ?d_ori rdfs:label ?d_label_ori. FILTER (LANG(?d_label_ori)='en')} } 
+            } UNION {
+            ?s rdf:type dbo:ProgrammingLanguage. 
+            ?s rdfs:label ?u. 
+            FILTER(LANG(?u)='en')
+            }
+            } LIMIT %d OFFSET %d
+        """ % (chunk_size, chunk*chunk_size))
+        sparql.setReturnFormat(JSON)
+        results = sparql.query().convert()
+
+        result_list.extend(results["results"]["bindings"])
+    return result_list
+
+def get_if_exists(key, d, rm=None):
+        if key in d:
+            if rm:
+                value = d[key]['value']
+                for term in rm:
+                    value = value.replace(term, '')
+                return value
+            else:
+                return d[key]['value']
+        else:
+            return None
+
+def transform_results(result_list):
+    result_transformed = []
+        
+    for res in result_list:
+        result_transformed.append({
+            'unique': get_if_exists('u', res, rm = [' (software)', ' (programming language)']),
+            'label_1': get_if_exists('l', res),
+            'label_alt': get_if_exists('n', res),
+            'label_redirect': get_if_exists('red_name', res),
+            'label_wiki_dis': get_if_exists('w_l', res, rm = [' (disambiguation)']),
+            'uri': res['s']['value'],
+            'developer_uri': get_if_exists('d', res),
+            'developer_label_alt': get_if_exists('d_foaf_name', res), 
+            'developer_label_1': get_if_exists('d_label', res),
+            'developer_label_normal': get_if_exists('d_dbp_name', res),
+            'developer_original_label': get_if_exists('d_label_ori', res)
+        })
+    return result_transformed
+
+def melt_data(result_transformed):
+    df = pd.DataFrame(result_transformed)
+    print("Resulting dataframe has length {}".format(len(df)))
+    df = df.drop_duplicates()
+    print("Length {} after dropping duplicates".format(len(df)))
+
+    df_first_melt = pd.melt(df, value_vars=['developer_label_1','developer_label_alt','developer_label_normal','developer_original_label'], id_vars=['label_1', 'label_alt', 'label_redirect', 'label_wiki_dis','developer_uri','unique', 'uri'], value_name='developer', var_name='dsource')
+    df_second_melt = pd.melt(df_first_melt, id_vars=['developer_uri','unique', 'uri', 'dsource', 'developer'], value_name='label', var_name='source')
+    df_final = df_second_melt.drop_duplicates()
+    return df, df_final
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description = "Load distant supervision data form DBpedia")
+    parser.add_argument("--out-path", required=True, help="Path to output dir.")
+    args = parser.parse_args()
+
+    args.out_path = args.out_path.rstrip('/')
+    if not os.path.isdir(args.out_path):
+        os.makedirs(args.out_path)
+
+    result_count = perform_count_query()
+    result_list = perform_load_query(result_count)
+    result_transformed = transform_results(result_list)
+    data, final_data = melt_data(result_transformed)
+
+    data.to_csv("{}/dbpedia_software.csv.gz".format(args.out_path), compression='gzip')
+    final_data.to_csv('{}/dbpedia_software_long.csv.gz'.format(args.out_path), compression='gzip')

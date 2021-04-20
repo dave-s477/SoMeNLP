@@ -1,0 +1,59 @@
+#!/usr/bin/env python
+
+import os
+import argparse
+import json
+
+from pathlib import Path
+
+from somenlp.utils import str2bool
+from somenlp.NER import predict
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description = "Calculate a word embedding (currently only W2V skipgram) based on a corpus.")
+    parser.add_argument("--input", required=True, help="Path to input file or directory.")
+    parser.add_argument("--file-ext", default='.txt', help="How to select input files in case an input directory is provided.")
+    parser.add_argument("--feature-ext", default='', help="Extension for feature files. Has to be provided in case custom Feature LSTM is used for prediction.")
+    parser.add_argument("--prepro", default=True, type=str2bool, help="Apply input preprocessing pipeline (sentenization, tokenization, normalization, etc.)")
+    parser.add_argument("--out-path", default='preds', help="Where to save results. If not provided results are only written to output console.")
+    parser.add_argument("--model-config", required=True, help="Full path to model configuration for training.")
+    parser.add_argument("--bio-pred", action='store_true', help="Write output in form of BIO prediction for each input.")
+    parser.add_argument("--sum-pred", action='store_true', help="Summary prediction. Individual entities for each input.")
+    parser.add_argument("--gpu", default=True, type=str2bool, help="Whether to use a GPU, default option decides automatically on the GPU with least usage if one is available.")
+    args = parser.parse_args()
+
+    args.out_path = args.out_path.rstrip('/')
+    if not os.path.isdir(args.out_path):
+        os.makedirs(args.out_path)
+
+    in_path = Path(args.input)
+    if in_path.is_file():
+        print("Predicting file: {}".format(in_path))
+        all_files = [{'in': in_path, 'out': Path('{}/{}.pred'.format(args.out_path, in_path.name))}]
+    elif in_path.is_dir():
+        print("Predicting all files in folder: {}".format(in_path))
+        all_files = list(in_path.rglob('*{}'.format(args.file_ext)))
+        all_files = [{'in': p, 'out': Path(str(p).replace(args.input.rstrip('/'), args.out_path) + '.pred')} for p in all_files]
+        print("Setting up output paths")
+        subpaths = [str(entry['out']).rsplit('/', 1)[0] for entry in all_files]
+        for p in subpaths:
+            if not os.path.isdir(p):
+                os.makedirs(p)
+    else:
+        raise(RuntimeError("Input path does not exist: {}".format(in_path)))
+
+    if args.feature_ext:
+        if args.prepro:
+            raise(RuntimeError("Tried to use precomputed features together with preprocessing. To generate the custom features the files already need to be preprocessed. This case should not be run.."))
+        all_files = [{'in': entry['in'], 'features': Path(str(entry['in']).replace(args.file_ext, args.feature_ext)), 'out': entry['out']} for entry in all_files]
+
+    model_c_path = Path(args.model_config)
+    if not model_c_path.is_file():
+        raise(RuntimeError("Model configuration file does not exist"))
+    with model_c_path.open(mode='r') as m_file:
+        model_config = json.load(m_file)
+
+    if 'checkpoint' not in model_config['general'].keys():
+        raise(RuntimeError("Model Checkpoint has to be provided for prediction"))
+
+    predict(model_config, all_files, args.prepro, args.bio_pred, args.sum_pred, args.gpu)

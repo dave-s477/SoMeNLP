@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+
+import os
+import argparse
+
+from pathlib import Path
+
+from somenlp.entity_disambiguation import main
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description = "Disambiguate entity names")
+    parser.add_argument("--in-file", required=True, help="Mentions to disambiguate")
+    parser.add_argument("--gold-standard", required=True, help="Linked Gold standard for disambiguation")
+    parser.add_argument("--dbpedia", required=True, help="DBpedia info for distant supervision.")
+    args = parser.parse_args()
+
+    data = Path(args.in_file)
+    gold_standard = Path(args.gold_standard)
+    dbpedia = Path(args.dbpedia)
+
+    main(data, gold_standard, dbpedia)

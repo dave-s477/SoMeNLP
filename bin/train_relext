@@ -1,0 +1,38 @@
+#!/usr/bin/env python
+
+import argparse
+import json
+
+from pathlib import Path
+
+from somenlp.utils import get_time_marker
+from somenlp.RE.run_relation_extraction import main
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description = "Run BiLSTM-CRF for NER.")
+    parser.add_argument("--model-config", default='', help="Full path to model configuration for training.")
+    parser.add_argument("--data-config", default='', help="Full path to data configuration for training.")
+    parser.add_argument("--data-file-ext", default='.data.txt', help="Extension for recognizing data files.")
+    parser.add_argument("--entity-file-ext", default='.labels.txt', help="Extension for recognizing entity files. (IOB2 format)")
+    parser.add_argument("--relation-file-ext", default='.relations.txt', help="Extension for recognizing relation files.")
+    args = parser.parse_args()
+
+    current_time = get_time_marker()
+
+    model_c_path = Path(args.model_config)
+    data_c_path = Path(args.data_config)
+
+    if not model_c_path.is_file():
+        raise(RuntimeError("Model configuration file does not exist"))
+    if not data_c_path.is_file():
+        raise(RuntimeError("Data configuration file does not exist"))
+    with model_c_path.open(mode='r') as m_file, data_c_path.open(mode='r') as d_file:
+        model_config = json.load(m_file)
+        data_config = json.load(d_file)
+
+    if 'checkpoint' not in model_config['general'].keys():
+        print("Model checkpoint not explicitly given --- assuming there is non and training from scratch.")
+        model_config['general']['checkpoint'] = { 'model': '' }
+
+    main(model_config, data_config, current_time, args.data_file_ext, args.entity_file_ext, args.relation_file_ext)
+    

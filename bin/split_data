@@ -1,0 +1,64 @@
+#!/usr/bin/env python
+
+import os
+import argparse
+import time
+import random
+import shutil
+
+from pathlib import Path
+from math import ceil
+
+from somenlp.utils import get_time_marker
+from somenlp.feature_engineering import calculate_features_parallel
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description = "Split corpus according to a specified ratio.")
+    parser.add_argument("--in-path", required=True, help="Path to input dir.")
+    parser.add_argument("--out-path", required=True, help="Path to output folder (will be created if it does not exist).")
+    parser.add_argument("--file-extension", default=".data.txt", help="Extension for recognizing unique files.")
+    parser.add_argument("--ratio", default=[60, 20, 20], nargs='+', type=int, help="Split ratio. Provided as int and has to sum to 100, e.g., 60 20 20")
+    parser.add_argument("--set-names", default=['train', 'devel', 'test'], nargs='+', help="Output set names for writing")
+    args = parser.parse_args()
+
+    args.in_path = args.in_path.rstrip('/')
+    args.out_path = args.out_path.rstrip('/')
+
+    if not os.path.isdir(args.in_path):
+        raise(RuntimeError("Input path does not exist"))
+    if not os.path.isdir(args.out_path):
+        os.mkdir(args.out_path)
+    
+    if sum(args.ratio) != 100:
+        raise(RuntimeError("Input ratio {} does not sum to 100".format(args.ratio)))
+    if len(args.ratio) != len(args.set_names):
+        raise(RuntimeError("Number of ratios and setnames has to match: {} vs {}".format(args.ratio, args.set_names)))
+
+    print("Loading files")
+    single_files = list(Path(args.in_path).rglob('*{}'.format(args.file_extension)))
+    all_files = []
+    for entry in single_files:
+        base_file_name = entry.name.split(args.file_extension)[0]
+        base_file_entries = list(Path(args.in_path).rglob('{}*'.format(base_file_name)))
+        all_files.append(base_file_entries)
+    
+    random.seed(2)
+    random.shuffle(all_files)
+
+    print("Copying files")
+    cut_sum = 0
+    prev_cut_idx = 0
+    for cut, name in zip(args.ratio, args.set_names):
+        cut_sum += cut
+        cut_idx = ceil(len(all_files) * cut_sum / 100) 
+        out_folder_name = args.in_path.rsplit('/')[-1]
+        new_output_location = '{}/{}_{}'.format(args.out_path.rstrip('/'), out_folder_name, name) 
+        if not os.path.isdir(new_output_location):
+            os.makedirs(new_output_location)
+        for files in all_files[prev_cut_idx:cut_idx]:
+            for f in files:
+                source_path = str(f)
+                target_path = '{}/{}'.format(new_output_location, f.name)
+                shutil.copy(source_path, target_path)
+        prev_cut_idx = cut_idx
+    print("Done")

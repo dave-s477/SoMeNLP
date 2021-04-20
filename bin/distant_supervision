@@ -1,0 +1,62 @@
+#!/usr/bin/env python
+
+import os
+import argparse
+
+from pathlib import Path
+
+from somenlp.utils import get_time_marker
+from somenlp.distant_supervision import load_package_names, query_wikidata, generate_triplets, load_wiktionary, merge_results, load_dicts
+
+def print_entry_numbers(d, name):
+    print("{} got the following numbers of dictionary entries:".format(name))
+    if d is not None:
+        for k, v in d.items():
+            print("{}: {}".format(k, len(v)))
+    else:
+        print("None")
+    print('\n')
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description = "Calculate a word embedding (currently only W2V skipgram) based on a corpus.")
+    parser.add_argument("--packages", default=True, help="Load known software package names.")
+    parser.add_argument("--wikidata", default='configurations/distant_supervision/wikidata_queries.json', help="Get WikiData software names.")
+    parser.add_argument("--wiktionary", default=True, help="Load and extract wiktionary dictionary words.")
+    parser.add_argument("--genseq", default=True, help="Generate GEN triplet expression.")
+    parser.add_argument("--include-dicts", default='data/distant_supervision/dictionaries', help="Location for external dicts to include.")
+    parser.add_argument("--max-token-length", default=6, help="Max token length to consider for all dict entries. Should be consistent with feature generation later on.")
+    parser.add_argument("--download", default='/tmp/', help="Location to store temporary downloads.")
+    parser.add_argument("--out-path", default='data/distant_supervision/automatic_generation', help='Location to write info overview too.')
+    parser.add_argument("--tmp-loc", default='/tmp', help='Location for intermediate save states.')
+    args = parser.parse_args()
+
+    current_date = get_time_marker(format='short')
+    if not os.path.isdir(args.out_path):
+        os.makedirs(args.out_path)
+
+    packages, software, triplets, english, ext_dicts = None, None, None, None, None
+    if bool(int(args.packages)):
+        print("Loading software package names")
+        packages = load_package_names(current_date)
+        print_entry_numbers(packages, "Packages")
+    if args.wikidata:
+        print("Querying wikidata with query file: {}".format(args.wikidata))
+        software = query_wikidata(args.wikidata)
+        print_entry_numbers(software, "WikiData")
+    if bool(int(args.genseq)):
+        print("Generating Genseq triplets")
+        triplets = generate_triplets()
+        print_entry_numbers(triplets, "Gen Seqs")
+    if bool(int(args.wiktionary)):
+        print("Generating Wiktionary dictionary")
+        english = load_wiktionary(download_location=args.download)
+        print_entry_numbers(english, "Wiktionary")
+    if args.include_dicts:
+        print("Loading External dicts from {}".format(args.include_dicts))
+        dictionaries = list(Path(args.include_dicts).rglob('*.dic'))
+        ext_dicts = load_dicts(dictionaries)
+        print_entry_numbers(ext_dicts, "External Dictionaries")
+    
+    out_file = Path(args.out_path) / 'distant_supervision_{}.json'.format(current_date)
+    print("Writing all outputs to {}".format(out_file.absolute()))
+    merge_results(out_file, int(args.max_token_length), [packages, software, triplets, english, ext_dicts])
