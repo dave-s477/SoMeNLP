@@ -14,7 +14,10 @@ class Trainer():
     def _weighted_averages(self, support, *arrays):
         res = []
         for arr in arrays:
-            weighted_average = sum([a * b for a, b in zip(support, arr)]) / sum(support)
+            if sum(support) == 0:
+                weighted_average = 0
+            else:
+                weighted_average = sum([a * b for a, b in zip(support, arr)]) / sum(support)
             res.append(weighted_average)
         return res
 
