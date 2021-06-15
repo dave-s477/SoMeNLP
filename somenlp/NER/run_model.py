@@ -47,7 +47,7 @@ def main(model_config, data_config, time, data_file_extension, label_file_extens
 
     print("\nPerforming a final test of the model")
     trainer._test_model()
-    return    
+        
     print("\nSaving final model")
     model_w.save_checkpoint()
 
