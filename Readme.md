@@ -3,9 +3,10 @@
 SoMeNLP provides functionality for performing information extraction for software mentions in scientific articles. 
 Implemented are: Named Entity Recognition, Relation Extraction and Entity Disambiguation. 
 
-Up to now it has been applied on the SoMeSci dataset (available from [zenodo](https://zenodo.org/record/4701764) or [github](https://github.com/dave-s477/SoMeSci)). 
+Up to now it has been applied on the SoMeSci dataset (available from [zenodo](https://zenodo.org/record/4701764) or [github](https://github.com/dave-s477/SoMeSci)). You can also have a look at the website including an interactive SPARQL Endpoint: https://data.gesis.org/somesci.
 
-Below is a short tutorial on applying the NLP pipeline on SoMeSci (or on `data/minimal_example`)
+
+Below is a short tutorial for training a NLP pipeline on SoMeSci (or on `data/minimal_example` that is included in the repository)
 
 ## Installing
 
