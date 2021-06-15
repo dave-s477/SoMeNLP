@@ -4,6 +4,14 @@ from . import OutputHandler, DataHandler, ModelWrapper, Trainer, Tuner
 from somenlp.utils import gpu_setup
 
 def setup_cuda(gpu):
+    """Set up device for pytorch training
+
+    Args:
+        gpu (bool): Whether to use a GPU
+
+    Returns:
+        device: torch device for executing the training
+    """
     if gpu and torch.cuda.device_count() > 0:
         GPU = str(gpu_setup.pick_gpu_lowest_memory())
         print("Working on GPU: {}".format(GPU))
@@ -14,6 +22,17 @@ def setup_cuda(gpu):
     return device
 
 def main(model_config, data_config, time, data_file_extension, label_file_extension, feature_file_extension, gpu=True):
+    """[summary]
+
+    Args:
+        model_config (dict): model configuration 
+        data_config (dict): configuration for training/devel and test data
+        time (string): time marker for logging and writing outputs
+        data_file_extension (string): file extension for recognition of input files
+        label_file_extension (string): file extension for recognition of input files
+        feature_file_extension (string): file extension for recognition of input files
+        gpu (bool, optional): whether to use GPU, will be selected automatically when set to True. Defaults to True.
+    """
     print("Setting up cuda")
     device = setup_cuda(gpu)
     
@@ -52,6 +71,16 @@ def main(model_config, data_config, time, data_file_extension, label_file_extens
     model_w.save_checkpoint()
 
 def predict(model_config, files, prepro=True, bio_predicition=True, summary_prediction=True, gpu=True):
+    """[summary]
+
+    Args:
+        model_config (dicts): model configuration for prediction
+        files (list of dicts): file list to predict
+        prepro (bool, optional): whether to preprocess input files. Defaults to True.
+        bio_predicition (bool, optional): whether to write predictions in bio format. Defaults to True.
+        summary_prediction (bool, optional): whether to write a summary of predictions. Defaults to True.
+        gpu (bool, optional): whether to use GPU, will be selected automatically when set to True. Defaults to True.
+    """
     print("Setting up cuda")
     device = setup_cuda(gpu)
 
@@ -79,6 +108,16 @@ def predict(model_config, files, prepro=True, bio_predicition=True, summary_pred
     trainer.prediction(bio_predicition, summary_prediction)
 
 def tune(config, time, data_file_extension, label_file_extension, feature_file_extension, gpu=True):
+    """Perform a hyper-parameter runing search 
+
+    Args:
+        config (dict): configuration for tuning
+        time (string): time marker for writing outputs
+        data_file_extension (string): file extension for recognition of input files
+        label_file_extension (string): file extension for recognition of input files
+        feature_file_extension (string): file extension for recognition of input files
+        gpu (bool, optional): whether to use GPU, will be selected automatically when set to True. Defaults to True.
+    """
     # switch between systematic and random
     tuner = Tuner(config, time)
     iterator = tuner.yield_configs()
