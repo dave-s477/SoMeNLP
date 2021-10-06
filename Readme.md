@@ -3,10 +3,10 @@
 SoMeNLP provides functionality for performing information extraction for software mentions in scientific articles. 
 Implemented are: Named Entity Recognition, Relation Extraction and Entity Disambiguation. 
 
-Up to now it has been applied on the SoMeSci dataset (available from [zenodo](https://zenodo.org/record/4701764) or [github](https://github.com/dave-s477/SoMeSci)). You can also have a look at the website including an interactive SPARQL Endpoint: https://data.gesis.org/somesci.
+Up to now it has been applied on the SoMeSci dataset (available from [zenodo](https://zenodo.org/record/4701764) or [github](https://github.com/dave-s477/SoMeSci)). 
 
-
-Below is a short tutorial for training a NLP pipeline on SoMeSci (or on `data/minimal_example` that is included in the repository)
+**The SoMeSci pipeline is adjusted to perform large scale information extraction on PMC for the construction of SoftwareKG in this branch. 
+While all code is already included, the documentation is not yet up to date and will be further extended.**
 
 ## Installing
 
@@ -66,50 +66,3 @@ brat_to_bio --in-path data/Creation_sentences --out-path data/Creation_sentences
 split_data --in-path data/Creation_sentences_bio --out-path data/Creation_sentences 
 ```
 Note that PLoS_sentences is entirely used for training and not split
-
-## Named Entity Recognition (NER)
-
-The configuration for training and testing is made in configurations files. Default examples are placed in `configurations/named_entity_recognition`.
-After data was preprocessed it can directly be run for the minimal example
-```shell
-train_model --model-config configurations/named_entity_recognition/minimal_example_LSTM.json --data-config configurations/named_entity_recognition/minimal_example_data.json --feature-file-ext ''
-```
-and SoMeSci
-```shell
-train_model --model-config configurations/named_entity_recognition/SoMeSci_LSTM.json --data-config configurations/named_entity_recognition/SomeSci_data_software.json --feature-file-ext ''
-```
-For SoMeSci different configurations are available to recognize different entities. Check `configurations/named_entity_recognition` and `configurations/data_transforms`.
-
-## Relation Extraction (RE)
-
-Configurations for RE are made in `configurations/relation_extraction` and can also be run directly: 
-```shell
-train_relext --model-config configurations/relation_extraction/SoMeSci_base_config.json --data-config configurations/relation_extraction/minimal_example_data_config.json
-```
-
-## Entity Disambiguation (ED)
-
-No configuration is required for ED, as all implementations are static for now.
-To run it a little more data pre-processing is required.
-For the minimal example:
-```shell
-somesci_disambiguation_input --in-paths data/minimal_example/text/ --out-path data
-```
-and for SoMeSci:
-```shell
-somesci_disambiguation_input --in-paths data/PLoS_methods data/Pubmed_fulltext data/PLoS_sentences data/Creation_sentences --out-path data
-
-```
-as well as some supervised data gathered from [DBpedia](https://www.dbpedia.org/):
-```shell
-load_dbpedia_info --out-path data/dbpedia
-```
-Now the disambiguation can be run for the minimal example:
-```shell
-entity_disambiguation --in-file data/entity_linking_input.json --gold-standard data/minimal_example/linking_gold_standard.json --dbpedia data/dbpedia/dbpedia_software_long.csv.gz
-```
-and SoMeSci:
-```shell
-entity_disambiguation --in-file data/entity_linking_input.json --gold-standard data/Linking/artifacts.json --dbpedia data/dbpedia/dbpedia_software_long.csv.gz
-```
-`Linking/artifacts.json` is contained in SoMeSci.
