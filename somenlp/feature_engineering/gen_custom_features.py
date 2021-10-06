@@ -34,7 +34,6 @@ def encode_sentence(text, max_length, distant_supervision_dict, key_mapping, pos
             distant_supervision_result = distant_supervision_rules.distant_supervision_by_dict(candidate, distant_supervision_dict, key_mapping)
             for pos in range(candidate.start_idx, candidate.end_idx):
                 distant_supervision_counts[:,pos] += distant_supervision_result
-
     all_feats = np.concatenate((pos_tags, features, sentence_counts, distant_supervision_counts))
     return np.transpose(all_feats)
 
@@ -43,7 +42,8 @@ def calculate_features(input_files, max_length, distant_supervision_dict, key_ma
     with input_files[0].open(mode='r') as in_text:
         for line in in_text:
             sentence_feature_encodings.append(encode_sentence(line, max_length, distant_supervision_dict, key_mapping, pos_tag_encoding)) 
-    np.savez_compressed('{}.npz'.format(str(input_files[1])), features=sentence_feature_encodings)
+    array_to_write = np.array(sentence_feature_encodings)
+    np.savez_compressed('{}.npz'.format(str(input_files[1])), features=array_to_write)
 
 def update_words(all_words, in_list, name):
     for word in in_list:
