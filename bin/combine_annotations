@@ -1,0 +1,177 @@
+#!/usr/bin/env python
+
+import os
+import argparse
+import json
+
+from pathlib import Path
+from multiprocessing import Pool
+from collections import Counter
+
+from numpy.core.defchararray import startswith
+
+from articlenizer.util import chunk_list
+
+glob_count = 0
+
+def combine_tags(name, tags, mention_tags, type_tags):
+    mention_type = [x.split('-')[-1] for x in mention_tags if x != 'O']
+    mention_type_tag = max(mention_type, key=mention_type.count) if len(mention_type) > 0 else "Unknown"
+    soft_type = [x.split('-')[-1] for x in type_tags if x != 'O' ]
+    soft_type_tag = max(soft_type, key=soft_type.count) if len(soft_type) > 0 else "Unknown"
+    out_type = '{}_{}'.format(soft_type_tag, mention_type_tag)
+    out_tags = ['B-{}'.format(out_type)]
+    out_tags.extend(['I-{}'.format(out_type)] * (len(tags) - 1))
+    return out_tags
+
+def merge_annotations(software_ann, mention_type_ann, soft_type_ann, text):
+    out_seq = []
+    len_current_soft = 0
+    current_software_name = []
+    current_software_tags = []
+    current_mention_type_tags = []
+    current_soft_type_tags = []
+    for t, s, mt, st in zip(text, software_ann, mention_type_ann, soft_type_ann):
+        if s == "B-Application":
+            if len_current_soft > 0:
+                out_tags = combine_tags(current_software_name, current_software_tags, current_mention_type_tags, current_soft_type_tags)
+                out_seq.extend(out_tags)
+                len_current_soft = 0
+                current_software_name = []
+                current_software_tags = []
+                current_mention_type_tags = []
+                current_soft_type_tags = []
+            len_current_soft += 1
+            current_software_name.append(t)
+            current_software_tags.append(s)
+            current_mention_type_tags.append(mt)
+            current_soft_type_tags.append(st)
+        elif s == "I-Application":
+            len_current_soft += 1
+            current_software_name.append(t)
+            current_software_tags.append(s)
+            current_mention_type_tags.append(mt)
+            current_soft_type_tags.append(st)
+        else:
+            if len_current_soft > 0:
+                out_tags = combine_tags(current_software_name, current_software_tags, current_mention_type_tags, current_soft_type_tags)
+                out_seq.extend(out_tags)
+                len_current_soft = 0
+                current_software_name = []
+                current_software_tags = []
+                current_mention_type_tags = []
+                current_soft_type_tags = []
+            out_seq.append(s)
+    if len_current_soft > 0:
+        out_tags = combine_tags(current_software_name, current_software_tags, current_mention_type_tags, current_soft_type_tags)
+        out_seq.extend(out_tags)
+    return out_seq
+
+def bert_match_line(t_line, software, mention_type, soft_type):
+    bert_merged_line = []
+    bert_merged_software_anno = []
+    bert_merged_mention_type_anno = []
+    bert_merged_soft_type_anno = []
+    for t, s, mt, st in zip(t_line.split(), software.split(), mention_type.split(), soft_type.split()):
+        if bert_merged_line and t.startswith('##'):
+            bert_merged_line[-1] += t.lstrip('#')
+        else:
+            bert_merged_line.append(t)
+            bert_merged_software_anno.append(s)
+            bert_merged_mention_type_anno.append(mt)
+            bert_merged_soft_type_anno.append(st)
+    return bert_merged_line, bert_merged_software_anno, bert_merged_mention_type_anno, bert_merged_soft_type_anno
+
+def fix_annotation(annotation, type="software", sent=''):
+    new_annotation = []
+    last_anno = 'O'
+    last_tag = ''
+    for ann in annotation:
+        if ann.startswith('B-'):
+            tag = ann.split('-', maxsplit=1)[-1]
+            last_tag = tag
+        elif ann.startswith('I-'):
+            tag = ann.split('-', maxsplit=1)[-1]
+            if not last_anno.startswith(('B-', 'I-')):
+                ann = 'B-' + tag
+            elif last_tag != tag:
+                if type == 'software':
+                    ann = 'B-' + tag
+                else:
+                    ann = 'I-' + last_tag
+                    tag = last_tag
+            last_tag = tag 
+        else:
+            last_tag = ''
+        last_anno = ann
+        new_annotation.append(ann)
+    # if new_annotation != annotation:
+    #     print(sent)
+    #     print(annotation)
+    #     print(new_annotation)
+    #     print()
+    return new_annotation
+
+def process_list(file_names):
+    for f in file_names:
+        try:
+            with f['in'].open() as text, f['software'].open() as software_anno, f['mention_type'].open() as mention_type_anno, f['soft_type'].open() as soft_type_anno, f['out'].open(mode="w") as out_anno, f['out_text'].open(mode="w") as out_text:
+                for idx, (t_line, software, mention_type, soft_type) in enumerate(zip(text, software_anno, mention_type_anno, soft_type_anno)):
+                    bert_merged_line, bert_merged_software_anno, bert_merged_mention_type_anno, bert_merged_soft_type_anno = bert_match_line(t_line, software, mention_type, soft_type)    
+                    bert_merged_software_anno = fix_annotation(bert_merged_software_anno, type="software", sent=bert_merged_line)
+                    bert_merged_mention_type_anno = fix_annotation(bert_merged_mention_type_anno, type="class", sent=bert_merged_line)
+                    bert_merged_soft_type_anno = fix_annotation(bert_merged_soft_type_anno, type="class", sent=bert_merged_line)
+                    annotation = merge_annotations(bert_merged_software_anno, bert_merged_mention_type_anno, bert_merged_soft_type_anno, bert_merged_line)
+                    out_text.write('{}\n'.format(' '.join(bert_merged_line).rstrip()))
+                    out_anno.write('{}\n'.format(' '.join(annotation).rstrip()))
+        except FileNotFoundError:
+            print("Did not find file {}".format(f['in']))
+
+def parallel_wrapper(file_names, n_cores):
+    list_segments = chunk_list(file_names, n_cores)
+    with Pool(n_cores) as p:
+        p.map(process_list, list_segments)
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description = "Calculate a word embedding (currently only W2V skipgram) based on a corpus.")
+    parser.add_argument("--in-path", required=True, help="Path to input directory.")
+    parser.add_argument("--out-path", required=True, help="Path to output directory.")
+    parser.add_argument("--file-ext", default='.pred.text', help="How to select input files in case an input directory is provided.")
+    parser.add_argument("--software-ext", default='.pred.software', help="Extension for software annotation")
+    parser.add_argument("--mention-type-ext", default='.pred.mention_type', help="Extension for software annotation")
+    parser.add_argument("--soft-type-ext", default='.pred.soft_type', help="Extension for software annotation")
+    parser.add_argument("--out-ext", default='.pred.anno.merged', help="Output extension for merged anno")
+    parser.add_argument("--out-text-ext", default='.pred.text.merged', help="Output extension for merged text")
+    parser.add_argument("--ncores", default=1, help="Number of cores for parallel execution")
+    args = parser.parse_args()
+
+    args.out_path = args.out_path.rstrip('/')
+    if not os.path.isdir(args.out_path):
+        os.makedirs(args.out_path)
+
+    in_path = Path(args.in_path)
+    if not in_path.is_dir():
+        raise(RuntimeError("Input is not directory or does not exist"))
+    print("Predicting all files in folder: {}".format(in_path))
+    all_files = sorted(list(in_path.rglob('*{}'.format(args.file_ext))), key=str)
+
+    all_files = [{
+        'in': p, 
+        'out': Path(str(p).replace(args.in_path.rstrip('/'), args.out_path).replace(args.file_ext, args.out_ext)),
+        'out_text': Path(str(p).replace(args.in_path.rstrip('/'), args.out_path).replace(args.file_ext, args.out_text_ext)),
+        'software': Path(str(p).replace(args.file_ext, args.software_ext)),
+        'mention_type': Path(str(p).replace(args.file_ext, args.mention_type_ext)),
+        'soft_type': Path(str(p).replace(args.file_ext, args.soft_type_ext))} for p in all_files]
+    print("Setting up output paths")
+    subpaths = [str(entry['out']).rsplit('/', 1)[0] for entry in all_files]
+    for p in subpaths:
+        if not os.path.isdir(p):
+            os.makedirs(p)
+
+    ncores = int(args.ncores)
+    if ncores <= 1:
+        print("Transforming {} articles on a single core".format(len(all_files)))
+        process_list(all_files)
+    else:
+        print("Transforming {} articles on {} cores".format(len(all_files), ncores))
+        parallel_wrapper(all_files, ncores)

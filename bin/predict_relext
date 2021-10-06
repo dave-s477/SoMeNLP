@@ -6,23 +6,20 @@ import json
 
 from pathlib import Path
 
-from somenlp.utils import str2bool, gpu_setup
-from somenlp.NER import predict
+from somenlp.utils import str2bool
+from somenlp.RE.run_relation_extraction import predict
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description = "Calculate a word embedding (currently only W2V skipgram) based on a corpus.")
-    parser.add_argument("--input", default=None, help="Path to input file or directory.")
+    parser = argparse.ArgumentParser(description = "")
+    parser.add_argument("--input", required=None, help="Path to input file or directory.")
     parser.add_argument("--file-ext", default='.txt', help="How to select input files in case an input directory is provided.")
-    parser.add_argument("--feature-ext", default='', help="Extension for feature files. Has to be provided in case custom Feature LSTM is used for prediction.")
+    parser.add_argument("--entity-ext", default='', help="Extension for entity files.")
     parser.add_argument("--prepro", default=True, type=str2bool, help="Apply input preprocessing pipeline (sentenization, tokenization, normalization, etc.)")
     parser.add_argument("--file-list", default=None, help="Provide a file list instead of going through a directory")
     parser.add_argument("--out-path", default='preds', help="Where to save results. If not provided results are only written to output console.")
-    parser.add_argument("--out-ext", default='.pred', help="Extension to append to output files.")
-    parser.add_argument("--out-text-ext", default='.pred.text', help="Extension appended when writing modified text")
+    parser.add_argument("--out-ext", default='.rel-pred', help="Extension to append to output files.")
     parser.add_argument("--model-config", required=True, help="Full path to model configuration for training.")
     parser.add_argument("--bio-pred", action='store_true', help="Write output in form of BIO prediction for each input.")
-    parser.add_argument("--sum-pred", action='store_true', help="Summary prediction. Individual entities for each input.")
-    parser.add_argument("--gpu", default=True, type=str2bool, help="Whether to use a GPU, default option decides automatically on the GPU with least usage if one is available.")
     parser.add_argument("--offset", default=None, help="Offset number for prediction on large file list.")
     parser.add_argument("--limit", default=None, help="Limit of files to process when working on a large number of files")
     args = parser.parse_args()
@@ -35,7 +32,7 @@ if __name__ == "__main__":
         in_path = Path(args.input)
         if in_path.is_file():
             print("Predicting file: {}".format(in_path))
-            all_files = [{'in': in_path, 'out': Path('{}/{}{}'.format(args.out_path, in_path.name, args.out_ext)), 'out-text': Path('{}/{}{}'.format(args.out_path, in_path.name, args.out_text_ext))}]
+            all_files = [{'in': in_path, 'entities': Path(str(in_path).replace(args.file_ext, args.entity_ext)), 'out': Path('{}/{}{}'.format(args.out_path, in_path.name, args.out_ext))}]
         elif in_path.is_dir():
             print("Predicting all files in folder: {}".format(in_path))
             all_files = sorted(list(in_path.rglob('*{}'.format(args.file_ext))), key=str)
@@ -48,7 +45,7 @@ if __name__ == "__main__":
                 print("Limiting to {} articles".format(limit))
                 all_files = all_files[:limit]
 
-            all_files = [{'in': p, 'out': Path(str(p).replace(args.input.rstrip('/'), args.out_path) + args.out_ext), 'out-text': Path(str(p).replace(args.input.rstrip('/'), args.out_path) + args.out_text_ext)} for p in all_files]
+            all_files = [{'in': p, 'entities': Path(str(p).replace(args.file_ext, args.entity_ext)), 'out': Path(str(p).replace(args.input.rstrip('/'), args.out_path) + args.out_ext)} for p in all_files]
             print("Setting up output paths")
             subpaths = [str(entry['out']).rsplit('/', 1)[0] for entry in all_files]
             for p in subpaths:
@@ -70,19 +67,12 @@ if __name__ == "__main__":
             print("Limiting to {} articles".format(limit))
             all_files = all_files[:limit]
 
-        all_files = [{'in': p, 'out': Path(str(p) + args.out_ext), 'out-text': Path(str(p) + args.out_text_ext)} for p in all_files]
+        all_files = [{'in': p, 'entities': Path(str(p).replace(args.file_ext, args.entity_ext)), 'out': Path(str(p) + args.out_ext)} for p in all_files]
         print("Setting up output paths")
         subpaths = [str(entry['out']).rsplit('/', 1)[0] for entry in all_files]
         for p in subpaths:
             if not os.path.isdir(p):
                 os.makedirs(p)
-
-    print("Predicting a total of {} files".format(len(all_files)))
-
-    if args.feature_ext:
-        if args.prepro:
-            raise(RuntimeError("Tried to use precomputed features together with preprocessing. To generate the custom features the files already need to be preprocessed. This case should not be run.."))
-        all_files = [{'in': entry['in'], 'features': Path(str(entry['in']).replace(args.file_ext, args.feature_ext)), 'out': entry['out']} for entry in all_files]
 
     model_c_path = Path(args.model_config)
     if not model_c_path.is_file():
@@ -93,7 +83,4 @@ if __name__ == "__main__":
     if 'checkpoint' not in model_config['general'].keys():
         raise(RuntimeError("Model Checkpoint has to be provided for prediction"))
 
-    print("Setting up cuda")
-    device = gpu_setup.setup_cuda(args.gpu)
-
-    predict(model_config, all_files, device, args.prepro, args.bio_pred, args.sum_pred)
+    predict(model_config, all_files, args.prepro, args.bio_pred)

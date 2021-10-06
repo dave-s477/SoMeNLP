@@ -5,7 +5,7 @@ import json
 
 from pathlib import Path
 
-from somenlp.utils import get_time_marker, str2bool
+from somenlp.utils import get_time_marker, str2bool, gpu_setup
 from somenlp.NER import tune
 
 if __name__ == "__main__":
@@ -15,6 +15,7 @@ if __name__ == "__main__":
     parser.add_argument("--feature-file-ext", default='.data.txt.features.npz', help="Extension for recognizing feature files.")
     parser.add_argument("--label-file-ext", default='.labels.txt', help="Extension for recognizing label files.")
     parser.add_argument("--gpu", default=True, type=str2bool, help="Whether to use a GPU, default option decides automatically on the GPU with least usage if one is available.")
+    parser.add_argument("--save-dir", default='save', help="Location where to save output models.")
     args = parser.parse_args()
 
     current_time = get_time_marker()
@@ -29,5 +30,8 @@ if __name__ == "__main__":
         print("Model checkpoint not explicitly given --- assuming there is non and training from scratch.")
         tuning_config['general']['checkpoint'] = { 'model': '' }
 
-    tune(tuning_config, current_time, args.data_file_ext, args.label_file_ext, args.feature_file_ext, args.gpu)
+    print("Setting up cuda")
+    device = gpu_setup.setup_cuda(args.gpu)
+
+    tune(tuning_config, current_time, args.data_file_ext, args.label_file_ext, args.feature_file_ext, device, save_dir=args.save_dir.rstrip('/'))
     

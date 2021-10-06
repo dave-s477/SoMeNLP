@@ -1,0 +1,128 @@
+#!/usr/bin/env python
+
+import argparse
+import json
+import os
+import numpy as np
+import pickle
+import time
+
+from copy import deepcopy
+from articlenizer import articlenizer
+from pathlib import Path
+from heapq import merge
+
+from somenlp.entity_disambiguation import DistanceMap, EfficientClustering
+from somenlp.entity_disambiguation.efficient_prediction import normalize, remove_spaces
+
+if __name__ == "__main__":
+    # TODO:
+    # -> feature generator
+    # -> distance calculation
+    # -> calculate distances between samples and evaluation data
+    # -> merge distances
+    # -> link up to threshold(s)
+    # -> get percentage of correctly linked files
+    parser = argparse.ArgumentParser(description = "Disambiguate entity names")
+    parser.add_argument("--config", required=True, help="Config for disambiguation")
+    parser.add_argument("--ncores", default=1, help="Number of cores for parallel computing.")
+    parser.add_argument("--reduced-sample-set", required=True, help="Sample overview.")
+    parser.add_argument("--combined-distances", required=True, help="Pre-calculated distances for samples.")
+    parser.add_argument("--eval-samples", required=True, help="New samples for evaluation.")
+    parser.add_argument("--eval-labels", required=True, help="Labels corresponding to eval samples.")
+    parser.add_argument("--save-path", required=True, help="Path for saving intermediate results")
+    args = parser.parse_args()
+
+    if not os.path.isfile(args.reduced_sample_set):
+        raise(RuntimeError("Reduced sample set does not exist"))
+    reduced_sample_set = json.load(open(args.reduced_sample_set, 'r'))
+
+    if not os.path.isfile(args.combined_distances):
+        raise(RuntimeError("Combined distances does not exist"))
+    combined_distances = pickle.load(open(args.combined_distances, 'rb'))
+
+    if not os.path.isfile(args.eval_samples):
+        raise(RuntimeError("Eval set does not exist"))
+    eval_samples = json.load(open(args.eval_samples, 'r'))
+
+    if not os.path.isfile(args.eval_labels):
+        raise(RuntimeError("Eval labels set does not exist"))
+    eval_labels = json.load(open(args.eval_labels, 'r'))
+
+    c_path = Path(args.config)
+    if not c_path.is_file():
+        raise(RuntimeError("Model configuration file does not exist"))
+    with c_path.open(mode='r') as c_file:
+        config = json.load(c_file)
+
+    args.save_path = args.save_path.rstrip('/')
+    if not os.path.isdir(args.save_path):
+        os.mkdir(args.save_path)
+
+    print("Expanding samples")
+    expanded_samples = []
+    for idx, entry in enumerate(reduced_sample_set.values()):
+        contexts = entry.pop('contexts')
+        for context in contexts:
+            out = deepcopy(entry)
+            out.update(context)
+            out['origin_id'] = idx
+            expanded_samples.append(out)
+    reduced_sample_set = None
+    print(len(expanded_samples))
+
+    for idx, v in enumerate(eval_samples):
+        v['string'] = remove_spaces(v['mention'])
+        v['norm'] = normalize(v['mention'])
+        v['origin_id'] = idx
+        v['eval'] = True
+
+    for sample in eval_samples:
+        for idx, gold in enumerate(eval_labels):
+            if sample['paper_id'] == gold['paper_id'] and sample['mention'] == ' '.join(articlenizer.get_tokenized_sentences(gold['mention'])[0]):
+                sample['gold_id'] = idx
+                break
+    print(len(eval_samples))
+
+    print("Generating gold lookup table")
+    gold_lookup_table = np.zeros((len(eval_samples), len(eval_samples)), dtype=bool)
+    for idx, v in enumerate(eval_samples):
+        for idx_link, v_link in enumerate(eval_samples[idx+1:]):
+            if 'gold_id' in v and 'gold_id' in v_link and eval_labels[v['gold_id']]['link'] == eval_labels[v_link['gold_id']]['link']:
+                gold_lookup_table[idx][idx_link+idx+1] = True
+                gold_lookup_table[idx_link+idx+1][idx] = True
+
+    if not os.path.isfile('{}/distance_map_{}_{}.p'.format(args.save_path, 0, len(eval_samples))):
+        print("Calculating distances between new samples")
+        new_sample_distance_map = DistanceMap(eval_samples, config['dbpedia'], config['model'], 0, len(eval_samples), config['threshold'], None, int(args.ncores), args.save_path, config['model']['batch_size'], config['device'])
+        new_sample_distance_map.calculate_distance_map()
+        new_sample_distances = new_sample_distance_map.distance_map
+        new_sample_distance_map = None
+    else:
+        print("Loading distances between new samples")
+        new_sample_distances = pickle.load(open('{}/distance_map_{}_{}.p'.format(args.save_path, 0, len(eval_samples)), 'rb'))
+
+    if not os.path.isfile('{}/distance_map_0_0.p'.format(args.save_path)):
+        print("Calculating distances between new and old samples")
+        new_old_sample_distance_map = DistanceMap(eval_samples, config['dbpedia'], config['model'], 0, 0, config['threshold'], expanded_samples, int(args.ncores), args.save_path, config['model']['batch_size'], config['device'])
+        new_old_sample_distance_map.calculate_distance_map(compare=True)
+        new_old_sample_distances = new_old_sample_distance_map.distance_map
+        new_old_sample_distance_map = None
+    else:
+        print("Loading distances between new and old samples")
+        new_old_sample_distances = pickle.load(open('{}/distance_map_0_0.p'.format(args.save_path), 'rb'))
+    # TODO update indices of sample distances
+    const = len(expanded_samples)
+    new_sample_distances = [[x, [y[0]+const, y[1]+const], z] for x, y, z in new_sample_distances]
+    new_old_sample_distances = [[x, [y[0]+const, y[1]], z] for x, y, z in new_old_sample_distances]
+
+    all_distances = list(merge(new_sample_distances, new_old_sample_distances))
+    all_distances = list(merge(all_distances, combined_distances))
+    expanded_samples.extend(eval_samples)
+    
+    print("Working on a sorted list of {} pairs".format(len(all_distances)))
+    start = time.time()
+    efficient_clustering = EfficientClustering(all_distances, config['threshold'], expanded_samples, args.save_path, int(args.ncores))
+    efficient_clustering.evaluate(gold_lookup_table, config['eval_step_size'], config['start_eval_threshold'])
+    end = time.time()
+    print("Clustering took {}s".format(round(end-start, 4)))

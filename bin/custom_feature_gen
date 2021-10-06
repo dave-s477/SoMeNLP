@@ -7,7 +7,6 @@ import random
 
 from pathlib import Path
 
-from somenlp.utils import get_time_marker
 from somenlp.feature_engineering import calculate_features_parallel
 
 if __name__ == "__main__":

@@ -5,12 +5,97 @@ import argparse
 import json
 
 from pathlib import Path
+from somenlp.utils import str2bool
 from articlenizer import formatting
+from multiprocessing import Pool
+from functools import partial
+
+from articlenizer.util import chunk_list
+
+def get_linking_info(files, format, write_single):
+    linking_info = []
+    for data in files:
+        file_info = []
+        with data['txt'].open() as t_in, data['ann'].open() as a_in:
+            text = t_in.read()
+            ann = a_in.read()
+            annotations = formatting.annotation_to_dict(ann)
+            sentences = formatting.sentence_based_info(text, ann, False, False, False, False, True)
+            for idx, sentence in enumerate(sentences):
+                for k, ent in sentence['entities'].items():
+                    if ent['label'].split('_')[0] in main_entities:
+                        path = str(data['txt']).split('/')[-1].split('.txt')[0]
+                        paper_id = '{}{}'.format("https://www.ncbi.nlm.nih.gov/pmc/articles/", path) if "PMC" in path else '{}{}'.format('https://doi.org/', path.replace('_', '/'))
+                        ent_type = ent['label'].split('_')[0]
+                        men_type = ent['label'].split('_')[1]
+                        # if args.relabel_unknown:
+                        #     ent_type = ent_type if ent_type != 'Unknown' else 'Application'
+                        #     men_type = men_type if men_type != 'Unknown' else 'Usage'
+                        if format == 'long':
+                            ent_linking_info = {
+                                "mention": ent['string'],
+                                "sentence": sentence['string'],
+                                "sentence_id": idx,
+                                "paper_id": paper_id,
+                                "beg": ent['beg'],
+                                "end": ent['end'],
+                                "ent_key": k,
+                                "ent_type": ent_type,
+                                "mention_context": men_type,
+                                "relations": [],
+                                "relations_of": []
+                            }
+                            for _, rel in annotations['relations'].items():
+                                if rel['arg2'] == k:
+                                    ent_linking_info['relations'].append({
+                                        'type': rel['label'],
+                                        'string': annotations['entities'][rel['arg1']]['string']
+                                    })
+                                elif rel['arg1'] == k:
+                                    ent_linking_info['relations_of'].append({
+                                        'type': rel['label'],
+                                        'string': annotations['entities'][rel['arg2']]['string']
+                                    })
+                        elif format == 'short':
+                            ent_linking_info = {
+                                "mention": ent['string'],
+                                "sentence_id": idx,
+                                "paper_id": paper_id.rsplit('/', maxsplit=1)[-1].split('.', maxsplit=1)[0],
+                                "beg": ent['beg'],
+                                "relations": []
+                            }
+                            for _, rel in annotations['relations'].items():
+                                if rel['arg2'] == k:
+                                    ent_linking_info['relations'].append({
+                                        'type': rel['label'],
+                                        'string': annotations['entities'][rel['arg1']]['string']
+                                    })
+                        else:
+                            raise(RuntimeError("Received unknown format type {}".format(format)))
+                        if write_single:
+                            file_info.append(ent_linking_info)
+                        else:
+                            linking_info.append(ent_linking_info)
+        if write_single:
+            with data['out'].open(mode='w') as out_f:
+                json.dump(file_info, out_f, indent=4)
+    return linking_info
+
+def parallel_wrapper(file_names, n_cores, format, write_single):
+    list_segments = chunk_list(file_names, n_cores)
+    with Pool(n_cores) as p:
+        linking_info_list = p.map(partial(get_linking_info, format=format, write_single=write_single), list_segments)
+    linking_info = [item for sublist in linking_info_list for item in sublist]
+    return linking_info
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description = "Get features for entity disambiguation from BRAT files")
     parser.add_argument("--in-paths", required=True, nargs='+', help="Paths to input directories")
-    parser.add_argument("--out-path", required=True, help="Path to output file")
+    parser.add_argument("--out-path", required=False, help="Path to output file")
+    parser.add_argument("--relabel-unknown", default=False, type=str2bool, help="Relabel Unknown tags that stem from prediction uncertainty and cannot be handled by clustering")
+    parser.add_argument("--ncores", default=1, help="Number of cores for parallel execution")
+    parser.add_argument("--format", default="long", help="Output format.")
+    parser.add_argument("--write-single", default=False, type=str2bool, help="Write split files individually")
     args = parser.parse_args()
 
     folders = [x.rstrip('/') for x in args.in_paths]
@@ -27,45 +112,22 @@ if __name__ == "__main__":
         plain_ann_names = set([p.with_suffix('') for p in all_ann_files])
 
         all_files = plain_txt_names & plain_ann_names
-        all_files = [{'txt': Path(str(p) + '.txt'), 'ann': Path(str(p) + '.ann')} for p in all_files]
+        all_files = [{'txt': Path(str(p) + '.txt'), 'ann': Path(str(p) + '.ann'), 'out': Path(str(p) + '.linking')} for p in all_files]
         files.extend(all_files)
 
-    linking_info = []
-    for data in files:
-        with data['txt'].open() as t_in, data['ann'].open() as a_in:
-            text = t_in.read()
-            ann = a_in.read()
-            annotations = formatting.annotation_to_dict(ann)
-            sentences = formatting.sentence_based_info(text, ann, False, False, False, False)
-            for idx, sentence in enumerate(sentences):
-                for k, ent in sentence['entities'].items():
-                    if ent['label'].split('_')[0] in ['Application', 'PlugIn', 'OperatingSystem', 'ProgrammingEnvironment']:
-                        path = str(data['txt']).split('/')[-1].split('.txt')[0]
-                        paper_id = '{}{}'.format("https://www.ncbi.nlm.nih.gov/pmc/articles/", path) if "PMC" in path else '{}{}'.format('https://doi.org/', path.replace('_', '/'))
-                        ent_linking_info = {
-                            "mention": ent['string'],
-                            "sentence": sentence['string'],
-                            "sentence_id": idx,
-                            "paper_id": paper_id,
-                            "beg": ent['beg'],
-                            "end": ent['end'],
-                            "ent_type": ent['label'].split('_')[0],
-                            "mention_context": ent['label'].split('_')[1],
-                            "relations": [],
-                            "relations_of": []
-                        }
-                        for _, rel in annotations['relations'].items():
-                            if rel['arg2'] == k:
-                                ent_linking_info['relations'].append({
-                                    'type': rel['label'],
-                                    'string': annotations['entities'][rel['arg1']]['string']
-                                })
-                            elif rel['arg1'] == k:
-                                ent_linking_info['relations_of'].append({
-                                    'type': rel['label'],
-                                    'string': annotations['entities'][rel['arg2']]['string']
-                                })
-                        linking_info.append(ent_linking_info)
+    if args.relabel_unknown:
+        main_entities = ['Application', 'PlugIn', 'OperatingSystem', 'ProgrammingEnvironment', 'Unknown']
+    else:
+        main_entities = ['Application', 'PlugIn', 'OperatingSystem', 'ProgrammingEnvironment']
 
-    with open(args.out_path + "/entity_linking_input.json", 'w') as j_out:
-        json.dump(linking_info, j_out, indent=4)
+    ncores = int(args.ncores)
+    if ncores <= 1:
+        print("Getting disambiguation features for {} articles on a single core".format(len(files)))
+        linking_info = get_linking_info(files, format=args.format, write_single=args.write_single)
+    else:
+        print("Getting disambiguation features for {} articles on a {} cores".format(len(files), ncores))
+        linking_info = parallel_wrapper(files, n_cores=ncores, format=args.format, write_single=args.write_single)
+
+    if args.write_single:
+        with open(args.out_path + "/entity_linking_input.json", 'w') as j_out:
+            json.dump(linking_info, j_out, indent=4)

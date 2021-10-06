@@ -1,0 +1,107 @@
+#!/usr/bin/env python
+
+import argparse
+from copy import deepcopy
+import json
+import os
+import pickle
+import time
+
+from pathlib import Path
+from heapq import merge
+
+from somenlp.entity_disambiguation import ReducedSampleSet, DistanceMap, EfficientClustering
+
+MAX_SAMPLE_SIZE = 10875684012
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description = "Disambiguate entity names")
+    parser.add_argument("--config", required=True, help="Config for disambiguation")
+    parser.add_argument("--ncores", default=1, help="Number of cores for parallel computing.")
+    parser.add_argument("--in-path", required=True, help="Path to input dir.")
+    parser.add_argument("--sample-overview", required=True, help="Sample overview.")
+    parser.add_argument("--save-path", required=True, help="Path for saving intermediate results")
+    parser.add_argument("--row", required=True, help="Row selection for distances")
+    args = parser.parse_args()
+
+    args.in_path = args.in_path.rstrip('/')
+    if not os.path.isdir(args.in_path):
+        raise(RuntimeError("Input path does not exist"))
+
+    args.save_path = args.save_path.rstrip('/')
+    if not os.path.isdir(args.save_path):
+        os.mkdir(args.save_path)
+
+    c_path = Path(args.config)
+    if not c_path.is_file():
+        raise(RuntimeError("Model configuration file does not exist"))
+    with c_path.open(mode='r') as c_file:
+        config = json.load(c_file)
+
+    print(args.save_path)
+    sample_set = None
+    print("Getting Samples")
+    sample_set = ReducedSampleSet(args.in_path, args.sample_overview, args.save_path)
+
+    print("Expanding samples")
+    expanded_samples = []
+    for idx, entry in enumerate(sample_set.sample_set.values()):
+        contexts = entry.pop('contexts')
+        for context in contexts:
+            out = deepcopy(entry)
+            out.update(context)
+            out['origin_id'] = idx
+            expanded_samples.append(out)
+    sample_set = None
+    print(len(expanded_samples))
+
+    if not os.path.isfile('{}/sample_split.json'.format(args.save_path)):
+        print("Calculating data split")
+        row_overview = []
+        curr_size = 0
+        for row in range(len(expanded_samples)-1):
+            curr_size += len(expanded_samples)-1-row
+            if curr_size > MAX_SAMPLE_SIZE:
+                row_overview.append(row)
+                curr_size = 0
+        row_overview.append(row)
+        with open('{}/sample_split.json'.format(args.save_path), 'w') as j_out:
+            json.dump(row_overview, j_out, indent=4)
+    else:
+        with open('{}/sample_split.json'.format(args.save_path), 'r') as j_in:
+            row_overview = json.load(j_in)
+
+    row = int(args.row)
+    if row <= 0:
+        start_row = 0
+    else:
+        start_row = row_overview[row-1]
+    end_row = row_overview[row]
+
+    existing_distance_files = list(Path(args.save_path).rglob('distance_map_*.p'))
+    if len(row_overview) != len(existing_distance_files):
+        print("Calculating distances")
+        distance_map = None
+        distance_map = DistanceMap(expanded_samples, config['dbpedia'], config['model'], start_row, end_row, config['threshold'], None, int(args.ncores), args.save_path, config['model']['batch_size'], config['device'])
+        distance_map.calculate_distance_map()
+    existing_distance_files = list(Path(args.save_path).rglob('distance_map_*.p'))
+    print(len(existing_distance_files))
+    if len(row_overview) == len(existing_distance_files):
+        print("All distances were calculated - combining files and starting Clustering")
+        combined_distances_path = '{}/combined_distances.p'.format(args.save_path)
+        if os.path.isfile(combined_distances_path):
+            combined_distances = pickle.load(open(combined_distances_path, 'rb'))
+        else:
+            combined_distances = []
+            for idx, distance_f in enumerate(existing_distance_files):
+                dists = pickle.load(distance_f.open(mode="rb"))
+                print(idx, len(dists))
+                combined_distances = list(merge(combined_distances, dists))
+            with open(combined_distances_path, 'wb') as p_out:
+                pickle.dump(combined_distances, p_out)
+
+        print("Working on a sorted list of {} pairs".format(len(combined_distances)))
+        start = time.time()
+        efficient_clustering = EfficientClustering(combined_distances, config['threshold'], expanded_samples, args.save_path, int(args.ncores))
+        end = time.time()
+        print("Clustering took {}s".format(round(end-start, 4)))

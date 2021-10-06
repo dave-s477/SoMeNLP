@@ -1,0 +1,99 @@
+#!/usr/bin/env python
+
+import os
+import argparse
+import json
+import sys
+import time
+
+from pathlib import Path
+from articlenizer import formatting
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description = "Get features for entity disambiguation from BRAT files")
+    parser.add_argument("--file-paths", required=True, nargs='+', help="Paths to input directories")
+    parser.add_argument("--middle-file-ext", default='', help="Help identifying files with naming extensions.")
+    parser.add_argument("--clusters", required=True, help="Cluster file")
+    #parser.add_argument("--ncores", default=8, help="Number of cores")
+    args = parser.parse_args()
+
+    folders = [x.rstrip('/') for x in args.file_paths]
+    files = {}
+    for folder in folders:
+        print("Loading files")
+        all_txt_files = list(Path(folder).rglob('*.txt'))
+        all_ann_files = list(Path(folder).rglob('*.ann'))
+        plain_txt_names = set([p.with_suffix('') for p in all_txt_files])
+        plain_ann_names = set([p.with_suffix('') for p in all_ann_files])
+
+        all_files = plain_txt_names & plain_ann_names
+        all_files = {str(p).split('/')[-1].split('_')[-1]: {'txt': Path(str(p) + '.txt'), 'ann': Path(str(p) + '.ann')} for p in all_files}
+        files.update(all_files)
+
+    for k, v in files.items():
+        with v['ann'].open() as a_in:
+            v['annotations'] = formatting.annotation_to_dict(a_in.read())
+    print("Loaded files..")
+    
+    with open(args.clusters, 'r') as j_in:
+        clusters = json.load(j_in)
+    print("Loaded clusters..")
+    
+    duplicate_name_mapping = {}
+    for idx, (cluster_key, cluster) in enumerate(clusters.items()):
+        if idx % 1000 == 0:
+            print("At cluster {}".format(idx))
+        for entity in cluster['entities']:
+            duplicate_name_mapping[entity['mention']] = cluster_key
+            ent_paper_key = entity['paper_id'].split('/')[-1] + args.middle_file_ext
+            if ent_paper_key in files:
+                if 'ent_key' in entity:
+                    files[ent_paper_key]['annotations']['entities'][entity['ent_key']]['unique_id'] = cluster_key
+                else:
+                    for k,v in files[ent_paper_key]['annotations']['entities'].items():
+                        if v['string'] == entity['mention']:
+                            if 'unique_id' in v:
+                                if cluster_key != v['unique_id']:
+                                    print(RuntimeWarning("Same string was matched in different clusters.. {}".format(entity['string'])))
+                            else:
+                                v['unique_id'] = cluster_key
+    print("Done with getting cluster keys in..")
+
+    start = time.time()
+    # TODO look at errors here... 
+    for idx, (k,v) in enumerate(list(files.items())):
+        if idx % 10000 == 0:
+            print("At {}".format(idx))
+        for ent_k, ent in v['annotations']['entities'].items():
+            if '_' in ent['label'] and "Coreference" not in ent['label'] and 'unique_id' not in ent:
+                #print(ent)
+                ent['unique_id'] = duplicate_name_mapping[ent['string']]
+                # if ent['string'] in duplicate_name_mapping:
+                #     ent['unique_id'] = duplicate_name_mapping[ent['string']]
+                # else:
+                #     for cluster_key, cluster in clusters.items():
+                #         names = [x['mention'] for x in cluster['entities']]
+                #         if ent['string'] in names:
+                #             if ent['string'] in duplicate_name_mapping:
+                #                 print("Duplicate")
+                #                 print(cluster)
+                #                 print(ent)
+                #                 print(duplicate_name_mapping[ent['string']])
+                #                 print()
+                #             else:
+                #                 duplicate_name_mapping[ent['string']] = cluster_key
+                #                 ent['unique_id'] = cluster_key
+    end = time.time()
+    print("Done with duplicate mapping {}s..".format(round(end-start, 4)))
+
+    for k, f in files.items():
+        with open(str(f['ann']) + '.unique', 'w') as u_out:
+            for k_anno, anno in f['annotations']['entities'].items():
+                if 'unique_id' in anno:
+                    u_out.write('{}\t{} {} {}\t{}\t{}\n'.format(k_anno, anno['label'], anno['beg'], anno['end'], anno['string'], anno['unique_id']))
+                else:
+                    u_out.write('{}\t{} {} {}\t{}\n'.format(k_anno, anno['label'], anno['beg'], anno['end'], anno['string']))
+            for k_rel, rel in f['annotations']['relations'].items():
+                u_out.write('{}\t{} Arg1:{} Arg2:{}\t\n'.format(k_rel, rel['label'], rel['arg1'], rel['arg2']))
+    print("Wrote all files..")
+

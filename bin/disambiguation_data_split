@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+
+import argparse
+import json
+
+from copy import deepcopy
+
+MAX_SAMPLE_SIZE = 10875684012
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description = "Disambiguate entity names")
+    parser.add_argument("--in-file", required=True, help="Input overview")
+    parser.add_argument("--out-file", required=True, help="Output file")
+    args = parser.parse_args()
+
+    with open(args.in_file, 'r') as j_in:
+        sample_set = json.load(j_in)
+
+    print("Expanding samples")
+    expanded_samples = []
+    for idx, entry in enumerate(sample_set.values()):
+        contexts = entry.pop('contexts')
+        for context in contexts:
+            out = deepcopy(entry)
+            out.update(context)
+            out['origin_id'] = idx
+            expanded_samples.append(out)
+    sample_set = None
+
+    print("Calculating data split")
+    rows = []
+    curr_size = 0
+    for row in range(len(expanded_samples)-1):
+        curr_size += len(expanded_samples)-1-row
+        if curr_size > MAX_SAMPLE_SIZE:
+            rows.append(row)
+            curr_size = 0
+    rows.append(row)
+
+    print("Saving result")
+    with open(args.out_file, 'w') as j_out:
+        json.dump(rows, j_out, indent=4)

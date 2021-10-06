@@ -1,0 +1,37 @@
+#!/usr/bin/env python
+
+import os
+import math
+import argparse
+import json
+import pandas as pd
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description = "Transform DBpedia infos from Pandas to Json.")
+    parser.add_argument("--in-file", required=True, help="Input file")
+    parser.add_argument("--out-file", required=True, help="Output file")
+    args = parser.parse_args()
+
+    dbpedia_names = pd.read_csv(args.in_file, compression='gzip')
+    dbpedia_names.drop(dbpedia_names.columns.difference(['unique','label']), 1, inplace=True)
+    dbpedia_names.dropna(inplace=True)
+    dbpedia_unique_mapping = {}
+    dbpedia_label_mapping = {}
+    for index, row in dbpedia_names.iterrows():
+        if row['unique'] not in dbpedia_unique_mapping:
+            dbpedia_unique_mapping[row['unique']] = set()
+        dbpedia_unique_mapping[row['unique']].update([row['label']])
+        if row['label'] not in dbpedia_label_mapping:
+            dbpedia_label_mapping[row['label']] = set()
+        dbpedia_label_mapping[row['label']].update([row['unique']])
+    for k in dbpedia_unique_mapping.keys():
+        dbpedia_unique_mapping[k] = list(dbpedia_unique_mapping[k])
+    for k in dbpedia_label_mapping.keys():
+        dbpedia_label_mapping[k] = list(dbpedia_label_mapping[k])
+    dbpedia_out = {
+        'unique_mapping': dbpedia_unique_mapping,
+        'label_mapping': dbpedia_label_mapping
+    }
+    with open(args.out_file, 'w') as j_out:
+        json.dump(dbpedia_out, j_out, indent=4)
+    
