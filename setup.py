@@ -35,11 +35,15 @@ setup(name='SoMeNLP',
         'bin/train_relext',
         'bin/load_dbpedia_info',
         'bin/entity_disambiguation',
-        'bin/somesci_disambiguation_input'
+        'bin/somesci_disambiguation_input',
+        'bin/map_unique_names_to_files',
+        'bin/predict_relext',
+        'bin/combine_annotations',
+        'bin/generate_file_list'
       ],
       install_requires=[
         'pytest',
-        'gensim==3.8.3',
+        'gensim>=4.0.1',
         'torch',
         'tensorboard',
         'pandas',
