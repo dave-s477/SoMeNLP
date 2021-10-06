@@ -73,7 +73,7 @@ def train_embedding(name, in_files, out_path, emb_dim=200, win_size=5, min_count
         ncores (int, optional): number of gensim workers. Defaults to 8.
     """
     iterator = SentenizedInput(in_files, seed)
-    model = gensim.models.Word2Vec(iterator, size=emb_dim, window=win_size, min_count=min_count, workers=ncores, sg=1, iter=epochs)
+    model = gensim.models.Word2Vec(iterator, vector_size=emb_dim, window=win_size, min_count=min_count, workers=ncores, sg=1, epochs=epochs)
 
     out_loc = out_path + '/' + name 
     if format == 0:
