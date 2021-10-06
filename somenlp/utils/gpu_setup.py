@@ -1,3 +1,4 @@
+import torch
 import subprocess, re
 
 # Nvidia-smi GPU memory parsing.
@@ -45,3 +46,13 @@ def pick_gpu_lowest_memory():
     memory_gpu_map = [(memory, gpu_id) for (gpu_id, memory) in gpu_memory_map().items()]
     best_memory, best_gpu = sorted(memory_gpu_map)[0]
     return best_gpu
+
+def setup_cuda(gpu):
+    if gpu and torch.cuda.device_count() > 0:
+        GPU = str(pick_gpu_lowest_memory())
+        print("Working on GPU: {}".format(GPU))
+        device = torch.device("cuda:{}".format(GPU))
+    else:
+        print("Working on CPU")
+        device = torch.device("cpu")
+    return device
