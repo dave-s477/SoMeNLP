@@ -1,2 +1,2 @@
-from .features import get_sentence_relations_and_features
+from .features import FeatureGenerator
 from .RE_model import REmodel
