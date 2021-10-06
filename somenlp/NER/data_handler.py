@@ -6,6 +6,7 @@ import numpy as np
 import json
 import math
 import random
+import copy
 
 from torch.nn.utils.rnn import pad_sequence
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
@@ -14,17 +15,15 @@ from gensim.models import KeyedVectors
 from itertools import zip_longest
 from articlenizer import articlenizer as art
 from transformers import BertTokenizer
-from articlenizer.formatting import bio_to_brat
 
 from .LSTM_dataset import LSTMDataset
-from .BERT_dataset import BERTDataset
-from somenlp.RE import get_sentence_relations_and_features
+from .BERT_dataset import BERTDataset, BERTMultiDataset
 
 BERT_MAX_LENGTH = 256
 
 class DataHandler():
-    def __init__(self, data_config=None, data_file_extension='.data.txt', label_file_extension='.labels.txt', feature_file_extension='', relation_file_extension='', output_handler=None, checkpoint=None, padding='<PAD>', unknown='<UNK>', batch_size=32, max_word_length=-1, max_sent_length=-1, data_files=None, prepro=False, tokenizer=None):
-        self.data_config = data_config
+    def __init__(self, data_config=None, data_file_extension='.data.txt', label_file_extension='.labels.txt', feature_file_extension='', relation_file_extension='', output_handler=None, checkpoint=None, padding='<PAD>', unknown='<UNK>', batch_size=32, max_word_length=-1, max_sent_length=-1, data_files=None, prepro=False, tokenizer=None, multi_task=False):
+        self.data_config = copy.deepcopy(data_config)
         self.data_file_extension = data_file_extension
         self.label_file_extension = label_file_extension
         self.feature_file_extension = feature_file_extension
@@ -39,6 +38,7 @@ class DataHandler():
         self.data_files = data_files
         self.prepro = prepro
         self.feature_dim = None
+        self.multi_task_mapping = multi_task
         self.data = []
         self.features = []
         self.labels = []
@@ -63,6 +63,13 @@ class DataHandler():
             mapping = Path(self.data_config['transform']['mapping'])
             with mapping.open(mode='r') as mapping_j:
                 self.tag_remapping = json.load(mapping_j)
+        elif self.data_config is not None and 'transform' in self.data_config and len(self.data_config['transform']) > 0:
+            print("Loading tag mappings for a multi-label tagging problem")
+            self.tag_remapping = {}
+            self.multi_task_mapping = True
+            for k, v in self.data_config['transform'].items():
+                with Path(v).open(mode='r') as mapping_j:
+                    self.tag_remapping[k] = json.load(mapping_j)
         else:
             self.tag_remapping = None
 
@@ -75,12 +82,15 @@ class DataHandler():
         else:
             self.relation_remapping = None
 
-    def _adjust_tag(self, tag):
+    def _adjust_tag(self, tag, key=''):
         if self.tag_remapping is None or tag == 'O':
             return tag
         else:
             tag_prefix, tag_name = tag.split('-')
-            remapped_tag = self.tag_remapping[tag_name]
+            if not key:
+                remapped_tag = self.tag_remapping[tag_name]
+            else:
+                remapped_tag = self.tag_remapping[key][tag_name]
             if remapped_tag == 'O':
                 return 'O'
             else:
@@ -105,15 +115,20 @@ class DataHandler():
                 sampler = SequentialSampler(input_data)
                 data_loader = DataLoader(input_data, sampler=sampler, batch_size=self.batch_size, collate_fn=self._collate_fn)
             else:
-                ids, tags, masks = self._prepare_bert_prediction_data(text)
+                ids, tags, masks, lengths = self._prepare_bert_prediction_data(text)
                 ids = self._pad_to_length(ids, length=BERT_MAX_LENGTH, fill_value=self.special_toks['pad_tok'], dtype=torch.long)
-                tags = self._pad_to_length(tags, length=BERT_MAX_LENGTH, fill_value=self.encoding['tag2idx']['O'], dtype=torch.long)
                 masks = self._pad_to_length(masks, length=BERT_MAX_LENGTH, fill_value=0, dtype=torch.long)
-                input_data = BERTDataset(ids, tags, masks)
+                if not self.multi_task_mapping:
+                    tags = self._pad_to_length(tags, length=BERT_MAX_LENGTH, fill_value=self.encoding['tag2idx']['O'], dtype=torch.long)
+                    input_data = BERTDataset(ids, tags, masks)
+                else:
+                    for k in tags.keys():
+                        tags[k] = self._pad_to_length(tags[k], length=BERT_MAX_LENGTH, fill_value=self.encoding['tag2idx'][k]['O'], dtype=torch.long)
+                    input_data = BERTMultiDataset(ids, tags, masks, lengths)
                 sampler = SequentialSampler(input_data)
                 data_loader = DataLoader(input_data, sampler=sampler, batch_size=self.batch_size)
             
-            yield [f_conf['out'], data_loader, text]
+            yield [{'out': f_conf['out'], 'out-text': f_conf['out-text']}, data_loader, text]
 
     def load_data_from_config(self):
         for dataset, dataset_setup in self.data_config['sets'].items():
@@ -149,35 +164,71 @@ class DataHandler():
             print("Loading given encodings")
             self.encoding = self.output_handler.load_encoding()
             for k, v in self.encoding.items():
-                if k.endswith('name'):
+                if self.multi_task_mapping and k.endswith('tag2name'):
+                    for sk, vk in v.items():
+                        vk_new = {int(key): value for key, value in vk.items()}
+                        self.encoding[k][sk] = vk_new
+                elif k.endswith('name'):
                     v_new = {int(key): value for key, value in v.items()}
                     self.encoding[k] = v_new
         else:
             print("Generating new encodings")
             tag2idx, tag2name, word2idx, word2name, char2idx, char2name = {}, {}, {}, {}, {}, {}
-            for dataset, dataset_setup in self.data_config['sets'].items():
-                for sub_dataset in dataset_setup:
-                    for f in sub_dataset['all_files']:
-                        if not tags_only:
-                            with f[self.data_file_extension].open(mode='r') as in_f:
+            if not tags_only:
+                for dataset, dataset_setup in self.data_config['sets'].items():
+                    for sub_dataset in dataset_setup:
+                        for f in sub_dataset['all_files']:
+                                with f[self.data_file_extension].open(mode='r') as in_f:
+                                    for line in in_f:
+                                        for word in line.rstrip().split():
+                                            if word not in word2idx:
+                                                word2name[len(word2idx)] = word
+                                                word2idx[word] = len(word2idx)
+                                            for char in word:
+                                                if char not in char2idx:
+                                                    char2name[len(char2idx)] = char
+                                                    char2idx[char] = len(char2idx)
+            if self.multi_task_mapping:
+                print("Considering a multi-task problem")
+                for dataset, dataset_setup in self.data_config['sets'].items():
+                    for sub_dataset in dataset_setup:
+                        for f in sub_dataset['all_files']:
+                            with f[self.label_file_extension].open(mode='r') as in_f:
                                 for line in in_f:
-                                    for word in line.rstrip().split():
-                                        if word not in word2idx:
-                                            word2name[len(word2idx)] = word
-                                            word2idx[word] = len(word2idx)
-                                        for char in word:
-                                            if char not in char2idx:
-                                                char2name[len(char2idx)] = char
-                                                char2idx[char] = len(char2idx)
-                        with f[self.label_file_extension].open(mode='r') as in_f:
-                            for line in in_f:
-                                for tag in line.rstrip().split():
-                                    t = self._adjust_tag(tag)
-                                    if tags_only and '-' in t:
-                                        t = t.split('-')[-1]
-                                    if t not in tag2idx:
-                                        tag2name[len(tag2idx)] = t
-                                        tag2idx[t] = len(tag2idx)
+                                    for tag in line.rstrip().split():
+                                        for mapping_key in self.tag_remapping.keys():
+                                            if mapping_key not in tag2idx:
+                                                tag2idx[mapping_key] = {}
+                                                tag2name[mapping_key] = {}
+                                            t = self._adjust_tag(tag, mapping_key)
+                                            if tags_only and '-' in t:
+                                                t = t.split('-')[-1]
+                                            if t not in tag2idx[mapping_key]:
+                                                tag2name[mapping_key][len(tag2idx[mapping_key])] = t
+                                                tag2idx[mapping_key][t] = len(tag2idx[mapping_key])
+                
+                for k, v in tag2idx.items():
+                    to_add = set()
+                    for tk, vk in v.items():
+                        if tk.startswith('B-') and 'I-' + tk.split('B-')[-1] not in v:
+                            to_add.update(['I-' + tk.split('B-')[-1]])
+                    for i in to_add:
+                        tag2name[k][len(tag2idx[k])] = i
+                        tag2idx[k][i] = len(tag2idx[k])
+            else:
+                print("considering a single-task problem")
+                for dataset, dataset_setup in self.data_config['sets'].items():
+                    for sub_dataset in dataset_setup:
+                        for f in sub_dataset['all_files']:
+                            with f[self.label_file_extension].open(mode='r') as in_f:
+                                for line in in_f:
+                                    for tag in line.rstrip().split():
+                                        t = self._adjust_tag(tag)
+                                        if tags_only and '-' in t:
+                                            t = t.split('-')[-1]
+                                        if t not in tag2idx:
+                                            tag2name[len(tag2idx)] = t
+                                            tag2idx[t] = len(tag2idx)
 
             if not tags_only:
                 word2name[len(word2idx)] = self.padding
@@ -299,7 +350,7 @@ class DataHandler():
         feat_ids = []
         for sentence, feat, tag in zip_longest(sentences, features, tags, fillvalue=[]):
             # TODO how to handle unknowns?
-            character_sentence = [[self.encoding['char2idx'][i] if i in self.encoding['char2idx'] else self.encoding['char2idx']['self.unknown'] for i in w] for w in sentence]
+            character_sentence = [[self.encoding['char2idx'][i] if i in self.encoding['char2idx'] else self.encoding['char2idx'][self.unknown] for i in w] for w in sentence]
             tokenized_sentence = [self.encoding['word2idx'][w] if w in self.encoding['word2idx'] else self.encoding['word2idx'][self.unknown] for w in sentence]
 
             character_ids.append(character_sentence)
@@ -332,8 +383,14 @@ class DataHandler():
 
     def _prepare_bert_prediction_data(self, sentences, tags=[]):
         input_ids = []
-        tags_ids = []
+        if not self.multi_task_mapping:
+            tags_ids = []
+        else:
+            tags_ids = {}
+            for k in self.encoding['tag2idx'].keys():
+                tags_ids[k] = []
         attention_masks = []
+        length = []
         for sentence, tag in zip_longest(sentences, tags, fillvalue=[]):            
             tokenized_sentence = []
             for word in sentence:
@@ -344,14 +401,25 @@ class DataHandler():
 
             input_ids.append(inputs["input_ids"])
             attention_masks.append(inputs['attention_mask'])
-            tags_ids.append(tag)
+            length.append(min(len(inputs['input_ids']), BERT_MAX_LENGTH))
+            if not self.multi_task_mapping:
+                tags_ids.append(tag)
+            else:
+                for mapping_key in self.encoding['tag2idx'].keys():
+                    tags_ids[mapping_key].append(tag)
         
-        return input_ids, tags_ids, attention_masks
+        return input_ids, tags_ids, attention_masks, length
 
     def _prepare_bert_training_data(self, sentences, tags, keep_prob):
         input_ids = []
-        tags_ids = []
+        if not self.multi_task_mapping:
+            tags_ids = []
+        else:
+            tags_ids = {}
+            for k in self.tag_remapping.keys():
+                tags_ids[k] = []
         attention_masks = []
+        length = []
         for sentence, tag in zip(sentences, tags):
             labels = tag.split()
             
@@ -370,15 +438,21 @@ class DataHandler():
                         tokenized_labels.extend([label.replace('B-', 'I-')] * (n_subwords-1))
             
                 inputs = self.tokenizer.encode_plus(tokenized_sentence, add_special_tokens=True, return_attention_mask=True)
-            
                 tokenized_labels = ["O"] + tokenized_labels + ["O"]
-                label_ids = [self.encoding['tag2idx'][self._adjust_tag(t)] for t in tokenized_labels]
 
                 input_ids.append(inputs["input_ids"])
                 attention_masks.append(inputs['attention_mask'])
-                tags_ids.append(label_ids)
+                length.append(min(len(inputs["input_ids"]), BERT_MAX_LENGTH))
+
+                if not self.multi_task_mapping:
+                    label_ids = [self.encoding['tag2idx'][self._adjust_tag(t)] for t in tokenized_labels]
+                    tags_ids.append(label_ids)
+                else:
+                    for mapping_key in self.tag_remapping.keys():
+                        label_ids = [self.encoding['tag2idx'][mapping_key][self._adjust_tag(t, mapping_key)] for t in tokenized_labels]
+                        tags_ids[mapping_key].append(label_ids)
         
-        return input_ids, tags_ids, attention_masks
+        return input_ids, tags_ids, attention_masks, length
 
     def load_input(self):
         for dataset, dataset_setup in self.data_config['sets'].items():
@@ -413,11 +487,17 @@ class DataHandler():
                     sampler = RandomSampler(input_data)
                     sub_dataset['dataloader'] = DataLoader(input_data, sampler=sampler, batch_size=self.batch_size, collate_fn=self._collate_fn)
                 else: 
-                    input_ids, tag_ids, attention_masks = self._prepare_bert_training_data(sub_dataset['sentences'], sub_dataset['tags'], sub_dataset['keep_neg_sample_prob'])
+                    input_ids, tag_ids, attention_masks, lengths = self._prepare_bert_training_data(sub_dataset['sentences'], sub_dataset['tags'], sub_dataset['keep_neg_sample_prob'])
                     input_ids = self._pad_to_length(input_ids, length=BERT_MAX_LENGTH, fill_value=self.special_toks['pad_tok'], dtype=torch.long)
-                    tag_ids = self._pad_to_length(tag_ids, length=BERT_MAX_LENGTH, fill_value=self.encoding['tag2idx']['O'], dtype=torch.long)
                     attention_masks = self._pad_to_length(attention_masks, length=BERT_MAX_LENGTH, fill_value=0, dtype=torch.long)
-                    input_data = BERTDataset(input_ids, tag_ids, attention_masks)
+                    if not self.multi_task_mapping:
+                        tag_ids = self._pad_to_length(tag_ids, length=BERT_MAX_LENGTH, fill_value=self.encoding['tag2idx']['O'], dtype=torch.long)
+                        input_data = BERTDataset(input_ids, tag_ids, attention_masks)
+                    else:                            
+                        for k in tag_ids.keys():
+                            tag_ids[k] = self._pad_to_length(tag_ids[k], length=BERT_MAX_LENGTH, fill_value=self.encoding['tag2idx'][k]['O'], dtype=torch.long)
+                        input_data = BERTMultiDataset(input_ids, tag_ids, attention_masks, lengths)
+                    
                     sampler = RandomSampler(input_data)
                     sub_dataset['dataloader'] = DataLoader(input_data, sampler=sampler, batch_size=self.batch_size)
 
@@ -440,17 +520,3 @@ class DataHandler():
                     unknown_word_count += 1
             print("{}/{} word from the dataset do no exist in the word embedding".format(unknown_word_count, len(self.encoding['word2idx'])))
         return embedding_weights
-
-    def generate_relation_extraction_features(self):
-        for dataset, dataset_setup in self.data_config['sets'].items():
-            for sub_dataset in dataset_setup:
-                sub_dataset['relext_feature_list'] = []
-                total_abbr = 0
-                for sentence, tags, relations in zip(sub_dataset['sentences'], sub_dataset['tags'], sub_dataset['relations']):
-                    if sum([1 if t.startswith('B-') else 0 for t in tags.split()]) > 1: 
-                        entities, _ = bio_to_brat(sentence, tags)
-                        if self.tag_remapping is not None:
-                            for ent in entities:
-                                ent['type'] = self.tag_remapping[ent['type']]
-                        pairs = get_sentence_relations_and_features(sentence, tags, entities, relations, self.encoding['tag2idx'])
-                        sub_dataset['relext_feature_list'].extend(pairs)

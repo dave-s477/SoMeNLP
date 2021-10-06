@@ -40,6 +40,8 @@ class Tuner():
             for sub_path in parameter['path']:
                 name += '{}-'.format(get_abbr(sub_path)) 
             name += '{}_'.format(parameter['values'])
+        for char in ['{', '}', ' ', "'", '/', '\\', ':', ',']:
+            name = name.replace(char, '')
         return name.rstrip('_')[:200]
 
     def _gen_all_configs(self):

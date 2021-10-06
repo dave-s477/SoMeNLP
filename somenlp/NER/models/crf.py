@@ -2,6 +2,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+import os
+os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
+
 class CRF(nn.Module):
     
     def __init__(self, tagset_size, device, init_parameters=None):

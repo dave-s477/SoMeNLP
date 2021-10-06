@@ -1,43 +1,8 @@
-import torch
-
 from . import OutputHandler, DataHandler, ModelWrapper, Trainer, Tuner
-from somenlp.utils import gpu_setup
 
-def setup_cuda(gpu):
-    """Set up device for pytorch training
-
-    Args:
-        gpu (bool): Whether to use a GPU
-
-    Returns:
-        device: torch device for executing the training
-    """
-    if gpu and torch.cuda.device_count() > 0:
-        GPU = str(gpu_setup.pick_gpu_lowest_memory())
-        print("Working on GPU: {}".format(GPU))
-        device = torch.device("cuda:{}".format(GPU))
-    else:
-        print("Working on CPU")
-        device = torch.device("cpu")
-    return device
-
-def main(model_config, data_config, time, data_file_extension, label_file_extension, feature_file_extension, gpu=True):
-    """[summary]
-
-    Args:
-        model_config (dict): model configuration 
-        data_config (dict): configuration for training/devel and test data
-        time (string): time marker for logging and writing outputs
-        data_file_extension (string): file extension for recognition of input files
-        label_file_extension (string): file extension for recognition of input files
-        feature_file_extension (string): file extension for recognition of input files
-        gpu (bool, optional): whether to use GPU, will be selected automatically when set to True. Defaults to True.
-    """
-    print("Setting up cuda")
-    device = setup_cuda(gpu)
-    
+def main(model_config, data_config, time, data_file_extension, label_file_extension, feature_file_extension, device, save_dir='save'):    
     print("\nSetting up output handler")
-    output_handler = OutputHandler(model_config['general']['name'], time, model_config['general']['checkpoint'])
+    output_handler = OutputHandler(model_config['general']['name'], time, model_config['general']['checkpoint'], save_dir=save_dir)
     output_handler.save_json(model_config, name='model_conf')
     output_handler.save_json(data_config, name='data_conf')
 
@@ -48,7 +13,6 @@ def main(model_config, data_config, time, data_file_extension, label_file_extens
     data_handler.encoding()
     data_handler.load_input()
     data_handler.data_loaders()
-
     if 'embedding' in model_config['model'] and model_config['model']['embedding']['file']:
         print("\nLoading word embedding")
         emb_weights = data_handler.word_embedding(model_config['model']['embedding'])
@@ -70,26 +34,14 @@ def main(model_config, data_config, time, data_file_extension, label_file_extens
     print("\nSaving final model")
     model_w.save_checkpoint()
 
-def predict(model_config, files, prepro=True, bio_predicition=True, summary_prediction=True, gpu=True):
-    """[summary]
-
-    Args:
-        model_config (dicts): model configuration for prediction
-        files (list of dicts): file list to predict
-        prepro (bool, optional): whether to preprocess input files. Defaults to True.
-        bio_predicition (bool, optional): whether to write predictions in bio format. Defaults to True.
-        summary_prediction (bool, optional): whether to write a summary of predictions. Defaults to True.
-        gpu (bool, optional): whether to use GPU, will be selected automatically when set to True. Defaults to True.
-    """
-    print("Setting up cuda")
-    device = setup_cuda(gpu)
-
+def predict(model_config, files, device, prepro=True, bio_predicition=True, summary_prediction=True):
     print("\nSetting up output handler")
     output_handler = OutputHandler(model_config['general']['name'], checkpoint=model_config['general']['checkpoint'])
 
     print("\nSetting up data handler")
+    multi_task = 'multi_task' in model_config['general'] and model_config['general']['multi_task']
     tokenizer = model_config['model']['pretrained']['tokenizer'] if 'pretrained' in model_config['model'] and 'tokenizer' in model_config['model']['pretrained'] else None
-    data_handler = DataHandler(data_files=files, prepro=prepro, output_handler=output_handler, checkpoint=model_config['general']['checkpoint'], max_word_length=model_config['general']['max_word_length'], max_sent_length=model_config['general']['max_sentence_length'], tokenizer=tokenizer)
+    data_handler = DataHandler(data_files=files, prepro=prepro, output_handler=output_handler, checkpoint=model_config['general']['checkpoint'], batch_size=model_config['general']['batch_size'], max_word_length=model_config['general']['max_word_length'], max_sent_length=model_config['general']['max_sentence_length'], tokenizer=tokenizer, multi_task=multi_task)
     data_handler.encoding()
     
     if 'embedding' in model_config['model'] and model_config['model']['embedding']['file']:
@@ -107,17 +59,7 @@ def predict(model_config, files, prepro=True, bio_predicition=True, summary_pred
     trainer = Trainer(device, model_w, data_handler, output_handler, model_config['training'])
     trainer.prediction(bio_predicition, summary_prediction)
 
-def tune(config, time, data_file_extension, label_file_extension, feature_file_extension, gpu=True):
-    """Perform a hyper-parameter runing search 
-
-    Args:
-        config (dict): configuration for tuning
-        time (string): time marker for writing outputs
-        data_file_extension (string): file extension for recognition of input files
-        label_file_extension (string): file extension for recognition of input files
-        feature_file_extension (string): file extension for recognition of input files
-        gpu (bool, optional): whether to use GPU, will be selected automatically when set to True. Defaults to True.
-    """
+def tune(config, time, data_file_extension, label_file_extension, feature_file_extension, device, save_dir='save'):
     # switch between systematic and random
     tuner = Tuner(config, time)
     iterator = tuner.yield_configs()
@@ -125,4 +67,4 @@ def tune(config, time, data_file_extension, label_file_extension, feature_file_e
     for name, data_conf, model_conf in iterator:
         time_name = '{}_{}'.format(time, name)
         print("Training model {}".format(time_name))
-        main(model_conf, data_conf, time_name, data_file_extension, label_file_extension, feature_file_extension, gpu)
+        main(model_conf, data_conf, time_name, data_file_extension, label_file_extension, feature_file_extension, device, save_dir=save_dir)

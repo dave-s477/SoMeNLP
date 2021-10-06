@@ -28,4 +28,32 @@ class BERTDataset(Dataset):
         if self.transforms:
             sample = self.transforms(sample)
         return sample
+
+class BERTMultiDataset(Dataset):
+    """PyTorch Dataset for BERT data
+    """
+    def __init__(self, ids, tags, masks, lengths, transforms=None):
+        self.ids = ids
+        self.tags = tags
+        self.masks = masks
+        self.lengths = lengths
+        self.transforms = transforms
+        
+    def __len__(self):
+        return len(self.ids)
+    
+    def __getitem__(self, idx):
+        if torch.is_tensor(idx):
+            idx = idx.tolist()
+        sample = {
+            'ids': self.ids[idx], 
+            'masks': self.masks[idx], 
+            'lengths': self.lengths[idx]
+        }
+        for k in self.tags.keys():
+            sample[k] = self.tags[k][idx]
+
+        if self.transforms:
+            sample = self.transforms(sample)
+        return sample
     

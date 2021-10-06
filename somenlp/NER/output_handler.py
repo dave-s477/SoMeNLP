@@ -7,7 +7,7 @@ from sklearn.metrics import confusion_matrix
 from articlenizer.formatting import bio_to_brat
 
 class OutputHandler():
-    def __init__(self, name, time='0_0_0', checkpoint={}):
+    def __init__(self, name, time='0_0_0', checkpoint={}, log_dir='logs', save_dir='save'):
         if 'model' in checkpoint and checkpoint['model']:
             self.model_loc = checkpoint['model']
         else:
@@ -16,13 +16,13 @@ class OutputHandler():
         if self.model_loc and 'log_dir' in checkpoint:
             self.log_dir = Path(checkpoint['log_dir'])
         else:
-            self.log_dir = Path('logs/{}/{}'.format(name, time))
+            self.log_dir = Path('{}/{}/{}'.format(log_dir, name, time))
         self.writer = SummaryWriter(self.log_dir)
         
         if self.model_loc and 'save_dir' in checkpoint:
             self.save_dir = Path(checkpoint['save_dir'])
         else:
-            self.save_dir = Path('save/{}/{}'.format(name, time))
+            self.save_dir = Path('{}/{}/{}'.format(save_dir, name, time))
             self.save_dir.mkdir(parents=True, exist_ok=True)
         
     def save_json(self, data, name='encoding'):
@@ -34,8 +34,8 @@ class OutputHandler():
             encoding_dict = json.load(json_file)
         return encoding_dict
 
-    def print_scalars(self, scalars, epoch, name):
-        out_s = 'Classification result on {} ep {}:\n'.format(name, epoch)
+    def print_scalars(self, scalars, epoch, name, meta_name=''):
+        out_s = 'Classification result on {}{} ep {}:\n'.format(meta_name, name, epoch)
         for idx, (k, v) in enumerate(scalars.items()):
             if idx % 3 == 0:
                 out_s += '\n'
@@ -98,25 +98,40 @@ Confusion Matrix for:
         """.format(tags, cm)
         print(out_s)
 
-    def save_predictions(self, path, predictions, text):
-        with path.open(mode='w') as out_f:
+    def save_predictions_fct(self, path, predictions, text):
+        with path['out'].open(mode='w') as out_f:
             for preds in predictions:
                 out_f.write('{}\n'.format(' '.join(preds).rstrip()))
-        text_path = Path('{}.text'.format(path))
-        with text_path.open(mode='w') as out_t:
+        with path['out-text'].open(mode='w') as out_t:
             for line in text:
-                out_t.write('{}\n'.format(line))
+                out_t.write('{}\n'.format(' '.join(line).rstrip()))
+    
+    def save_predictions(self, path, predictions, text):
+        if not isinstance(predictions, dict):
+            self.save_predictions_fct(path, predictions, text)
+        else:
+            path_out = str(path['out'])
+            for k, v in predictions.items():
+                path['out'] = Path(path_out + '.' + k)
+                self.save_predictions_fct(path, v, text)
         
-    def summarize_predictions(self, path, predictions, text):
+    def summarize_predictions_fct(self, path, predictions, text):
         print("Predicted entities for {}".format(path.name))
         out_path = Path(str(path) + '.sum')
-        entities, _ = bio_to_brat(text, predictions, split_sent=False, split_words=False)
+        entities, _, _ = bio_to_brat(text, predictions, split_sent=False, split_words=False)
         out_s = ''
         for e in entities:
             out_s += '{}\t{} {} {}\t{}\n'.format(e['id'], e['type'], e['beg'], e['end'], e['string'])
         with out_path.open(mode='w') as out_f:
             out_f.write(out_s)
         print(out_s)
+
+    def summarize_predictions(self, path, predictions, text):
+        if not isinstance(predictions, dict):
+            self.summarize_predictions_fct(path['out'], predictions, text)
+        else:
+            for k, v in predictions.items():
+                self.summarize_predictions_fct(Path(str(path['out']) + k), v, text)
 
     def cl_for_latex(self, dictionary, round_n=2):
         new_mapping = {}
@@ -144,4 +159,4 @@ Confusion Matrix for:
                 v['support_test_0'],
                 v['support_devel_0']
             )
-        print(s)
+        return s

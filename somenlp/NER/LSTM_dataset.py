@@ -1,6 +1,4 @@
 import torch
-import numpy as np
-import pandas as pd
 
 from torch.nn.utils.rnn import pad_sequence
 
