@@ -53,7 +53,7 @@ setup(name='SoMeNLP',
         'wget', 
         'NLTK',
         'scikit-learn',
-        'transformers',
+        'transformers==4.6.1',
         'SPARQLWrapper',
         'python-levenshtein',
         'articlenizer @ https://github.com/dave-s477/articlenizer/tarball/master#egg=package'
