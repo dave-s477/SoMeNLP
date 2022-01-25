@@ -1,5 +1,5 @@
 {
-    "data": "configurations/PMC/gold_standard/gold_data_software.json",
+    "data": "configurations/SoMeSci/named_entity_recognition/SoMeSci_data_software.json",
     "general": {
         "type": "CombinedLSTM",
         "name": "Gold-CombinedLSTM",

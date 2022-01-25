@@ -1,5 +1,5 @@
 {
-    "data": "configurations/PMC/gold_standard/gold_data_software_const_-55_200ep.json",
+    "data": "configurations/PMC/gold_standard/gold_data_SciBERT_final.json",
     "general": {
         "type": "SciBERT",
         "name": "Gold-SciBERT",

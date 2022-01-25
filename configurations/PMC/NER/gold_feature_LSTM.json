@@ -13,7 +13,7 @@
     },
     "model": {
         "embedding": {
-            "file": "data/word_embs/Emb_26-03-2021_14-57-08_dim-200_win-5_min-5_ep-1.bin",
+            "file": "data/word_embs/wikipedia-pubmed-and-PMC-w2v.bin",
             "dim": 200,
             "zero_init": true,
             "train": true
