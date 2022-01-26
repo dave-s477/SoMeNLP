@@ -1,0 +1,7 @@
+AlternativeName_of	IDentify EPItopes	134	1	IDEPI	126	0;;
+
+License_of	GPL	61	1	IDEPI	157	3;;URL_of	https://github.com/veg/idepi	179	4	IDEPI	157	3;;Version_of	3.0	65	2	GPL	61	1;;
+
+URL_of	scikit-learn.org/	81	2	scikit-learn	64	1;;URL_of	hmmer.janelia.org/	132	4	HMMER	124	3;;URL_of	biopython.org	191	6	BioPython	179	5;;URL_of	pythonhosted.org/joblib	240	8	joblib	231	7;;
+Developer_of	Oracle	22	0	VirtualBox	33	1;;URL_of	http://github.com/veg/idepi/	228	4	IDEPI	90	2;;
+URL_of	https://github.com/veg/idepi	146	1	IDEPI	70	0;;

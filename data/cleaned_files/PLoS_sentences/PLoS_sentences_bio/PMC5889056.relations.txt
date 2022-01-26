@@ -1,0 +1,1 @@
+Abbreviation_of	SPSS	81	2	Statistical Package for the Social Sciences	35	1;;Version_of	18	88	3	Statistical Package for the Social Sciences	35	1;;Developer_of	IBM	31	0	Statistical Package for the Social Sciences	35	1;;

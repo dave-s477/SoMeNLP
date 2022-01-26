@@ -1,0 +1,1 @@
+Version_of	13.1	14	1	Stata	0	0;;Developer_of	Stata Corp LP	21	2	Stata	0	0;;

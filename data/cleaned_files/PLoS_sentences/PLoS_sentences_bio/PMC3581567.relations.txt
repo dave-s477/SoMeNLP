@@ -1,0 +1,1 @@
+Version_of	16	105	1	Statistical Package for Social Sciences	38	0;;Developer_of	SPSS, Inc.	110	2	Statistical Package for Social Sciences	38	0;;

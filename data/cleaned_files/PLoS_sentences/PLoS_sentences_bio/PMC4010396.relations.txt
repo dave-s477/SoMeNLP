@@ -1,0 +1,1 @@
+Version_of	15.0	76	2	SPSS	42	0;;Developer_of	SPSS Inc.	83	3	SPSS	42	0;;

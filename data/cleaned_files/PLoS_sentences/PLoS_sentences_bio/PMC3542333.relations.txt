@@ -1,0 +1,1 @@
+Version_of	18	68	1	PASW Statistics	52	0;;Developer_of	SPSS Inc.	73	2	PASW Statistics	52	0;;Developer_of	R Development Core Team	154	5	R	141	4;;Specification_of	R	199	6	R	141	4;;Version_of	2.11.1	201	7	R	199	6;;Release_of	2009	101	3	PASW Statistics	52	0;;

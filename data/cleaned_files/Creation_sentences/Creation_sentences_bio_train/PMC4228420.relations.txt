@@ -1,0 +1,6 @@
+URL_of	http://www.die.upm.es/im/archives/DCEurLAB/	107	1	DCE@urLAB	20	0;;
+
+
+
+URL_of	http://www.die.upm.es/im/archives/DCEurLAB/	107	1	DCE@urLAB	20	0;;
+Version_of	1.0	29	1	DCE@urLAB	17	0;;URL_of	http://www.die.upm.es/im/archives/DCEurLAB/	52	2	DCE@urLAB	17	0;;Developer_of	Microsoft	120	3	Windows	130	4;;Version_of	7	138	5	Windows	130	4;;Version_of	Vista	142	6	Windows	130	4;;Version_of	XP	150	7	Windows	130	4;;Version_of	6.4	203	10	IDL	199	9;;License_of	BSD license	262	13	DCE@urLAB	17	0;;Version_of	6.4	239	12	IDL Virtual Machine	219	11;;

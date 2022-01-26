@@ -1,0 +1,1 @@
+Version_of	9.2	188	1	Statistical Analysis System	143	0;;Developer_of	SAS Institute Inc	211	2	Statistical Analysis System	143	0;;

@@ -1,0 +1,1 @@
+Developer_of	IBM	29	0	SPSS Statistics	33	1;;Version_of	20	49	2	SPSS Statistics	33	1;;Developer_of	SPSS Inc	54	3	SPSS Statistics	33	1;;Release_of	2011	80	4	SPSS Statistics	33	1;;

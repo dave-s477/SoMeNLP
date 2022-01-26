@@ -1,0 +1,1 @@
+All analyses were done in Stata 14 .

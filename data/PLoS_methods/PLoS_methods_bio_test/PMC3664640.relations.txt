@@ -1,0 +1,43 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Developer_of	Agilent Technologies	58	1	MassHunter Acquisition	24	0;;
+Developer_of	Agilent	140	0	MassHunter Qualitative Analysis	148	1;;Version_of	5.0	199	2	MassHunter Qualitative Analysis	148	1;;
+
+
+
+
+
+
+
+Developer_of	Agilent	50	0	Mass Profiler Professional	58	1;;Version_of	12.1	104	2	Mass Profiler Professional	58	1;;
+
+
+Developer_of	Agilent	148	0	Mass Profiler Professional	156	1;;Version_of	12.1	200	2	Mass Profiler Professional	156	1;;Developer_of	Agilent Technologies	207	3	Mass Profiler Professional	156	1;;
+
+
+
+Developer_of	Graphpad	85	0	Prism	94	1;;Developer_of	GraphPad software	112	3	Prism	94	1;;Version_of	5	108	2	Prism	94	1;;

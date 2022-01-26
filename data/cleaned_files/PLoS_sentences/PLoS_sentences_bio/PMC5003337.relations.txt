@@ -1,0 +1,1 @@
+Version_of	8	94	1	SPM	90	0;;URL_of	http://www.fil.ion.ucl.ac.uk/spm	98	2	SPM	90	0;;Release_of	R2012b	155	4	MATLAB	148	3;;Developer_of	MathWorks	165	5	MATLAB	148	3;;

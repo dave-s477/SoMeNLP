@@ -1,0 +1,20 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Version_of	9.3	82	1	SAS	78	0;;Developer_of	SAS Institute Inc.	88	2	SAS	78	0;;Version_of	19.0	198	4	Statistical Package for the Social Sciences	144	3;;Developer_of	SPSS Inc.	205	5	Statistical Package for the Social Sciences	144	3;;

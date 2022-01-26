@@ -1,0 +1,1 @@
+Specification_of	SPSS	91	1	Statistical Package for Social Sciences	49	0;;Version_of	19.0	118	3	SPSS	91	1;;

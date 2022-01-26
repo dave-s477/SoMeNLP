@@ -1,0 +1,5 @@
+
+URL_of	http://quin.jax.org	51	1	QuIN	15	0;;Developer_of	Apache	127	5	Tomcat	134	6;;Version_of	3	219	9	GPL	214	8;;License_of	GPL	214	8	QuIN	71	2;;URL_of	https://github.com/UcarLab/QuIN/	251	11	QuIN	71	2;;
+Abbreviation_of	QuIN	140	1	Querying and visualizing Chromatin Interaction Networks	82	0;;URL_of	http://quin.jax.org	149	2	Querying and visualizing Chromatin Interaction Networks	82	0;;
+
+Version_of	3	85	2	GNU General Public License	50	1;;License_of	GNU General Public License	50	1	QuIN	0	0;;URL_of	https://github.com/UcarLab/QuIN/	116	4	QuIN	0	0;;

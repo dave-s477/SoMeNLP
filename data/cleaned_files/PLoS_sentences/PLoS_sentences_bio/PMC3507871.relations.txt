@@ -1,0 +1,1 @@
+Version_of	11.2	30	1	STATA	24	0;;Citation_of	[44]	35	2	STATA	24	0;;

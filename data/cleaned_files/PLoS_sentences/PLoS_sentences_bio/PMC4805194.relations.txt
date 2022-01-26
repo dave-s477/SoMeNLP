@@ -1,0 +1,1 @@
+Developer_of	IBM	36	0	SPSS	40	1;;Version_of	21	48	2	SPSS	40	1;;

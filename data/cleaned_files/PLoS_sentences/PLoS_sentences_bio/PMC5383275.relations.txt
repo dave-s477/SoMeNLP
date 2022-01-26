@@ -1,0 +1,1 @@
+Version_of	10.3	61	1	ArcGIS	54	0;;Version_of	12.1	107	4	Stata	79	2;;Extension_of	SE	87	3	Stata	79	2;;

@@ -1,0 +1,6 @@
+Version_of	3	25	1	PathVisio	15	0;;URL_of	http://www.pathvisio.org	229	3	PathVisio	184	2;;Version_of	3	276	5	PathVisio	266	4;;
+License_of	Apache	73	1	PathVisio	0	0;;Version_of	2.0	80	2	Apache	73	1;;URL_of	http://www.apache.org/licenses/LICENSE-2.0	94	3	Apache	73	1;;
+URL_of	[1]	98	1	PathVisio	88	0;;
+
+URL_of	http://repository.pathvisio.org	39	1	PathVisio	4	0;;
+URL_of	http://projects.bigcat.unimaas.nl/pathvisiorpc/	94	2	PathVisioRPC	79	1;;

@@ -1,0 +1,69 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Citation_of	[24]	92	1	cutadapt	83	0;;Citation_of	[25]	108	3	sickle	101	2;;
+Citation_of	[26]	98	1	GATK	0	0;;
+Citation_of	[27]	78	1	BWA-MEM	68	0;;
+Citation_of	[28]	54	1	SAMtools	45	0;;
+URL_of	https://github.com/broadinstitute/picard	139	1	Picard	130	0;;
+Version_of	3.2	99	1	GATK	86	0;;
+
+
+Version_of	3.2	54	1	GATK	22	0;;
+
+
+
+URL_of	https://atgu.mgh.harvard.edu/plinkseq/	434	1	PLINK/SEQ	405	0;;Version_of	1.9	606	3	PLINK	592	2;;Citation_of	[29]	610	4	PLINK	592	2;;Version_of	1.9	674	6	PLINK	660	5;;
+
+
+
+Citation_of	[28]	95	1	BCFtools	86	0;;
+Citation_of	[28]	105	1	BCFtools	96	0;;
+Citation_of	[31]	58	1	ANNOVAR	50	0;;Release_of	2015, Mar22	71	2	ANNOVAR	50	0;;
+
+
+
+Citation_of	[35]	105	1	XHMM	84	0;;
+
+Version_of	2.5	48	1	bedtools	31	0;;Citation_of	[36]	52	2	bedtools	31	0;;
+
+
+Version_of	1.9	215	1	PLINK	201	0;;Citation_of	[29]	219	2	PLINK	201	0;;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abbreviation_of	IPA	164	1	Ingenuity Pathway Analyser	135	0;;Citation_of	[43]	172	2	Ingenuity Pathway Analyser	135	0;;
+
+
+
+
+PlugIn_of	GeneOverlap	6	1	R	4	0;;URL_of	https://bioconductor.org/packages/release/bioc/html/GeneOverlap.html	28	2	GeneOverlap	6	1;;
+
+
+
+

@@ -1,0 +1,142 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abbreviation_of	HRC	191	1	Haplotype Reference Consortium	158	0;;Citation_of	[54]	203	2	Haplotype Reference Consortium	158	0;;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Version_of	1.07	34	1	PLINK	26	0;;Citation_of	[58]	39	2	PLINK	26	0;;
+
+Version_of	10210	11	1	SMARTPCA	0	0;;Citation_of	[59]	17	2	SMARTPCA	0	0;;
+
+
+
+
+Citation_of	[60]	168	1	KING	163	0;;
+
+
+
+
+
+
+
+
+
+Version_of	2	199	1	SHAPEITv	190	0;;Citation_of	[61]	201	2	SHAPEITv	190	0;;Version_of	2	245	4	IMPUTE	238	3;;Citation_of	[62,63]	247	5	IMPUTE	238	3;;
+
+
+Version_of	2.5	203	1	SNPTEST	193	0;;Citation_of	[65]	207	2	SNPTEST	193	0;;
+Citation_of	[66]	98	1	BOLT-LMM	87	0;;
+
+
+
+
+
+
+
+
+
+
+
+
+
+Citation_of	[71]	56	1	rms	44	0;;Version_of	4.5.0	63	2	rms	44	0;;Citation_of	[72]	74	4	R	72	3;;PlugIn_of	rms	44	0	R	72	3;;
+Citation_of	[73]	47	1	Quanto	40	0;;
+
+
+
+Citation_of	[74]	67	1	DISSECT	59	0;;
+
+
+
+PlugIn_of	GTX	14	1	R	4	0;;URL_of	https://cran.r-project.org/web/packages/gtx/index.html	20	2	GTX	14	1;;
+PlugIn_of	ordinal	198	0	R	206	1;;
+
+
+
+
+
+
+
+
+
+
+
+
+
+Citation_of	[58]	74	1	PLINK	68	0;;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Citation_of	[75]	173	1	METACARPA	163	0;;
+Citation_of	[76]	74	1	METAL	68	0;;
+
+
+
+
+
+
+
+
+

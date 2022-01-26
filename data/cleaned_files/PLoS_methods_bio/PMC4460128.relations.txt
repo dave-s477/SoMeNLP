@@ -1,0 +1,28 @@
+
+
+
+
+
+
+
+
+
+
+
+
+Version_of	3.0	61	1	Genescan	35	0;;Developer_of	Applied Biosystems	67	2	Genescan	35	0;;Version_of	1.0	112	4	Peakscanner	91	3;;Developer_of	Applied Biosystems	118	5	Peakscanner	91	3;;
+Version_of	3.1	180	1	GENEPOP	172	0;;Citation_of	[12]	193	2	GENEPOP	172	0;;
+
+Citation_of	[14]	22	1	MICROCHECKER	0	0;;
+Version_of	6.5	255	1	GenAlEx	247	0;;Citation_of	[15]	259	2	GenAlEx	247	0;;
+Citation_of	[16]	76	1	MLRELATE	67	0;;Citation_of	[17]	90	3	COLONY	83	2;;Citation_of	[18]	110	5	COANCESTRY	99	4;;
+
+
+
+
+
+
+
+Citation_of	[19]	28	1	BOTTLENECK	8	0;;
+
+
