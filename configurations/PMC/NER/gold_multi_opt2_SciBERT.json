@@ -2,6 +2,7 @@
     "general": {
         "type": "MultiOpt2SciBERT",
         "name": "Gold-Multi-Opt2-SciBERT",
+        "multi_task": true,
         "checkpoint": {
             "model": "",
             "save_dir": "",

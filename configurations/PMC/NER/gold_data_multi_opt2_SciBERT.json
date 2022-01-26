@@ -41,7 +41,6 @@
     "transform": {
         "software": "configurations/data_transforms/SoMeSci_software.json",
         "soft_type": "configurations/data_transforms/SoMeSci_soft_type.json",
-        "mention_type": "configurations/data_transforms/SoMeSci_mention_type.json",
-        "add_info": "configurations/data_transforms/SoMeSci_add_info.json"
+        "mention_type": "configurations/data_transforms/SoMeSci_mention_type.json"
     } 
 }
