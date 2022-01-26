@@ -1,0 +1,70 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Version_of	1.0	55	1	Sequence Scanner	36	0;;Developer_of	Applied BioSystems	61	2	Sequence Scanner	36	0;;Version_of	7.0.0	160	4	BioEdit	135	3;;Citation_of	[30]	166	5	BioEdit	135	3;;
+
+
+Version_of	3.11	235	1	Arlequin	221	0;;Citation_of	[60]	240	2	Arlequin	221	0;;
+Version_of	3.11	135	1	Arlequin	121	0;;
+Version_of	17.0	120	1	SPSS	110	0;;Developer_of	SPSS Inc.	127	2	SPSS	110	0;;
+Version_of	4.610	87	1	Network	79	0;;URL_of	www.fluxus-engineering.com	95	2	Network	79	0;;
+
+Version_of	8.05	136	1	Surfer	121	0;;Developer_of	Golden Software	143	2	Surfer	121	0;;

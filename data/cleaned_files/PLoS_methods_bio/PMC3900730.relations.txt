@@ -1,0 +1,24 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Version_of	2.10	134	3	MLwiN	120	2;;Version_of	11	70	1	STATA	64	0;;
+
+
+
+

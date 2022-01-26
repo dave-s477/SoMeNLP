@@ -1,0 +1,4 @@
+PlugIn_of	FunciSNP	15	0	Bioconductor	42	1;;URL_of	bioconductor.org	57	2	Bioconductor	42	1;;
+Abbreviation_of	FunciSNP	89	1	Functional Identification of SNPs	53	0;;
+PlugIn_of	FunciSNP	0	0	R	15	1;;Specification_of	GPL	80	3	General Public License	55	2;;Version_of	3	85	4	GPL	80	3;;Citation_of	[31]	151	6	Bioconductor	125	5;;License_of	General Public License	55	2	FunciSNP	0	0;;
+

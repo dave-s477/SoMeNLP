@@ -1,0 +1,51 @@
+Citation_of	[14]	95	1	GRAB	90	0;;
+
+
+
+Citation_of	[14]	135	1	GRAB	0	0;;
+
+
+
+
+
+Citation_of	[14]	18	1	GRAB	13	0;;
+
+
+
+Citation_of	[14]	53	1	GRAB	48	0;;
+
+
+
+
+
+
+
+
+
+
+
+Abbreviation_of	READ	43	1	Relationship Estimation from Ancient DNA	0	0;;Version_of	2.7	76	3	Python	69	2;;Citation_of	[73]	80	4	Python	69	2;;Citation_of	[74]	95	6	GNU R	89	5;;
+URL_of	https://bitbucket.org/tguenther/read	72	1	READ	40	0;;
+
+Version_of	0.1.11	25	1	vcftools	8	0;;Citation_of	[75]	32	2	vcftools	8	0;;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Citation_of	[77]	93	1	samtools	84	0;;
+

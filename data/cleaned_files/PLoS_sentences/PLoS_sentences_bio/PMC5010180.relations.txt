@@ -1,0 +1,1 @@
+Version_of	13.0	76	1	Stata	70	0;;

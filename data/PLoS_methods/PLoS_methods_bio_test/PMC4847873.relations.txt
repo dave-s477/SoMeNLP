@@ -1,0 +1,140 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Citation_of	[59, 60]	140	1	SLINK	126	0;;
+
+
+
+
+
+
+
+Citation_of	[66]	67	1	PLINK	61	0;;Citation_of	[67]	85	3	PEDSTATS	76	2;;
+Abbreviation_of	PBAP	148	1	Pedigree-Based Analysis Pipeline	111	0;;Citation_of	[68]	155	2	Pedigree-Based Analysis Pipeline	111	0;;
+
+
+
+
+Citation_of	[70-72]	112	2	MORGAN	93	0;;Version_of	3.2	100	1	MORGAN	93	0;;
+
+
+
+
+
+Abbreviation_of	CoNIFER	97	1	Copy Number Inference from Exome Reads	56	0;;Citation_of	[74]	115	2	Copy Number Inference from Exome Reads	56	0;;
+Citation_of	[75]	153	2	mrsFAST	145	1;;
+
+
+
+
+
+Citation_of	[76]	63	1	PennCNV	55	0;;Citation_of	[77]	79	3	cnvHap	72	2;;
+
+
+
+
+Version_of	3.3.2	112	1	BEAGLE	78	0;;Citation_of	[79]	118	2	BEAGLE	78	0;;
+Citation_of	[66]	98	1	PLINK	92	0;;
+
+
+
+
+
+
+
+
+
+
+Citation_of	[80]	206	1	MERLIN	199	0;;
+
+URL_of	http://snp.gs.washington.edu/SeattleSeqAnnotation137/HelpHowToUse.jsp	179	2	Seattle Seq	161	0;;Version_of	76	288	4	Variant Effect Predictor	253	3;;Citation_of	[81, 82]	291	5	Variant Effect Predictor	253	3;;Citation_of	[83]	330	7	GEMINI	323	6;;Version_of	137	173	1	Seattle Seq	161	0;;
+
+
+
+
+
+Citation_of	[84]	106	1	GATK	101	0;;
+
+Citation_of	[85]	243	2	PolyPhen	234	1;;Abbreviation_of	CADD	298	4	Combined Annotation Dependent Depletion	256	3;;Citation_of	[86]	312	5	Combined Annotation Dependent Depletion	256	3;;
+
+
+
+
+
+AlternativeName_of	Pedigree Based Analysis Pipeline	299	11	PBAP	292	10;;URL_of	https://faculty.washington.edu/browning/beagle/b3.html#beaglev4	7	1	BEAGLE	0	0;;URL_of	http://www.imperial.ac.uk/people/l.coin	78	3	cnvHap	71	2;;URL_of	http://conifer.sourceforge.net	126	5	CoNIFER	118	4;;URL_of	http://faculty.washington.edu/wijsman/software.shtml	164	7	GEMINI	157	6;;URL_of	https://www.stat.washington.edu/thompson/Genepi/MORGAN/Morgan.shtml	224	9	MORGAN	217	8;;URL_of	http://faculty.washington.edu/wijsman/software.shtml	334	12	PBAP	292	10;;URL_of	http://csg.sph.umich.edu/abecasis/Pedstats/download/	396	14	PEDSTATS	387	13;;URL_of	http://penncnv.openbioinformatics.org/en/latest/	457	16	PennCNV	449	15;;URL_of	http://pngu.mgh.harvard.edu/~purcell/plink/download.shtml	512	18	PLINK	506	17;;

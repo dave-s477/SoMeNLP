@@ -1,0 +1,7 @@
+
+
+
+
+URL_of	http://bio.informatics.iupui.edu/proteolens/	50	1	ProteoLens	17	0;;
+Version_of	Vista	54	4	Windows	29	0;;Version_of	2003	47	3	Windows	29	0;;Version_of	XP	42	2	Windows	29	0;;Version_of	NT	37	1	Windows	29	0;;
+Abbreviation_of	JRE	80	2	Java Runtime Environment	53	1;;Version_of	1.5	94	3	Java Runtime Environment	53	1;;

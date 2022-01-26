@@ -1,0 +1,1 @@
+Version_of	2.27	190	2	MLwiN	164	1;;Citation_of	[37]	195	3	MLwiN	164	1;;

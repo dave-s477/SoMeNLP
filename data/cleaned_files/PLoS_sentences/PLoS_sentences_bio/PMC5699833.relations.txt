@@ -1,0 +1,1 @@
+Version_of	20.0	40	1	SPSS	30	0;;Developer_of	IBM Corp.	47	2	SPSS	30	0;;Version_of	7.0	109	6	Prism	103	5;;Developer_of	GraphPad	94	4	Prism	103	5;;Developer_of	GraphPad Software, Inc.	124	7	Prism	103	5;;Release_of	2011	69	3	SPSS	30	0;;

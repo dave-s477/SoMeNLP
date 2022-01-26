@@ -1,0 +1,1 @@
+Version_of	23.0	62	1	SPSS Statistics	46	0;;Version_of	23.0	84	3	AMOS	71	2;;

@@ -1,0 +1,1 @@
+Specification_of	SPSS Statistics	70	2	SPSS	50	0;;Developer_of	IBM	66	1	SPSS Statistics	70	2;;Version_of	20	86	3	SPSS Statistics	70	2;;Developer_of	IBM Corporation	91	4	SPSS Statistics	70	2;;

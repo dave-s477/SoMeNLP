@@ -1,0 +1,1 @@
+Specification_of	SPSS	73	1	statistical package for social sciences	31	0;;Version_of	12	78	2	SPSS	73	1;;

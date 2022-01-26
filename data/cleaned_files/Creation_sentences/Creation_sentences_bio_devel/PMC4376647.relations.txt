@@ -1,0 +1,3 @@
+
+URL_of	http://bioinformatics.ua.pt/software/mafco	113	1	source-code and binaries	5	0;;
+URL_of	http://bioinformatics.ua.pt/software/mafco	45	1	MAFCO	4	0;;URL_of	https://github.com/lumiratos/mafco	90	2	MAFCO	4	0;;

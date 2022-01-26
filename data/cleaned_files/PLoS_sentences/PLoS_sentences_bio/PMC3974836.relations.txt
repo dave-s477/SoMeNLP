@@ -1,0 +1,1 @@
+Version_of	12.0	52	1	STATA	46	0;;Developer_of	Statacorp	59	2	STATA	46	0;;

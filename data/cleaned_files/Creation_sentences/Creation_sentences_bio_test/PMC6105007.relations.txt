@@ -1,0 +1,6 @@
+PlugIn_of	scPipe	27	0	R	39	1;;PlugIn_of	Bioconductor	43	2	R	39	1;;
+PlugIn_of	scPipe	4	0	R	11	1;;URL_of	https://www.bioconductor.org/packages/scPipe	52	2	scPipe	4	0;;
+
+PlugIn_of	scPipe	0	0	R	13	1;;Citation_of	[13]	15	2	R	13	1;;Citation_of	[14]	35	4	Bioconductor	22	3;;PlugIn_of	Bioconductor	22	3	R	13	1;;
+Citation_of	[16, 17]	71	4	Rcpp	58	3;;Citation_of	[18]	147	8	Rhtslib	131	7;;PlugIn_of	Rhtslib	131	7	R	33	1;;PlugIn_of	Rcpp	58	3	R	33	1;;
+URL_of	https://www.bioconductor.org/packages/scPipe	37	1	scPipe	4	0;;
