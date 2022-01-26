@@ -1,20 +1,53 @@
 {
     "O": "O",
 
+    "Application_Usage_Analysis" : "Application_Usage",
+    "Application_Usage_Modelling" : "Application_Usage",
+    "Application_Usage_Stimulation" : "Application_Usage",
+    "Application_Usage_DataCollection" : "Application_Usage",
+    "Application_Usage_DataPreProcss" : "Application_Usage" ,
+    "Application_Usage_Simulation" : "Application_Usage",
+    "Application_Usage_Visualization" : "Application_Usage",
+    "Application_Usage_Programming" : "Application_Usage",
+
+    "PlugIn_Usage_Analysis" : "PlugIn_Usage",
+    "PlugIn_Usage_Modelling" : "PlugIn_Usage" ,
+    "PlugIn_Usage_Stimulation" : "PlugIn_Usage",
+    "PlugIn_Usage_DataCollection" : "PlugIn_Usage" ,
+    "PlugIn_Usage_DataPreProcss" : "PlugIn_Usage",
+    "PlugIn_Usage_Simulation" : "PlugIn_Usage",
+    "PlugIn_Usage_Visualization" : "PlugIn_Usage",
+    "PlugIn_Usage_Programming" : "PlugIn_Usage",
+
+    "OperatingSystem_Usage_Analysis" : "OperatingSystem_Usage",
+    "OperatingSystem_Usage_Modelling" : "OperatingSystem_Usage",
+    "OperatingSystem_Usage_Stimulation" : "OperatingSystem_Usage",
+    "OperatingSystem_Usage_DataCollection" : "OperatingSystem_Usage",
+    "OperatingSystem_Usage_DataPreProcss" : "OperatingSystem_Usage" ,
+    "OperatingSystem_Usage_Simulation" : "OperatingSystem_Usage",
+    "OperatingSystem_Usage_Visualization" : "OperatingSystem_Usage",
+    "OperatingSystem_Usage_Programming" : "OperatingSystem_Usage" ,
+
+
+    "ProgrammingEnvironment_Usage_Analysis" : "ProgrammingEnvironment_Usage", 
+    "ProgrammingEnvironment_Usage_Modelling" : "ProgrammingEnvironment_Usage",
+    "ProgrammingEnvironment_Usage_Stimulation" : "ProgrammingEnvironment_Usage",
+    "ProgrammingEnvironment_Usage_DataCollection" : "ProgrammingEnvironment_Usage", 
+    "ProgrammingEnvironment_Usage_DataPreProcss" : "ProgrammingEnvironment_Usage",
+    "ProgrammingEnvironment_Usage_Simulation" : "ProgrammingEnvironment_Usage",
+    "ProgrammingEnvironment_Usage_Visualization" : "ProgrammingEnvironment_Usage", 
+    "ProgrammingEnvironment_Usage_Programming" : "ProgrammingEnvironment_Usage",
+
     "Application_Creation": "Application_Creation",
-    "Application_Deposition": "Application_Deposition",
-    "Application_Usage": "Application_Usage",
-    "Application_Mention": "Application_Mention",
-
     "PlugIn_Creation": "PlugIn_Creation",
+
+    "Application_Deposition": "Application_Deposition",
     "PlugIn_Deposition": "PlugIn_Deposition",
-    "PlugIn_Usage": "PlugIn_Usage",
+    
+    
+    "Application_Mention": "Application_Mention",
     "PlugIn_Mention": "PlugIn_Mention",
-
-    "ProgrammingEnvironment_Usage": "ProgrammingEnvironment_Usage",
     "ProgrammingEnvironment_Mention": "ProgrammingEnvironment_Mention",
-
-    "OperatingSystem_Usage": "OperatingSystem_Usage",
     "OperatingSystem_Mention": "OperatingSystem_Mention",
 
     "Version": "O",

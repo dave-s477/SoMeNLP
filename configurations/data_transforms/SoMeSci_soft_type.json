@@ -1,20 +1,52 @@
 {
     "O": "O",
+    
+    "Application_Usage_Analysis" : "Application",
+    "Application_Usage_Modelling" : "Application",
+    "Application_Usage_Stimulation" : "Application",
+    "Application_Usage_DataCollection" : "Application",
+    "Application_Usage_DataPreProcss" : "Application" ,
+    "Application_Usage_Simulation" : "Application",
+    "Application_Usage_Visualization" : "Application",
+    "Application_Usage_Programming" : "Application",
+
+    "PlugIn_Usage_Analysis" : "PlugIn",
+    "PlugIn_Usage_Modelling" : "PlugIn" ,
+    "PlugIn_Usage_Stimulation" : "PlugIn",
+    "PlugIn_Usage_DataCollection" : "PlugIn" ,
+    "PlugIn_Usage_DataPreProcss" : "PlugIn",
+    "PlugIn_Usage_Simulation" : "PlugIn",
+    "PlugIn_Usage_Visualization" : "PlugIn",
+    "PlugIn_Usage_Programming" : "PlugIn",
+
+    "OperatingSystem_Usage_Analysis" : "OperatingSystem",
+    "OperatingSystem_Usage_Modelling" : "OperatingSystem",
+    "OperatingSystem_Usage_Stimulation" : "OperatingSystem",
+    "OperatingSystem_Usage_DataCollection" : "OperatingSystem",
+    "OperatingSystem_Usage_DataPreProcss" : "OperatingSystem" ,
+    "OperatingSystem_Usage_Simulation" : "OperatingSystem",
+    "OperatingSystem_Usage_Visualization" : "OperatingSystem",
+    "OperatingSystem_Usage_Programming" : "OperatingSystem" ,
+
+    
+    "ProgrammingEnvironment_Usage_Analysis" : "ProgrammingEnvironment", 
+    "ProgrammingEnvironment_Usage_Modelling" : "ProgrammingEnvironment",
+    "ProgrammingEnvironment_Usage_Stimulation" : "ProgrammingEnvironment",
+    "ProgrammingEnvironment_Usage_DataCollection" : "ProgrammingEnvironment", 
+    "ProgrammingEnvironment_Usage_DataPreProcss" : "ProgrammingEnvironment",
+    "ProgrammingEnvironment_Usage_Simulation" : "ProgrammingEnvironment",
+    "ProgrammingEnvironment_Usage_Visualization" : "ProgrammingEnvironment", 
+    "ProgrammingEnvironment_Usage_Programming" : "ProgrammingEnvironment",
 
     "Application_Creation": "Application",
     "Application_Deposition": "Application",
-    "Application_Usage": "Application",
     "Application_Mention": "Application",
 
     "PlugIn_Creation": "PlugIn",
     "PlugIn_Deposition": "PlugIn",
-    "PlugIn_Usage": "PlugIn",
     "PlugIn_Mention": "PlugIn",
 
-    "ProgrammingEnvironment_Usage": "ProgrammingEnvironment",
     "ProgrammingEnvironment_Mention": "ProgrammingEnvironment",
-
-    "OperatingSystem_Usage": "OperatingSystem",
     "OperatingSystem_Mention": "OperatingSystem",
 
     "Version": "O",
