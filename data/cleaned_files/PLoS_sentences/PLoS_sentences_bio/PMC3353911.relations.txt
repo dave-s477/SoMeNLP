@@ -1,1 +1,0 @@
-Version_of	11	48	1	Stata	34	0;;Developer_of	StataCorp	53	2	Stata	34	0;;Release_of	2007	109	4	Excel	95	3;;Developer_of	Microsoft Corporation	116	5	Excel	95	3;;

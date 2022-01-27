@@ -1,1 +1,0 @@
-Version_of	3.02	60	1	EPI Info	43	0;;Version_of	14.2	103	3	Stata	89	2;;

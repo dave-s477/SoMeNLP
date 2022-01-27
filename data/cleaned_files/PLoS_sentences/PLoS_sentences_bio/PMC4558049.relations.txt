@@ -1,1 +1,0 @@
-Version_of	8	79	1	SPM	75	0;;Developer_of	Wellcome Department of Cognitive Neurology	83	2	SPM	75	0;;Release_of	R2010a	170	4	MATLAB	153	3;;Developer_of	The MathWorks Inc.	180	5	MATLAB	153	3;;

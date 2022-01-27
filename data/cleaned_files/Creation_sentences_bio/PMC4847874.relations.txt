@@ -1,3 +1,0 @@
-Abbreviation_of	MEDYAN	189	1	Mechanochemical Dynamics of Active Networks	143	0;;URL_of	www.medyan.org	268	2	Mechanochemical Dynamics of Active Networks	143	0;;
-
-URL_of	www.medyan.org	60	1	MEDYAN	38	0;;

@@ -1,2 +1,0 @@
-All statistical analyses were conducted using SAS 9.3 software package (SAS Institute, Cary, NC, USA).
-

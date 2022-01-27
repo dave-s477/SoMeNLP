@@ -1,2 +1,0 @@
-Version_of	11	104	1	SPSS	99	0;;Developer_of	SPSS Inc.	109	2	SPSS	99	0;;
-Developer_of	SPSS Inc.	124	2	SPSS	112	0;;Version_of	11.5	117	1	SPSS	112	0;;

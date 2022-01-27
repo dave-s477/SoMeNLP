@@ -1,1 +1,0 @@
-Version_of	20.0.0	16	1	SPSS Statistics	0	0;;Developer_of	SPSS Inc.	46	2	SPSS Statistics	0	0;;

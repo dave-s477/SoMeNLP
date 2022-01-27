@@ -1,2 +1,0 @@
-PlugIn_of	PROCESS	52	0	SPSS	64	1;;Citation_of	[29]	69	2	PROCESS	52	0;;
-Version_of	22	53	1	SPSS	40	0;;

@@ -1,6 +1,0 @@
-T1	ProgrammingEnvironment_Usage_Analysis 3279 3280	R
-T2	PlugIn_Usage_Analysis 3290 3295	rpart
-T3	Application_Usage_Analysis 5400 5405	STATA
-R1	PlugIn_of Arg1:T2 Arg2:T1	
-T4	Version 5407 5409	11
-R2	Version_of Arg1:T4 Arg2:T3	

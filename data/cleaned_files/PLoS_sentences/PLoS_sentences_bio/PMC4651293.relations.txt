@@ -1,1 +1,0 @@
-Version_of	18.0	40	1	SPSS	27	0;;Version_of	18.0	55	2	SPSS	27	0;;Developer_of	SPSS Inc.	72	3	SPSS	27	0;;

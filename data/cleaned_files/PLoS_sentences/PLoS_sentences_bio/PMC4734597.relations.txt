@@ -1,1 +1,0 @@
-Version_of	3.1.80	64	1	EpiData Analysis	28	0;;Version_of	12	93	3	Stata	77	2;;

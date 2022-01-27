@@ -1,3 +1,0 @@
-
-License_of	BSD license	129	4	software	4	0;;URL_of	https://github.com/krm15/ACME	143	5	software	4	0;;
-URL_of	https://wiki.med.harvard.edu/SysBio/Megason/ACME	43	1	Precompiled binaries	0	0;;

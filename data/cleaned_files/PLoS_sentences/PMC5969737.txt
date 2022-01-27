@@ -1,1 +1,0 @@
-We used the Statistical Package for Social Sciences (IBM SPSS v. 24.0.0.0) for all analyses. 

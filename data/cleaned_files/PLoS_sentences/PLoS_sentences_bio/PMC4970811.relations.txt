@@ -1,1 +1,0 @@
-Version_of	7.3	83	1	Mplus	49	0;;Developer_of	IBM	91	2	SPSS	95	3;;Version_of	22	108	4	SPSS	95	3;;

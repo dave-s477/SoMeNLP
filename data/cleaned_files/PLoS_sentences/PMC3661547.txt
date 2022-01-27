@@ -1,2 +1,0 @@
-All analyses were adjusted for sample weights and NHANES complex survey design using Stata (11.2).
-

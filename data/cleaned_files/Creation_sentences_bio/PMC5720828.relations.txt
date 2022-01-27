@@ -1,5 +1,0 @@
-
-Version_of	14	46	2	C++	40	1;;URL_of	https://github.com/ruolin/strawberry	95	3	Strawberry	15	0;;License_of	MIT license	142	4	Strawberry	15	0;;
-Version_of	14	32	2	C++	26	1;;
-URL_of	https://github.com/ruolin/strawberry	46	1	Strawberry	0	0;;License_of	MIT license	93	2	Strawberry	0	0;;
-

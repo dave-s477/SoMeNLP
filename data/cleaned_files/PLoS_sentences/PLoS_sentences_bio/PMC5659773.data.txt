@@ -1,1 +1,0 @@
-The statistical analysis was done with Stata 14.1 ( Stata Corp LP , College station , Texas ) .

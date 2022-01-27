@@ -1,3 +1,0 @@
-T1	Application_Usage_DataCollection 11040 11045	Excel
-T2	Version 11046 11048	20
-R1	Version_of Arg1:T2 Arg2:T1	

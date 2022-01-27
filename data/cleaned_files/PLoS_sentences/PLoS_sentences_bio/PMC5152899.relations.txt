@@ -1,1 +1,0 @@
-Developer_of	IBM	34	0	SPSS statistics	38	1;;Version_of	20	64	2	SPSS statistics	38	1;;

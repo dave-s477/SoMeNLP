@@ -1,3 +1,0 @@
-AlternativeName_of	Design Of Genuine Structures	164	1	DOGS	157	0;;
-
-Developer_of	Oracle Corporation	69	2	Java	62	1;;Version_of	1.6	153	3	Java	62	1;;Abbreviation_of	CDK	198	5	Chemistry Development Kit	170	4;;Version_of	1.0.2	212	6	Chemistry Development Kit	170	4;;Citation_of	[23], [24]	220	7	Chemistry Development Kit	170	4;;

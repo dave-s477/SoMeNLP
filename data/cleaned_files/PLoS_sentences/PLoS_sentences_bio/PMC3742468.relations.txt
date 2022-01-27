@@ -1,1 +1,0 @@
-Developer_of	IBM	38	0	SPSS Statistics	42	1;;Version_of	18.0	58	2	SPSS Statistics	42	1;;

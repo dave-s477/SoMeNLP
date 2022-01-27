@@ -1,1 +1,0 @@
-Analyses were conducted in Stata 12. 

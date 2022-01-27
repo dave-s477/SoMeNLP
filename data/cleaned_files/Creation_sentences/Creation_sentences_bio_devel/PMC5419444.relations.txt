@@ -1,3 +1,0 @@
-
-AlternativeName_of	Molecular tAgged GEnome Re-sequencing pIpeline	27	1	MAGERI	18	0;;
-Version_of	1.8	32	2	Java	25	1;;URL_of	https://github.com/mikessh/mageri	106	3	MAGERI	0	0;;

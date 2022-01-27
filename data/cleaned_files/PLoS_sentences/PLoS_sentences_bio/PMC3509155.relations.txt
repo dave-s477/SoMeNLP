@@ -1,1 +1,0 @@
-Version_of	20.0	13	1	SPSS	8	0;;Developer_of	SPSS Inc.	32	3	SPSS	8	0;;

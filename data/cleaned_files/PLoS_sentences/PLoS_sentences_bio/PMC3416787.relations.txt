@@ -1,1 +1,0 @@
-Version_of	15.0.1	51	1	SPSS	46	0;;Developer_of	SPSS Inc.	72	3	SPSS	46	0;;Release_of	2006	106	4	SPSS	46	0;;

@@ -1,4 +1,0 @@
-
-URL_of	https://github.com/mikessh/vdjtools	53	1	VDJtools	0	0;;
-
-Citation_of	[40]	82	2	VDJtools	0	0;;

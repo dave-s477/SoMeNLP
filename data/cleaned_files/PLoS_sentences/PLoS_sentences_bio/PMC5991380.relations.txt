@@ -1,1 +1,0 @@
-URL_of	https://www.ebi.ac.uk/Tools/msa/clustalo/	162	3	Clustal	141	1;;Extension_of	Omega	149	2	Clustal	141	1;;

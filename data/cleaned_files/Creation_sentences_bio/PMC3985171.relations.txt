@@ -1,6 +1,0 @@
-Version_of	2	121	1	BEAST	115	0;;
-
-Abbreviation_of	BEAST	72	1	Bayesian Evolutionary Analysis by Sampling Trees	21	0;;Citation_of	[1], [2]	88	2	Bayesian Evolutionary Analysis by Sampling Trees	21	0;;
-Version_of	2	139	2	BEAST	133	1;;Specification_of	BEAST	133	1	BEAST	94	0;;
-Version_of	2	10	1	BEAST	4	0;;URL_of	https://github.com/CompEvol/beast2	119	3	BEAST	4	0;;
-Version_of	2.1.0	32	1	BEAST	26	0;;PlugIn_of	MultiTypeTree	47	2	BEAST	26	0;;URL_of	http://compevol.github.io/MultiTypeTree/	71	3	MultiTypeTree	47	2;;

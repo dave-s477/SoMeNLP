@@ -1,2 +1,0 @@
-Version_of	24.0	43	1	SPSS	30	0;;
-

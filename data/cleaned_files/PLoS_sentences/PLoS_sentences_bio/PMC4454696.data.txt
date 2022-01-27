@@ -1,1 +1,0 @@
-Data were analyzed using Statistical Parametric Mapping 5 ( SPM 5 , Wellcome Department of Cognitive Neurology , London , UK ) software implemented in Matlab 7.8 ( Mathworks , Sherborn , MA , USA ) .

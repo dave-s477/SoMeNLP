@@ -1,6 +1,0 @@
-PlugIn_of	dcGOR	41	1	R	29	0;;
-PlugIn_of	dcGOR	41	0	R	62	1;;
-PlugIn_of	dcGOR	4	0	R	44	1;;
-License_of	GPL	76	1	dcGOR	32	0;;Version_of	2	82	2	GPL	76	1;;
-URL_of	http://cran.r-project.org/package=dcGOR	90	3	it	54	1;;
-URL_of	https://github.com/hfang-bristol/dcGOR	65	2	it	30	0;;

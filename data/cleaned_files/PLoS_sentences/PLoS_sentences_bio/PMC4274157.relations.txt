@@ -1,1 +1,0 @@
-Version_of	3.5.2	71	1	Epi-Info	52	0;;Version_of	19	94	3	SPSS	81	2;;

@@ -1,5 +1,0 @@
-Abbreviation_of	PSAMM	108	1	Portable System for the Analysis of Metabolic Models	53	0;;
-
-Abbreviation_of	PSAMM	75	1	Portable System for the Analysis of Metabolic Models	20	0;;
-
-

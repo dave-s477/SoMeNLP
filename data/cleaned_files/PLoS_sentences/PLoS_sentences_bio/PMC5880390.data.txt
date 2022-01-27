@@ -1,1 +1,0 @@
-We used STATA 13.0 ( College Station , TX ) for all analyses .

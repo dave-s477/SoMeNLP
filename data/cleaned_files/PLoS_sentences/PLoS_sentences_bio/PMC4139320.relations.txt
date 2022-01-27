@@ -1,1 +1,0 @@
-Version_of	1.4	29	1	WinBugs	21	0;;URL_of	http://www.mrc-bsu.cam.ac.uk/bugs/	52	2	WinBugs	21	0;;Version_of	2.1-16	126	4	R2WinBUGS	99	3;;

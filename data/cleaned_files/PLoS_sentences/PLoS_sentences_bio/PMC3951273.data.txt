@@ -1,1 +1,0 @@
-The word ‘ hello ’ was extracted from each recording , and normalised for power ( RMS ) and loudness via Matlab ( the Mathworks ) .

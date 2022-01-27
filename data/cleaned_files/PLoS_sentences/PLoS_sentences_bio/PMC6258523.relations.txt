@@ -1,1 +1,0 @@
-Version_of	3	65	1	Psychtoolbox	50	0;;Citation_of	[56]	67	2	Psychtoolbox	50	0;;Release_of	2014a	83	4	Matlab	76	3;;Developer_of	Mathworks	91	5	Matlab	76	3;;PlugIn_of	Psychtoolbox	50	0	Matlab	76	3;;

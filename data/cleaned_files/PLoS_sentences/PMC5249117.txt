@@ -1,1 +1,0 @@
-The visual stimuli were generated using Psychophysics toolbox [49–51] in MATLAB (The MathWorks Inc., Natick, MA). 

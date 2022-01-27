@@ -1,1 +1,0 @@
-All analysis was conducted using Stata .

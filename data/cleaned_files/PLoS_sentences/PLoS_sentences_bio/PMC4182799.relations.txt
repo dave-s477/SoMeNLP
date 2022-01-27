@@ -1,1 +1,0 @@
-Version_of	16.2	290	1	Minitab	274	0;;Developer_of	Minitab Inc.	297	2	Minitab	274	0;;

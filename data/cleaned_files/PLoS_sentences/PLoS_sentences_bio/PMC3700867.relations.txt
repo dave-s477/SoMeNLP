@@ -1,1 +1,0 @@
-Version_of	19.0.1	54	1	SPSS	41	0;;Developer_of	IBM	63	2	SPSS	41	0;;Version_of	5.0d	130	4	Prism	116	3;;Developer_of	GraphPad	137	5	Prism	116	3;;

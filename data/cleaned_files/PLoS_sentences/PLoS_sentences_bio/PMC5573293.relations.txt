@@ -1,1 +1,0 @@
-Specification_of	SPSS statistics	20	2	SPSS	0	0;;Developer_of	IBM	16	1	SPSS statistics	20	2;;Version_of	21	44	3	SPSS statistics	20	2;;

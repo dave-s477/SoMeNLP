@@ -1,2 +1,0 @@
-All analyses were performed using SAS 9.2.
-

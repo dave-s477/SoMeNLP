@@ -1,1 +1,0 @@
-Results were computed using SPSS ver.15 (SPSS Inc, Illinois, USA), employing the ‘Complex Samples’ procedure required when using probability weights. 

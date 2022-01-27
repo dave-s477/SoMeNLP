@@ -1,1 +1,0 @@
-Version_of	16.0	44	1	SPSS	39	0;;Developer_of	SPSS Inc.	68	2	SPSS	39	0;;

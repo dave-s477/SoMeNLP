@@ -1,1 +1,0 @@
-Version_of	18.0	88	1	Statistical Package for the Social Sciences	36	0;;Developer_of	SPSS Inc	95	2	Statistical Package for the Social Sciences	36	0;;

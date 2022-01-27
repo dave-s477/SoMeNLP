@@ -1,1 +1,0 @@
-Version_of	11.2	43	1	Stata	37	0;;

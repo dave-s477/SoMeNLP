@@ -1,1 +1,0 @@
-Specification_of	SPSS	84	1	Statistical Package for the Social Sciences	38	0;;Version_of	19.0	111	3	SPSS	84	1;;Developer_of	SPSS Inc	118	4	SPSS	84	1;;

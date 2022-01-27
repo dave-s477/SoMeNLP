@@ -1,1 +1,0 @@
-All computations were done using SAS V9.2. 

@@ -1,1 +1,0 @@
-Version_of	16	50	1	Minitab	42	0;;Developer_of	Minitab Ltd	55	2	Minitab	42	0;;

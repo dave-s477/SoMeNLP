@@ -1,3 +1,0 @@
-URL_of	http://strep-microarray.sbs.surrey.ac.uk/RankProducts	172	1	RankProdIt	51	0;;
-
-URL_of	http://strep-microarray.sbs.surrey.ac.uk/RankProducts/	48	1	RankProdIt	17	0;;

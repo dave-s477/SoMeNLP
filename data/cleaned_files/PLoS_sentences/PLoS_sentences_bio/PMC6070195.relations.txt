@@ -1,1 +1,0 @@
-Version_of	2.13	97	1	PROCESS	87	0;;Citation_of	[51]	123	2	PROCESS	87	0;;PlugIn_of	PROCESS	87	0	SPSS	132	3;;

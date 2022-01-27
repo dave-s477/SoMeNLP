@@ -1,3 +1,0 @@
-
-URL_of	http://code.google.com/p/bedtools	68	1	Source code	0	0;;
-

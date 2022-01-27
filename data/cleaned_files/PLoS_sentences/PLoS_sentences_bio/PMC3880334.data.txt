@@ -1,1 +1,0 @@
-The SAS version 9.1.3 program package was used for all analyses ( SAS Institute , Inc . , Cary , NC , USA ) .
