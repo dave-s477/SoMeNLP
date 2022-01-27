@@ -1,1 +1,0 @@
-Stata 11.1 was used for statistical analysis to calculate means, proportions and regressions. 

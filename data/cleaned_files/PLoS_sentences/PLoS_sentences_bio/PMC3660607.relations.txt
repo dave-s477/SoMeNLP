@@ -1,1 +1,0 @@
-Version_of	9.2	50	1	SAS	29	0;;Citation_of	[30]	54	2	SAS	29	0;;Version_of	10.0	89	4	SUDAAN	65	3;;Citation_of	[31]	94	5	SUDAAN	65	3;;

@@ -1,1 +1,0 @@
-Version_of	18	66	1	PASW Statistics	42	0;;Developer_of	SPSS Inc.	83	3	PASW Statistics	42	0;;

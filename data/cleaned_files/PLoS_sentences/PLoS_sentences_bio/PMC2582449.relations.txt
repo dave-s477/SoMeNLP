@@ -1,1 +1,0 @@
-Version_of	9.1	64	2	SAS	34	0;;Developer_of	SAS Institute Inc.	70	3	SAS	34	0;;Specification_of	SPSS	168	6	Statistical Package for the Social Sciences	106	4;;Version_of	14.1	183	7	SPSS	168	6;;Developer_of	SPSS Inc.	190	8	SPSS	168	6;;Version_of	4.1	239	10	RevMan	224	9;;Developer_of	Cochrane Collaboration	245	11	RevMan	224	9;;Extension_of	STAT	40	1	SAS	34	0;;

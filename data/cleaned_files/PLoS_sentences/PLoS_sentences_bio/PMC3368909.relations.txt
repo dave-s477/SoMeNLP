@@ -1,1 +1,0 @@
-Version_of	15.0	49	1	SPSS	42	0;;Developer_of	SPSS, Inc.	56	2	SPSS	42	0;;Version_of	10	120	4	Stata	114	3;;Developer_of	StataCorp LP	125	5	Stata	114	3;;

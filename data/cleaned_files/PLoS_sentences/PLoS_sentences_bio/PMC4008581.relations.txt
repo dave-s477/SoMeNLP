@@ -1,1 +1,0 @@
-Version_of	8	97	2	SPM	93	1;;Specification_of	SPM	93	1	Statistical Parametric Mapping	60	0;;Developer_of	Wellcome Department of Imaging Neuroscience	112	3	Statistical Parametric Mapping	60	0;;Release_of	R2009b	194	5	MATLAB	187	4;;Developer_of	MathWorks	204	6	MATLAB	187	4;;

@@ -1,3 +1,0 @@
-T1	Application_Usage 48 53	BLAST
-T2	Developer 43 47	NCBI
-R1	Developer_of Arg1:T2 Arg2:T1	

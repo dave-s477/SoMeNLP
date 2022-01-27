@@ -1,1 +1,0 @@
-Version_of	14.1	45	1	Stata	39	0;;Developer_of	Stata Corp LP	52	2	Stata	39	0;;

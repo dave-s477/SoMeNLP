@@ -1,1 +1,0 @@
-Release_of	2015	42	1	XLSTAT	35	0;;PlugIn_of	XLSTAT	35	0	Excel	51	2;;

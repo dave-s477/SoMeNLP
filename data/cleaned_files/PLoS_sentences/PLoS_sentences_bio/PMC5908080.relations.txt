@@ -1,1 +1,0 @@
-Developer_of	Wellcome Department of Cognitive Neurology	53	2	SPM	45	0;;Version_of	8	49	1	SPM	45	0;;URL_of	http://www.fil.ion.ucl.ac.uk/spm	112	3	SPM	45	0;;Release_of	2007b	165	5	MATLAB	158	4;;Developer_of	Mathworks Inc.	173	6	MATLAB	158	4;;

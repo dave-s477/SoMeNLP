@@ -1,5 +1,0 @@
-
-URL_of	https://github.com/mlbendall/telescope	26	1	Telescope	0	0;;
-
-
-License_of	MIT license	88	2	Telescope	0	0;;

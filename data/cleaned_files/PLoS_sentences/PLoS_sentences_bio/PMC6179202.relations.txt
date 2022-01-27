@@ -1,1 +1,0 @@
-Version_of	15.0	63	1	Stata	57	0;;

@@ -1,1 +1,0 @@
-Version_of	9.4	12	1	SAS	8	0;;Developer_of	SAS Institute	18	2	SAS	8	0;;

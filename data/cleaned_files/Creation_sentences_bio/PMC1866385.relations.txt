@@ -1,2 +1,0 @@
-AlternativeName_of	Nematode Transcription Factor Scan Through Philogenetic Footprinting	18	1	NemaFootPrinter	0	0;;
-URL_of	http://bio.ifom-firc.it/NTFootPrinter/index.html	53	1	NemaFootPrinter	17	0;;

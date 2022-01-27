@@ -1,1 +1,0 @@
-Developer_of	SAS Institute	87	2	SAS	53	0;;Extension_of	University Edition	57	1	SAS	53	0;;

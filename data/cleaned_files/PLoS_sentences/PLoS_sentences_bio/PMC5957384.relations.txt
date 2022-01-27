@@ -1,1 +1,0 @@
-Version_of	14.1	90	1	STATA	60	0;;Developer_of	STATA Corp.	97	2	STATA	60	0;;

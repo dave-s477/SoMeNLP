@@ -1,2 +1,0 @@
-Version_of	19.0	159	1	SPSS	144	0;;Developer_of	IBM	166	2	SPSS	144	0;;
-Specification_of	SAS	80	1	statistical analyses software	48	0;;Version_of	9	84	2	SAS	80	1;;Version_of	9.2	96	3	statistical analyses software	48	0;;Developer_of	SAS Institute	102	4	statistical analyses software	48	0;;

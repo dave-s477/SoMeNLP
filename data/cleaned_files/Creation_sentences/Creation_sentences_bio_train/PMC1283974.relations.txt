@@ -1,4 +1,0 @@
-
-
-Citation_of	[63,85]	247	2	Mindboggle	186	0;;
-Version_of	6	95	2	Matlab	78	1;;Release_of	13	107	3	Matlab	78	1;;PlugIn_of	Image Processing Toolbox	121	4	Matlab	78	1;;Developer_of	The Mathworks Inc.	148	5	Matlab	78	1;;

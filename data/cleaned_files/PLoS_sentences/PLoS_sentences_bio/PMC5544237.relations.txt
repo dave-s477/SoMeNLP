@@ -1,1 +1,0 @@
-Specification_of	Tableau	142	3	Tableau	122	1;;Version_of	9.0	150	4	Tableau	142	3;;Developer_of	Tableau Software Inc.	156	5	Tableau	142	3;;Specification_of	Excel	181	6	Excel	134	2;;Version_of	14.4.2	187	7	Excel	181	6;;Developer_of	Microsoft Corporation	196	8	Excel	181	6;;Release_of	2010	218	9	Excel	181	6;;

@@ -1,2 +1,0 @@
-Version_of	9.3	302	1	SAS	290	0;;Developer_of	SAS Institute	308	2	SAS	290	0;;
-Version_of	9.3	64	1	SAS	50	0;;Developer_of	SAS Institute	70	2	SAS	50	0;;

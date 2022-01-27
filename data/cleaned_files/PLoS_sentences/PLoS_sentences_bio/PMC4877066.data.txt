@@ -1,1 +1,0 @@
-Scores were calculated using the “ PCA ” and “ predict ” commands in Stata .

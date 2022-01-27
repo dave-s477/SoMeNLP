@@ -1,2 +1,0 @@
-All analyses were conducted in STATA, release 10.1 (Statacorp., College Station, TX, USA).
-

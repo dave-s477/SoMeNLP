@@ -1,6 +1,0 @@
-Abbreviation_of	CBFA	54	1	Constraint-based Flux Analysis	19	0;;
-PlugIn_of	CBFA	19	0	OptFlux	35	1;;
-AlternativeName_of	Constraint-based Flux Analysis	22	1	CBFA	15	0;;
-PlugIn_of	CBFA	129	0	Optflux	164	1;;
-
-URL_of	http://www.optflux.org/	75	2	Optflux	47	1;;URL_of	http://www.optflux.org/cbfa	142	3	CBFA	31	0;;Version_of	1.7.x	275	6	Java JRE	266	5;;Version_of	1.7	325	9	JDK	321	8;;License_of	GNU-GPL	363	11	CBFA	31	0;;Version_of	3	383	12	GNU-GPL	363	11;;

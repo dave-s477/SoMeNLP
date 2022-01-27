@@ -1,2 +1,0 @@
-PlugIn_of	Image Acquisition Toolbox	44	1	Matlab	37	0;;Developer_of	Mathworks	72	2	Image Acquisition Toolbox	44	1;;Developer_of	Mathworks	72	2	Matlab	37	0;;Release_of	v2011b	91	4	Matlab	84	3;;Specification_of	Matlab	84	3	Matlab	37	0;;
-PlugIn_of	Image Processing Toolbox	99	1	Matlab	92	0;;Developer_of	Mathworks	126	2	Image Processing Toolbox	99	1;;Developer_of	Mathworks	126	2	Matlab	92	0;;Release_of	v2011b	145	4	Matlab	138	3;;Specification_of	Matlab	138	3	Matlab	92	0;;

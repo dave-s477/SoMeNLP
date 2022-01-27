@@ -1,4 +1,0 @@
-
-Version_of	2.0	39	2	Apache	32	1;;License_of	Apache	32	1	NFTsim	0	0;;
-
-Version_of	42.2	125	10	OpenSUSE	116	9;;Version_of	13.2	109	8	OpenSUSE	100	7;;Version_of	7.4	94	6	RHEL	89	5;;Version_of	6.9	83	4	RHEL	78	3;;

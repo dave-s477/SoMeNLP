@@ -1,9 +1,0 @@
-
-
-License_of	GNU General Public License	33	1	package	4	0;;URL_of	http://sites.google.com/site/neuromapsoftware	77	2	package	4	0;;
-
-
-License_of	GNU General Public License	57	1	NeuroMap	0	0;;Abbreviation_of	GPL	86	2	GNU General Public License	57	1;;URL_of	http://sites.google.com/site/neuromapsoftware	95	3	NeuroMap	0	0;;
-
-License_of	GNU GPL	27	1	NeuroMap	0	0;;URL_of	http://sites.google.com/site/neuromapsoftware	91	2	NeuroMap	0	0;;
-

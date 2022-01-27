@@ -1,1 +1,0 @@
-The newey-west regression and robust regression in the Stata were used to correct the autocorrelation and heteroskedasticity. 

@@ -1,5 +1,0 @@
-
-URL_of	http://www.phylobot.com	73	1	PhyloBot	0	0;;
-
-URL_of	http://www.phylobot.com	62	1	PhyloBot	40	0;;
-URL_of	http://www.phylobot.com	32	1	PhyloBot	0	0;;URL_of	https://github.com/vhsvhs/phylobot-django	94	2	PhyloBot	0	0;;

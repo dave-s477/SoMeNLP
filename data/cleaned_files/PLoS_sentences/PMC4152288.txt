@@ -1,2 +1,0 @@
-Statistical analyses were performed using Stata 11.0 (StataCorp, College Station, Texas, USA).
-

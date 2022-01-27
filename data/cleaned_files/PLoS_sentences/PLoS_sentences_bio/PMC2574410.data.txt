@@ -1,1 +1,0 @@
-Facial stimuli were presented to the subjects in 4 different blocks using MATLAB 7.0 ™ ( Mathworks Inc . , Sherborn , USA ) .

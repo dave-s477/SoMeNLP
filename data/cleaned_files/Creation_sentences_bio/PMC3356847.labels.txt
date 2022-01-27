@@ -1,5 +1,0 @@
-O O B-Application_Creation I-Application_Creation I-Application_Creation O O O O O O O O O O O
-B-Application_Mention I-Application_Mention I-Application_Mention O O O O O O O O O O O O O
-O O B-SoftwareCoreference_Deposition O O B-URL O O O O O B-URL O O O O O O
-O O O B-Application_Creation I-Application_Creation I-Application_Creation O O O O O O O O O O O O O O O O O O O O O O O O
-O O B-ProgrammingEnvironment_Usage O B-Application_Creation I-Application_Creation I-Application_Creation O O O O O O O O

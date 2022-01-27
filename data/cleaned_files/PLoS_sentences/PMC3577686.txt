@@ -1,2 +1,0 @@
-All analyses were conducted in Stata v.12 (StataCorp, TX, USA).
-

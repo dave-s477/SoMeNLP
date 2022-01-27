@@ -1,1 +1,0 @@
-Version_of	23	59	2	SPSS	34	0;;Developer_of	IBM Japan Ltd	73	3	SPSS	34	0;;

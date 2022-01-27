@@ -1,1 +1,0 @@
-Using Psychophysics toolbox for MATLAB , the stimuli were presented using an LCD projector ( AVOTEC ) that projected images onto a screen located behind the subject ’ s head .

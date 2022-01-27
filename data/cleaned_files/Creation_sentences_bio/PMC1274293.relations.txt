@@ -1,8 +1,0 @@
-
-
-URL_of	http://lpg.nci.nih.gov	70	3	SNPdetector	0	0;;
-
-Version_of	5.0.2	170	2	PolyPhred	160	1;;Citation_of	[17]	188	4	NovoSNP	180	3;;
-
-URL_of	http://lpg.nci.nih.gov	80	3	SNPdetector	0	0;;
-

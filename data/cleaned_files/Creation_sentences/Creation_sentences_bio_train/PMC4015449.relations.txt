@@ -1,6 +1,0 @@
-
-
-URL_of	http://www4a.biotec.or.th/GI/tools/metasel	44	1	program	4	0;;
-
-Developer_of	Microsoft	142	2	Windows	152	3;;Version_of	7	160	4	Windows	152	3;;
-Version_of	XP	28	2	Windows	20	1;;Version_of	7	34	3	Windows	20	1;;URL_of	http://www4a.biotec.or.th/GI/tools/metasel	103	4	software	5	0;;

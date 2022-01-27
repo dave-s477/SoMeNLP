@@ -1,7 +1,0 @@
-
-
-URL_of	www.podbat.org	56	1	Podbat	0	0;;License_of	GNU LGPL	95	2	Podbat	0	0;;
-Version_of	1.6	29	2	Java	16	1;;
-AlternativeName_of	Positioning database and analysis tool	66	1	Podbat	57	0;;
-URL_of	www.podbat.org	126	2	Podbat	0	0;;
-License_of	GNU LGPL	32	1	Podbat	0	0;;

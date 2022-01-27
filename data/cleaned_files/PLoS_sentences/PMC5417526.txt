@@ -1,2 +1,0 @@
-The eye-tracking data were processed with custom software written in MATLAB (Mathworks, Natick, MA, USA).
-

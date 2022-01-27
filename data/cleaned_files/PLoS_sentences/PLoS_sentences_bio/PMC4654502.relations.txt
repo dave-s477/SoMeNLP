@@ -1,1 +1,0 @@
-Version_of	6.0	51	1	Prism	42	0;;Developer_of	GraphPad Software, Inc.	57	2	Prism	42	0;;

@@ -1,1 +1,0 @@
-Version_of	11	46	1	Stata	40	0;;Developer_of	Stata Corp.	51	2	Stata	40	0;;Citation_of	[41]	87	3	Stata	40	0;;

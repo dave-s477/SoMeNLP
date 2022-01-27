@@ -1,1 +1,0 @@
-Version_of	12.1	55	1	STATA	39	0;;Developer_of	Stata Corp	62	2	STATA	39	0;;

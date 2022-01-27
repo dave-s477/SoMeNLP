@@ -1,6 +1,0 @@
-Version_of	3.0	32	1	CellProfiler	19	0;;
-
-Citation_of	[4]	79	1	CellProfiler	21	0;;
-Citation_of	[5]	125	3	CellProfiler	26	0;;
-Version_of	3.0	20	1	CellProfiler	7	0;;
-Version_of	3.0	33	1	CellProfiler	20	0;;PlugIn_of	MorphoLibJ	70	2	Fiji	91	3;;
