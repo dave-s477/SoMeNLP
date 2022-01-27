@@ -1,0 +1,6 @@
+
+PlugIn_of	DriverNet	0	0	Bioconductor	26	1;;URL_of	http://compbio.bccrc.ca/software/drivernet/	45	2	DriverNet	0	0;;
+
+
+
+Citation_of	[31]	73	2	R	63	1;;

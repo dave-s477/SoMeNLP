@@ -1,0 +1,36 @@
+{
+    "general": {
+        "type": "BioBERT",
+        "name": "Gold-BioBERT",
+        "checkpoint": {
+            "model": "",
+            "save_dir": "",
+            "log_dir": ""
+        },
+        "batch_size": 16,
+        "max_word_length": 17,
+        "max_sentence_length": -1
+    },
+    "model": {
+        "dropouts": {
+            "all": 0.3
+        },
+        "pretrained": {
+            "weights": "./data/pretrained/biobert-base-cased-v1.1",
+            "tokenizer": "./data/pretrained/biobert-base-cased-v1.1"
+        },
+        "gen": {
+            "max_grad_norm": 1.0
+        }
+    },
+    "training": {
+        "print_errors": true,
+        "max_output_length": 110,
+        "test_epochs": 1,
+        "save_epochs": 100,
+        "print_batches": 50,
+        "save_batches": 40000,
+        "test_batches": 10000,
+        "tag_mode": "bio"
+    }
+}

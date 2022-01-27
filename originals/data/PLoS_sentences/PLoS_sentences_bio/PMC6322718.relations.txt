@@ -1,0 +1,1 @@
+Abbreviation_of	PASW	43	2	SPSS	33	0;;Developer_of	SPSS Inc.	64	4	SPSS	33	0;;Version_of	17	38	1	SPSS	33	0;;

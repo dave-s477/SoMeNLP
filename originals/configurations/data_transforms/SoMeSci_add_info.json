@@ -1,0 +1,31 @@
+{
+    "O": "O",
+
+    "Application_Creation": "O",
+    "Application_Deposition": "O",
+    "Application_Usage": "O",
+    "Application_Mention": "O",
+
+    "PlugIn_Creation": "O",
+    "PlugIn_Deposition": "O",
+    "PlugIn_Usage": "O",
+    "PlugIn_Mention": "O",
+
+    "ProgrammingEnvironment_Usage": "O",
+    "ProgrammingEnvironment_Mention": "O",
+
+    "OperatingSystem_Usage": "O",
+    "OperatingSystem_Mention": "O",
+
+    "Version": "Version",
+    "Developer": "Developer",
+    "URL": "URL",
+    "License": "License",
+    "Citation": "Citation",
+    "Abbreviation": "Abbreviation",
+    "AlternativeName": "AlternativeName",
+    "Release": "Release",
+    "Extension": "Extension",
+
+    "SoftwareCoreference_Deposition": "O"
+}

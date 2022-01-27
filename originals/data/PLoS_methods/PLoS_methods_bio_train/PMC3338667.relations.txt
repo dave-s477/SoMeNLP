@@ -1,0 +1,96 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Citation_of	[13]	156	1	PyroTagger	134	0;;
+
+
+
+
+
+
+
+
+
+
+
+
+Citation_of	[14]	48	1	EstimateS	38	0;;
+
+
+
+
+
+
+
+
+
+
+
+Version_of	4.25	58	1	PCORD	42	0;;Citation_of	[19]	74	2	PCORD	42	0;;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Version_of	2.2	57	1	RDP Classifier	40	0;;Citation_of	[25]	61	2	RDP Classifier	40	0;;
+Version_of	5.5	62	1	Geneious	43	0;;Citation_of	[26]	66	2	Geneious	43	0;;
+
+
+URL_of	greengenes.lbl.gov/	77	1	Bellerpheron	57	0;;
+
+
+
+
+
+Citation_of	[28]	76	1	MEGA	71	0;;
+Citation_of	[29]	50	1	DNAsp	36	0;;
+
+
+
+Citation_of	[28]	117	1	MEGA	112	0;;
+
+
+
+
+
+
+
+
+
+
+
+

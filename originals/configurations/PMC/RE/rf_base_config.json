@@ -1,0 +1,36 @@
+{
+    "general": {
+        "type": "RF",
+        "name": "RF-RelationExtraction",
+        "checkpoint": {
+            "model": "",
+            "save_dir": "",
+            "log_dir": ""
+        },
+        "batch_size": 32,
+        "max_word_length": 17,
+        "max_sentence_length": -1,
+        "cross_val": false,
+        "train": false
+    },
+    "model": {
+        "n_estimators": 100,
+        "criterion": "gini",
+        "max_depth": null,
+        "min_samples_split": 2,
+        "min_samples_leaf": 1,
+        "min_weight_fraction_leaf": 0.0,
+        "max_features": "auto",
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "word_embedding": ""
+    },
+    "training": {},
+    "output": {
+        "confusion": true,
+        "no_neg": true,
+        "with_neg": false,
+        "latex": false,
+        "save_log": true
+    }
+}

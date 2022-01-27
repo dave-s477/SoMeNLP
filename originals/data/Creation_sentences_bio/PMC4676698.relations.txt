@@ -1,0 +1,6 @@
+Abbreviation_of	MIiSR	65	1	Molecular Interactions in Super Resolution	20	0;;
+
+Abbreviation_of	MIiSR	94	1	Molecular Interactions in Super-Resolution	47	0;;
+Citation_of	[34]	183	2	QuickPALM	164	1;;
+License_of	GNU General Public License	53	1	MIiSR	0	0;;URL_of	http://www.phagocytes.ca/miisr/	170	2	MIiSR	0	0;;
+

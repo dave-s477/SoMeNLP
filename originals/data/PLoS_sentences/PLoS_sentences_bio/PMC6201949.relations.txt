@@ -1,0 +1,1 @@
+PlugIn_of	PROCESS	111	4	SPSS	100	3;;PlugIn_of	PROCESS	233	7	SPSS	222	6;;Version_of	2.16	93	2	PROCESS	111	4;;Citation_of	[53]	78	1	PROCESS	111	4;;Developer_of	Hayes	66	0	PROCESS	111	4;;Developer_of	Hayes	212	5	PROCESS	233	7;;

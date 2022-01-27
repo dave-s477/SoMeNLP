@@ -1,0 +1,1 @@
+PROC MIXED procedure in SAS 9.2 was used to analyze all of the above data .

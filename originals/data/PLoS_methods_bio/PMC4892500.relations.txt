@@ -1,0 +1,49 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Developer_of	Roche	57	0	Newbler	63	1;;Version_of	2.6	84	2	Newbler	63	1;;Version_of	6.5.1	114	4	CLC Genomic Workbench	92	3;;Version_of	2.0.1	140	6	SMRT analysis	126	5;;
+Abbreviation_of	PGAAP	100	2	Prokaryotic Genomes Automatic Annotation Pipeline	48	1;;Citation_of	[40]	106	3	Prokaryotic Genomes Automatic Annotation Pipeline	48	1;;Developer_of	NCBI	39	0	Prokaryotic Genomes Automatic Annotation Pipeline	48	1;;
+
+
+Citation_of	[41, 42]	48	1	GARLI	42	0;;
+
+
+Version_of	2.08.02	107	1	Novoalign	95	0;;URL_of	http://www.novocraft.com	117	2	Novoalign	95	0;;Citation_of	[43]	215	4	SAMtools	181	3;;
+
+
+
+
+
+Citation_of	[41,42]	63	1	GARLI	57	0;;
+
+
+
+
+

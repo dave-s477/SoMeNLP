@@ -1,0 +1,1 @@
+Version_of	11.1	127	1	STATA	121	0;;Developer_of	StataCorp	134	2	STATA	121	0;;Release_of	2009	146	3	STATA	121	0;;

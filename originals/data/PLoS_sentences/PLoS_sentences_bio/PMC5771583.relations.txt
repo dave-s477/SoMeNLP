@@ -1,0 +1,1 @@
+Version_of	14.0	34	1	Stata	20	0;;Developer_of	StataCorp	41	2	Stata	20	0;;

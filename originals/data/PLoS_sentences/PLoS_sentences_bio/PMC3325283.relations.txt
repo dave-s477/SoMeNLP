@@ -1,0 +1,1 @@
+Version_of	19	39	1	SPSS	34	0;;Developer_of	IBM	44	2	SPSS Statistics	48	3;;Version_of	19.0.0	64	4	SPSS Statistics	48	3;;Specification_of	SPSS Statistics	48	3	SPSS	34	0;;

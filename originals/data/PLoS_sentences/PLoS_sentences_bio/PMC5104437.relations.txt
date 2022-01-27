@@ -1,0 +1,1 @@
+Version_of	14	153	2	STATA	116	0;;Developer_of	StataCorp L	158	3	STATA	116	0;;Extension_of	MP	122	1	STATA	116	0;;

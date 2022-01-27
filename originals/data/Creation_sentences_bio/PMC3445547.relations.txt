@@ -1,0 +1,6 @@
+
+
+
+Citation_of	[44]	16	1	web service	4	0;;URL_of	http://www.fragit.org	34	2	web service	4	0;;
+URL_of	http://www.github.com/FragIt/	167	1	development source	145	0;;
+License_of	GPL	69	1	FragIt	4	0;;Version_of	2	83	2	GPL	69	1;;

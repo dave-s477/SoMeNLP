@@ -1,0 +1,32 @@
+{
+    "general": {
+        "type": "NN",
+        "name": "NN-RelationExtraction",
+        "checkpoint": {
+            "model": "",
+            "save_dir": "",
+            "log_dir": ""
+        },
+        "batch_size": 32,
+        "max_word_length": 17,
+        "max_sentence_length": -1,
+        "cross_val": false,
+        "train": true
+    },
+    "model": {
+        "scaler": true,
+        "solver": "adam",
+        "epochs": 1000,
+        "lr": 1e-3,
+        "layers": [7],
+        "word_embedding": "data/word_embs/wikipedia-pubmed-and-PMC-w2v.bin"
+    },
+    "training": {},
+    "output": {
+        "confusion": true,
+        "no_neg": true,
+        "with_neg": false,
+        "latex": false,
+        "save_log": true
+    }
+}

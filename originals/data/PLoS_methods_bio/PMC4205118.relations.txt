@@ -1,0 +1,43 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abbreviation_of	CCS	148	1	Clinical Classifications Software	112	0;;Developer_of	HCUP	175	2	Clinical Classifications Software	112	0;;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Version_of	9.2	55	1	SAS	43	0;;
+Version_of	2.1	275	1	MLwiN	261	0;;Citation_of	[35]	279	2	MLwiN	261	0;;
+

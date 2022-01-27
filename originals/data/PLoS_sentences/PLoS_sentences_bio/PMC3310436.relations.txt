@@ -1,0 +1,2 @@
+Developer_of	Microsoft	31	0	Excel	41	1;;
+PlugIn_of	metareg	81	1	Stata	57	0;;Citation_of	[44]	89	2	metareg	81	1;;

@@ -1,0 +1,6 @@
+PlugIn_of	IHC Profiler	4	0	ImageJ	105	1;;
+PlugIn_of	IHC Profiler	144	0	ImageJ	188	1;;
+
+URL_of	https://sourceforge.net/projects/ihcprofiler/	65	1	IHC profiler	0	0;;
+Developer_of	Microsoft	50	1	Windows	60	2;;
+PlugIn_of	IHC Profiler	21	0	ImageJ	83	1;;

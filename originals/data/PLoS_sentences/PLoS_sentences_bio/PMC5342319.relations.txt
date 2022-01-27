@@ -1,0 +1,1 @@
+Version_of	14	38	1	Stata	30	0;;Developer_of	StataCorp	43	2	Stata	30	0;;Version_of	3.2.2	67	5	R	63	4;;URL_of	www.R-project.org	75	6	R	63	4;;Release_of	2015	53	3	Stata	30	0;;

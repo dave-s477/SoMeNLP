@@ -1,0 +1,1 @@
+All analyses were performed in Stata 14.0 ( College Station , TX USA ) .

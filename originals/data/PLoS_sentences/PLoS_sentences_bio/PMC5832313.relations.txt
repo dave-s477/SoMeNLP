@@ -1,0 +1,2 @@
+
+Version_of	22	49	1	SPSS	34	0;;Version_of	22.0.0.2	62	2	SPSS	34	0;;Developer_of	IBM Corp.	73	3	SPSS	34	0;;

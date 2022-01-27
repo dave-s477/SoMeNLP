@@ -1,0 +1,3 @@
+
+
+URL_of	http://sailing.cs.cmu.edu/Drosophila_ISH_images/	34	1	GINI	13	0;;

@@ -1,0 +1,4 @@
+
+License_of	GNU General Public License	63	1	ProDy	15	0;;URL_of	http://www.csb.pitt.edu/ProDy/	95	2	ProDy	15	0;;
+
+

@@ -1,0 +1,1 @@
+Version_of	14	61	1	STATA	55	0;;Developer_of	StataCorp	66	2	STATA	55	0;;Release_of	2009	78	3	STATA	55	0;;

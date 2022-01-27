@@ -1,0 +1,2 @@
+PlugIn_of	Complex Samples	163	1	SPSS	158	0;;
+Version_of	19	36	1	SPSS	31	0;;

@@ -1,0 +1,1 @@
+Release_of	2007	70	3	Excel	64	2;;Version_of	17.0	55	1	SPSS	50	0;;

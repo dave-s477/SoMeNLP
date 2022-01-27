@@ -1,0 +1,3 @@
+AlternativeName_of	hierarchical drift diffusion model	63	2	HDDM	56	1;;
+
+URL_of	http://ski.clps.brown.edu/hddm_docs/	54	1	software	4	0;;
