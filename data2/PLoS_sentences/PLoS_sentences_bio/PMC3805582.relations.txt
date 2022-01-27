@@ -1,1 +1,0 @@
-Version_of	11	73	1	STATA	59	0;;Developer_of	StataCorp LP	78	2	STATA	59	0;;

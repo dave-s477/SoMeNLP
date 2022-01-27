@@ -1,1 +1,0 @@
-Version_of	7.1	31	1	Mplus	25	0;;Citation_of	[28]	44	2	Mplus	25	0;;Developer_of	IBM	53	3	SPSS Statistics	57	4;;Version_of	22.0	73	5	SPSS Statistics	57	4;;

@@ -1,4 +1,0 @@
-AlternativeName_of	Structured COalescent Transmission Tree Inference	73	1	SCOTTI	64	0;;
-Version_of	2	84	2	BEAST	78	1;;PlugIn_of	SCOTTI	0	0	BEAST	78	1;;
-
-Version_of	2	95	2	BEAST	89	1;;Citation_of	[28]	97	3	BEAST	89	1;;PlugIn_of	SCOTTI	0	0	BEAST	89	1;;

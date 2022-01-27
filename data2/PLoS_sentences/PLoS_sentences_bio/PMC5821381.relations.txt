@@ -1,1 +1,0 @@
-Abbreviation_of	SAS	72	1	Statistical Analysis System	42	0;;Version_of	9.4	88	2	Statistical Analysis System	42	0;;Developer_of	SAS Institute Inc.	94	3	Statistical Analysis System	42	0;;

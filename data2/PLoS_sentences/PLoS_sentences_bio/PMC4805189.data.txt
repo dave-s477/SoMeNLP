@@ -1,1 +1,0 @@
-We built a generalized linear mixed model ( GLMM ) using the GLIMMIX procedure [43] in SAS v 9.3 to identify factors associated with the occurrence of groups .

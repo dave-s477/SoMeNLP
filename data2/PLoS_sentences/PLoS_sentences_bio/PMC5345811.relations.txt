@@ -1,1 +1,0 @@
-Version_of	23	129	2	SPSS	114	1;;Developer_of	IBM Corp	134	3	SPSS	114	1;;

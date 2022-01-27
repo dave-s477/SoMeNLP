@@ -1,2 +1,0 @@
-We used the SAS system (version 9.3 SAS Institute Inc.) for statistical analysis.
-

@@ -1,1 +1,0 @@
-Version_of	12.0	22	1	Stata	8	0;;

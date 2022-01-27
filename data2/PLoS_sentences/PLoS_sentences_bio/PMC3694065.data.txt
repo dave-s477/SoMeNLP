@@ -1,1 +1,0 @@
-Analyses were performed by using the statistical package STATA version 11 .

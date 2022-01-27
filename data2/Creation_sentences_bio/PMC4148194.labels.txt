@@ -1,5 +1,0 @@
-O O O O O O O O B-Application_Creation I-Application_Creation I-Application_Creation O B-AlternativeName I-AlternativeName I-AlternativeName I-AlternativeName I-AlternativeName I-AlternativeName I-AlternativeName O O O O O O O O O O O O O O O O O O O O O O O
-O O O O B-Application_Usage I-Application_Usage I-Application_Usage O O O O O O O O O O O O O O O O O O O O
-O O O O O O O O O O O O O O O O O O B-Application_Creation I-Application_Creation I-Application_Creation O B-AlternativeName I-AlternativeName I-AlternativeName I-AlternativeName I-AlternativeName I-AlternativeName I-AlternativeName O O
-O B-Application_Mention I-Application_Mention I-Application_Mention O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
-B-Application_Creation I-Application_Creation I-Application_Creation O O O O B-ProgrammingEnvironment_Usage O B-ProgrammingEnvironment_Usage I-ProgrammingEnvironment_Usage I-ProgrammingEnvironment_Usage O B-Application_Usage O O B-AlternativeName I-AlternativeName I-AlternativeName O O B-Version O O B-Extension I-Extension B-OperatingSystem_Usage O O O O O

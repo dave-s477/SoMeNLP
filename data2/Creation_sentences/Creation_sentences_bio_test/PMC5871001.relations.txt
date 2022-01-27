@@ -1,2 +1,0 @@
-
-License_of	GNU General Public License	52	1	LAILAPS-QSM	19	0;;Version_of	2	87	2	GNU General Public License	52	1;;URL_of	https://bitbucket.org/ipk_bit_team/bioescorte-suggestion	119	4	LAILAPS-QSM	19	0;;

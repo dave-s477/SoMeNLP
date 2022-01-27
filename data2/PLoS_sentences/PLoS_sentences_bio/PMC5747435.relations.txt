@@ -1,2 +1,0 @@
-
-Citation_of	[20]	27	2	Excel	21	1;;Developer_of	Microsoft	11	0	Excel	21	1;;Version_of	12	105	4	Stata	91	3;;Citation_of	[21]	108	5	Stata	91	3;;

@@ -1,1 +1,0 @@
-We used SAS 9.4 ( SAS Institute , Cary , NC , USA ) for data set - up and analyses .

@@ -1,7 +1,0 @@
-
-
-
-
-URL_of	http://pathomx.org	45	1	Pathomx	17	0;;
-
-Version_of	2.7	57	1	Python	50	0;;Version_of	5.2	66	3	Qt	63	2;;Version_of	3.0	152	5	GNU GPL	142	4;;

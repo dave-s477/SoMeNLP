@@ -1,1 +1,0 @@
-Developer_of	IBM	51	0	SPSS Statistics	55	1;;Version_of	21	90	2	SPSS Statistics	55	1;;Developer_of	IBM Corporation	95	3	SPSS Statistics	55	1;;

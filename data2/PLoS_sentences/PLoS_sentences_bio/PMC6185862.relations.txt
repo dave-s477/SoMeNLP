@@ -1,1 +1,0 @@
-Developer_of	Microsoft	31	1	excel	23	0;;Release_of	2010	41	2	excel	23	0;;

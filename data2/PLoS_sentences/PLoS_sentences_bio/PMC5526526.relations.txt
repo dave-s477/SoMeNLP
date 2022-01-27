@@ -1,1 +1,0 @@
-Version_of	14	181	2	Stata	173	1;;Developer_of	StataCorp	195	3	Stata	173	1;;Release_of	2011	207	4	Stata	173	1;;

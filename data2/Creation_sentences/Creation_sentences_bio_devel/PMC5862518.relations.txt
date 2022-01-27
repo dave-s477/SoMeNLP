@@ -1,5 +1,0 @@
-
-
-
-URL_of	https://github.com/batxes/4Cin	36	1	code	4	0;;License_of	GNU GENERAL PUBLIC LICENSE	74	2	code	4	0;;
-URL_of	https://hub.docker.com/r/batxes/4cin_ubuntu/	64	1	4Cin	4	0;;

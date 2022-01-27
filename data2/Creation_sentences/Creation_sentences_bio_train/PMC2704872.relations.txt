@@ -1,8 +1,0 @@
-
-URL_of	http://www.ebi.ac.uk/thornton-srv/software/PoreWalker/	55	1	software	4	0;;
-
-
-URL_of	http://www.ebi.ac.uk/thornton-srv/software/PoreWalker/	57	1	software	4	0;;
-
-
-

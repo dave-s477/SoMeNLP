@@ -1,1 +1,0 @@
-Version_of	13	36	1	STATA	30	0;;Citation_of	[28]	46	3	STATA	30	0;;Extension_of	SE	41	2	STATA	30	0;;

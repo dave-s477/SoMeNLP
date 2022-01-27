@@ -1,1 +1,0 @@
-Version_of	14.0J	33	1	SPSS	28	0;;Developer_of	SPSS Inc.	41	2	SPSS	28	0;;

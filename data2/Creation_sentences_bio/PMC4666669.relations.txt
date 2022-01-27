@@ -1,6 +1,0 @@
-AlternativeName_of	Whole-genome Alignment Metrics	37	1	Wham	30	0;;
-License_of	MIT License	55	1	Wham	0	0;;URL_of	https://github.com/zeeev/wham	110	3	Wham	0	0;;URL_of	http://zeeev.github.io/wham/	175	4	Wham	0	0;;
-
-
-
-URL_of	https://github.com/zeeev/wham	58	2	Wham	0	0;;URL_of	http://zeeev.github.io/wham/	123	3	Wham	0	0;;

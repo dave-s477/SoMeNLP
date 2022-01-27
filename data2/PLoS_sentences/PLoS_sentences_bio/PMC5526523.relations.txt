@@ -1,1 +1,0 @@
-Version_of	14	81	1	STATA	67	0;;Developer_of	Stata Corp LP	86	2	STATA	67	0;;

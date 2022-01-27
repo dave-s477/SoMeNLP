@@ -1,6 +1,0 @@
-AlternativeName_of	Leaf shApe deterMINAtion	27	1	LAMINA	18	0;;
-
-Citation_of	[20]	65	1	ImageJ	58	0;;
-AlternativeName_of	Leaf shApe deterMINAtion	26	1	LAMINA	17	0;;URL_of	http://sourceforge.net/projects/lamina	71	2	LAMINA	17	0;;Version_of	1.4.x	210	5	Java	205	4;;
-Abbreviation_of	JAI	40	2	Java Advanced Imaging	16	1;;URL_of	http://java.sun.com/javase/technologies/desktop/media/jai/	54	3	Java Advanced Imaging	16	1;;
-Version_of	2	18	1	GNU GPL	10	0;;

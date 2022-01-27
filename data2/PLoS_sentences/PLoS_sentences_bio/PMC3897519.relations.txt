@@ -1,1 +1,0 @@
-Version_of	19	39	1	SPSS	24	0;;Developer_of	SPSS Inc.	44	2	SPSS	24	0;;Release_of	2007	87	4	NCSS	82	3;;Developer_of	Number Cruncher Statistical Systems	94	5	NCSS	82	3;;

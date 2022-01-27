@@ -1,1 +1,0 @@
-Version_of	19.0	29	1	SPSS	24	0;;Developer_of	SPSS, Inc.	36	2	SPSS	24	0;;

@@ -1,2 +1,0 @@
-The statistical software IBM SPSS Statistics version 22 [39] and R [40] were used for the statistical analyses.
-

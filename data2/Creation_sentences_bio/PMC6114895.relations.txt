@@ -1,4 +1,0 @@
-
-URL_of	https://github.com/guigolab/ggsashimi	324	1	ggsashimi	291	0;;
-Citation_of	[5]	110	3	ggplot2	93	2;;
-URL_of	https://github.com/guigolab/ggsashimi	318	2	ggsashimi	285	1;;

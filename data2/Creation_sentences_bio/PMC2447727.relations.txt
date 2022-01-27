@@ -1,2 +1,0 @@
-AlternativeName_of	OligoHeatMap	6	1	OHM	0	0;;
-URL_of	http://bioinfo.unice.fr/ohm/	27	1	OHM	0	0;;

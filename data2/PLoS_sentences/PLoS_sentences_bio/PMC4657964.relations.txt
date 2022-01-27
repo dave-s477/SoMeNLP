@@ -1,1 +1,0 @@
-Version_of	22.0	13	1	SPSS	0	0;;Developer_of	SPSS, Inc.	20	2	SPSS	0	0;;Citation_of	[42]	39	4	R	37	3;;Citation_of	[43]	57	6	EpiTools	48	5;;

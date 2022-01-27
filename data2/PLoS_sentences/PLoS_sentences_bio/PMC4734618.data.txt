@@ -1,1 +1,0 @@
-We used STATA version 11 for the statistical analyses .

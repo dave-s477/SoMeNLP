@@ -1,1 +1,0 @@
-Version_of	13	14	1	STATA	0	0;;

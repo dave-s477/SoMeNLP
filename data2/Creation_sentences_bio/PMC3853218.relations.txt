@@ -1,7 +1,0 @@
-
-
-
-Extension_of	64-bit	41	1	Windows	50	2;;Extension_of	64-bit	41	1	Linux	62	3;;URL_of	http://www.cellXpress.org	170	4	cellXpress	4	0;;
-
-
-URL_of	http://www.cellXpress.org	55	1	cellXpress	4	0;;

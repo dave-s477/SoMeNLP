@@ -1,4 +1,0 @@
-Version_of	2.0	54	2	Apache License	39	1;;License_of	Apache License	39	1	OpenSim	4	0;;
-URL_of	simtk.org	77	1	OpenSim	34	0;;
-Version_of	2.0	73	2	Apache License	58	1;;License_of	Apache License	58	1	OpenSim	4	0;;
-URL_of	https://simtk.org/projects/opensim	162	1	OpenSim	8	0;;

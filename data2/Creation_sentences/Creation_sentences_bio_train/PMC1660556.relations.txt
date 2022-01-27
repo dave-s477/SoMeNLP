@@ -1,7 +1,0 @@
-PlugIn_of	coXpress	17	0	R	31	1;;
-
-
-
-PlugIn_of	CoXpress	0	0	R	38	1;;
-
-URL_of	http://coxpress.sf.net	50	1	coXpress	19	0;;PlugIn_of	gplots	165	6	R	161	5;;PlugIn_of	gtools	174	7	R	161	5;;PlugIn_of	gdata	183	8	R	161	5;;PlugIn_of	hu6800	208	9	R	161	5;;PlugIn_of	hgu95av2	218	10	R	161	5;;PlugIn_of	plotrix	231	11	R	161	5;;License_of	GNU GPL	268	12	coXpress	19	0;;

@@ -1,1 +1,0 @@
-[3] Analyses were performed using Stata 13.1 survey statistical methods that incorporated NHIS supplied probability weights, strata and primary sampling unit data. 

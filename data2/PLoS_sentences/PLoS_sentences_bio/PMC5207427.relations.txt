@@ -1,1 +1,0 @@
-Developer_of	Microsoft	0	0	Excel	10	1;;Specification_of	SPSS	66	3	Statistical Package for the Social Sciences	20	2;;Version_of	22.0	79	4	Statistical Package for the Social Sciences	20	2;;

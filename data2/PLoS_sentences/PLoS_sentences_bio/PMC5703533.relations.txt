@@ -1,1 +1,0 @@
-Version_of	10.0	62	1	STATA	46	0;;Version_of	3.2.2	88	3	R Studio	71	2;;

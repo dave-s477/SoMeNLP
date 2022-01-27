@@ -1,1 +1,0 @@
-Statistical analysis was performed using SAS 9.3 ( SAS Institute , Cary NC ) .

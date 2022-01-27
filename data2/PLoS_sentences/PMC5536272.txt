@@ -1,1 +1,0 @@
-The Gannet GABA analysis toolkit for Matlab was used to analyse GABA data [41]. 

@@ -1,4 +1,0 @@
-O O O O O O O O O O B-PlugIn_Creation O B-AlternativeName I-AlternativeName I-AlternativeName I-AlternativeName I-AlternativeName O O
-B-PlugIn_Creation O O O O O O O O O O O B-Application_Mention B-Version O
-O O O O O O O O B-PlugIn_Creation O O O O O O O O O O O O
-B-PlugIn_Creation O O O O O O O O O O O O O B-Application_Mention B-Version B-Citation O O O O O O O O O O O O O

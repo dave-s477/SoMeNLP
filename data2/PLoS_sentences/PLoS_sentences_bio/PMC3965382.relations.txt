@@ -1,1 +1,0 @@
-Version_of	4.0	66	2	Prism	50	1;;Version_of	20	91	4	SPSS	76	3;;Developer_of	GraphPad	41	0	Prism	50	1;;

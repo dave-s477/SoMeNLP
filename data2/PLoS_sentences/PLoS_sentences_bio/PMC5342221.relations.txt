@@ -1,1 +1,0 @@
-Version_of	13.0	11	1	STATA	5	0;;

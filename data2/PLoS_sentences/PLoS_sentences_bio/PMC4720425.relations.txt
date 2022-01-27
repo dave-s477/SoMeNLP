@@ -1,1 +1,0 @@
-Developer_of	GraphPad	42	0	InStat	51	1;;Version_of	3.10	66	2	InStat	51	1;;Developer_of	GraphPad Software, Inc.	73	3	InStat	51	1;;

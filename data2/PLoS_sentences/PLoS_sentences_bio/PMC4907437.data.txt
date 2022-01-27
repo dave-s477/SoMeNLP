@@ -1,1 +1,0 @@
-Analysis was performed using Stata version 13 and REALCOM - IMPUTE software [38] .
