@@ -1,0 +1,1 @@
+Developer_of	MS	50	0	Excel	53	1;;Developer_of	IBM	116	2	SPSS Statistics	120	3;;Version_of	22	138	4	SPSS Statistics	120	3;;

@@ -1,0 +1,5 @@
+
+
+PlugIn_of	CGBayesNets	0	0	MATLAB	30	1;;URL_of	http://www.cgbayesnets.com	130	3	CGBayesNets	0	0;;
+
+URL_of	www.cgbayesnets.com	86	1	CGBayesNets	4	0;;

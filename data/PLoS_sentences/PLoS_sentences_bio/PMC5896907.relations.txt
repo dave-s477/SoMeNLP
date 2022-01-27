@@ -1,0 +1,2 @@
+Developer_of	Microsoft	37	0	Excel	47	1;;Version_of	12	105	4	STATA	91	3;;Developer_of	STATA Corp	110	5	STATA	91	3;;
+

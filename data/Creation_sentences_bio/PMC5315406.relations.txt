@@ -1,0 +1,4 @@
+AlternativeName_of	Automated Simulation Parameter Alteration and SensItivity Analysis	21	1	ASPASIA	11	0;;
+URL_of	http://www.york.ac.uk/ycil/software	79	3	ASPASIA	0	0;;License_of	Artistic License	29	1	ASPASIA	0	0;;Version_of	2.0	48	2	Artistic License	29	1;;
+AlternativeName_of	Automated Simulation Parameter Alteration and SensItivity Analysis	115	1	ASPASIA	105	0;;
+License_of	Artistic License	47	1	ASPASIA	0	0;;Version_of	2.0	66	2	Artistic License	47	1;;

@@ -1,0 +1,5 @@
+AlternativeName_of	Volumetric Analysis of Surface Properties with Electrostatics	51	1	VASP-E	40	0;;
+
+AlternativeName_of	Volumetric Analysis of Surface Properties with Electrostatics	150	1	VASP-E	139	0;;
+
+AlternativeName_of	Gnu Compiler Collection	57	4	gcc	47	3;;Version_of	4.4.7	91	5	gcc	47	3;;Extension_of	64 bit	102	6	linux	109	7;;

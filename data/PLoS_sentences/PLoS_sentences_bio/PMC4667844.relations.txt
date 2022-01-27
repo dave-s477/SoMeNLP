@@ -1,0 +1,1 @@
+Version_of	18.0	43	1	statistical package for social science	4	0;;Specification_of	SPSS	50	2	statistical package for social science	4	0;;Version_of	18.0	55	3	statistical package for social science	4	0;;

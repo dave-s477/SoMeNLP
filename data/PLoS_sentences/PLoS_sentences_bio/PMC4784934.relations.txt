@@ -1,0 +1,1 @@
+Version_of	9.3	46	1	SAS	42	0;;Developer_of	SAS Institute INC.	52	2	SAS	42	0;;URL_of	http://www.r-project.org	105	4	R	92	3;;URL_of	http://www.singlecaseresearch.org/calculators/pabak-os	176	6	PABAK-OS calculator	152	5;;

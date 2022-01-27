@@ -1,0 +1,1 @@
+Version_of	12.1	38	1	STATA	22	0;;PlugIn_of	traj	78	2	STATA	22	0;;Citation_of	[24]	93	3	traj	78	2;;

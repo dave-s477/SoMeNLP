@@ -1,0 +1,1 @@
+Citation_of	[43]	76	1	JAGS	42	0;;Version_of	3.0.3	87	3	R	85	2;;Citation_of	[44]	93	4	R	85	2;;

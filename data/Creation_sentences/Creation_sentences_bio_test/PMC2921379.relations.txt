@@ -1,0 +1,4 @@
+AlternativeName_of	ANalyses of DEep Sequencing	119	3	ANDES	18	0;;
+
+
+URL_of	http://andestools.sourceforge.net/	43	1	ANDES	17	0;;URL_of	https://sourceforge.net/projects/andestools	98	2	ANDES	17	0;;License_of	GNU GPL	241	6	ANDES	17	0;;Version_of	3	251	7	ANDES	17	0;;

@@ -1,0 +1,1 @@
+Version_of	5	56	1	Statistical Parametric Mapping	25	0;;Version_of	5	64	3	SPM	60	2;;Developer_of	Wellcome Department of Cognitive Neurology	68	4	SPM	60	2;;Version_of	7.8	158	6	Matlab	151	5;;Developer_of	Mathworks	164	7	Matlab	151	5;;Specification_of	SPM	60	2	Statistical Parametric Mapping	25	0;;

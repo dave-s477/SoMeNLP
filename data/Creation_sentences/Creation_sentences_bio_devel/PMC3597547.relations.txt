@@ -1,0 +1,9 @@
+PlugIn_of	Chaste	0	0	C++	72	1;;
+
+Abbreviation_of	Chaste	45	1	Cancer, Heart And Soft Tissue Environment	0	0;;
+URL_of	http://www.cs.ox.ac.uk/chaste/download	111	1	Chaste	91	0;;
+PlugIn_of	Chaste	0	0	C++	21	1;;
+Developer_of	Microsoft	155	4	Windows	165	5;;
+URL_of	http://www.ohloh.net/p/Chaste	100	1	Chaste	27	0;;
+
+URL_of	http://www.cs.ox.ac.uk/chaste	59	1	Chaste	0	0;;

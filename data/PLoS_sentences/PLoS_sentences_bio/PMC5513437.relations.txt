@@ -1,0 +1,1 @@
+Version_of	13	64	1	STATA	50	0;;Abbreviation_of	SPSS	112	3	statistical package for social science	71	2;;Version_of	22	127	4	statistical package for social science	71	2;;

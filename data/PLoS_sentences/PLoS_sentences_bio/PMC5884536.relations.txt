@@ -1,0 +1,1 @@
+Specification_of	SPSS Statistics	129	2	Statistical Package for the Social Sciences	70	0;;Developer_of	IBM	125	1	SPSS Statistics	129	2;;Version_of	18	145	3	SPSS Statistics	129	2;;
