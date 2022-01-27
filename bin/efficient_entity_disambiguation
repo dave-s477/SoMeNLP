@@ -103,5 +103,6 @@ if __name__ == "__main__":
         print("Working on a sorted list of {} pairs".format(len(combined_distances)))
         start = time.time()
         efficient_clustering = EfficientClustering(combined_distances, config['threshold'], expanded_samples, args.save_path, int(args.ncores))
+        efficient_clustering.cluster()
         end = time.time()
         print("Clustering took {}s".format(round(end-start, 4)))
