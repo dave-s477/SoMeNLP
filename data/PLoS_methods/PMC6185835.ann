@@ -1,6 +1,6 @@
-T1	Application_Usage 1729 1741	Experimetrix
-T2	Application_Usage 5323 5330	E-Prime
-T3	Application_Usage 8313 8334	Brain Vision Analyzer
+T1	Application_Usage_DataCollection 1729 1741	Experimetrix
+T2	Application_Usage_Stimulation 5323 5330	E-Prime
+T3	Application_Usage_DataCollection 8313 8334	Brain Vision Analyzer
 T4	Version 5331 5334	2.0
 R1	Version_of Arg1:T4 Arg2:T2	
 T5	URL 5345 5384	http://www.pstnet.com/products/e-prime/

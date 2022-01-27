@@ -1,13 +1,13 @@
-T1	Application_Usage 9666 9669	SPM
+T1	Application_Usage_Analysis 9666 9669	SPM
+T3	PlugIn_Usage_DataPreProcss 9718 9724	DARTEL
+T4	PlugIn_Usage_Modelling 9889 9895	DARTEL
+T5	PlugIn_Usage_DataPreProcss 10134 10140	DARTEL
+T6	Application_Usage_DataPreProcss 13980 13993	WFU pickatlas
+T7	Application_Usage_DataPreProcss 13943 13959	Talairach Daemon
+T8	Application_Usage_Analysis 15099 15114	SPSS Statistics
+T9	Application_Usage_DataPreProcss 10288 10291	SPM
+T10	PlugIn_Usage_DataPreProcss 10449 10455	DARTEL
 T2	Application_Mention 9820 9823	SPM
-T3	PlugIn_Usage 9718 9724	DARTEL
-T4	PlugIn_Usage 9889 9895	DARTEL
-T5	PlugIn_Usage 10134 10140	DARTEL
-T6	Application_Usage 13980 13993	WFU pickatlas
-T7	Application_Usage 13943 13959	Talairach Daemon
-T8	Application_Usage 15099 15114	SPSS Statistics
-T9	Application_Usage 10288 10291	SPM
-T10	PlugIn_Usage 10449 10455	DARTEL
 T11	Version 9669 9670	8
 R1	Version_of Arg1:T11 Arg2:T1	
 T12	URL 9672 9711	www.fil.ion.ucl.ac.uk/spm/software/spm8

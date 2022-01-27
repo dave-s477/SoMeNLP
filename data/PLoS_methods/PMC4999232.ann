@@ -1,10 +1,10 @@
-T1	PlugIn_Usage 989 1010	Psychophysics Toolbox
-T2	ProgrammingEnvironment_Usage 1036 1042	Matlab
-T3	Application_Usage 6354 6358	SPSS
-T4	OperatingSystem_Usage 6368 6375	Windows
-T5	PlugIn_Usage 12574 12577	HGF
-T6	Application_Usage 12618 12623	TAPAS
-T7	Application_Usage 12911 12914	SPM
+T1	PlugIn_Usage_Stimulation 989 1010	Psychophysics Toolbox
+T2	ProgrammingEnvironment_Usage_Stimulation 1036 1042	Matlab
+T3	Application_Usage_Analysis 6354 6358	SPSS
+T4	OperatingSystem_Usage_Analysis 6368 6375	Windows
+T5	PlugIn_Usage_Modelling 12574 12577	HGF
+T6	Application_Usage_Modelling 12618 12623	TAPAS
+T7	Application_Usage_Modelling 12911 12914	SPM
 T8	Release 1043 1049	R2007b
 R1	Release_of Arg1:T8 Arg2:T2	
 T9	Developer 1051 1065	Mathworks Inc.

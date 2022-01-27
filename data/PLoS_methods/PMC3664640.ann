@@ -1,8 +1,8 @@
-T1	Application_Usage 4535 4557	MassHunter Acquisition
-T2	Application_Usage 4751 4782	MassHunter Qualitative Analysis
-T3	Application_Usage 5854 5880	Mass Profiler Professional
-T4	Application_Usage 6532 6558	Mass Profiler Professional
-T5	Application_Usage 7365 7370	Prism
+T1	Application_Usage_DataCollection 4535 4557	MassHunter Acquisition
+T2	Application_Usage_DataPreProcss 4751 4782	MassHunter Qualitative Analysis
+T3	Application_Usage_Analysis 5854 5880	Mass Profiler Professional
+T4	Application_Usage_Analysis 6532 6558	Mass Profiler Professional
+T5	Application_Usage_Analysis 7365 7370	Prism
 T11	Developer 4568 4588	Agilent Technologies
 R1	Developer_of Arg1:T11 Arg2:T1	
 T12	Developer 4743 4750	Agilent

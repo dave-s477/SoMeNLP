@@ -1,13 +1,14 @@
-T1	ProgrammingEnvironment_Usage 5478 5479	R
+T1	ProgrammingEnvironment_Usage_Analysis 5478 5479	R
+T6	ProgrammingEnvironment_Usage_Analysis 5794 5795	R
+T7	ProgrammingEnvironment_Usage_Programming 5825 5826	R
+T8	Application_Usage_DataPreProcss 14224 14229	Plink
+T9	Application_Usage_Analysis 14933 14959	Ingenuity Pathway Analysis
+T10	PlugIn_Usage_Analysis 5790 5793	eRM
+T20	Application_Usage_Analysis 14961 14964	IPA
 T2	Application_Mention 5536 5544	ConQuest
 T3	Application_Mention 5584 5588	RUMM
 T4	PlugIn_Mention 5611 5614	ltm
 T5	PlugIn_Mention 5652 5655	eRM
-T6	ProgrammingEnvironment_Usage 5794 5795	R
-T7	ProgrammingEnvironment_Usage 5825 5826	R
-T8	Application_Usage 14224 14229	Plink
-T9	Application_Usage 14933 14959	Ingenuity Pathway Analysis
-T10	PlugIn_Usage 5790 5793	eRM
 T12	URL 5546 5581	https://shop.acer.edu.au/group/CON3
 R1	URL_of Arg1:T12 Arg2:T2	
 T13	URL 5590 5608	www.rummlab.com.au
@@ -19,7 +20,6 @@ R4	URL_of Arg1:T15 Arg2:T5
 R5	PlugIn_of Arg1:T10 Arg2:T6	
 T19	Citation 14331 14335	[36]
 R9	Citation_of Arg1:T19 Arg2:T8	
-T20	Application_Usage 14961 14964	IPA
 R10	Specification_of Arg1:T20 Arg2:T9	
 T21	Developer 14924 14930	QIAGEN
 R11	Developer_of Arg1:T21 Arg2:T9	

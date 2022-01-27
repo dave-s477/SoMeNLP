@@ -1,5 +1,5 @@
-T1	Application_Usage 5733 5737	SPSS
-T2	Application_Usage 5845 5848	JMP
+T1	Application_Usage_Analysis 5733 5737	SPSS
+T2	Application_Usage_Analysis 5845 5848	JMP
 T11	Version 5746 5750	15.0
 T12	Developer 5752 5760	SPSS Inc
 R2	Developer_of Arg1:T12 Arg2:T1	

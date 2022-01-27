@@ -1,4 +1,4 @@
-T1	Application_Usage 5478 5521	Statistical Package for the Social Sciences
+T1	Application_Usage_Analysis 5478 5521	Statistical Package for the Social Sciences
 T2	Abbreviation 5523 5527	SPSS
 R1	Abbreviation_of Arg1:T2 Arg2:T1	
 T3	Version 5537 5539	22

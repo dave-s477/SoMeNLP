@@ -1,8 +1,8 @@
-T1	Application_Usage 2692 2698	Mothur
-T2	Application_Usage 3845 3850	Venny
-T4	Application_Usage 5737 5747	SILVA SINA
-T5	Application_Usage 6013 6017	MEGA
-T9	Application_Usage 3833 3839	Mothur
+T1	Application_Usage_Analysis 2692 2698	Mothur
+T2	Application_Usage_Visualization 3845 3850	Venny
+T4	Application_Usage_DataPreProcss 5737 5747	SILVA SINA
+T5	Application_Usage_Modelling 6013 6017	MEGA
+T9	Application_Usage_Visualization 3833 3839	Mothur
 T3	Version 2701 2707	1.33.3
 R1	Version_of Arg1:T3 Arg2:T1	
 T14	Citation 2708 2712	[12]

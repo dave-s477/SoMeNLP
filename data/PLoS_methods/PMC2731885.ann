@@ -1,5 +1,5 @@
-T1	Application_Usage 1983 1992	Structure
-T2	Application_Usage 2006 2014	ADMIXMAP
+T1	Application_Usage_Modelling 1983 1992	Structure
+T2	Application_Usage_Modelling 2006 2014	ADMIXMAP
 T3	Version 1993 1996	2.2
 R1	Version_of Arg1:T3 Arg2:T1	
 T4	Citation 1997 2001	[71]

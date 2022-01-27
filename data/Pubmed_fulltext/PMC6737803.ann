@@ -1,8 +1,8 @@
-T1	Application_Usage 955 959	SPSS
+T1	Application_Usage_Analysis 955 959	SPSS
+T3	Application_Usage_Analysis 7293 7308	SPSS Statistics
+T4	OperatingSystem_Usage_Analysis 7313 7320	Windows
 T2	Version 968 970	22
 R1	Version_of Arg1:T2 Arg2:T1	
-T3	Application_Usage 7293 7308	SPSS Statistics
-T4	OperatingSystem_Usage 7313 7320	Windows
 T5	Version 7329 7333	22.0
 R2	Version_of Arg1:T5 Arg2:T3	
 T6	Developer 7347 7356	IBM Corp.

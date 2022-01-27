@@ -1,19 +1,29 @@
-T1	Application_Usage 2167 2171	AFNI
-T2	Application_Usage 2415 2419	AFNI
-T3	Application_Usage 2465 2469	AFNI
-T4	Application_Usage 2777 2781	AFNI
-T5	Application_Usage 3294 3298	AFNI
-T6	Application_Usage 3817 3827	FreeSurfer
-T7	Application_Usage 3916 3920	AFNI
-T8	PlugIn_Usage 4028 4034	PyMVPA
-T9	Application_Usage 4156 4166	FreeSurfer
-T10	PlugIn_Usage 4834 4838	SUMA
-T11	PlugIn_Usage 7181 7185	SUMA
-T12	PlugIn_Usage 29351 29357	BootES
-T13	PlugIn_Usage 34937 34943	PyMVPA
-T14	Application_Usage 35117 35128	NeuroDebian
-T15	OperatingSystem_Usage 35060 35066	Debian
-T32	Application_Usage 28342 28352	NeuroSynth
+T1	Application_Usage_DataPreProcss 2167 2171	AFNI
+T2	Application_Usage_DataPreProcss 2415 2419	AFNI
+T3	Application_Usage_DataPreProcss 2465 2469	AFNI
+T4	Application_Usage_DataPreProcss 2777 2781	AFNI
+T5	Application_Usage_Modelling 3294 3298	AFNI
+T6	Application_Usage_Modelling 3817 3827	FreeSurfer
+T7	Application_Usage_Modelling 3916 3920	AFNI
+T8	PlugIn_Usage_Analysis 4028 4034	PyMVPA
+T9	Application_Usage_DataPreProcss 4156 4166	FreeSurfer
+T10	PlugIn_Usage_Modelling 4834 4838	SUMA
+T11	PlugIn_Usage_Modelling 7181 7185	SUMA
+T12	PlugIn_Usage_Analysis 29351 29357	BootES
+T13	PlugIn_Usage_Analysis 34937 34943	PyMVPA
+T14	Application_Usage_Analysis 35117 35128	NeuroDebian
+T15	OperatingSystem_Usage_Analysis 35060 35066	Debian
+T32	Application_Usage_Analysis 28342 28352	NeuroSynth
+T41	PlugIn_Usage_DataPreProcss 2402 2411	3dDespike
+T42	PlugIn_Usage_DataPreProcss 2451 2461	3dBandpass
+T43	PlugIn_Usage_Modelling 3923 3937	MapIcosahedron
+T17	PlugIn_Usage_Modelling 5728 5735	MSM-All
+T19	PlugIn_Usage_DataPreProcss 8628 8635	MSM-All
+T20	PlugIn_Usage_DataPreProcss 8828 8835	MSM-All
+T21	PlugIn_Usage_Analysis 29613 29620	MSM-All
+T22	PlugIn_Usage_Analysis 29837 29844	MSM-All
+T23	PlugIn_Usage_DataPreProcss 31794 31801	MSM-All
+T24	PlugIn_Usage_DataPreProcss 32601 32608	MSM-All
 T39	Citation 2181 2185	[42]
 R1	Citation_of Arg1:T39 Arg2:T1	
 T40	URL 2186 2210	http://afni.nimh.nih.gov
@@ -43,23 +53,13 @@ T57	Citation 35129 35133	[52]
 R20	Citation_of Arg1:T57 Arg2:T14	
 T59	URL 35134 35157	http://neuro.debian.net
 R21	URL_of Arg1:T59 Arg2:T14	
-T41	PlugIn_Usage 2402 2411	3dDespike
 R3	PlugIn_of Arg1:T41 Arg2:T2	
-T42	PlugIn_Usage 2451 2461	3dBandpass
 R4	PlugIn_of Arg1:T42 Arg2:T3	
-T43	PlugIn_Usage 3923 3937	MapIcosahedron
 R5	PlugIn_of Arg1:T43 Arg2:T7	
 T16	Citation 7186 7190	[43]
 R7	Citation_of Arg1:T16 Arg2:T11	
-T17	PlugIn_Usage 5728 5735	MSM-All
 T18	Citation 5736 5740	[22]
 R12	Citation_of Arg1:T18 Arg2:T17	
-T19	PlugIn_Usage 8628 8635	MSM-All
-T20	PlugIn_Usage 8828 8835	MSM-All
-T21	PlugIn_Usage 29613 29620	MSM-All
-T22	PlugIn_Usage 29837 29844	MSM-All
-T23	PlugIn_Usage 31794 31801	MSM-All
-T24	PlugIn_Usage 32601 32608	MSM-All
 R19	Extension_of Arg1:T56 Arg2:T15	
 T25	Version 35072 35078	wheezy
 R13	Version_of Arg1:T25 Arg2:T15	

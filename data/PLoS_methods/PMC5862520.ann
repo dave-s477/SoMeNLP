@@ -1,8 +1,8 @@
-T1	Application_Usage 1750 1765	SPSS Statistics
-T2	Application_Usage 1687 1692	Excel
-T3	Application_Usage 2006 2010	QGIS
-T4	Application_Usage 2021 2028	ArcView
-T5	Application_Usage 1966 1974	DIVA-GIS
+T1	Application_Usage_Analysis 1750 1765	SPSS Statistics
+T2	Application_Usage_DataCollection 1687 1692	Excel
+T3	Application_Usage_Visualization 2006 2010	QGIS
+T4	Application_Usage_Visualization 2021 2028	ArcView
+T5	Application_Usage_Visualization 1966 1974	DIVA-GIS
 T8	Developer 1677 1686	Microsoft
 R1	Developer_of Arg1:T8 Arg2:T2	
 T9	Release 1693 1697	2010

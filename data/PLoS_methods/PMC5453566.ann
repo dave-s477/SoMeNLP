@@ -1,6 +1,6 @@
-T1	Application_Usage 5375 5381	FlowJo
-T2	Application_Usage 6270 6276	FlowJo
-T3	Application_Usage 6366 6371	Prism
+T1	Application_Usage_Analysis 5375 5381	FlowJo
+T2	Application_Usage_Analysis 6270 6276	FlowJo
+T3	Application_Usage_Analysis 6366 6371	Prism
 T4	Version 5391 5393	10
 R1	Version_of Arg1:T4 Arg2:T1	
 T5	Developer 5395 5404	Tree Star

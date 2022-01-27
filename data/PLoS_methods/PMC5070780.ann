@@ -1,22 +1,24 @@
-T1	Application_Usage 3756 3762	FastQC
-T2	Application_Usage 3828 3839	Trimmomatic
-T3	Application_Usage 4181 4185	STAR
-T4	Application_Usage 4274 4282	Samtools
-T5	Application_Usage 4737 4745	Mirdeep2
-T6	Application_Usage 4994 4999	BLAST
-T7	Application_Usage 5113 5121	Mirdeep2
-T8	ProgrammingEnvironment_Usage 5429 5430	R
-T9	PlugIn_Usage 5456 5461	edgeR
-T10	PlugIn_Usage 5468 5473	vegan
-T11	PlugIn_Usage 5483 5489	gplots
-T12	ProgrammingEnvironment_Usage 5664 5665	R
-T13	PlugIn_Usage 5659 5663	edge
-T14	Application_Usage 7248 7260	Primer-BLAST
-T15	Application_Usage 7658 7697	Statistical Package for Social Sciences
-T16	Application_Usage 8156 8182	Ingenuity Pathway Analysis
-T17	Application_Usage 9212 9217	miRDB
-T18	Application_Usage 9590 9600	TargetScan
-T19	Application_Usage 9791 9796	miRDB
+T1	Application_Usage_DataCollection 3756 3762	FastQC
+T2	Application_Usage_DataPreProcss 3828 3839	Trimmomatic
+T3	Application_Usage_DataPreProcss 4181 4185	STAR
+T4	Application_Usage_DataPreProcss 4274 4282	Samtools
+T5	Application_Usage_Analysis 4737 4745	Mirdeep2
+T6	Application_Usage_DataCollection 4994 4999	BLAST
+T7	Application_Usage_DataCollection 5113 5121	Mirdeep2
+T8	ProgrammingEnvironment_Usage_Analysis 5429 5430	R
+T9	PlugIn_Usage_Analysis 5456 5461	edgeR
+T10	PlugIn_Usage_Analysis 5468 5473	vegan
+T11	PlugIn_Usage_Analysis 5483 5489	gplots
+T12	ProgrammingEnvironment_Usage_Modelling 5664 5665	R
+T13	PlugIn_Usage_Modelling 5659 5663	edge
+T14	Application_Usage_Modelling 7248 7260	Primer-BLAST
+T15	Application_Usage_Analysis 7658 7697	Statistical Package for Social Sciences
+T16	Application_Usage_Analysis 8156 8182	Ingenuity Pathway Analysis
+T17	Application_Usage_Analysis 9212 9217	miRDB
+T18	Application_Usage_Analysis 9590 9600	TargetScan
+T19	Application_Usage_Modelling 9791 9796	miRDB
+T35	Application_Usage_Analysis 7708 7712	SPSS
+T38	Application_Usage_Analysis 8184 8187	IPA
 T22	Version 3773 3779	0.11.2
 T23	Citation 3780 3784	[89]
 R1	Version_of Arg1:T22 Arg2:T1	
@@ -45,13 +47,11 @@ T33	Developer 7262 7266	NCBI
 R16	Developer_of Arg1:T33 Arg2:T14	
 T34	Developer 7654 7657	IBM
 R17	Developer_of Arg1:T34 Arg2:T15	
-T35	Application_Usage 7708 7712	SPSS
 T36	Version 7719 7721	21
 R18	Version_of Arg1:T36 Arg2:T35	
 T37	Developer 7723 7736	IMB SPSS Inc.
 R19	Developer_of Arg1:T37 Arg2:T35	
 R20	Specification_of Arg1:T35 Arg2:T15	
-T38	Application_Usage 8184 8187	IPA
 T39	Developer 8189 8211	Ingenuity Systems Inc.
 R22	Developer_of Arg1:T39 Arg2:T38	
 T40	Developer 8149 8155	Qiagen

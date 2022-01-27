@@ -1,10 +1,10 @@
-T1	Application_Usage 8223 8230	BioEdit
-T2	Application_Usage 8127 8143	Sequence Scanner
-T3	Application_Usage 9543 9551	Arlequin
-T4	Application_Usage 9668 9672	SPSS
-T5	Application_Usage 9775 9782	Network
-T6	Application_Usage 10063 10069	Surfer
-T7	Application_Usage 9399 9407	Arlequín
+T1	Application_Usage_DataPreProcss 8223 8230	BioEdit
+T2	Application_Usage_Analysis 8127 8143	Sequence Scanner
+T3	Application_Usage_Analysis 9543 9551	Arlequin
+T4	Application_Usage_Visualization 9668 9672	SPSS
+T5	Application_Usage_Visualization 9775 9782	Network
+T6	Application_Usage_Visualization 10063 10069	Surfer
+T7	Application_Usage_Modelling 9399 9407	Arlequín
 T8	Version 8145 8148	1.0
 T9	Developer 8150 8168	Applied BioSystems
 R1	Version_of Arg1:T8 Arg2:T2	

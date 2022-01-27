@@ -1,13 +1,13 @@
-T2	Application_Usage 5100 5103	FSL
-T3	PlugIn_Usage 5930 5956	Artifact Rejection Toolbox
-T4	PlugIn_Usage 6802 6806	CONN
-T5	Application_Usage 6831 6834	SPM
-T6	Application_Usage 7000 7003	SPM
-T7	PlugIn_Usage 7057 7061	CONN
-T8	PlugIn_Usage 7452 7455	ART
-T9	PlugIn_Usage 7546 7549	ART
-T10	PlugIn_Usage 8142 8146	conn
-T11	Application_Usage 8975 9007	Wake Forest University PickAtlas
+T2	Application_Usage_DataPreProcss 5100 5103	FSL
+T3	PlugIn_Usage_Modelling 5930 5956	Artifact Rejection Toolbox
+T4	PlugIn_Usage_Analysis 6802 6806	CONN
+T5	Application_Usage_Analysis 6831 6834	SPM
+T6	Application_Usage_DataPreProcss 7000 7003	SPM
+T7	PlugIn_Usage_Analysis 7057 7061	CONN
+T8	PlugIn_Usage_Modelling 7452 7455	ART
+T9	PlugIn_Usage_Analysis 7546 7549	ART
+T10	PlugIn_Usage_Analysis 8142 8146	conn
+T11	Application_Usage_Modelling 8975 9007	Wake Forest University PickAtlas
 T12	Version 5108 5109	5
 R1	Version_of Arg1:T12 Arg2:T2	
 T13	URL 5111 5140	http://fsl.fmrib.ox.ac.uk/fsl

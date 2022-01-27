@@ -1,9 +1,9 @@
-T1	Application_Usage 4783 4787	Scan
-T2	Application_Usage 5322 5326	Scan
-T3	ProgrammingEnvironment_Usage 14156 14157	R
-T4	ProgrammingEnvironment_Usage 14204 14210	MATLAB
-T5	Application_Usage 14369 14379	BrainStorm
-T6	Application_Usage 14389 14397	openMEEG
+T1	Application_Usage_DataCollection 4783 4787	Scan
+T2	Application_Usage_DataPreProcss 5322 5326	Scan
+T3	ProgrammingEnvironment_Usage_Analysis 14156 14157	R
+T4	ProgrammingEnvironment_Usage_Programming 14204 14210	MATLAB
+T5	Application_Usage_Modelling 14369 14379	BrainStorm
+T6	Application_Usage_Modelling 14389 14397	openMEEG
 T7	Application_Deposition 14235 14246	LAN toolbox
 T8	Version 4788 4791	4.3
 R1	Version_of Arg1:T8 Arg2:T1	

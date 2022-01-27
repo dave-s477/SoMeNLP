@@ -1,7 +1,7 @@
-T1	Application_Usage 7429 7432	SPM
-T2	PlugIn_Usage 9372 9379	Marsbar
-T3	Application_Usage 12489 12492	SPM
-T4	Application_Usage 12462 12471	Pickatlas
+T1	Application_Usage_Analysis 7429 7432	SPM
+T2	PlugIn_Usage_Modelling 9372 9379	Marsbar
+T3	Application_Usage_DataPreProcss 12489 12492	SPM
+T4	Application_Usage_DataPreProcss 12462 12471	Pickatlas
 T5	Version 7432 7433	8
 R1	Version_of Arg1:T5 Arg2:T1	
 T6	Developer 7435 7473	Wellcome Trust Centre for Neuroimaging

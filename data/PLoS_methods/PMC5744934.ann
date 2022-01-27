@@ -1,5 +1,5 @@
-T1	Application_Usage 5886 5891	STATA
-T2	Application_Usage 5842 5847	Excel
+T1	Application_Usage_Analysis 5886 5891	STATA
+T2	Application_Usage_DataCollection 5842 5847	Excel
 T3	Developer 5832 5841	Microsoft
 R1	Developer_of Arg1:T3 Arg2:T2	
 T4	Release 5848 5852	2007

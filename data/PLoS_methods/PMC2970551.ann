@@ -1,4 +1,4 @@
-T1	Application_Usage 4247 4252	Stata
+T1	Application_Usage_Analysis 4247 4252	Stata
 T3	Version 4261 4263	11
 T4	Developer 4265 4279	Stata Corp. LP
 R1	Developer_of Arg1:T4 Arg2:T1	

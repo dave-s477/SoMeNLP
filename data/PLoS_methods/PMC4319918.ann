@@ -1,6 +1,6 @@
-T1	Application_Usage 2345 2350	VPixx
-T2	Application_Usage 3026 3036	Habit 2000
-T3	Application_Usage 9010 9019	TouchStat
+T1	Application_Usage_Stimulation 2345 2350	VPixx
+T2	Application_Usage_DataCollection 3026 3036	Habit 2000
+T3	Application_Usage_Analysis 9010 9019	TouchStat
 T4	Citation 2361 2365	[34]
 R1	Citation_of Arg1:T4 Arg2:T1	
 T6	Citation 3046 3050	[35]

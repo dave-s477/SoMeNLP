@@ -1,8 +1,8 @@
-T1	Application_Usage 5666 5697	Fire Weather Indices Calculator
-T3	ProgrammingEnvironment_Usage 11117 11118	R
-T4	PlugIn_Usage 11195 11200	dismo
-T5	ProgrammingEnvironment_Usage 11202 11203	R
-T6	ProgrammingEnvironment_Usage 14663 14664	R
+T1	Application_Usage_Analysis 5666 5697	Fire Weather Indices Calculator
+T3	ProgrammingEnvironment_Usage_Analysis 11117 11118	R
+T4	PlugIn_Usage_Modelling 11195 11200	dismo
+T5	ProgrammingEnvironment_Usage_Programming 11202 11203	R
+T6	ProgrammingEnvironment_Usage_Analysis 14663 14664	R
 T7	URL 5763 5773	www.wsl.ch
 T8	Developer 5758 5761	WSL
 R1	URL_of Arg1:T7 Arg2:T8	

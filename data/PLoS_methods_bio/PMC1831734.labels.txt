@@ -7,7 +7,7 @@ O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
-O O O O O O O O O O O O O O O O O O B-Application_Usage O O O B-Version O B-Developer I-Developer I-Developer O B-URL O O
+O O O O O O O O O O O O O O O O O O B-Application_Usage_DataCollection O O O B-Version O B-Developer I-Developer I-Developer O B-URL O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O
@@ -54,7 +54,7 @@ O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
-O O O O O B-Application_Usage O B-Version O B-Developer O B-URL O O
+O O O O O B-Application_Usage_Analysis O B-Version O B-Developer O B-URL O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O

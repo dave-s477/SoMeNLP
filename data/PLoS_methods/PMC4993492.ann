@@ -1,7 +1,7 @@
-T1	Application_Usage 2882 2889	Acrobat
-T2	Application_Usage 7067 7073	FlowJo
-T3	Application_Usage 8365 8373	ToupView
-T4	Application_Usage 8747 8755	Statview
+T1	Application_Usage_DataCollection 2882 2889	Acrobat
+T2	Application_Usage_Analysis 7067 7073	FlowJo
+T3	Application_Usage_DataCollection 8365 8373	ToupView
+T4	Application_Usage_Analysis 8747 8755	Statview
 T5	Developer 2876 2881	Adobe
 R1	Developer_of Arg1:T5 Arg2:T1	
 T6	Developer 7084 7093	Tree Star

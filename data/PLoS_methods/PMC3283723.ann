@@ -1,9 +1,9 @@
-T1	Application_Usage 1987 1995	SeqScape
-T2	Application_Usage 2240 2248	Arlequin
-T3	Application_Usage 2381 2391	STATISTICA
-T4	Application_Usage 2562 2572	STATISTICA
-T5	Application_Usage 3539 3546	Network
-T6	Application_Usage 3580 3586	mtPhyl
+T1	Application_Usage_Analysis 1987 1995	SeqScape
+T2	Application_Usage_Analysis 2240 2248	Arlequin
+T3	Application_Usage_Analysis 2381 2391	STATISTICA
+T4	Application_Usage_Analysis 2562 2572	STATISTICA
+T5	Application_Usage_Analysis 3539 3546	Network
+T6	Application_Usage_Analysis 3580 3586	mtPhyl
 T9	Version 1999 2002	2.5
 R1	Version_of Arg1:T9 Arg2:T1	
 T10	Developer 2013 2031	Applied Biosystems

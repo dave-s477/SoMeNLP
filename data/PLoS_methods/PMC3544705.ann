@@ -1,12 +1,12 @@
-T1	Application_Usage 9121 9131	Videotrack
-T2	Application_Usage 16837 16846	Photoshop
-T3	Application_Usage 18524 18530	pClamp
-T4	Application_Usage 19615 19621	pClamp
-T5	Application_Usage 19629 19637	Igor pro
-T6	Application_Usage 19856 19863	Visilog
-T7	Application_Usage 20407 20414	Visilog
-T8	Application_Usage 9809 9819	VideoTrack
-T9	Application_Usage 10652 10662	VideoTrack
+T1	Application_Usage_DataCollection 9121 9131	Videotrack
+T2	Application_Usage_DataPreProcss 16837 16846	Photoshop
+T3	Application_Usage_Analysis 18524 18530	pClamp
+T4	Application_Usage_Analysis 19615 19621	pClamp
+T5	Application_Usage_Analysis 19629 19637	Igor pro
+T6	Application_Usage_DataCollection 19856 19863	Visilog
+T7	Application_Usage_Analysis 20407 20414	Visilog
+T8	Application_Usage_Analysis 9809 9819	VideoTrack
+T9	Application_Usage_Analysis 10652 10662	VideoTrack
 T21	Developer 9133 9142	Viewpoint
 R1	Developer_of Arg1:T21 Arg2:T1	
 T22	Developer 16831 16836	Adobe

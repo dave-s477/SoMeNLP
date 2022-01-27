@@ -1,8 +1,8 @@
-T1	Application_Usage 5311 5319	TrackVis
-T2	Application_Usage 5931 5934	FSL
-T3	PlugIn_Usage 5915 5918	FDT
-T4	Application_Usage 8067 8109	Waikato Environment for Knowledge Analysis
-T5	Application_Usage 9890 9895	Stata
+T1	Application_Usage_Modelling 5311 5319	TrackVis
+T2	Application_Usage_Modelling 5931 5934	FSL
+T3	PlugIn_Usage_Modelling 5915 5918	FDT
+T4	Application_Usage_Modelling 8067 8109	Waikato Environment for Knowledge Analysis
+T5	Application_Usage_Analysis 9890 9895	Stata
 T6	URL 5330 5350	http://trackvis.org/
 R1	URL_of Arg1:T6 Arg2:T1	
 T7	URL 5945 5971	http://fsl.fmrib.ox.ac.uk/

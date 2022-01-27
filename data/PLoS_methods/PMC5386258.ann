@@ -1,9 +1,9 @@
-T1	ProgrammingEnvironment_Usage 14445 14446	R
-T2	PlugIn_Usage 14481 14496	H2O R interface
-T3	PlugIn_Usage 14589 14600	h2oEnsemble
-T4	OperatingSystem_Usage 14873 14880	Windows
-T5	ProgrammingEnvironment_Usage 15276 15277	R
-T6	PlugIn_Usage 15286 15290	pROC
+T1	ProgrammingEnvironment_Usage_Modelling 14445 14446	R
+T2	PlugIn_Usage_Analysis 14481 14496	H2O R interface
+T3	PlugIn_Usage_Modelling 14589 14600	h2oEnsemble
+T4	OperatingSystem_Usage_Analysis 14873 14880	Windows
+T5	ProgrammingEnvironment_Usage_Analysis 15276 15277	R
+T6	PlugIn_Usage_Modelling 15286 15290	pROC
 T7	Citation 14468 14472	[34]
 R1	Citation_of Arg1:T7 Arg2:T1	
 T8	Version 14505 14512	3.8.2.2

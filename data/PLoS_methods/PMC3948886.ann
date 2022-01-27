@@ -1,6 +1,6 @@
-T1	Application_Usage 4572 4575	SPM
-T2	Application_Usage 9883 9886	SPM
-T3	ProgrammingEnvironment_Usage 10709 10715	Matlab
+T1	Application_Usage_DataPreProcss 4572 4575	SPM
+T2	Application_Usage_Modelling 9883 9886	SPM
+T3	ProgrammingEnvironment_Usage_Analysis 10709 10715	Matlab
 T4	PlugIn_Creation 10766 10787	neurofeedback toolbox
 T5	Version 4575 4576	8
 R1	Version_of Arg1:T5 Arg2:T1	

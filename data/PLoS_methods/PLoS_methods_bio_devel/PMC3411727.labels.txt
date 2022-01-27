@@ -14,7 +14,7 @@ O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O 
 O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O
-B-Application_Usage I-Application_Usage I-Application_Usage B-Version O O B-Developer I-Developer I-Developer I-Developer O O O O O O
+B-Application_Usage_Stimulation I-Application_Usage_Stimulation I-Application_Usage_Stimulation B-Version O O B-Developer I-Developer I-Developer I-Developer O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
@@ -65,15 +65,15 @@ O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O
-O O O O O O O O O O O O O O O O B-Application_Usage I-Application_Usage I-Application_Usage B-Version O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
+O O O O O O O O O O O O O O O O B-Application_Usage_DataCollection I-Application_Usage_DataCollection I-Application_Usage_DataCollection B-Version O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
-O O O B-Application_Usage O O O O O O O O O O O O O O B-Application_Usage O B-Developer B-Application_Usage B-Release O O
-B-Application_Usage O B-Application_Usage B-Version O B-Developer I-Developer I-Developer I-Developer O O O B-Developer B-Application_Usage B-Version I-Version O O B-Version O O O O O O O O O O O O O O O O O O
-B-Application_Usage I-Application_Usage O O B-Version O B-Version O B-Developer O O O O O O O O O O O O
+O O O B-Application_Usage_DataCollection O O O O O O O O O O O O O O B-Application_Usage_DataCollection O B-Developer B-Application_Usage_DataCollection B-Release O O
+B-Application_Usage_Visualization O B-Application_Usage_Visualization B-Version O B-Developer I-Developer I-Developer I-Developer O O O B-Developer B-Application_Usage_Visualization B-Version I-Version O O B-Version O O O O O O O O O O O O O O O O O O
+B-Application_Usage_Modelling I-Application_Usage_Modelling O O B-Version O B-Version O B-Developer O O O O O O O O O O O O
 O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O

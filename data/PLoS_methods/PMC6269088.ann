@@ -1,11 +1,11 @@
-T1	PlugIn_Usage 7195 7205	TensorFlow
-T2	PlugIn_Usage 8199 8210	PyRadiomics
-T3	PlugIn_Usage 8346 8349	irr
-T4	PlugIn_Usage 8592 8597	mRMRe
-T5	PlugIn_Usage 10225 10233	survcomp
-T6	Application_Usage 11985 11989	GSEA
-T7	Application_Usage 12253 12257	GSEA
-T8	PlugIn_Usage 9064 9069	caret
+T1	PlugIn_Usage_Analysis 7195 7205	TensorFlow
+T2	PlugIn_Usage_Analysis 8199 8210	PyRadiomics
+T3	PlugIn_Usage_Analysis 8346 8349	irr
+T4	PlugIn_Usage_Analysis 8592 8597	mRMRe
+T5	PlugIn_Usage_Analysis 10225 10233	survcomp
+T6	Application_Usage_Analysis 11985 11989	GSEA
+T7	Application_Usage_Analysis 12253 12257	GSEA
+T8	PlugIn_Usage_Analysis 9064 9069	caret
 T10	Developer 7162 7168	Google
 R1	Developer_of Arg1:T10 Arg2:T1	
 T11	Citation 7206 7210	[40]

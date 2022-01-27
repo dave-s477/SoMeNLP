@@ -1,7 +1,7 @@
-T1	Application_Usage 2107 2113	MUSCLE
-T2	Application_Usage 2123 2127	MEGA
-T3	Application_Usage 15757 15762	Prism
-T9	Application_Usage 2115 2119	MEGA
+T1	Application_Usage_DataPreProcss 2107 2113	MUSCLE
+T2	Application_Usage_DataPreProcss 2123 2127	MEGA
+T3	Application_Usage_Analysis 15757 15762	Prism
+T9	Application_Usage_DataPreProcss 2115 2119	MEGA
 T10	Developer 15748 15756	GraphPad
 R4	Developer_of Arg1:T10 Arg2:T3	
 T11	Developer 15764 15781	GraphPad Software

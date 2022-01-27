@@ -1,5 +1,5 @@
-T1	Application_Usage 7482 7485	SAS
-T2	Application_Usage 7528 7534	SUDAAN
+T1	Application_Usage_Analysis 7482 7485	SAS
+T2	Application_Usage_Analysis 7528 7534	SUDAAN
 T10	Version 7495 7498	9.4
 R3	Version_of Arg1:T10 Arg2:T1	
 T11	Developer 7500 7508	SAS Inc.

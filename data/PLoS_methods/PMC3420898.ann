@@ -1,12 +1,12 @@
-T1	Application_Usage 4520 4529	Cyberball
+T1	Application_Usage_Stimulation 4520 4529	Cyberball
+T3	Application_Usage_Analysis 7482 7485	SPM
+T4	Application_Usage_DataPreProcss 7893 7896	SPM
+T5	Application_Usage_Analysis 8767 8770	SPM
+T6	Application_Usage_Analysis 8920 8923	SPM
+T7	Application_Usage_Stimulation 3459 3468	Cyberball
 T2	Application_Mention 5128 5137	Cyberball
-T3	Application_Usage 7482 7485	SPM
-T4	Application_Usage 7893 7896	SPM
-T5	Application_Usage 8767 8770	SPM
-T6	Application_Usage 8920 8923	SPM
-T7	Application_Usage 3459 3468	Cyberball
 T8	Application_Mention 5277 5286	Cyberball
-T9	Application_Usage 6377 6386	Cyberball
+T9	Application_Mention 6377 6386	Cyberball
 T10	Version 7485 7486	8
 R1	Version_of Arg1:T10 Arg2:T3	
 T11	URL 7488 7520	http://www.fil.ion.ucl.ac.uk/spm

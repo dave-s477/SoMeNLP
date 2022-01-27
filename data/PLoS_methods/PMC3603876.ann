@@ -1,7 +1,7 @@
-T1	Application_Usage 3272 3281	Dataquest
-T2	Application_Usage 7764 7770	Primer
-T3	Application_Usage 8104 8110	GeNorm
-T4	Application_Usage 8659 8665	GeNorm
+T1	Application_Usage_DataPreProcss 3272 3281	Dataquest
+T2	Application_Usage_Modelling 7764 7770	Primer
+T3	Application_Usage_Analysis 8104 8110	GeNorm
+T4	Application_Usage_Analysis 8659 8665	GeNorm
 T5	Developer 3292 3319	Data Sciences International
 R1	Developer_of Arg1:T5 Arg2:T1	
 T6	Version 8112 8115	3.3

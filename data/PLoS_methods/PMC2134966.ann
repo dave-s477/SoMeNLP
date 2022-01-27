@@ -1,6 +1,6 @@
-T1	Application_Usage 874 886	DS ViewerPro
-T2	Application_Usage 6038 6044	SHARP2
-T5	Application_Usage 5819 5831	ConSurf-HSSP
+T1	Application_Usage_Visualization 874 886	DS ViewerPro
+T2	Application_Usage_Analysis 6038 6044	SHARP2
+T5	Application_Usage_Analysis 5819 5831	ConSurf-HSSP
 T7	Version 887 890	6.0
 R2	Version_of Arg1:T7 Arg2:T1	
 T8	Citation 891 895	[42]

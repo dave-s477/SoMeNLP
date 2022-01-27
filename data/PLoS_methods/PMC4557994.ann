@@ -1,21 +1,22 @@
-T1	Application_Usage 246 256	FreeSurfer
-T2	Application_Usage 1009 1019	FreeSurfer
-T3	Application_Usage 1629 1639	FreeSurfer
-T4	Application_Usage 1829 1832	FSL
-T5	Application_Usage 1887 1891	AFNI
-T6	Application_Usage 1896 1899	FSL
-T7	PlugIn_Usage 2252 2258	DTIFit
-T8	Application_Usage 2349 2359	FreeSurfer
-T9	Application_Usage 2459 2530	Statistical Analysis of Minimum cost path based Structural Connectivity
-T10	Application_Usage 3666 3670	ANFI
-T11	Application_Usage 3675 3678	FSL
-T12	Application_Usage 3761 3765	AFNI
-T13	Application_Usage 4801 4811	FreeSurfer
-T14	Application_Usage 13176 13186	FreeSurfer
-T15	Application_Usage 13585 13595	FreeSurfer
-T16	Application_Usage 14654 14664	FreeSurfer
+T1	Application_Usage_DataCollection 246 256	FreeSurfer
+T2	Application_Usage_DataCollection 1009 1019	FreeSurfer
+T3	Application_Usage_Analysis 1629 1639	FreeSurfer
+T4	Application_Usage_Analysis 1829 1832	FSL
+T5	Application_Usage_DataPreProcss 1887 1891	AFNI
+T6	Application_Usage_DataPreProcss 1896 1899	FSL
+T7	PlugIn_Usage_DataCollection 2252 2258	DTIFit
+T8	Application_Usage_Modelling 2349 2359	FreeSurfer
+T9	Application_Usage_Analysis 2459 2530	Statistical Analysis of Minimum cost path based Structural Connectivity
+T10	Application_Usage_DataPreProcss 3666 3670	ANFI
+T11	Application_Usage_DataPreProcss 3675 3678	FSL
+T12	Application_Usage_DataPreProcss 3761 3765	AFNI
+T13	Application_Usage_DataPreProcss 4801 4811	FreeSurfer
+T14	Application_Usage_DataPreProcss 13176 13186	FreeSurfer
+T15	Application_Usage_DataPreProcss 13585 13595	FreeSurfer
+T16	Application_Usage_Modelling 14654 14664	FreeSurfer
+T18	Application_Usage_DataPreProcss 3222 3228	SAMSCo
+T29	PlugIn_Usage_Analysis 1835 1840	FLIRT
 T17	Application_Mention 3083 3089	SAMSCo
-T18	Application_Usage 3222 3228	SAMSCo
 T19	Application_Mention 3408 3414	SAMSCo
 T21	Citation 257 261	[17]
 R1	Citation_of Arg1:T21 Arg2:T1	
@@ -32,5 +33,4 @@ R6	Citation_of Arg1:T26 Arg2:T9
 T27	Citation 3685 3692	[18,19]
 R7	Citation_of Arg1:T27 Arg2:T11	
 R8	Citation_of Arg1:T27 Arg2:T10	
-T29	PlugIn_Usage 1835 1840	FLIRT
 R10	PlugIn_of Arg1:T29 Arg2:T4	

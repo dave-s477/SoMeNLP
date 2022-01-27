@@ -1,5 +1,5 @@
-T1	ProgrammingEnvironment_Usage 4300 4301	R
-T2	Application_Usage 5858 5861	SAS
+T1	ProgrammingEnvironment_Usage_Analysis 4300 4301	R
+T2	Application_Usage_Analysis 5858 5861	SAS
 T3	Developer 4312 4335	R Development Core Team
 R1	Developer_of Arg1:T3 Arg2:T1	
 T4	Version 4351 4357	2.11.1

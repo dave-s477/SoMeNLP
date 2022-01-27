@@ -1,5 +1,5 @@
-T1	Application_Usage 4780 4785	STATA
-T2	Application_Usage 4835 4840	MLwiN
+T1	Application_Usage_Analysis 4780 4785	STATA
+T2	Application_Usage_Modelling 4835 4840	MLwiN
 T3	Version 4786 4788	11
 T4	Version 4849 4853	2.10
 R1	Version_of Arg1:T4 Arg2:T2	

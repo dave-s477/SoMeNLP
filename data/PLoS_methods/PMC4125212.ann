@@ -1,13 +1,13 @@
-T1	Application_Usage 5970 5992	MassARRAY Assay Design
-T2	Application_Usage 6497 6512	MassARRAY Typer
-T3	Application_Usage 6838 6845	GENEPOP
-T4	Application_Usage 6913 6918	CLUMP
-T5	Application_Usage 7230 7269	Statistical Package for Social Sciences
-T6	OperatingSystem_Usage 7288 7295	windows
-T7	Application_Usage 7409 7412	2LD
-T8	Application_Usage 7462 7474	GENECOUNTING
-T9	Application_Usage 8205 8208	PGA
-T11	Application_Usage 4914 4923	Haploview
+T1	Application_Usage_Modelling 5970 5992	MassARRAY Assay Design
+T2	Application_Usage_DataCollection 6497 6512	MassARRAY Typer
+T3	Application_Usage_Analysis 6838 6845	GENEPOP
+T4	Application_Usage_Simulation 6913 6918	CLUMP
+T5	Application_Usage_Analysis 7230 7269	Statistical Package for Social Sciences
+T6	OperatingSystem_Usage_Analysis 7288 7295	windows
+T7	Application_Usage_Analysis 7409 7412	2LD
+T8	Application_Usage_Modelling 7462 7474	GENECOUNTING
+T9	Application_Usage_Analysis 8205 8208	PGA
+T11	Application_Usage_DataCollection 4914 4923	Haploview
 T14	Citation 4924 4928	[41]
 R2	Citation_of Arg1:T14 Arg2:T11	
 T15	Version 6014 6017	3.1

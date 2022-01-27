@@ -1,32 +1,32 @@
-T1	Application_Usage 12395 12400	SLINK
-T2	Application_Usage 13876 13881	PLINK
-T3	Application_Usage 13891 13899	PEDSTATS
-T4	Application_Usage 14876 14882	MORGAN
-T5	Application_Usage 15643 15681	Copy Number Inference from Exome Reads
-T6	Application_Usage 15710 15717	CoNIFER
-T7	Application_Usage 15846 15853	mrsFAST
-T8	Application_Usage 16572 16579	PennCNV
-T9	Application_Usage 16589 16595	cnvHap
+T1	Application_Usage_Analysis 12395 12400	SLINK
+T2	Application_Usage_Analysis 13876 13881	PLINK
+T3	Application_Usage_Analysis 13891 13899	PEDSTATS
+T4	Application_Usage_Analysis 14876 14882	MORGAN
+T5	Application_Usage_DataCollection 15643 15681	Copy Number Inference from Exome Reads
+T6	Application_Usage_DataCollection 15710 15717	CoNIFER
+T7	Application_Usage_Modelling 15846 15853	mrsFAST
+T8	Application_Usage_Analysis 16572 16579	PennCNV
+T9	Application_Usage_Analysis 16589 16595	cnvHap
+T13	Application_Usage_Analysis 17368 17374	BEAGLE
+T14	Application_Usage_DataPreProcss 17505 17510	PLINK
+T15	Application_Usage_DataPreProcss 17645 17650	PLINK
+T16	Application_Usage_Analysis 17862 17868	BEAGLE
+T17	Application_Usage_Modelling 17893 17899	BEAGLE
+T18	Application_Usage_Analysis 18916 18922	MERLIN
+T19	Application_Usage_Modelling 19398 19422	Variant Effect Predictor
+T20	Application_Usage_Analysis 19463 19469	GEMINI
+T21	Application_Usage_DataPreProcss 20405 20409	GATK
+T22	Application_Usage_Analysis 20707 20715	PolyPhen
+T23	Application_Usage_Analysis 20608 20631	Genome Variation Server
+T24	Application_Usage_Analysis 20729 20768	Combined Annotation Dependent Depletion
+T29	Application_Usage_Analysis 14089 14121	Pedigree-Based Analysis Pipeline
+T34	Application_Usage_DataPreProcss 19309 19320	Seattle Seq
 T10	Application_Mention 16602 16609	PennCNV
 T11	Application_Mention 16889 16896	PennCNV
 T12	Application_Mention 16898 16904	cnvHap
-T13	Application_Usage 17368 17374	BEAGLE
-T14	Application_Usage 17505 17510	PLINK
-T15	Application_Usage 17645 17650	PLINK
-T16	Application_Usage 17862 17868	BEAGLE
-T17	Application_Usage 17893 17899	BEAGLE
-T18	Application_Usage 18916 18922	MERLIN
-T19	Application_Usage 19398 19422	Variant Effect Predictor
-T20	Application_Usage 19463 19469	GEMINI
-T21	Application_Usage 20405 20409	GATK
-T22	Application_Usage 20707 20715	PolyPhen
-T23	Application_Usage 20608 20631	Genome Variation Server
-T24	Application_Usage 20729 20768	Combined Annotation Dependent Depletion
 T25	Application_Mention 22071 22078	CoNIFER
 T26	Application_Mention 22338 22346	PEDSTATS
 T27	Application_Mention 22457 22462	PLINK
-T29	Application_Usage 14089 14121	Pedigree-Based Analysis Pipeline
-T34	Application_Usage 19309 19320	Seattle Seq
 T35	Application_Mention 21953 21959	BEAGLE
 T36	Application_Mention 22110 22116	GEMINI
 T37	Application_Mention 22170 22176	MORGAN

@@ -1,5 +1,5 @@
-T1	Application_Usage 4427 4438	WinEpiscope
-T2	Application_Usage 16167 16171	NCSS
+T1	Application_Usage_Analysis 4427 4438	WinEpiscope
+T2	Application_Usage_Analysis 16167 16171	NCSS
 T7	Version 4440 4443	2.0
 R1	Version_of Arg1:T7 Arg2:T1	
 T8	Citation 4453 4457	[39]

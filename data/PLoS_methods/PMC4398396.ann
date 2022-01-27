@@ -1,7 +1,7 @@
-T1	Application_Usage 8576 8594	Remote Proctor Now
-T2	Application_Usage 8647 8655	ProctorU
-T6	PlugIn_Usage 15408 15415	ggplot2
-T7	ProgrammingEnvironment_Usage 15397 15398	R
+T1	Application_Usage_Simulation 8576 8594	Remote Proctor Now
+T2	Application_Usage_Simulation 8647 8655	ProctorU
+T6	PlugIn_Usage_Visualization 15408 15415	ggplot2
+T7	ProgrammingEnvironment_Usage_Visualization 15397 15398	R
 T8	Developer 8600 8615	Software Secure
 R1	Developer_of Arg1:T8 Arg2:T1	
 T9	URL 8617 8642	http://softwaresecure.com

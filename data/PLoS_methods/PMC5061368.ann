@@ -1,5 +1,5 @@
-T1	ProgrammingEnvironment_Usage 7575 7576	R
-T2	PlugIn_Usage 7619 7623	nlme
+T1	ProgrammingEnvironment_Usage_Analysis 7575 7576	R
+T2	PlugIn_Usage_Analysis 7619 7623	nlme
 T3	Version 7585 7590	3.2.2
 R1	Version_of Arg1:T3 Arg2:T1	
 R2	PlugIn_of Arg1:T2 Arg2:T1	

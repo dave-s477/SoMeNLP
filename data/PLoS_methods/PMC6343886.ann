@@ -1,5 +1,5 @@
-T1	Application_Usage 8295 8309	NQuery Advisor
-T2	Application_Usage 8370 8375	STATA
+T1	Application_Usage_Analysis 8295 8309	NQuery Advisor
+T2	Application_Usage_Analysis 8370 8375	STATA
 T5	Developer 8313 8322	StatsSols
 R1	Developer_of Arg1:T5 Arg2:T1	
 T6	Version 8331 8334	3.0

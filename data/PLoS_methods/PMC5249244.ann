@@ -1,7 +1,7 @@
-T1	Application_Usage 2088 2093	qBase
-T2	Application_Usage 2592 2602	Statistica
-T3	Application_Usage 3300 3314	Genevestigator
-T4	Application_Usage 2214 2219	qBase
+T1	Application_Usage_DataPreProcss 2088 2093	qBase
+T2	Application_Usage_Analysis 2592 2602	Statistica
+T3	Application_Usage_Analysis 3300 3314	Genevestigator
+T4	Application_Usage_Analysis 2214 2219	qBase
 T5	Version 2094 2097	2.0
 T6	Developer 2099 2109	Biogazelle
 R1	Version_of Arg1:T5 Arg2:T1	
