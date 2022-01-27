@@ -1,0 +1,6 @@
+Abbreviation_of	WPS	70	1	WholePathwayScope	50	0;;
+URL_of	http://www.abcc.ncifcrf.gov/wps/wps_index.php	32	1	tool	4	0;;
+Abbreviation_of	WPS	317	2	WholePathwayScope	294	1;;
+Abbreviation_of	WPS	21	1	WholePathwayScope	0	0;;
+
+URL_of	http://www.abcc.ncifcrf.gov/wps/wps_index.php	92	1	WPS	39	0;;Citation_of	[63]	138	2	WPS	39	0;;Developer_of	Microsoft	162	3	Window	172	4;;Version_of	2000	179	5	Window	172	4;;Version_of	XP	187	6	Window	172	4;;Developer_of	Microsoft	213	7	Visual Basic	223	8;;Version_of	6	236	9	Visual Basic	223	8;;

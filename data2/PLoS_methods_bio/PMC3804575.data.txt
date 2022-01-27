@@ -1,0 +1,33 @@
+Bacterial Strains , Plasmids , and Growth Conditions : The bacterial strains and plasmids used in this study are described in Table 1 .
+LB and TSB broths and agar were used for the growth of P . aeruginosa and Escherichia coli strains at 37 ° C .
+Cultures were inoculated at an optical density at 600 nm ( OD 600 ) of 0.1 with overnight cultures , and strains were grown at 30 , 37 or 42 ° C with aeration in TSB .
+Recombinant plasmids were introduced into P . aeruginosa using the conjugative properties of pRK 2013 ( Table 1 ) or by electroporation .
+Pseudomonas transconjugants were selected on Pseudomonas isolation agar ( PIA , Difco Laboratories ) supplemented with appropriate antibiotics .
+The antibiotic concentrations were as follows : for E . coli , ampicillin ( 50 μ g ml - 1 ) , kanamycin ( 25 μ g ml - 1 ) , tetracycline ( 15 μ g ml - 1 ) , gentamicin ( 10 μ g ml - 1 ) ; for P . aeruginosa , tetracycline ( 200 μ g ml - 1 for plates or 50 μ g ml - 1 for liquid growth ) , gentamicin ( 50 μ g ml - 1 ) , carbenicillin ( 500 μ g ml - 1 ) .
+Table data removed from full text .
+Table identifier and caption : 10.1371/journal.pone.0076030.t001 Strains , plasmids and oligonucleotides used in this study .
+lacZ Reporter Fusion and β - galactosidase Assay : The H3 - T6SS left - lacZ and H3 - T6SS right - lacZ transcriptional fusions were constructed by PCR amplification of respectively 486 and 494 bp upstream DNA region from the lip 3 or hsiB 3 gene by using TSO 15 / TSO 16 and TSO 17 / TSO 18 primers ( Table 1 ) .
+PCR amplification products were directly cloned into the pMini - CTX : : lacZ vector [18] , yielding pTS 12 and pTS 13 , in pCR 2.1 , and pTS 19 and pTS 20 in MiniCTX - ‘ lacZ .
+Nucleotide sequences were verified by sequencing ( GATC ) .
+The promoter fragment was integrated at the CTX phage attachment site in PAO 1 and isogenic mutants using established protocols [18] .
+Overnight culture , grown in TSB , was diluted in TSB to OD 600 = 0.1 .
+Growth and ß - galactosidase activity were monitored by harvesting samples at different time intervals .
+ß - galactosidase activity was measured according Miller [19] , based on o - nitrophenyl - β - D - galactopyranoside hydrolysis .
+ß - galactosidase activities were expressed in Miller units .
+Construction of the Δ clpV 2 Δ cplV 3 Mutant : To generate the Δ clpV 2cplV 3 mutant , the pTS 27 mutator plasmid [14] was mobilized in the P . aeruginosa strain PAO 1 Δ clpV 3 [20] .
+Mutants which had undergone a double recombination event , resulting in the non - polar deletion of the clpV 2 gene , were verified by PCR with the primers OA 14 and OA 17 that flank clpV 2 .
+Construction of sfa 2 and sfa 3 Mutants : To generate sfa 2 and sfa 3 mutants , internal fragments of 490 and 511 bp were respectively amplified with TSO 118 - TSO 119 and TSO 120 - TSO 121 and cloned in the pCR 2.1 , resulting in pSBC 56 and pSBC 57 .
+The mutator plasmids were electroporated into P . aeruginosa PAO 1 and the mutant bacteria selected on PIA medium containing Carbenicillin .
+The insertions were verified by PCR with the primer pairs TSO 39 - TSO 40 - TSO 45 and TSO 41 - TSO 42 - TSO 46 that hybridize outside and inside of the sfa 2 and sfa 3 genes .
+The slow killing assay was performed as described previously [14] .
+Each independent assay consisted of three replicates .
+E . coli OP 50 was used as a control .
+L4 to adult stage C . elegans were removed from food and placed on unseeded NGM plates for 24 hours at 25 ° C .
+50 worms were then picked onto plates containing overnight grown bacteria .
+Worms were evaluated for viability on a daily basis .
+Animal survival was plotted using the PRISM 5.0 program .
+Survival curves are considered significantly different from the control when P - values are < 0.05 .
+Prism calculates survival fractions using the product limit ( Kaplan - Meier ) method .
+Prism compares survival curves by two methods : the log - rank test ( also called the Mantel - Cox test ) and the Gehan - Breslow - Wilcoxon test .
+Paired Student ’ s t tests were performed using Excel software .
+In the figures , * means P - values ≤ 0.05 , * * ≤ 0.01 , and * * * ≤ 0.001 .

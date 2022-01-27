@@ -1,0 +1,1 @@
+Version_of	3.0.3	66	2	R	64	1;;PlugIn_of	rjags	52	0	R	64	1;;Version_of	3.3.0	83	4	JAGS	76	3;;

@@ -1,0 +1,14 @@
+
+
+
+
+
+
+
+
+
+Developer_of	Microsoft	50	0	Excel	60	1;;Release_of	2010	66	2	Excel	60	1;;Developer_of	IBM	119	3	SPSS Statistics	123	4;;Version_of	20	147	5	SPSS Statistics	123	4;;
+
+URL_of	http://www.diva-gis.org/	77	1	DIVA-GIS	64	0;;Version_of	1.8.0	114	3	QGIS	109	2;;Version_of	3.2	132	5	ArcView	124	4;;
+
+

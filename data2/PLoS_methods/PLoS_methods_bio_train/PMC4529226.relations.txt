@@ -1,0 +1,70 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Version_of	5	35	1	FSL	26	0;;URL_of	http://fsl.fmrib.ox.ac.uk/fsl	39	2	FSL	26	0;;
+
+
+
+
+Abbreviation_of	ART	62	1	Artifact Rejection Toolbox	33	0;;URL_of	http://www.nitrc.org/projects/artifact_detect/	68	2	Artifact Rejection Toolbox	33	0;;
+
+
+
+
+Version_of	14.p	72	1	CONN	59	0;;Citation_of	[46]	77	2	CONN	59	0;;Developer_of	Wellcome Department of Imaging Neuroscience	97	5	SPM	89	3;;URL_of	www.fil.ion.ucl.ac.uk/spm	157	6	SPM	89	3;;Version_of	8	93	4	SPM	89	3;;
+Version_of	8	84	1	SPM	80	0;;
+Citation_of	[46]	17	1	CONN	4	0;;
+
+
+
+
+
+Version_of	14p	61	1	conn	45	0;;Citation_of	[46]	65	2	conn	45	0;;
+
+
+
+
+Citation_of	[50, 51]	64	1	Wake Forest University PickAtlas	31	0;;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

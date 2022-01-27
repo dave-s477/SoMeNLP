@@ -1,0 +1,63 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Developer_of	BD Biosciences	122	1	BD FACSDiva	99	0;;
+
+
+
+
+
+
+Citation_of	[8,16]	50	1	FastQC	43	0;;
+
+Version_of	2.0.8	95	2	Tophat	82	0;;Citation_of	[17]	103	3	Tophat	82	0;;Developer_of	Illumina	117	4	iGenomes	126	5;;URL_of	http://support.illumina.com/sequencing/sequencing_software/igenome.html	153	6	iGenomes	126	5;;Version_of	2	89	1	Tophat	82	0;;
+Version_of	2.1.1	96	1	Cufflinks	82	0;;Citation_of	[18]	104	2	Cufflinks	82	0;;
+
+
+
+
+
+
+
+
+
+Abbreviation_of	DAVID	114	1	Database for Annotation, Visualization and Integrated Discovery	47	0;;URL_of	http://david.abcc.ncifcrf.gov	122	2	Database for Annotation, Visualization and Integrated Discovery	47	0;;Citation_of	[23,24]	154	3	Database for Annotation, Visualization and Integrated Discovery	47	0;;
+Abbreviation_of	FAT	88	2	Functional Annotation Tool	59	1;;PlugIn_of	Functional Annotation Tool	59	1	DAVID	53	0;;
+Abbreviation_of	EASE	81	1	Expression Analysis Systematic Explorer	39	0;;
+
+
+Citation_of	[29,30]	81	1	GSEA-P	55	0;;
+
+
+Citation_of	[27,28,32]	55	1	BisoGenet	35	0;;Citation_of	[24,33]	99	3	Cytoscape	77	2;;PlugIn_of	BisoGenet	35	0	Cytoscape	77	2;;
+
+
+
+

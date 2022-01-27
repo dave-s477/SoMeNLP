@@ -1,0 +1,1 @@
+Version_of	20.0	52	2	SPSS	25	0;;Developer_of	SPSS Inc.	66	4	SPSS	25	0;;Release_of	2012	59	3	SPSS	25	0;;

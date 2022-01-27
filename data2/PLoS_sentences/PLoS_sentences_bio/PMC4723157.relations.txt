@@ -1,0 +1,1 @@
+Developer_of	IBM	4	0	Statistical Package for the Social Sciences	8	1;;Specification_of	SPSS	54	2	Statistical Package for the Social Sciences	8	1;;Version_of	22	61	3	SPSS	54	2;;

@@ -1,0 +1,72 @@
+{
+  "software_query": {
+    "target": "software",
+    "query_string": "SELECT DISTINCT ?item ?itemLabel ?abbreviation WHERE {{?item wdt:P31 wd:Q7397 .} UNION {?d1_sub wdt:P279 wd:Q7397 .?item wdt:P31 ?d1_sub .} UNION {?d1_sub wdt:P279 wd:Q7397 .?d2_sub wdt:P279 ?d1_sub .?item wdt:P31 ?d2_sub .} UNION {?d1_sub wdt:P279 wd:Q7397 .?d2_sub wdt:P279 ?d1_sub .?d3_sub wdt:P279 ?d2_sub .?item wdt:P31 ?d3_sub .} UNION {?d1_sub wdt:P279 wd:Q7397 .?d2_sub wdt:P279 ?d1_sub .?d3_sub wdt:P279 ?d2_sub .?d4_sub wdt:P279 ?d3_sub .?item wdt:P31 ?d4_sub .} UNION {?d1_sub wdt:P279 wd:Q7397 .?d2_sub wdt:P279 ?d1_sub .?d3_sub wdt:P279 ?d2_sub .?d4_sub wdt:P279 ?d3_sub .?d5_sub wdt:P279 ?d4_sub .?item wdt:P31 ?d5_sub . }OPTIONAL {?item skos:altLabel ?abbreviation . FILTER(lang(?abbreviation)='en')  }SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. }}LIMIT 100000", 
+    "languages": [
+      "en",
+      "de",
+      "fr",
+      "es"
+    ]
+  },
+  "statistical_package_query": {
+    "target": "software",
+    "query_string": "SELECT DISTINCT ?item ?itemLabel ?abbreviation WHERE {{?item wdt:P31 wd:Q13199995 . }OPTIONAL {?item skos:altLabel ?abbreviation . FILTER(lang(?abbreviation)='en')  }SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. }}LIMIT 100000", 
+    "languages": [
+      "en",
+      "de",
+      "fr",
+      "es"
+    ]
+  },
+  "software_subcategories_query": {
+    "target": "software",
+    "query_string": "SELECT DISTINCT ?item ?itemLabel ?abbreviation WHERE {{?d1_sub wdt:P279 wd:Q17155032 .?item wdt:P31 ?d1_sub .} UNION {?d1_sub wdt:P279 wd:Q17155032 .?d2_sub wdt:P279 ?d1_sub .?item wdt:P31 ?d2_sub .}OPTIONAL {?item skos:altLabel ?abbreviation . FILTER(lang(?abbreviation)='en')  }SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. }} LIMIT 100000", 
+    "languages": [
+      "en",
+      "de",
+      "fr",
+      "es"
+    ]
+  },
+  "database_query": {
+    "target": "database",
+    "query_string": "SELECT DISTINCT ?item ?itemLabel ?abbreviation WHERE {{?item wdt:P31 wd:Q8513 } UNION {?d1_sub wdt:P279 wd:Q8513 .?item wdt:P31 ?d1_sub} UNION {?d1_sub wdt:P279 wd:Q8513 .?d2_sub wdt:P279 ?d1_sub .?item wdt:P31 ?d2_sub} UNION {?d1_sub wdt:P279 wd:Q8513 .?d2_sub wdt:P279 ?d1_sub .?d3_sub wdt:P279 ?d2_sub .?item wdt:P31 ?d3_sub} UNION {?d1_sub wdt:P279 wd:Q8513 .?d2_sub wdt:P279 ?d1_sub .?d3_sub wdt:P279 ?d2_sub .?d4_sub wdt:P279 ?d3_sub .?item wdt:P31 ?d4_sub}OPTIONAL {?item skos:altLabel ?abbreviation . FILTER(lang(?abbreviation)='en')  }SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. }}LIMIT 100000", 
+    "languages": [
+      "en",
+      "de",
+      "fr",
+      "es"
+    ]
+  },
+  "programming_language_query": {
+    "target": "programming language",
+    "query_string": "SELECT DISTINCT ?item ?itemLabel ?abbreviation WHERE {{?item wdt:P31 wd:Q9143 } UNION {?d1_sub wdt:P279 wd:Q9143 .?item wdt:P31 ?d1_sub} UNION {?d1_sub wdt:P279 wd:Q9143 .?d2_sub wdt:P279 ?d1_sub .?item wdt:P31 ?d2_sub} OPTIONAL {?item skos:altLabel ?abbreviation . FILTER(lang(?abbreviation)='en')  }SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. }}LIMIT 100000", 
+    "languages": [
+      "en",
+      "de",
+      "fr",
+      "es"
+    ]
+  },
+  "search_engine_query": {
+    "target": "search engine",
+    "query_string": "SELECT DISTINCT ?item ?itemLabel ?abbreviation WHERE {{?item wdt:P31 wd:Q19541 .} UNION {?d1_sub wdt:P279 wd:Q19541 .?item wdt:P31 ?d1_sub} UNION {?d1_sub wdt:P279 wd:Q19541 .?d2_sub wdt:P279 ?d1_sub .?item wdt:P31 ?d2_sub} UNION {?d1_sub wdt:P279 wd:Q19541 .?d2_sub wdt:P279 ?d1_sub .?d3_sub wdt:P279 ?d2_sub .?item wdt:P31 ?d3_sub} UNION {?d1_sub wdt:P279 wd:Q19541 .?d2_sub wdt:P279 ?d1_sub .?d3_sub wdt:P279 ?d2_sub .?d4_sub wdt:P279 ?d3_sub .?item wdt:P31 ?d4_sub} OPTIONAL {?item skos:altLabel ?abbreviation . FILTER(lang(?abbreviation)='en')  }SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. }}LIMIT 100000", 
+    "languages": [
+      "en",
+      "de",
+      "fr",
+      "es"
+    ]
+  },
+  "operating_system_query": {
+    "target": "operating system",
+    "query_string": "SELECT DISTINCT ?item ?itemLabel ?abbreviation WHERE {{?item wdt:P279 wd:Q9135 .} UNION {?d1_sub wdt:P279 wd:Q9135 .?item wdt:P31 ?d1_sub} UNION {?d1_sub wdt:P279 wd:Q9135 .?d2_sub wdt:P279 ?d1_sub .?item wdt:P31 ?d2_sub} UNION {?d1_sub wdt:P279 wd:Q9135 .?d2_sub wdt:P279 ?d1_sub .?d3_sub wdt:P279 ?d2_sub .?item wdt:P31 ?d3_sub} OPTIONAL {?item skos:altLabel ?abbreviation . FILTER(lang(?abbreviation)='en')  }SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. }}LIMIT 100000", 
+    "languages": [
+      "en",
+      "de",
+      "fr",
+      "es"
+    ]
+  }
+}

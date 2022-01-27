@@ -1,0 +1,1 @@
+Developer_of	Microsoft	24	0	Excel	34	1;;Abbreviation_of	SPSS	86	3	Statistical Package for Social Sciences	44	2;;Version_of	16	101	4	Statistical Package for Social Sciences	44	2;;

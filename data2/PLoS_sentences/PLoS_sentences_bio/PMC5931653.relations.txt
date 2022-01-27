@@ -1,0 +1,1 @@
+Version_of	14.1	50	1	Stata	44	0;;

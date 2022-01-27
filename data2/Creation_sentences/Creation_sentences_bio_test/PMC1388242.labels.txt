@@ -1,0 +1,6 @@
+O O O O O O O O B-Application_Creation O B-Abbreviation O O O O O O O O O O O O
+O B-SoftwareCoreference_Deposition O O O O B-URL O
+O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O B-OperatingSystem_Mention O O O O O B-Application_Creation O O B-Abbreviation O
+B-Application_Mention O B-Abbreviation O O O O O O O O O O O O O O O O O O O
+O O O B-Application_Creation O O O O O O O O O O O O O O O O O O O O O O O O O O O O
+O O O O O O O B-Application_Deposition O O O O O O O O O O B-URL B-Citation O O O B-Developer B-OperatingSystem_Usage B-Version O B-Version O O O B-Developer B-ProgrammingEnvironment_Usage I-ProgrammingEnvironment_Usage B-Version O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O

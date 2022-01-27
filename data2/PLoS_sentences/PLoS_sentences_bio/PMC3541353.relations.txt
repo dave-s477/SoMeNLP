@@ -1,0 +1,1 @@
+Abbreviation_of	SAS	60	1	Statistical Analysis Systems	29	0;;Version_of	9.2	74	2	Statistical Analysis Systems	29	0;;

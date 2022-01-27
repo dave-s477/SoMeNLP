@@ -1,0 +1,1 @@
+Version_of	10.01	91	3	SPSS	86	2;;Version_of	3.0	32	1	EpiData	24	0;;

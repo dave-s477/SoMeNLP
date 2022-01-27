@@ -1,0 +1,5 @@
+
+
+URL_of	http://sysbio.rnet.missouri.edu/multicom_toolbox/	29	1	software	4	0;;
+Citation_of	[4]	328	2	MSAProbs	319	1;;
+

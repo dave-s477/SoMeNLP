@@ -1,0 +1,1 @@
+Version_of	9.3	72	1	SAS	60	0;;Version_of	14	94	5	STATA	80	2;;Extension_of	IC	86	3	STATA	80	2;;Extension_of	SE	91	4	STATA	80	2;;

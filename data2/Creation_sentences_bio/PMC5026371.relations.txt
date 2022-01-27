@@ -1,0 +1,6 @@
+
+
+
+URL_of	https://sites.google.com/site/scimemilab2013/software	109	1	M-Track	35	0;;URL_of	https://github.com/scimemia/M-Track	341	3	M-Track	35	0;;
+Version_of	2.7	35	2	Python	28	1;;Version_of	3.0	48	4	OpenCV	41	3;;Version_of	4.8	59	6	Qt	56	5;;
+URL_of	https://sites.google.com/site/scimemilab2013/software	110	1	M-Track	35	0;;URL_of	https://github.com/scimemia/M-Track	198	3	M-Track	35	0;;

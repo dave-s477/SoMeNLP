@@ -1,0 +1,1 @@
+Statistical models were run using Proc Genmod in SAS v 9.1.2 ( Cary , North Carolina ) .

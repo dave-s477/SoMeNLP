@@ -1,0 +1,1 @@
+The data were prepared for analysis using Stata v 13 [48] and the structural equation models were estimated using Mplus v 7 [46] .
