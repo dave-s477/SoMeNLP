@@ -1,7 +1,7 @@
-T1	Application_Usage 6680 6689	Haploview
-T2	Application_Usage 8206 8212	Access
-T3	Application_Usage 8242 8285	Statistical Package for the Social Sciences
-T4	ProgrammingEnvironment_Usage 8322 8323	R
+T1	Application_Usage_Analysis 6680 6689	Haploview
+T2	Application_Usage_DataCollection 8206 8212	Access
+T3	Application_Usage_Analysis 8242 8285	Statistical Package for the Social Sciences
+T4	ProgrammingEnvironment_Usage_Analysis 8322 8323	R
 T5	Version 6692 6695	4.1
 R1	Version_of Arg1:T5 Arg2:T1	
 T6	Developer 8196 8205	Microsoft

@@ -1,5 +1,5 @@
-T1	Application_Usage 2882 2885	SAS
-T2	Application_Usage 2942 2985	Statistical Package for the Social Sciences
+T1	Application_Usage_Analysis 2882 2885	SAS
+T2	Application_Usage_Analysis 2942 2985	Statistical Package for the Social Sciences
 T3	Version 2886 2889	9.3
 R1	Version_of Arg1:T3 Arg2:T1	
 T4	Developer 2891 2909	SAS Institute Inc.

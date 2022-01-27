@@ -1,4 +1,4 @@
-T1	Application_Usage 3213 3216	JMP
+T1	Application_Usage_Analysis 3213 3216	JMP
 T2	Version 3216 3219	5.0
 R1	Version_of Arg1:T2 Arg2:T1	
 T3	Developer 3249 3267	SAS Institute Inc.

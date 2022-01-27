@@ -1,5 +1,5 @@
-T1	Application_Usage 10218 10223	Stata
-T2	Application_Usage 15848 15853	Stata
+T1	Application_Usage_Analysis 10218 10223	Stata
+T2	Application_Usage_Analysis 15848 15853	Stata
 T3	Version 10227 10231	13.1
 R1	Version_of Arg1:T3 Arg2:T1	
 T4	Version 15857 15861	14.1

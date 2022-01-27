@@ -1,6 +1,6 @@
-T1	Application_Usage 7120 7127	Image-J
-T2	Application_Usage 7761 7766	Prism
-T3	Application_Usage 7661 7671	Statistica
+T1	Application_Usage_Analysis 7120 7127	Image-J
+T2	Application_Usage_Visualization 7761 7766	Prism
+T3	Application_Usage_Analysis 7661 7671	Statistica
 T4	Developer 7674 7686	StaSoft Inc.
 R1	Developer_of Arg1:T4 Arg2:T3	
 T5	Developer 7752 7760	GraphPad

@@ -1,22 +1,22 @@
-T1	Application_Usage 3588 3598	PyroTagger
-T3	Application_Usage 4676 4682	blastn
-T4	Application_Usage 5084 5090	blastn
-T5	Application_Usage 5466 5475	EstimateS
-T6	Application_Usage 6385 6391	blastn
-T7	ProgrammingEnvironment_Usage 6776 6780	Perl
-T8	Application_Usage 6823 6828	PCORD
-T9	Application_Usage 10152 10166	RDP Classifier
-T10	Application_Usage 10313 10321	Geneious
-T11	Application_Usage 10567 10579	Bellerpheron
-T12	Application_Usage 10755 10761	MUSCLE
-T13	Application_Usage 10769 10777	Geneious
-T14	Application_Usage 11206 11212	blastn
-T15	Application_Usage 11474 11480	Blastn
-T16	Application_Usage 11754 11758	MEGA
-T17	Application_Usage 11801 11806	DNAsp
-T18	Application_Usage 12467 12471	MEGA
-T19	Application_Usage 14605 14611	Blastn
-T2	Application_Usage 3673 3679	blastn
+T1	Application_Usage_Analysis 3588 3598	PyroTagger
+T3	Application_Usage_Analysis 4676 4682	blastn
+T4	Application_Usage_Modelling 5084 5090	blastn
+T5	Application_Usage_Modelling 5466 5475	EstimateS
+T6	Application_Usage_Analysis 6385 6391	blastn
+T7	ProgrammingEnvironment_Usage_DataPreProcss 6776 6780	Perl
+T8	Application_Usage_Analysis 6823 6828	PCORD
+T9	Application_Usage_DataPreProcss 10152 10166	RDP Classifier
+T10	Application_Usage_DataPreProcss 10313 10321	Geneious
+T11	Application_Usage_DataPreProcss 10567 10579	Bellerpheron
+T12	Application_Usage_Analysis 10755 10761	MUSCLE
+T13	Application_Usage_Analysis 10769 10777	Geneious
+T14	Application_Usage_DataPreProcss 11206 11212	blastn
+T15	Application_Usage_DataPreProcss 11474 11480	Blastn
+T16	Application_Usage_DataPreProcss 11754 11758	MEGA
+T17	Application_Usage_Analysis 11801 11806	DNAsp
+T18	Application_Usage_Modelling 12467 12471	MEGA
+T19	Application_Usage_Analysis 14605 14611	Blastn
+T2	Application_Usage_Analysis 3673 3679	blastn
 T27	Citation 3609 3613	[13]
 R1	Citation_of Arg1:T27 Arg2:T1	
 T30	Citation 5476 5480	[14]

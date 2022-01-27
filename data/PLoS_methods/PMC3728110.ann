@@ -1,5 +1,5 @@
-T1	Application_Usage 6022 6025	SAS
-T2	Application_Usage 6092 6097	Stata
+T1	Application_Usage_Analysis 6022 6025	SAS
+T2	Application_Usage_Analysis 6092 6097	Stata
 T3	Version 6052 6055	9.2
 R1	Version_of Arg1:T3 Arg2:T1	
 T4	Developer 6057 6070	SAS Institute

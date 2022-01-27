@@ -1,5 +1,5 @@
-T1	Application_Usage 562 569	G*Power
-T2	Application_Usage 9150 9155	Prism
+T1	Application_Usage_Analysis 562 569	G*Power
+T2	Application_Usage_Analysis 9150 9155	Prism
 T3	Version 570 573	3.1
 R1	Version_of Arg1:T3 Arg2:T1	
 T4	Version 592 599	3.1.9.2

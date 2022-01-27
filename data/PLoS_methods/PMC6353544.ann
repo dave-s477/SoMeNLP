@@ -1,8 +1,8 @@
-T1	Application_Usage 6517 6524	G*Power
-T2	Application_Usage 8352 8358	Enketo
+T1	Application_Usage_Analysis 6517 6524	G*Power
+T2	Application_Usage_DataCollection 8352 8358	Enketo
+T4	Application_Usage_DataCollection 8487 8493	Enketo
+T5	ProgrammingEnvironment_Usage_Analysis 11462 11463	R
 T3	Application_Mention 8419 8432	Open Data Kit
-T4	Application_Usage 8487 8493	Enketo
-T5	ProgrammingEnvironment_Usage 11462 11463	R
 T6	Citation 6525 6529	[47]
 R1	Citation_of Arg1:T6 Arg2:T1	
 T7	Developer 8360 8363	Ona

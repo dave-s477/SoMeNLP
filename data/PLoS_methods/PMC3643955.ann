@@ -1,6 +1,6 @@
-T1	Application_Usage 6883 6891	JWatcher
-T2	Application_Usage 9232 9236	SPSS
-T3	Application_Usage 8455 8462	Digilab
+T1	Application_Usage_Analysis 6883 6891	JWatcher
+T2	Application_Usage_Analysis 9232 9236	SPSS
+T3	Application_Usage_DataCollection 8455 8462	Digilab
 T4	Developer 8449 8454	Motic
 R1	Developer_of Arg1:T4 Arg2:T3	
 T5	Version 8463 8465	II

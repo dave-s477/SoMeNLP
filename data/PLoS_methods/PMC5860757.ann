@@ -1,5 +1,5 @@
-T1	Application_Usage 3634 3648	Review Manager
-T7	Application_Usage 4204 4209	Stata
+T1	Application_Usage_Analysis 3634 3648	Review Manager
+T7	Application_Usage_Analysis 4204 4209	Stata
 T9	Version 3649 3652	5.3
 R2	Version_of Arg1:T9 Arg2:T1	
 T10	Developer 3654 3676	Cochrane Collaboration

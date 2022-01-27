@@ -1,15 +1,15 @@
-T1	Application_Usage 2229 2240	Peakscanner
-T2	Application_Usage 2175 2183	Genescan
-T3	Application_Usage 2444 2451	GENEPOP
-T4	Application_Usage 2648 2660	MICROCHECKER
-T5	PlugIn_Usage 3009 3016	GenAlEx
-T6	Application_Usage 3093 3101	MLRELATE
-T7	Application_Usage 3108 3114	COLONY
-T8	Application_Usage 3124 3134	COANCESTRY
+T1	Application_Usage_Analysis 2229 2240	Peakscanner
+T2	Application_Usage_Analysis 2175 2183	Genescan
+T3	Application_Usage_Analysis 2444 2451	GENEPOP
+T4	Application_Usage_Analysis 2648 2660	MICROCHECKER
+T5	PlugIn_Usage_Analysis 3009 3016	GenAlEx
+T6	Application_Usage_Analysis 3093 3101	MLRELATE
+T7	Application_Usage_Analysis 3108 3114	COLONY
+T8	Application_Usage_Analysis 3124 3134	COANCESTRY
+T12	Application_Usage_Analysis 4130 4140	BOTTLENECK
 T9	Application_Mention 3141 3149	MLRELATE
 T10	Application_Mention 3261 3267	COLONY
 T11	Application_Mention 3689 3699	COANCESTRY
-T12	Application_Usage 4130 4140	BOTTLENECK
 T13	Version 2201 2204	3.0
 R1	Version_of Arg1:T13 Arg2:T2	
 T14	Developer 2206 2224	Applied Biosystems

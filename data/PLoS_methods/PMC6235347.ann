@@ -1,9 +1,9 @@
-T1	Application_Usage 10120 10128	Promasys
-T2	ProgrammingEnvironment_Usage 10502 10503	R
-T3	ProgrammingEnvironment_Usage 10732 10733	R
-T4	PlugIn_Usage 10772 10777	dplyr
-T5	PlugIn_Usage 10790 10795	psych
-T6	PlugIn_Usage 10808 10813	tidyr
+T1	Application_Usage_DataCollection 10120 10128	Promasys
+T2	ProgrammingEnvironment_Usage_Visualization 10502 10503	R
+T3	ProgrammingEnvironment_Usage_Analysis 10732 10733	R
+T4	PlugIn_Usage_Analysis 10772 10777	dplyr
+T5	PlugIn_Usage_Analysis 10790 10795	psych
+T6	PlugIn_Usage_Analysis 10808 10813	tidyr
 T10	Developer 10130 10143	Omnicomm Inc.
 R1	Developer_of Arg1:T10 Arg2:T1	
 T11	Version 10512 10517	3.4.0

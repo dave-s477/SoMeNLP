@@ -1,6 +1,6 @@
-T1	Application_Usage 4655 4664	CellQuest
-T2	Application_Usage 6087 6126	Statistical Package for Social Sciences
-T3	Application_Usage 6221 6226	Prism
+T1	Application_Usage_Analysis 4655 4664	CellQuest
+T2	Application_Usage_Analysis 6087 6126	Statistical Package for Social Sciences
+T3	Application_Usage_Visualization 6221 6226	Prism
 T4	Developer 4675 4689	BD Biosciences
 R1	Developer_of Arg1:T4 Arg2:T1	
 T5	Version 6135 6139	15.0

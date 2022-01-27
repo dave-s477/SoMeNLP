@@ -1,9 +1,9 @@
-T1	Application_Usage 9581 9593	Presentation
-T2	Application_Usage 14855 14869	WFU-pick atlas
-T3	Application_Usage 15695 15698	SPM
-T4	Application_Usage 16754 16757	SPM
-T5	PlugIn_Usage 17545 17552	MarsBar
-T6	Application_Usage 17948 17951	SPM
+T1	Application_Usage_Visualization 9581 9593	Presentation
+T2	Application_Usage_Analysis 14855 14869	WFU-pick atlas
+T3	Application_Usage_Analysis 15695 15698	SPM
+T4	Application_Usage_Modelling 16754 16757	SPM
+T5	PlugIn_Usage_DataCollection 17545 17552	MarsBar
+T6	Application_Usage_Analysis 17948 17951	SPM
 T8	URL 9621 9636	www.neurobs.com
 T9	Developer 9595 9619	Neurobehavioural systems
 R1	Developer_of Arg1:T9 Arg2:T1	

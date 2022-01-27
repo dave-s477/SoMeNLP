@@ -1,4 +1,4 @@
-T1	Application_Usage 12749 12754	Prism
+T1	Application_Usage_Analysis 12749 12754	Prism
 T2	Developer 12740 12748	GraphPad
 R1	Developer_of Arg1:T2 Arg2:T1	
 T3	Version 12755 12756	5

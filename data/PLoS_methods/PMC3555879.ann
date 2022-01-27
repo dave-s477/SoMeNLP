@@ -1,4 +1,4 @@
-T1	Application_Usage 5503 5507	SPSS
+T1	Application_Usage_Analysis 5503 5507	SPSS
 T2	Version 5525 5529	19.0
 T3	Developer 5531 5539	IBM Corp
 R1	Version_of Arg1:T2 Arg2:T1	

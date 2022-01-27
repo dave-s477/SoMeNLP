@@ -1,12 +1,12 @@
-T1	ProgrammingEnvironment_Usage 963 969	MATLAB
-T2	ProgrammingEnvironment_Usage 3713 3719	MATLAB
-T3	PlugIn_Usage 3726 3747	Psychophysics Toolbox
-T4	Application_Usage 4696 4699	FSL
-T5	Application_Usage 4709 4713	AFNI
-T6	Application_Usage 7715 7726	ISC-toolbox
-T7	Application_Usage 10342 10345	SPM
-T8	ProgrammingEnvironment_Usage 12636 12642	MATLAB
-T9	Application_Usage 4122 4131	ViewPoint
+T1	ProgrammingEnvironment_Usage_Modelling 963 969	MATLAB
+T2	ProgrammingEnvironment_Usage_Stimulation 3713 3719	MATLAB
+T3	PlugIn_Usage_Stimulation 3726 3747	Psychophysics Toolbox
+T4	Application_Usage_DataPreProcss 4696 4699	FSL
+T5	Application_Usage_DataPreProcss 4709 4713	AFNI
+T6	Application_Usage_Analysis 7715 7726	ISC-toolbox
+T7	Application_Usage_Analysis 10342 10345	SPM
+T8	ProgrammingEnvironment_Usage_Analysis 12636 12642	MATLAB
+T9	Application_Usage_DataCollection 4122 4131	ViewPoint
 T10	Developer 4133 4151	Arrington Research
 T11	Citation 3748 3755	[15,16]
 R1	Citation_of Arg1:T11 Arg2:T3	

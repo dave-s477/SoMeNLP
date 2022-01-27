@@ -1,4 +1,4 @@
-T1	Application_Usage 4798 4802	SPSS
+T1	Application_Usage_Analysis 4798 4802	SPSS
 T2	Version 4811 4815	15.0
 T3	Developer 4826 4835	SPSS Inc.
 R1	Developer_of Arg1:T3 Arg2:T1	

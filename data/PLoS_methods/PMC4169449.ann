@@ -1,9 +1,9 @@
-T1	Application_Usage 5451 5455	MEGA
-T2	Application_Usage 5340 5345	BLAST
-T3	Application_Usage 8636 8643	ArcView
-T4	PlugIn_Usage 8604 8617	Patch Analyst
-T5	Application_Usage 8560 8567	ArcView
-T6	Application_Usage 12102 12106	SPSS
+T1	Application_Usage_DataPreProcss 5451 5455	MEGA
+T2	Application_Usage_DataCollection 5340 5345	BLAST
+T3	Application_Usage_DataCollection 8636 8643	ArcView
+T4	PlugIn_Usage_DataCollection 8604 8617	Patch Analyst
+T5	Application_Usage_DataCollection 8560 8567	ArcView
+T6	Application_Usage_Analysis 12102 12106	SPSS
 T7	Developer 5333 5337	NCBI
 R1	Developer_of Arg1:T7 Arg2:T2	
 T8	Citation 5466 5470	[34]

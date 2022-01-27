@@ -1,4 +1,4 @@
-T1	Application_Usage 12525 12529	SPSS
+T1	Application_Usage_Analysis 12525 12529	SPSS
 T2	Developer 12521 12524	IBM
 R1	Developer_of Arg1:T2 Arg2:T1	
 T3	Version 12538 12542	19.0

@@ -1,5 +1,5 @@
-T1	Application_Usage 1884 1891	Epidata
-T2	Application_Usage 1992 1995	SAS
+T1	Application_Usage_DataCollection 1884 1891	Epidata
+T2	Application_Usage_Analysis 1992 1995	SAS
 T5	Version 1892 1895	3.1
 R2	Version_of Arg1:T5 Arg2:T1	
 T6	Developer 1897 1920	The Epidata Association

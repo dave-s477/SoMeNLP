@@ -1,8 +1,8 @@
-T1	Application_Usage 9591 9594	SAS
-T2	Application_Usage 9948 9951	SAS
-T3	Application_Usage 10084 10127	Statistical Package for the Social Sciences
-T4	Application_Usage 10171 10174	SAS
-T5	OperatingSystem_Usage 10183 10190	Windows
+T1	Application_Usage_DataPreProcss 9591 9594	SAS
+T2	Application_Usage_Modelling 9948 9951	SAS
+T3	Application_Usage_Analysis 10084 10127	Statistical Package for the Social Sciences
+T4	Application_Usage_Analysis 10171 10174	SAS
+T5	OperatingSystem_Usage_Analysis 10183 10190	Windows
 T6	Developer 10129 10133	SPSS
 R1	Developer_of Arg1:T6 Arg2:T3	
 T7	Version 10161 10165	21.0

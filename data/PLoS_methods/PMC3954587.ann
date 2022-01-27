@@ -1,8 +1,8 @@
-T1	Application_Usage 243 267	EASY RA1 Easy Randomizer
-T2	Application_Usage 1459 1469	PowerPoint
-T3	Application_Usage 2160 2170	PowerPoint
-T4	Application_Usage 8541 8546	Excel
-T5	Application_Usage 8590 8593	SAS
+T1	Application_Usage_Stimulation 243 267	EASY RA1 Easy Randomizer
+T2	Application_Usage_Visualization 1459 1469	PowerPoint
+T3	Application_Usage_Visualization 2160 2170	PowerPoint
+T4	Application_Usage_DataPreProcss 8541 8546	Excel
+T5	Application_Usage_Analysis 8590 8593	SAS
 T6	Version 276 279	4.1
 R1	Version_of Arg1:T6 Arg2:T1	
 T7	Developer 281 309	State University of Michigan

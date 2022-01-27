@@ -1,8 +1,8 @@
-T1	Application_Usage 2872 2875	SPM
-T2	PlugIn_Usage 3292 3363	Diffeomorphic Anatomical Registration Through Exponentiated Lie Algebra
-T3	Application_Usage 3917 3920	SPM
-T4	Application_Usage 4433 4437	REST
-T5	PlugIn_Usage 4398 4406	AlphaSim
+T1	Application_Usage_Analysis 2872 2875	SPM
+T2	PlugIn_Usage_DataCollection 3292 3363	Diffeomorphic Anatomical Registration Through Exponentiated Lie Algebra
+T3	Application_Usage_Analysis 3917 3920	SPM
+T4	Application_Usage_DataPreProcss 4433 4437	REST
+T5	PlugIn_Usage_DataPreProcss 4398 4406	AlphaSim
 T6	Version 2875 2876	8
 R1	Version_of Arg1:T6 Arg2:T1	
 T7	URL 2878 2910	http://www.fil.ion.ucl.ac.uk/spm

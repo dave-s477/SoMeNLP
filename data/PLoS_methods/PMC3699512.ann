@@ -1,6 +1,6 @@
-T1	Application_Usage 3885 3891	ArcGIS
-T2	Application_Usage 6369 6375	ArcMap
-T3	ProgrammingEnvironment_Usage 8999 9000	R
+T1	Application_Usage_DataCollection 3885 3891	ArcGIS
+T2	Application_Usage_DataCollection 6369 6375	ArcMap
+T3	ProgrammingEnvironment_Usage_Analysis 8999 9000	R
 T4	Version 3901 3905	10.0
 R1	Version_of Arg1:T4 Arg2:T1	
 T5	Developer 3907 3947	Environmental Systems Research Institute

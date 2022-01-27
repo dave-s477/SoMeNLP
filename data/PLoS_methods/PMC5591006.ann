@@ -1,16 +1,16 @@
-T1	Application_Usage 1774 1783	SigmaPlot
-T2	Application_Usage 1784 1793	SigmaStat
-T3	Application_Usage 4484 4496	PhylopythiaS
-T4	Application_Usage 5092 5099	FGENESB
-T5	Application_Usage 5185 5192	Artemis
-T6	Application_Usage 5330 5336	BLASTp
-T7	Application_Usage 5475 5483	InterPro
-T9	Application_Usage 7552 7566	ProteomeWeaver
-T10	Application_Usage 8076 8089	Flex Analysis
-T11	Application_Usage 8103 8111	BioTools
-T12	Application_Usage 8141 8147	MASCOT
+T1	Application_Usage_Analysis 1774 1783	SigmaPlot
+T2	Application_Usage_Analysis 1784 1793	SigmaStat
+T3	Application_Usage_Analysis 4484 4496	PhylopythiaS
+T4	Application_Usage_Analysis 5092 5099	FGENESB
+T5	Application_Usage_DataPreProcss 5185 5192	Artemis
+T6	Application_Usage_Analysis 5330 5336	BLASTp
+T7	Application_Usage_Analysis 5475 5483	InterPro
+T9	Application_Usage_Analysis 7552 7566	ProteomeWeaver
+T10	Application_Usage_Visualization 8076 8089	Flex Analysis
+T11	Application_Usage_Visualization 8103 8111	BioTools
+T12	Application_Usage_Visualization 8141 8147	MASCOT
+T15	Application_Usage_DataPreProcss 4937 4980	Rapid Annotation using Subsystem Technology
 T14	Application_Mention 4735 4747	PhylopythiaS
-T15	Application_Usage 4937 4980	Rapid Annotation using Subsystem Technology
 T17	Developer 1812 1821	SPSS Inc.
 R1	Developer_of Arg1:T17 Arg2:T2	
 R2	Developer_of Arg1:T17 Arg2:T1	

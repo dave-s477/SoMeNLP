@@ -1,36 +1,37 @@
-T1	Application_Usage 4482 4487	BLAST
-T2	Application_Usage 4654 4658	MEGA
-T3	Application_Usage 5196 5206	genemapper
-T4	Application_Usage 5875 5879	MEGA
-T5	Application_Usage 5844 5853	Clustal W
-T6	Application_Usage 6005 6009	MEGA
-T7	Application_Usage 6090 6094	MEGA
-T8	Application_Usage 6229 6234	DnaSP
-T9	Application_Usage 6998 7003	PAUP*
-T10	Application_Usage 7365 7372	Network
-T11	Application_Usage 7535 7542	MrBayes
-T12	Application_Usage 7735 7744	Modeltest
-T13	Application_Usage 8448 8460	Google Earth
-T14	Application_Usage 8735 8743	Arlequin
-T15	Application_Usage 8889 8894	IBDWS
-T16	Application_Usage 9256 9264	Arlequin
-T17	Application_Usage 9834 9842	Arlequin
-T18	Application_Usage 10312 10317	beast
-T19	Application_Usage 10842 10851	Modeltest
-T20	Application_Usage 11454 11460	Tracer
-T21	Application_Usage 11579 11590	LogCombiner
-T22	Application_Usage 11676 11689	TreeAnnotator
-T23	Application_Usage 11707 11715	Fig Tree
-T24	Application_Usage 11759 11764	EXCEL
-T25	Application_Usage 11844 11852	Arlequin
-T26	Application_Usage 11998 12005	GenePop
-T27	Application_Usage 12136 12141	Fstat
-T28	Application_Usage 12267 12277	Bottleneck
-T29	Application_Usage 12590 12600	Bottleneck
-T30	Application_Usage 12704 12712	Arlequin
-T31	Application_Usage 12772 12781	Structure
-T32	Application_Usage 13407 13415	Geneland
-T33	Application_Usage 14089 14096	migrate
+T1	Application_Usage_DataCollection 4482 4487	BLAST
+T2	Application_Usage_DataPreProcss 4654 4658	MEGA
+T3	Application_Usage_Analysis 5196 5206	genemapper
+T4	Application_Usage_DataCollection 5875 5879	MEGA
+T5	Application_Usage_DataPreProcss 5844 5853	Clustal W
+T6	Application_Usage_DataPreProcss 6005 6009	MEGA
+T7	Application_Usage_DataPreProcss 6090 6094	MEGA
+T8	Application_Usage_DataPreProcss 6229 6234	DnaSP
+T9	Application_Usage_Analysis 6998 7003	PAUP*
+T10	Application_Usage_Visualization 7365 7372	Network
+T11	Application_Usage_Modelling 7535 7542	MrBayes
+T12	Application_Usage_Modelling 7735 7744	Modeltest
+T13	Application_Usage_DataCollection 8448 8460	Google Earth
+T14	Application_Usage_Analysis 8735 8743	Arlequin
+T15	Application_Usage_Analysis 8889 8894	IBDWS
+T16	Application_Usage_Analysis 9256 9264	Arlequin
+T17	Application_Usage_Analysis 9834 9842	Arlequin
+T18	Application_Usage_Modelling 10312 10317	beast
+T19	Application_Usage_Modelling 10842 10851	Modeltest
+T20	Application_Usage_Analysis 11454 11460	Tracer
+T21	Application_Usage_DataPreProcss 11579 11590	LogCombiner
+T22	Application_Usage_Visualization 11676 11689	TreeAnnotator
+T23	Application_Usage_Visualization 11707 11715	Fig Tree
+T24	Application_Usage_DataCollection 11759 11764	EXCEL
+T25	Application_Usage_Analysis 11844 11852	Arlequin
+T26	Application_Usage_Analysis 11998 12005	GenePop
+T27	Application_Usage_Analysis 12136 12141	Fstat
+T28	Application_Usage_Analysis 12267 12277	Bottleneck
+T29	Application_Usage_Analysis 12590 12600	Bottleneck
+T30	Application_Usage_Analysis 12704 12712	Arlequin
+T31	Application_Usage_Analysis 12772 12781	Structure
+T32	Application_Usage_Analysis 13407 13415	Geneland
+T33	Application_Usage_Modelling 14089 14096	migrate
+T75	Application_Usage_DataPreProcss 11822 11829	convert
 T37	Citation 4498 4502	[40]
 R1	Citation_of Arg1:T37 Arg2:T1	
 T38	Version 4659 4662	4.1
@@ -105,7 +106,6 @@ T73	Version 11718 11721	1.2
 R37	Version_of Arg1:T73 Arg2:T23	
 T74	Citation 11722 11726	[60]
 R38	Citation_of Arg1:T74 Arg2:T23	
-T75	Application_Usage 11822 11829	convert
 T76	Citation 11830 11834	[61]
 R39	Citation_of Arg1:T76 Arg2:T75	
 T77	Version 11855 11859	3.11

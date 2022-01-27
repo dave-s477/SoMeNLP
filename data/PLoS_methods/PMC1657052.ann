@@ -1,6 +1,6 @@
-T1	Application_Usage 3670 3681	DS modeling
-T2	Application_Usage 5677 5683	pCLAMP
-T3	Application_Usage 1203 1211	ENSEMBLE
+T1	Application_Usage_Modelling 3670 3681	DS modeling
+T2	Application_Usage_DataCollection 5677 5683	pCLAMP
+T3	Application_Usage_Analysis 1203 1211	ENSEMBLE
 T5	Developer 1224 1240	Sanger Institute
 R1	Developer_of Arg1:T5 Arg2:T3	
 T7	Version 3699 3702	1.1

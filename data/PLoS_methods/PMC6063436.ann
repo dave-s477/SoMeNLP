@@ -1,5 +1,5 @@
-T1	Application_Usage 2796 2800	PAST
-T2	Application_Usage 4225 4229	PAST
+T1	Application_Usage_Analysis 2796 2800	PAST
+T2	Application_Usage_Analysis 4225 4229	PAST
 T3	Version 2801 2806	2.17c
 R1	Version_of Arg1:T3 Arg2:T1	
 T4	Citation 2807 2811	[21]

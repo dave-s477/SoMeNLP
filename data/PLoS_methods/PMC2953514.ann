@@ -1,7 +1,7 @@
-T1	Application_Usage 16701 16706	Mplus
-T2	OperatingSystem_Usage 16715 16722	Windows
-T3	PlugIn_Usage 17121 17131	AmeliaView
-T4	Application_Usage 20089 20094	MPlus
+T1	Application_Usage_Analysis 16701 16706	Mplus
+T2	OperatingSystem_Usage_Analysis 16715 16722	Windows
+T3	PlugIn_Usage_DataPreProcss 17121 17131	AmeliaView
+T4	Application_Usage_Modelling 20089 20094	MPlus
 T5	Version 16707 16710	6.0
 R1	Version_of Arg1:T5 Arg2:T1	
 T6	Citation 16723 16727	[43]

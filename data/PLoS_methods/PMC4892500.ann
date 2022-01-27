@@ -1,14 +1,14 @@
-T1	Application_Usage 3791 3798	Newbler
-T2	Application_Usage 3817 3838	CLC Genomic Workbench
-T3	Application_Usage 3850 3863	SMRT analysis
-T4	Application_Usage 3982 4031	Prokaryotic Genomes Automatic Annotation Pipeline
-T5	Application_Usage 4294 4299	GARLI
-T6	Application_Usage 4768 4776	SAMtools
-T7	Application_Usage 4686 4695	Novoalign
-T8	ProgrammingEnvironment_Usage 4817 4823	Python
-T10	Application_Usage 6126 6131	GARLI
-T11	Application_Usage 6198 6203	GARLI
-T15	Application_Usage 4402 4407	GARLI
+T1	Application_Usage_Analysis 3791 3798	Newbler
+T2	Application_Usage_Analysis 3817 3838	CLC Genomic Workbench
+T3	Application_Usage_Analysis 3850 3863	SMRT analysis
+T4	Application_Usage_DataPreProcss 3982 4031	Prokaryotic Genomes Automatic Annotation Pipeline
+T5	Application_Usage_Visualization 4294 4299	GARLI
+T6	Application_Usage_DataPreProcss 4768 4776	SAMtools
+T7	Application_Usage_DataCollection 4686 4695	Novoalign
+T8	ProgrammingEnvironment_Usage_Analysis 4817 4823	Python
+T10	Application_Usage_Modelling 6126 6131	GARLI
+T11	Application_Usage_Analysis 6198 6203	GARLI
+T15	Application_Usage_Visualization 4402 4407	GARLI
 T9	Application_Mention 6394 6400	github
 T19	Developer 3785 3790	Roche
 R1	Developer_of Arg1:T19 Arg2:T1	

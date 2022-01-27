@@ -1,4 +1,4 @@
-T1	Application_Usage 8198 8201	SAS
+T1	Application_Usage_Analysis 8198 8201	SAS
 T2	Version 8228 8231	9.1
 R1	Version_of Arg1:T2 Arg2:T1	
 T3	Developer 8233 8251	SAS Institute Inc.

@@ -1,9 +1,9 @@
-T1	Application_Usage 5445 5452	Image J
-T2	Application_Usage 5978 5981	NIS
-T3	Application_Usage 7967 7974	Image J
-T4	Application_Usage 9929 9938	HVS Image
-T5	Application_Usage 12009 12012	NIS
-T6	Application_Usage 12180 12184	SPSS
+T1	Application_Usage_Analysis 5445 5452	Image J
+T2	Application_Usage_Analysis 5978 5981	NIS
+T3	Application_Usage_Analysis 7967 7974	Image J
+T4	Application_Usage_Analysis 9929 9938	HVS Image
+T5	Application_Usage_Analysis 12009 12012	NIS
+T6	Application_Usage_Analysis 12180 12184	SPSS
 T7	Developer 5463 5492	National Institutes of Health
 R1	Developer_of Arg1:T7 Arg2:T1	
 T8	Developer 5972 5977	Nikon

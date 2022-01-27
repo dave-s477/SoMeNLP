@@ -1,10 +1,10 @@
-T1	Application_Usage 7316 7324	Videomot
-T2	Application_Usage 10101 10107	ImageJ
-T3	Application_Usage 10156 10161	Prism
-T4	Application_Usage 12723 12734	Patchmaster
-T5	Application_Usage 17120 17133	Spectrum Mill
-T7	Application_Usage 20367 20380	Spectrum Mill
-T8	Application_Usage 20872 20885	Spectrum Mill
+T1	Application_Usage_Analysis 7316 7324	Videomot
+T2	Application_Usage_DataPreProcss 10101 10107	ImageJ
+T3	Application_Usage_Analysis 10156 10161	Prism
+T4	Application_Usage_Analysis 12723 12734	Patchmaster
+T5	Application_Usage_DataPreProcss 17120 17133	Spectrum Mill
+T7	Application_Usage_DataPreProcss 20367 20380	Spectrum Mill
+T8	Application_Usage_Analysis 20872 20885	Spectrum Mill
 T9	Version 7325 7326	2
 T10	Developer 7337 7340	TSE
 R1	Version_of Arg1:T9 Arg2:T1	

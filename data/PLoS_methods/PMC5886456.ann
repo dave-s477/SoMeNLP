@@ -1,4 +1,4 @@
-T1	Application_Usage 6423 6438	SPSS Statistics
+T1	Application_Usage_Analysis 6423 6438	SPSS Statistics
 T2	Version 6439 6441	22
 T3	Developer 6443 6452	IBM Corp.
 R1	Developer_of Arg1:T3 Arg2:T1	

@@ -3,7 +3,7 @@ O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O 
 O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O
-O O O O O O B-Application_Usage I-Application_Usage B-Version B-Citation O
+O O O O O O B-Application_Usage_Visualization I-Application_Usage_Visualization B-Version B-Citation O
 O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O
@@ -39,8 +39,8 @@ O O O O O O O O O O O O O O O O
 O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
 O O O
-O O O O O O O O O O O O B-Application_Usage I-Application_Usage I-Application_Usage O B-Citation O
+O O O O O O O O O O O O B-Application_Usage_Analysis I-Application_Usage_Analysis I-Application_Usage_Analysis O B-Citation O
 O O O O O O O O O O O O O O O O
 O O O
-O O O O O O O O O O O O O B-Application_Usage I-Application_Usage O B-Citation O
+O O O O O O O O O O O O O B-Application_Usage_Analysis I-Application_Usage_Analysis O B-Citation O
 O O O O O O O O O

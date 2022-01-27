@@ -1,8 +1,8 @@
-T1	Application_Usage 7778 7786	Inquisit
-T2	Application_Usage 7907 7915	Inquisit
-T3	Application_Usage 25365 25370	Stata
-T4	Application_Usage 25586 25591	Stata
-T5	Application_Usage 26260 26265	Stata
+T1	Application_Usage_Programming 7778 7786	Inquisit
+T2	Application_Usage_Modelling 7907 7915	Inquisit
+T3	Application_Usage_DataPreProcss 25365 25370	Stata
+T4	Application_Usage_Analysis 25586 25591	Stata
+T5	Application_Usage_Visualization 26260 26265	Stata
 T6	Version 7787 7792	4.0.8
 R1	Version_of Arg1:T6 Arg2:T1	
 T7	Citation 7897 7901	[65]

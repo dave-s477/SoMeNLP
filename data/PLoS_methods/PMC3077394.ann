@@ -1,6 +1,6 @@
-T1	Application_Usage 6933 6939	ImageJ
-T2	Application_Usage 11012 11017	Prism
-T3	OperatingSystem_Usage 11026 11031	MacOS
+T1	Application_Usage_DataCollection 6933 6939	ImageJ
+T2	Application_Usage_Analysis 11012 11017	Prism
+T3	OperatingSystem_Usage_Analysis 11026 11031	MacOS
 T4	Developer 6941 6954	Wayne Rasband
 R1	Developer_of Arg1:T4 Arg2:T1	
 T5	Developer 11003 11011	GraphPad

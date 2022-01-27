@@ -12,9 +12,9 @@ O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O
 O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O
-O O O O O O O O O O O O O O O B-PlugIn_Usage O B-URL O O
-O B-PlugIn_Usage O O O O O B-Application_Usage O O O O
-O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O B-Application_Usage B-Version O
+O O O O O O O O O O O O O O O B-PlugIn_Usage_DataCollection O B-URL O O
+O B-PlugIn_Usage_DataCollection O O O O O B-Application_Usage_DataCollection O O O O
+O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O B-Application_Usage_DataCollection B-Version O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O

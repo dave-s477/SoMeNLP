@@ -1,8 +1,8 @@
-T1	ProgrammingEnvironment_Usage 2347 2359	Visual Basic
-T2	Application_Usage 3582 3591	Photoshop
-T3	Application_Usage 3640 3650	Pixelmator
-T4	ProgrammingEnvironment_Usage 6624 6625	R
-T5	PlugIn_Usage 6647 6651	lme4
+T1	ProgrammingEnvironment_Usage_Programming 2347 2359	Visual Basic
+T2	Application_Usage_Analysis 3582 3591	Photoshop
+T3	Application_Usage_Analysis 3640 3650	Pixelmator
+T4	ProgrammingEnvironment_Usage_Analysis 6624 6625	R
+T5	PlugIn_Usage_Analysis 6647 6651	lme4
 T7	Developer 2336 2345	Microsoft
 R1	Developer_of Arg1:T7 Arg2:T1	
 T8	Release 2361 2365	2010

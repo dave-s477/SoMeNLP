@@ -1,4 +1,4 @@
-T1	Application_Usage 11871 11876	Stata
+T1	Application_Usage_Analysis 11871 11876	Stata
 T5	Version 11878 11882	14.0
 R3	Version_of Arg1:T5 Arg2:T1	
 T6	Developer 11884 11896	StataCorp LP

@@ -1,11 +1,11 @@
-T1	Application_Usage 2627 2632	PLINK
+T1	Application_Usage_Analysis 2627 2632	PLINK
+T3	Application_Usage_Analysis 3504 3509	PLINK
+T4	Application_Usage_Modelling 3929 3935	Primer
+T5	Application_Usage_DataCollection 5146 5163	Mutation Surveyor
+T6	Application_Usage_Analysis 6653 6658	BLAST
+T7	Application_Usage_Analysis 7396 7410	Genome browser
+T8	Application_Usage_Analysis 7535 7543	PolyPhen
 T2	Application_Mention 3139 3144	PLINK
-T3	Application_Usage 3504 3509	PLINK
-T4	Application_Usage 3929 3935	Primer
-T5	Application_Usage 5146 5163	Mutation Surveyor
-T6	Application_Usage 6653 6658	BLAST
-T7	Application_Usage 7396 7410	Genome browser
-T8	Application_Usage 7535 7543	PolyPhen
 T26	Version 2634 2638	1.03
 R5	Version_of Arg1:T26 Arg2:T1	
 T27	Citation 2665 2669	[45]

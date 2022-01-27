@@ -1,7 +1,7 @@
-T1	Application_Usage 5006 5016	Statistica
-T2	ProgrammingEnvironment_Usage 6012 6013	R
-T3	PlugIn_Usage 6022 6028	glmnet
-T4	Application_Usage 5988 5993	Stata
+T1	Application_Usage_Analysis 5006 5016	Statistica
+T2	ProgrammingEnvironment_Usage_Analysis 6012 6013	R
+T3	PlugIn_Usage_Analysis 6022 6028	glmnet
+T4	Application_Usage_Analysis 5988 5993	Stata
 T5	Version 5995 5999	13.1
 R1	Version_of Arg1:T5 Arg2:T4	
 T6	Citation 6000 6004	[13]

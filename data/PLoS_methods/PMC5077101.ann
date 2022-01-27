@@ -1,5 +1,5 @@
-T1	Application_Usage 3909 3917	Xcalibur
-T2	Application_Usage 8867 8876	OriginLab
+T1	Application_Usage_Stimulation 3909 3917	Xcalibur
+T2	Application_Usage_Modelling 8867 8876	OriginLab
 T3	Version 3918 3921	1.3
 R1	Version_of Arg1:T3 Arg2:T1	
 T4	Version 8882 8883	8

@@ -1,8 +1,9 @@
-T1	Application_Usage 4960 4964	ENVI
-T2	Application_Usage 6227 6259	geo-spatial modeling environment
-T3	Application_Usage 6303 6312	Fragstats
-T4	Application_Usage 8255 8260	STATA
-T5	Application_Usage 10601 10607	ArcGIS
+T1	Application_Usage_Analysis 4960 4964	ENVI
+T2	Application_Usage_Analysis 6227 6259	geo-spatial modeling environment
+T3	Application_Usage_Analysis 6303 6312	Fragstats
+T4	Application_Usage_Modelling 8255 8260	STATA
+T5	Application_Usage_Analysis 10601 10607	ArcGIS
+T15	PlugIn_Usage_Analysis 10608 10626	Spatial Statistics
 T6	AlternativeName 4966 5000	Environment for Visualizing Images
 R1	AlternativeName_of Arg1:T6 Arg2:T1	
 T7	Developer 5012 5015	ITT
@@ -21,7 +22,6 @@ T13	Version 8273 8277	12.0
 T14	Developer 8279 8296	STATA Corporation
 R8	Version_of Arg1:T13 Arg2:T4	
 R9	Developer_of Arg1:T14 Arg2:T4	
-T15	PlugIn_Usage 10608 10626	Spatial Statistics
 R10	PlugIn_of Arg1:T15 Arg2:T5	
 T16	Release 5016 5020	2011
 R11	Release_of Arg1:T16 Arg2:T1	

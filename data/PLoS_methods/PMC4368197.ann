@@ -1,5 +1,5 @@
-T1	Application_Usage 5236 5240	SPSS
-T2	OperatingSystem_Usage 5281 5288	Windows
+T1	Application_Usage_Analysis 5236 5240	SPSS
+T2	OperatingSystem_Usage_Analysis 5281 5288	Windows
 T3	Version 5259 5263	17.0
 R1	Version_of Arg1:T3 Arg2:T1	
 T4	Developer 5265 5268	IBM

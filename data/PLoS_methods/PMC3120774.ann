@@ -1,9 +1,9 @@
-T1	Application_Usage 8074 8079	STATA
+T1	Application_Usage_Analysis 8074 8079	STATA
+T8	Application_Usage_Analysis 8122 8127	Stata
 T6	Version 8080 8082	11
 R4	Version_of Arg1:T6 Arg2:T1	
 T7	Developer 8105 8115	StataCorp.
 R5	Developer_of Arg1:T7 Arg2:T1	
-T8	Application_Usage 8122 8127	Stata
 R6	Specification_of Arg1:T8 Arg2:T1	
 T9	Version 8158 8160	11
 R7	Version_of Arg1:T9 Arg2:T8	

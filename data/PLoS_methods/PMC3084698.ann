@@ -1,8 +1,8 @@
-T1	Application_Usage 93 98	Flash
-T2	ProgrammingEnvironment_Usage 126 138	Actionscript
-T3	Application_Usage 186 191	Flash
-T4	Application_Usage 2755 2762	MacVide
-T5	ProgrammingEnvironment_Usage 3828 3834	Matlab
+T1	Application_Usage_Visualization 93 98	Flash
+T2	ProgrammingEnvironment_Usage_Programming 126 138	Actionscript
+T4	Application_Usage_Analysis 2755 2762	MacVide
+T5	ProgrammingEnvironment_Usage_Analysis 3828 3834	Matlab
+T3	Application_Mention 186 191	Flash
 T6	Developer 87 92	Adobe
 R1	Developer_of Arg1:T6 Arg2:T1	
 T7	Version 99 102	CS3

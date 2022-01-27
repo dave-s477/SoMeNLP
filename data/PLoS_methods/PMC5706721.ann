@@ -1,9 +1,9 @@
-T1	Application_Usage 690 700	Brainsight
-T2	Application_Usage 1816 1826	Brainsight
-T3	Application_Usage 2197 2207	Brainsight
-T4	ProgrammingEnvironment_Usage 3005 3011	Matlab
-T5	PlugIn_Usage 3029 3041	Psychtoolbox
-T6	PlugIn_Usage 3051 3066	Eyelink Toolbox
+T1	Application_Usage_Analysis 690 700	Brainsight
+T2	Application_Usage_Analysis 1816 1826	Brainsight
+T3	Application_Usage_Analysis 2197 2207	Brainsight
+T4	ProgrammingEnvironment_Usage_Stimulation 3005 3011	Matlab
+T5	PlugIn_Usage_Stimulation 3029 3041	Psychtoolbox
+T6	PlugIn_Usage_Stimulation 3051 3066	Eyelink Toolbox
 T9	Developer 709 728	Rogue Research Inc.
 R1	Developer_of Arg1:T9 Arg2:T1	
 T11	Developer 3013 3022	Mathworks

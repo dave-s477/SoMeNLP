@@ -1,8 +1,8 @@
-T1	PlugIn_Usage 9310 9331	Psychophysics Toolbox
-T2	ProgrammingEnvironment_Usage 9367 9373	MATLAB
-T3	OperatingSystem_Usage 9434 9438	OS-X
-T4	ProgrammingEnvironment_Usage 12683 12689	MATLAB
-T5	Application_Usage 21057 21060	SPM
+T1	PlugIn_Usage_Stimulation 9310 9331	Psychophysics Toolbox
+T2	ProgrammingEnvironment_Usage_Stimulation 9367 9373	MATLAB
+T3	OperatingSystem_Usage_Stimulation 9434 9438	OS-X
+T4	ProgrammingEnvironment_Usage_Modelling 12683 12689	MATLAB
+T5	Application_Usage_Analysis 21057 21060	SPM
 T8	Version 9340 9346	3.0.10
 R2	Version_of Arg1:T8 Arg2:T1	
 T9	Citation 9347 9355	[22, 23]

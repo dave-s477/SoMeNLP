@@ -1,5 +1,5 @@
-T1	Application_Usage 1447 1450	RIU
-T2	Application_Usage 8512 8517	Stata
+T1	Application_Usage_DataCollection 1447 1450	RIU
+T2	Application_Usage_Analysis 8512 8517	Stata
 T3	Version 1469 1474	2.26B
 T4	Developer 1476 1495	MTI Health Services
 T5	URL 1497 1518	http://www.mtifwb.com

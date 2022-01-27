@@ -1,4 +1,4 @@
-T1	Application_Usage 10144 10159	SPSS statistics
+T1	Application_Usage_Analysis 10144 10159	SPSS statistics
 T2	Version 10168 10174	17.0.0
 R1	Version_of Arg1:T2 Arg2:T1	
 T3	Release 10184 10196	Aug 23. 2008

@@ -1,5 +1,5 @@
-T1	ProgrammingEnvironment_Usage 3483 3489	MATLAB
-T2	Application_Usage 6048 6054	EEGLAB
+T1	ProgrammingEnvironment_Usage_Programming 3483 3489	MATLAB
+T2	Application_Usage_Analysis 6048 6054	EEGLAB
 T6	Release 3499 3504	2015a
 R3	Release_of Arg1:T6 Arg2:T1	
 T7	Citation 6063 6067	[29]

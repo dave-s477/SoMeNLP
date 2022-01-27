@@ -1,6 +1,6 @@
-T1	Application_Usage 6322 6337	SPSS Statistics
-T2	Application_Usage 6349 6358	SPSS Amos
-T3	OperatingSystem_Usage 6366 6373	Windows
+T1	Application_Usage_Analysis 6322 6337	SPSS Statistics
+T2	Application_Usage_Analysis 6349 6358	SPSS Amos
+T3	OperatingSystem_Usage_Analysis 6366 6373	Windows
 T4	Developer 6318 6321	IBM
 R1	Developer_of Arg1:T4 Arg2:T1	
 T5	Version 6338 6340	21

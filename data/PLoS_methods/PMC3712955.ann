@@ -1,13 +1,14 @@
-T1	Application_Usage 1674 1679	BLAST
-T2	Application_Usage 1772 1780	ClustalW
-T3	Application_Usage 1858 1863	SMART
-T4	Application_Usage 1902 1909	SignalP
-T5	Application_Usage 2057 2063	Muscle
-T6	Application_Usage 2171 2176	PhyML
-T7	Application_Usage 2405 2413	I-TASSER
-T8	Application_Usage 3973 4016	Statistical Package for the Social Sciences
-T9	Application_Usage 9529 9535	MASCOT
-T10	Application_Usage 10053 10064	GlobalWorks
+T1	Application_Usage_Analysis 1674 1679	BLAST
+T2	Application_Usage_DataPreProcss 1772 1780	ClustalW
+T3	Application_Usage_Modelling 1858 1863	SMART
+T4	Application_Usage_Modelling 1902 1909	SignalP
+T5	Application_Usage_DataPreProcss 2057 2063	Muscle
+T6	Application_Usage_Visualization 2171 2176	PhyML
+T7	Application_Usage_Modelling 2405 2413	I-TASSER
+T8	Application_Usage_Analysis 3973 4016	Statistical Package for the Social Sciences
+T9	Application_Usage_Analysis 9529 9535	MASCOT
+T10	Application_Usage_Stimulation 10053 10064	GlobalWorks
+T21	Application_Usage_Analysis 4027 4031	SPSS
 T13	URL 1694 1723	http://ncbi.nlm.nih.gov/blast
 R1	URL_of Arg1:T13 Arg2:T1	
 T14	URL 1790 1819	http://www.ebi.ac.uk/clustalw
@@ -24,7 +25,6 @@ T19	URL 2186 2216	www.atgc-montpellier.fr/phyml/
 R7	URL_of Arg1:T19 Arg2:T6	
 T20	URL 2431 2474	http://zhanglab.ccmb.med.umich.edu/I-TASSER
 R8	URL_of Arg1:T20 Arg2:T7	
-T21	Application_Usage 4027 4031	SPSS
 R9	Specification_of Arg1:T21 Arg2:T8	
 T22	Version 4040 4044	13.0
 R10	Version_of Arg1:T22 Arg2:T21	

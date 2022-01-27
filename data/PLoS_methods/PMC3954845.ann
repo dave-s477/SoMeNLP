@@ -1,7 +1,7 @@
-T1	Application_Usage 8921 8924	SPM
-T2	ProgrammingEnvironment_Usage 9023 9029	MATLAB
-T3	PlugIn_Usage 9192 9200	Fieldmap
-T4	Application_Usage 9226 9229	SPM
+T1	Application_Usage_Analysis 8921 8924	SPM
+T2	ProgrammingEnvironment_Usage_Analysis 9023 9029	MATLAB
+T3	PlugIn_Usage_DataPreProcss 9192 9200	Fieldmap
+T4	Application_Usage_DataPreProcss 9226 9229	SPM
 T5	Version 8924 8925	8
 R1	Version_of Arg1:T5 Arg2:T1	
 T6	Developer 8936 8979	Wellcome Department of Imaging Neuroscience

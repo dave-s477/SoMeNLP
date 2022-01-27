@@ -1,8 +1,8 @@
-T1	ProgrammingEnvironment_Usage 4999 5005	MATLAB
-T2	Application_Usage 4886 4916	Statistical Parametric Mapping
-T3	Application_Usage 8835 8838	SPM
-T4	PlugIn_Usage 8847 8860	Anatomy atlas
-T5	Application_Usage 4917 4920	SPM
+T1	ProgrammingEnvironment_Usage_Programming 4999 5005	MATLAB
+T2	Application_Usage_Analysis 4886 4916	Statistical Parametric Mapping
+T3	Application_Usage_Modelling 8835 8838	SPM
+T4	PlugIn_Usage_Modelling 8847 8860	Anatomy atlas
+T5	Application_Usage_Analysis 4917 4920	SPM
 T6	Version 4920 4921	8
 R1	Version_of Arg1:T6 Arg2:T5	
 R2	Specification_of Arg1:T5 Arg2:T2	

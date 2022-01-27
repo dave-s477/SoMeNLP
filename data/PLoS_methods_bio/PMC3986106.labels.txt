@@ -31,8 +31,8 @@ O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O
-O O O O O O O B-Application_Usage I-Application_Usage B-Version O O O O O O O O O O O
-O O O O O O B-Application_Usage O O O O B-Version O
+O O O O O O O B-Application_Usage_DataCollection I-Application_Usage_DataCollection B-Version O O O O O O O O O O O
+O O O O O O B-Application_Usage_Analysis O O O O B-Version O
 O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O O O O O O O O O O O
 O O O O O O O O O O O O O O O O O O

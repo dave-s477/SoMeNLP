@@ -1,13 +1,13 @@
-T1	Application_Usage 4594 4609	Bioplex Manager
-T2	Application_Usage 4700 4715	Bioplex Manager
-T3	Application_Usage 5106 5112	BLASTp
-T4	Application_Usage 5273 5280	Skyline
-T5	Application_Usage 7115 7122	Analyst
-T6	Application_Usage 8841 8848	Skyline
-T7	PlugIn_Usage 9178 9185	MSstats
-T8	ProgrammingEnvironment_Usage 9186 9187	R
-T9	PlugIn_Usage 10133 10136	Epi
-T10	ProgrammingEnvironment_Usage 10137 10138	R
+T1	Application_Usage_DataCollection 4594 4609	Bioplex Manager
+T2	Application_Usage_Analysis 4700 4715	Bioplex Manager
+T3	Application_Usage_Analysis 5106 5112	BLASTp
+T4	Application_Usage_Modelling 5273 5280	Skyline
+T5	Application_Usage_Analysis 7115 7122	Analyst
+T6	Application_Usage_Analysis 8841 8848	Skyline
+T7	PlugIn_Usage_DataPreProcss 9178 9185	MSstats
+T8	ProgrammingEnvironment_Usage_DataPreProcss 9186 9187	R
+T9	PlugIn_Usage_Visualization 10133 10136	Epi
+T10	ProgrammingEnvironment_Usage_Visualization 10137 10138	R
 T14	Version 4610 4613	4.0
 R1	Version_of Arg1:T14 Arg2:T1	
 T16	URL 5123 5152	http://blast.ncbi.nlm.nih.gov

@@ -1,6 +1,6 @@
-T1	Application_Usage 2066 2073	Digipro
-T2	Application_Usage 8543 8554	Scion image
-T3	Application_Usage 10269 10273	SPSS
+T1	Application_Usage_DataCollection 2066 2073	Digipro
+T2	Application_Usage_DataPreProcss 8543 8554	Scion image
+T3	Application_Usage_Analysis 10269 10273	SPSS
 T4	Version 2093 2096	140
 R1	Version_of Arg1:T4 Arg2:T1	
 T5	Developer 2098 2118	AccuScan Instruments

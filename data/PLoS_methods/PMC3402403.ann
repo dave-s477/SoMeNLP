@@ -1,7 +1,7 @@
-T1	Application_Usage 7960 7963	SAS
-T2	Application_Usage 7860 7868	Epi Info
-T3	Application_Usage 8409 8415	MAXQDA
-T4	Application_Usage 8603 8609	MAXQDA
+T1	Application_Usage_Analysis 7960 7963	SAS
+T2	Application_Usage_DataCollection 7860 7868	Epi Info
+T3	Application_Usage_DataCollection 8409 8415	MAXQDA
+T4	Application_Usage_DataCollection 8603 8609	MAXQDA
 T6	Version 7869 7874	3.5.1
 T7	Developer 7876 7879	CDC
 R1	Version_of Arg1:T6 Arg2:T2	

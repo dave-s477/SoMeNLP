@@ -1,24 +1,28 @@
-T1	Application_Usage 5667 5689	FMRIB Software Library
-T2	PlugIn_Usage 6128 6163	FMRIB's Automated Segmentation Tool
-T3	PlugIn_Usage 6847 6853	DTIFit
-T4	PlugIn_Usage 6863 6888	FMRIB’s Diffusion Toolbox
-T5	Application_Usage 7139 7142	FSL
-T6	PlugIn_Usage 7463 7493	FMRIB's ICA-based X-noiseifier
-T7	Application_Usage 7857 7860	FSL
-T8	PlugIn_Usage 8055 8062	FSL-VBM
-T9	PlugIn_Usage 8093 8146	FMRIB’s Integrated Registration and Segmentation Tool
-T10	Application_Usage 8351 8355	SPSS
-T11	PlugIn_Usage 8452 8477	FMRIB’s Diffusion Toolbox
-T12	Application_Usage 8636 8639	FSL
-T13	Application_Usage 10031 10035	SPSS
-T14	Application_Usage 10539 10544	CubeX
-T15	PlugIn_Usage 6022 6027	FLIRT
-T16	PlugIn_Usage 6045 6050	FNIRT
-T17	PlugIn_Usage 7143 7226	Multivariate Exploratory Linear Optimized Decomposition into Independent Components
-T18	PlugIn_Usage 7641 7646	FNIRT
-T19	PlugIn_Usage 8482 8512	tract-based spatial statistics
-T20	PlugIn_Usage 8640 8655	dual regression
-T21	PlugIn_Usage 8748 8755	MELODIC
+T1	Application_Usage_DataPreProcss 5667 5689	FMRIB Software Library
+T2	PlugIn_Usage_DataPreProcss 6128 6163	FMRIB's Automated Segmentation Tool
+T3	PlugIn_Usage_Modelling 6847 6853	DTIFit
+T4	PlugIn_Usage_Modelling 6863 6888	FMRIB’s Diffusion Toolbox
+T5	Application_Usage_DataPreProcss 7139 7142	FSL
+T6	PlugIn_Usage_Analysis 7463 7493	FMRIB's ICA-based X-noiseifier
+T7	Application_Usage_Analysis 7857 7860	FSL
+T8	PlugIn_Usage_Analysis 8055 8062	FSL-VBM
+T9	PlugIn_Usage_Analysis 8093 8146	FMRIB’s Integrated Registration and Segmentation Tool
+T10	Application_Usage_Analysis 8351 8355	SPSS
+T11	PlugIn_Usage_Analysis 8452 8477	FMRIB’s Diffusion Toolbox
+T12	Application_Usage_Analysis 8636 8639	FSL
+T13	Application_Usage_Analysis 10031 10035	SPSS
+T14	Application_Usage_Analysis 10539 10544	CubeX
+T15	PlugIn_Usage_DataPreProcss 6022 6027	FLIRT
+T16	PlugIn_Usage_DataPreProcss 6045 6050	FNIRT
+T17	PlugIn_Usage_DataPreProcss 7143 7226	Multivariate Exploratory Linear Optimized Decomposition into Independent Components
+T18	PlugIn_Usage_DataPreProcss 7641 7646	FNIRT
+T19	PlugIn_Usage_Analysis 8482 8512	tract-based spatial statistics
+T20	PlugIn_Usage_Analysis 8640 8655	dual regression
+T21	PlugIn_Usage_Analysis 8748 8755	MELODIC
+T40	PlugIn_Usage_Analysis 8964 8967	VBM
+T41	PlugIn_Usage_Analysis 8969 8973	TBSS
+T42	PlugIn_Usage_Analysis 8975 8990	dual regression
+T43	PlugIn_Usage_DataPreProcss 9171 9205	threshold-free cluster enhancement
 T22	Abbreviation 5691 5694	FSL
 R1	Abbreviation_of Arg1:T22 Arg2:T1	
 T23	Version 5703 5706	5.0
@@ -56,10 +60,6 @@ R17	Citation_of Arg1:T38 Arg2:T19
 R18	PlugIn_of Arg1:T20 Arg2:T12	
 T39	Citation 8928 8932	[25]
 R19	Citation_of Arg1:T39 Arg2:T21	
-T40	PlugIn_Usage 8964 8967	VBM
-T41	PlugIn_Usage 8969 8973	TBSS
-T42	PlugIn_Usage 8975 8990	dual regression
-T43	PlugIn_Usage 9171 9205	threshold-free cluster enhancement
 T44	Abbreviation 9207 9211	TFCE
 R20	Abbreviation_of Arg1:T44 Arg2:T43	
 T45	Citation 9213 9217	[33]

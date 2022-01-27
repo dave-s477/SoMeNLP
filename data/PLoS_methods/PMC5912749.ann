@@ -1,3 +1,11 @@
+T9	ProgrammingEnvironment_Usage_Programming 4837 4843	Python
+T10	ProgrammingEnvironment_Usage_Programming 4857 4862	GNU R
+T13	Application_Usage_DataPreProcss 6464 6468	READ
+T14	Application_Usage_Analysis 7009 7013	READ
+T15	Application_Usage_Analysis 7283 7287	READ
+T16	Application_Usage_Modelling 8144 8148	READ
+T17	Application_Usage_Analysis 8783 8791	samtools
+T18	Application_Usage_Analysis 5293 5301	vcftools
 T1	Application_Mention 89 93	GRAB
 T2	Application_Mention 640 644	GRAB
 T3	Application_Mention 1378 1382	READ
@@ -6,16 +14,8 @@ T5	Application_Mention 2290 2294	GRAB
 T6	Application_Mention 2316 2320	GRAB
 T7	Application_Mention 2965 2969	READ
 T8	Application_Creation 3972 3976	READ
-T9	ProgrammingEnvironment_Usage 4837 4843	Python
-T10	ProgrammingEnvironment_Usage 4857 4862	GNU R
 T11	Application_Creation 4770 4810	Relationship Estimation from Ancient DNA
 T12	Application_Deposition 4907 4911	READ
-T13	Application_Usage 6464 6468	READ
-T14	Application_Usage 7009 7013	READ
-T15	Application_Usage 7283 7287	READ
-T16	Application_Usage 8144 8148	READ
-T17	Application_Usage 8783 8791	samtools
-T18	Application_Usage 5293 5301	vcftools
 T20	Citation 94 98	[14]
 R1	Citation_of Arg1:T20 Arg2:T1	
 T21	Citation 774 778	[14]
