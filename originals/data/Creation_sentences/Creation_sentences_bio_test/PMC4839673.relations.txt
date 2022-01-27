@@ -1,0 +1,5 @@
+
+URL_of	https://github.com/etal/cnvkit	32	1	CNVkit	0	0;;
+Version_of	2.7	34	2	Python	27	1;;
+Citation_of	[35]	79	2	Biopython	69	1;;URL_of	http://www.reportlab.com/opensource/	98	4	Reportlab	86	3;;URL_of	http://matplotlib.org	154	6	matplotlib	141	5;;
+URL_of	https://github.com/etal/cnvkit	44	1	CNVkit	0	0;;Version_of	2.0	100	3	Apache License	85	2;;URL_of	http://www.apache.org/licenses/LICENSE-2.0	106	4	Apache License	85	2;;License_of	Apache License	85	2	CNVkit	0	0;;

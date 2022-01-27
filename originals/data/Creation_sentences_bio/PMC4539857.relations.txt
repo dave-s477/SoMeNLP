@@ -1,0 +1,8 @@
+URL_of	http://www.phosphortholog.com	86	1	PhosphOrtholog	69	0;;
+
+
+
+URL_of	http://www.phosphortholog.com/	36	1	web-tool	4	0;;
+
+URL_of	http://www.phosphortholog.com/	52	1	PhosphOrtholog	17	0;;
+Version_of	5	167	9	HTML	162	8;;Version_of	30.0	92	2	Firefox	82	1;;Version_of	36.0	108	4	Chrome	99	3;;Version_of	6.1	124	6	Safari	115	5;;

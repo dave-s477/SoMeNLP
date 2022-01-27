@@ -1,0 +1,1 @@
+Specification_of	SPSS	175	1	Statistical Package for Social Sciences	133	0;;Version_of	18.0	180	2	SPSS	175	1;;

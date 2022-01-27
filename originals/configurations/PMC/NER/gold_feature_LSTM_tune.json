@@ -1,0 +1,55 @@
+{
+    "data": "configurations/SoMeSci/named_entity_recognition/SoMeSci_data_software.json",
+    "general": {
+        "type": "CombinedLSTM",
+        "name": "Gold-CombinedLSTM",
+        "checkpoint": {
+            "model": "",
+            "save_dir": "",
+            "log_dir": ""
+        },
+        "batch_size": 32,
+        "max_word_length": 17,
+        "max_sentence_length": -1
+    },
+    "model": {
+        "embedding": {
+            "file": "data/word_embs/Emb_26-03-2021_14-57-08_dim-200_win-5_min-5_ep-1.bin",
+            "dim": 200,
+            "zero_init": true,
+            "train": true
+        },
+        "characters": {
+            "emb_dim": 50,
+            "hidden_dim": 20,
+            "layers": 1
+        },
+        "dropouts": {
+            "char_emb": 0.0,
+            "char_feat": 0.3,
+            "word_emb": 0.0,
+            "lstm_feat": 0.3,
+            "dense_feat": 0.3,
+            "in_feat": 0.3,
+            "proj_feat": 0.3
+        },
+        "gen": {
+            "layers": 1,
+            "hidden_dim": 100,
+            "crf_norm": false,
+            "zero_init": true,
+            "sample_weight": 1.5,
+            "feature_emb_dim": 40
+        }
+    },
+    "training": {
+        "print_errors": true,
+        "max_output_length": 110,
+        "test_epochs": 1,
+        "save_epochs": 110,
+        "print_batches": 50,
+        "save_batches": 40000,
+        "test_batches": 10000,
+        "tag_mode": "bio"
+    }
+}

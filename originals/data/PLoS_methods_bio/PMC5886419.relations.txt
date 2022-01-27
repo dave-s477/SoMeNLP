@@ -1,0 +1,32 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+URL_of	https://www.altmetric.com/products/free-tools/bookmarklet/	88	1	Altmetric	76	0;;
+PlugIn_of	Altmetric	4	0	Firefox	47	1;;
+Version_of	20.0	297	1	SPSS	292	0;;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

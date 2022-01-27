@@ -1,0 +1,1 @@
+Version_of	18.0	15	1	SPSS	10	0;;Developer_of	IBM	39	2	SPSS	10	0;;

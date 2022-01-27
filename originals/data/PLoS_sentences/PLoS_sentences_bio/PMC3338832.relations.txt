@@ -1,0 +1,1 @@
+Version_of	18	75	1	PASW Statistics	59	0;;Version_of	18.0.0	96	2	PASW Statistics	59	0;;Developer_of	SPSS, Inc.	105	3	PASW Statistics	59	0;;URL_of	www.spss.com	142	5	PASW Statistics	59	0;;Release_of	2009	120	4	PASW Statistics	59	0;;

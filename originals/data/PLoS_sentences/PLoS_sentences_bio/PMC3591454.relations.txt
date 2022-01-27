@@ -1,0 +1,1 @@
+PlugIn_of	Brain Connectivity Toolbox	102	1	Matlab	62	0;;URL_of	www.brain-connectivity-toolbox.net	131	2	Brain Connectivity Toolbox	102	1;;Citation_of	[17]	168	3	Brain Connectivity Toolbox	102	1;;

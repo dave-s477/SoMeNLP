@@ -1,0 +1,1 @@
+Version_of	12	106	1	SPSS	101	0;;Developer_of	SPSS	125	3	SPSS	101	0;;

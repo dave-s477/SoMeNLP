@@ -1,0 +1,123 @@
+[
+    {
+        "mention": "MATLAB",
+        "link": "https://www.wikidata.org/wiki/Q169478",
+        "sentence": "Off-line EEG processing and analyses were performed by adopting custom MATLAB (MathWorks) scripts using functions from the EEGLAB environment [38].",
+        "sentence_id": 0,
+        "paper_id": "https://doi.org/10.1371/journal.pone.0174100",
+        "beg": 71,
+        "end": 77,
+        "ent_type": "ProgrammingEnvironment",
+        "context": "Usage"
+    },
+    {
+        "mention": "EEGLAB",
+        "link": "https://github.com/sccn/eeglab",
+        "sentence": "Off-line EEG processing and analyses were performed by adopting custom MATLAB (MathWorks) scripts using functions from the EEGLAB environment [38].",
+        "sentence_id": 0,
+        "paper_id": "https://doi.org/10.1371/journal.pone.0174100",
+        "beg": 123,
+        "end": 129,
+        "ent_type": "Application",
+        "context": "Usage"
+    },
+    {
+        "mention": "SAS",
+        "link": "https://www.wikidata.org/wiki/Q2003932",
+        "sentence": "Statistical analyses were conducted by using SAS software, version 9.3 [PROC GENMOD, with options REPEATED, CORR = IND, and DIST = NORMAL; SAS Institute, Inc., Cary, NC].",
+        "sentence_id": 0,
+        "paper_id": "https://doi.org/10.1371/journal.pone.0150331",
+        "beg": 45,
+        "end": 48,
+        "ent_type": "Application",
+        "context": "Usage"
+    },
+    {
+        "mention": "STATA",
+        "link": "https://www.wikidata.org/wiki/Q1204300",
+        "sentence": "We used the computer software, STATA 12.1 for all analyses.",
+        "sentence_id": 0,
+        "paper_id": "https://doi.org/10.1371/journal.pone.0111169",
+        "beg": 31,
+        "end": 36,
+        "ent_type": "Application",
+        "context": "Usage"
+    },
+    {
+        "mention": "Stata",
+        "link": "https://www.wikidata.org/wiki/Q1204300",
+        "sentence": "We conducted analyses using the complex survey functions of Stata (version 14) to incorporate weighting, clustering, and stratification of the Natsal-3 data.",
+        "sentence_id": 0,
+        "paper_id": "https://doi.org/10.1371/journal.pone.0189607",
+        "beg": 60,
+        "end": 65,
+        "ent_type": "Application",
+        "context": "Usage"
+    },
+    {
+        "mention": "Stata",
+        "link": "https://www.wikidata.org/wiki/Q1204300",
+        "sentence": "All analyses were performed using Stata 13.1 software [30].",
+        "sentence_id": 1,
+        "paper_id": "https://doi.org/10.1371/journal.pone.0147923",
+        "beg": 34,
+        "end": 39,
+        "ent_type": "Application",
+        "context": "Usage"
+    },
+    {
+        "mention": "SPSS",
+        "link": "https://www.wikidata.org/wiki/Q181596",
+        "sentence": "All statistical analyses were performed using the SPSS 19.0 software package (SPSS Inc., Chicago, IL, USA).P-values<0.05 were considered statistically significant.",
+        "sentence_id": 0,
+        "paper_id": "https://doi.org/10.1371/journal.pone.0166418",
+        "beg": 50,
+        "end": 54,
+        "ent_type": "Application",
+        "context": "Usage"
+    },
+    {
+        "mention": "SPSS AMOS",
+        "link": "https://www.ibm.com/products/structural-equation-modeling-sem",
+        "sentence": "Simultaneous relationships among variables were tested using path analysis with IBM SPSS AMOS 22 software.",
+        "sentence_id": 0,
+        "paper_id": "https://doi.org/10.1371/journal.pone.0122478",
+        "beg": 84,
+        "end": 93,
+        "ent_type": "Application",
+        "context": "Usage"
+    },
+    {
+        "mention": "Excel",
+        "link": "https://www.wikidata.org/wiki/Q11272",
+        "sentence": "Data extraction was managed in Microsoft Excel using a data extraction proforma developed specifically for this review.",
+        "sentence_id": 0,
+        "paper_id": "https://doi.org/10.1371/journal.pone.0210587",
+        "beg": 41,
+        "end": 46,
+        "ent_type": "Application",
+        "context": "Usage"
+    },
+    {
+        "mention": "Statistical Package for Social Sciences",
+        "link": "https://www.wikidata.org/wiki/Q181596",
+        "sentence": "All statistical analyses were conducted using Statistical Package for Social Sciences (SPSS 20.0).",
+        "sentence_id": 0,
+        "paper_id": "https://doi.org/10.1371/journal.pone.0210532",
+        "beg": 46,
+        "end": 85,
+        "ent_type": "Application",
+        "context": "Usage"
+    },
+    {
+        "mention": "SPSS",
+        "link": "https://www.wikidata.org/wiki/Q181596",
+        "sentence": "SPSS software, version 18.0 (SPSS Inc., Chicago, IL, USA) was used for all analyses.",
+        "sentence_id": 0,
+        "paper_id": "https://doi.org/10.1371/journal.pone.0132838",
+        "beg": 0,
+        "end": 4,
+        "ent_type": "Application",
+        "context": "Usage"
+    }
+]

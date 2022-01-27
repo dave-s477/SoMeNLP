@@ -1,0 +1,1 @@
+Developer_of	GraphPad	48	0	Prism	57	1;;Version_of	5.04	71	2	Prism	57	1;;Developer_of	GraphPad Software	90	4	Prism	57	1;;URL_of	www.graphpad.com	127	5	GraphPad Software	90	4;;

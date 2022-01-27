@@ -1,0 +1,1 @@
+Developer_of	Microsoft	22	0	Excel	32	1;;Version_of	10.0	38	2	Excel	32	1;;Developer_of	Microsoft	45	3	Excel	32	1;;Version_of	12.1	87	6	STATA	76	4;;Developer_of	Stata Corp	94	7	STATA	76	4;;Extension_of	IC	84	5	STATA	76	4;;

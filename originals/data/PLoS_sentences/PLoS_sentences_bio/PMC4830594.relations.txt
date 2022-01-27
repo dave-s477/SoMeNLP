@@ -1,0 +1,1 @@
+Developer_of	IBM	48	0	SPSS	52	1;;Version_of	22	57	2	SPSS	52	1;;Developer_of	IBM Corp.	74	4	SPSS	52	1;;Release_of	2013	94	5	SPSS	52	1;;

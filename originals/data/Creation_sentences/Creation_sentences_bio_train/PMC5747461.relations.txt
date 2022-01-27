@@ -1,0 +1,5 @@
+AlternativeName_of	Modeling and Analysis Generic Platform with Integrated Evaluation	11	1	MAGPIE	0	0;;
+
+
+Version_of	5	40	2	Ruby on Rails	26	1;;
+URL_of	https://github.com/christbald/magpie	71	2	MAGPIE	4	0;;

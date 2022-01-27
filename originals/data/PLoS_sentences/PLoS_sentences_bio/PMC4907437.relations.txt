@@ -1,0 +1,1 @@
+Version_of	13	43	1	Stata	29	0;;Citation_of	[38]	76	3	REALCOM-IMPUTE	50	2;;

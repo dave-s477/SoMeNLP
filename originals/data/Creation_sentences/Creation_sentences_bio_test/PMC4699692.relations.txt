@@ -1,0 +1,1 @@
+Abbreviation_of	MIB	76	1	Microscopy Image Browser	49	0;;Citation_of	[9]	82	2	Microscopy Image Browser	49	0;;

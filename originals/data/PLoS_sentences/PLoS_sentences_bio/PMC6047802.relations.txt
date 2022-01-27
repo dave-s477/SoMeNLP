@@ -1,0 +1,1 @@
+Developer_of	IBM	31	0	SPSS Statistics	35	1;;Version_of	21	51	2	SPSS Statistics	35	1;;PlugIn_of	Advanced Model	54	3	SPSS Statistics	35	1;;

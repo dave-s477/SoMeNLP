@@ -1,0 +1,4 @@
+
+
+
+License_of	GPL	54	1	FamSeq	0	0;;URL_of	http://bioinformatics.mdanderson.org/main/FamSeq	109	3	FamSeq	0	0;;URL_of	http://sourceforge.net/projects/famseq/	182	4	FamSeq	0	0;;Version_of	3	60	2	GPL	54	1;;

@@ -1,0 +1,2 @@
+Version_of	6.04	67	1	Epi Info	58	0;;Developer_of	CDC	74	2	Epi Info	58	0;;Version_of	9.0	136	4	STATA	130	3;;Developer_of	Stata Corp.	151	5	STATA	130	3;;
+

@@ -1,0 +1,46 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Version_of	1.33.3	54	1	Mothur	44	0;;Citation_of	[12]	61	2	Mothur	44	0;;
+
+
+
+
+
+
+
+
+
+Version_of	2.0.2	10	1	Venny	4	0;;
+
+
+
+
+
+
+
+
+
+
+
+
+
+URL_of	www.arb-silva.de/aligner/	87	1	SILVA SINA	74	0;;
+
+Version_of	6.0	98	1	MEGA	91	0;;Citation_of	[18]	102	2	MEGA	91	0;;

@@ -1,0 +1,1 @@
+Version_of	11.0	51	1	SigmaPlot	41	0;;Developer_of	Systat, Inc.	58	2	SigmaPlot	41	0;;

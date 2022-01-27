@@ -1,0 +1,27 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Version_of	2010	31	1	Microsoft Office Excel	8	0;;Specification_of	Stata	57	3	Stata	40	2;;Version_of	13.1	68	5	Stata	40	2;;Extension_of	SE	65	4	Stata	57	3;;
+
+

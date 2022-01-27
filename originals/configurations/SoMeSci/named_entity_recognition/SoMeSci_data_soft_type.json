@@ -1,0 +1,53 @@
+{
+    "sets": {
+        "train": [{
+            "folder": [
+                "data/PLoS_methods/PLoS_methods_bio_train", 
+                "data/PLoS_sentences/PLoS_sentences_bio",
+                "data/Pubmed_fulltext/Pubmed_fulltext_bio_train",
+                "data/Creation_sentences/Creation_sentences_bio_train"
+            ],
+            "name": "train_0",
+            "epochs": 50,
+            "optimizer": {
+                "reset": false,
+                "lr_update":false,
+                "lr": -1
+            },
+            "scheduler": {
+                "warm_up": 0
+            },
+            "keep_neg_sample_prob": -1
+        }],
+        "test": [{
+            "folder": [
+                "data/PLoS_methods/PLoS_methods_bio_train", 
+                "data/PLoS_sentences/PLoS_sentences_bio",
+                "data/Pubmed_fulltext/Pubmed_fulltext_bio_train",
+                "data/Creation_sentences/Creation_sentences_bio_train"
+            ],
+            "name": "test_train_0",
+            "keep_neg_sample_prob": -1          
+        },{
+            "folder": [
+                "data/PLoS_methods/PLoS_methods_bio_devel",
+                "data/Pubmed_fulltext/Pubmed_fulltext_bio_devel",
+                "data/Creation_sentences/Creation_sentences_bio_devel"
+            ],
+            "name": "devel_0",
+            "keep_neg_sample_prob": -1          
+        },
+        {
+            "folder": [
+                "data/PLoS_methods/PLoS_methods_bio_test",
+                "data/Pubmed_fulltext/Pubmed_fulltext_bio_test",
+                "data/Creation_sentences/Creation_sentences_bio_test"
+            ],
+            "name": "test_0",
+            "keep_neg_sample_prob": -1          
+        }]
+    },
+    "transform": {
+        "mapping": "configurations/data_transforms/SoMeSci_soft_type.json"
+    } 
+} 
