@@ -1,4 +1,0 @@
-
-License_of	GPL	52	2	aLFQ	0	0;;Version_of	3	57	3	GPL	52	2;;URL_of	http://www.cran.r-project.org	71	5	aLFQ	0	0;;
-
-

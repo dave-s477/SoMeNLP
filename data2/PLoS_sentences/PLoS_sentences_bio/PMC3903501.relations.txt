@@ -1,1 +1,0 @@
-Version_of	20.0.0	47	1	SPSS	42	0;;Version_of	3.0.0	102	3	R	100	2;;Citation_of	[44]	108	4	R	100	2;;

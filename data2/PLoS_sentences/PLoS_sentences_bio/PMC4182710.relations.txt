@@ -1,1 +1,0 @@
-Developer_of	SAS	66	2	SAS	39	0;;Version_of	9.1	60	1	SAS	39	0;;Developer_of	Research Triangle Institute	92	5	SUDAAN	83	4;;Release_of	2004	72	3	SAS	39	0;;Release_of	2004	122	6	SUDAAN	83	4;;

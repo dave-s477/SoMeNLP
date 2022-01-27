@@ -1,1 +1,0 @@
-The API calls can be run on a specific tab in the Excel to analyze tweets. 

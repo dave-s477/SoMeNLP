@@ -1,1 +1,0 @@
-Data analysis was conducted using SigmaPlot ver.12.3 (SYSTAT Software Inc., San Jose, CA, USA). 

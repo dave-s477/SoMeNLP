@@ -1,1 +1,0 @@
-Version_of	2.0	117	1	Kubios HRV	96	0;;Developer_of	biosignal analysis and medical imaging group	130	3	Kubios HRV	96	0;;Release_of	2008	123	2	Kubios HRV	96	0;;

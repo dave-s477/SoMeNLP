@@ -1,1 +1,0 @@
-Specification_of	SPSS	54	1	Statistical Package for Social Sciences	12	0;;Version_of	16.0	81	3	SPSS	54	1;;Developer_of	SPSS Inc.	88	4	SPSS	54	1;;

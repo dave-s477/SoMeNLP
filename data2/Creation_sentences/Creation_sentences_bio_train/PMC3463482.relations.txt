@@ -1,4 +1,0 @@
-
-URL_of	http://compbio.clemson.edu/DelPhi.php	71	1	resource	4	0;;
-
-URL_of	http://compbio.clemson.edu/delphi.php	49	1	DelPhi	17	0;;

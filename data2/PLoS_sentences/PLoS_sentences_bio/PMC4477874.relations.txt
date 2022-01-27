@@ -1,1 +1,0 @@
-Version_of	21.0J	65	1	SPSS	29	0;;Developer_of	IBM SPSS Japan	73	2	SPSS	29	0;;

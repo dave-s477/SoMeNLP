@@ -1,5 +1,0 @@
-URL_of	http://epigraph.mpi-inf.mpg.de/	25	1	EpiGRAPH	4	0;;
-
-
-
-

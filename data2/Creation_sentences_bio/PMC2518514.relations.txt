@@ -1,3 +1,0 @@
-PlugIn_of	PhyloGibbs-MP	16	0	PhyloGibbs	50	1;;
-
-URL_of	http://www.imsc.res.in/∼rsidd/phylogibbs-mp/	32	1	PhyloGibbs-MP	0	0;;

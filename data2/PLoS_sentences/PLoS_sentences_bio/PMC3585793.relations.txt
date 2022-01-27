@@ -1,1 +1,0 @@
-Version_of	20.0	94	1	Statistical Package for the Social Sciences	42	0;;Specification_of	SPSS	101	2	Statistical Package for the Social Sciences	42	0;;Specification_of	AMOS	162	6	Analysis of Moment Structures	117	4;;Version_of	20.0	167	7	AMOS	162	6;;Version_of	20.0	106	3	SPSS	101	2;;Version_of	20.0	155	5	Analysis of Moment Structures	117	4;;

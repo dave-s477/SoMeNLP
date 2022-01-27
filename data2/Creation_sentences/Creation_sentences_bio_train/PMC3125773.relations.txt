@@ -1,2 +1,0 @@
-URL_of	http://hmmer.janelia.org	21	1	HMMER	2	0;;
-URL_of	http://hmmer.janelia.org	39	1	HMMER	22	0;;

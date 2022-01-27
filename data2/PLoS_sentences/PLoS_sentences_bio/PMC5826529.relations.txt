@@ -1,1 +1,0 @@
-Developer_of	IBM	131	0	SPSS Statistics	135	1;;Version_of	18	151	2	SPSS Statistics	135	1;;Version_of	3	237	4	LatentGold	226	3;;

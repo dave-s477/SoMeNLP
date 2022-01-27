@@ -1,4 +1,0 @@
-
-PlugIn_of	CloVR-ITS	0	0	CloVR	142	1;;URL_of	http://clovr.org	174	2	CloVR	142	1;;
-
-

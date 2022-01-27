@@ -1,1 +1,0 @@
-Version_of	18	39	1	SPSS	32	0;;Developer_of	SPSS inc	44	2	SPSS	32	0;;Version_of	9.2	81	4	SAS	75	3;;Developer_of	SAS	87	5	SAS	75	3;;

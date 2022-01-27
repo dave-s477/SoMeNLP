@@ -1,1 +1,0 @@
-Version_of	10.1	120	1	STATA	114	0;;Developer_of	Stata Corp	139	3	STATA	114	0;;

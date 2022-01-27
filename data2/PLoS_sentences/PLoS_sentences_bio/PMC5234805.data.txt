@@ -1,1 +1,0 @@
-Stata version 12.0 SE was used for all analyses .

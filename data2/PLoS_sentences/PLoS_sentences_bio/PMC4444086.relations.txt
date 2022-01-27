@@ -1,2 +1,0 @@
-Version_of	16.0	91	1	SPSS	78	0;;Developer_of	SPSS Inc.	98	2	SPSS	78	0;;Version_of	8.5	184	5	LISREL	177	4;;
-

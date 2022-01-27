@@ -1,2 +1,0 @@
-DLMs were implemented using the dlnm package version 2.2.6 in R Studio (Vienna, Austria) and other analyses were performed in SAS (v9.4, SAS Institute Inc., Cary, NC).
-

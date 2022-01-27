@@ -1,1 +1,0 @@
-PlugIn_of	punafcc	104	0	STATA	123	1;;Version_of	14	129	2	STATA	123	1;;

@@ -1,2 +1,0 @@
-All analyses were performed using R version 3.2.4 (Vienna, Austria) and STATA version 14 (College Station, Texas).
-

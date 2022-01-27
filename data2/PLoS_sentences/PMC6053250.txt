@@ -1,2 +1,0 @@
-Data analysis was performed in Stata, version 15.0, and R, version 3.4.0.
-

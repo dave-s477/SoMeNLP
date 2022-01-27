@@ -1,4 +1,0 @@
-O O B-PlugIn_Creation O O B-ProgrammingEnvironment_Usage O O O O O O O O O O O O O
-O O O O O O O O O O O O O O O O O O O O O O O B-PlugIn_Creation O O O O O O O O O O O O O O
-O O O O O B-PlugIn_Deposition O O O O O O O O O O O O B-License O B-Version O O
-O B-SoftwareCoreference_Deposition I-SoftwareCoreference_Deposition O O O B-URL O

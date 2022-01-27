@@ -1,5 +1,0 @@
-
-
-
-Citation_of	[18]	104	3	COBRApy	57	2;;
-URL_of	https://github.com/SBRG/cobrame	53	1	COBRAme	22	0;;

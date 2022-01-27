@@ -1,4 +1,0 @@
-Abbreviation_of	iDREM	92	1	interactive DREM	73	0;;
-Abbreviation_of	iDREM	60	1	interactive DREM	41	0;;
-
-URL_of	https://github.com/phoenixding/idrem	114	2	iDREM	4	0;;

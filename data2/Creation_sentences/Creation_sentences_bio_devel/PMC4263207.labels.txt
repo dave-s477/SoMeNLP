@@ -1,6 +1,0 @@
-O O O B-PlugIn_Creation I-PlugIn_Creation I-PlugIn_Creation I-PlugIn_Creation I-PlugIn_Creation O B-Abbreviation O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O
-O O O B-PlugIn_Mention O O B-Application_Mention O O O O O O O O O O O O O O O O O O O O O O O O O O
-O O O O B-PlugIn_Creation O B-AlternativeName I-AlternativeName I-AlternativeName I-AlternativeName I-AlternativeName O O O O O O O O O O O O O O O O O O O O O O O
-O O O O O O O O O O O O O O O O O O O O O B-PlugIn_Creation O O O O O O O B-Application_Mention O
-O O O O O O O O B-PlugIn_Creation O O O O O O O O O O O O O O O O O O O O O O O O O O O O
-O O O O O O B-PlugIn_Creation O O B-Application_Mention O O O O B-URL O O O O O O B-URL O O O O O O O O O O O B-ProgrammingEnvironment_Usage O O O B-Application_Mention I-Application_Mention B-Version I-Version O O B-OperatingSystem_Mention I-OperatingSystem_Mention O O O O B-Application_Mention B-Version O O O O B-Application_Mention O O B-License I-License I-License O O B-Version O

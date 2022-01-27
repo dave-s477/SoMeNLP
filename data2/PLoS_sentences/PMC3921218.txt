@@ -1,2 +1,0 @@
-Statistical analysis was carried out using STATA 11.2 [18].
-

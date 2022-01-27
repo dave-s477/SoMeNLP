@@ -1,1 +1,0 @@
-AlternativeName_of	Statistical Package for Social Sciences	42	1	SPSS	35	0;;Version_of	19	104	3	SPSS	35	0;;

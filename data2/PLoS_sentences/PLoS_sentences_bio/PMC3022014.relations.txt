@@ -1,1 +1,0 @@
-Version_of	15	60	2	SPSS	29	0;;Developer_of	IBM	63	3	SPSS	29	0;;Version_of	8.02.	148	6	Sigma plot	120	4;;Developer_of	Systat Software Inc.	155	7	Sigma plot	120	4;;

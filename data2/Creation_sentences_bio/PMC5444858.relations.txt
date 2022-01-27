@@ -1,5 +1,0 @@
-
-Version_of	3	48	2	GNU GPL	39	1;;License_of	GNU GPL	39	1	source code	4	0;;URL_of	https://github.com/i-git/FIMTrack	53	3	source code	4	0;;URL_of	http://fim.uni-muenster.de	152	7	pre-compiled binaries	91	4;;
-URL_of	http://fim.uni-muenster.de	84	3	FIMTrack	0	0;;
-License_of	GNU GPL	50	1	FIMTrack	19	0;;Version_of	3	59	2	GNU GPL	50	1;;URL_of	https://github.com/i-git/FIMTrack	86	3	FIMTrack	19	0;;
-

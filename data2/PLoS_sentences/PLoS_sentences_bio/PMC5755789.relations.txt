@@ -1,1 +1,0 @@
-Version_of	13	60	1	STATA	46	0;;Developer_of	StataCorp	77	2	STATA	46	0;;Version_of	2.12.3	192	4	QGIS	170	3;;Developer_of	OSGeo	201	5	QGIS	170	3;;

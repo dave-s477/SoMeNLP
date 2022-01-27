@@ -1,1 +1,0 @@
-We used the cp _ apr function in the Matlab Tensor Toolbox [18] .

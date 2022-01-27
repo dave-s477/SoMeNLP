@@ -1,1 +1,0 @@
-Specification_of	Excel	47	1	Excel	30	0;;Version_of	2013	61	2	Excel	47	1;;Developer_of	Microsoft	68	3	Excel	47	1;;

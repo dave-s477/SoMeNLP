@@ -1,1 +1,0 @@
-Survey responses were analyzed using STATA 15 [16] .

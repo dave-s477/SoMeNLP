@@ -1,1 +1,0 @@
-Version_of	12.3	49	1	SigmaPlot	34	0;;Developer_of	SYSTAT Software Inc.	56	2	SigmaPlot	34	0;;

@@ -1,2 +1,0 @@
-PlugIn_of	T3_MM	17	1	R	3	0;;URL_of	http://biocomputer.bio.cuhk.edu.hk/softwares/T3_MM	55	2	T3_MM	17	1;;
-URL_of	http://biocomputer.bio.cuhk.edu.hk/T3DB/T3_MM.php	21	1	T3_MM	0	0;;

@@ -1,1 +1,0 @@
-Version_of	11.2	37	2	STATA	28	0;;Extension_of	MP	34	1	STATA	28	0;;

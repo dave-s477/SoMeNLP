@@ -1,1 +1,0 @@
-Abbreviation_of	SPSS	88	1	Statistical Package for Social Sciences	46	0;;Version_of	21	117	3	Statistical Package for Social Sciences	46	0;;

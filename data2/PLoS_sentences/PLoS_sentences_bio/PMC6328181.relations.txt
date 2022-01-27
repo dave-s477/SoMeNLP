@@ -1,1 +1,0 @@
-Developer_of	IBM	56	3	SPSS Statistics	60	4;;Version_of	24	43	1	SPSS	30	0;;Version_of	23	98	6	SPSS Statistics	60	4;;

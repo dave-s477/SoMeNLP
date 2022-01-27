@@ -1,6 +1,0 @@
-
-
-URL_of	http://www2.umdnj.edu/lilabweb/publications/AccuTyping.html	34	1	AccuTyping	0	0;;
-
-Developer_of	Axon Instrument	152	2	GenePix	142	1;;Developer_of	Biodiscovery, Inc.	201	4	ImaGene	191	3;;
-URL_of	http://www2.umdnj.edu/lilabweb/Publications/AccuTyping.html	55	1	program	4	0;;

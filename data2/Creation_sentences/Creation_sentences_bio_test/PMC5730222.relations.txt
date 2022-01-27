@@ -1,4 +1,0 @@
-
-
-
-URL_of	mosaic.mpi-cbg.de	80	1	pSSAlib	4	0;;Version_of	3	136	3	GNU LGPL	125	2;;License_of	GNU LGPL	125	2	pSSAlib	4	0;;

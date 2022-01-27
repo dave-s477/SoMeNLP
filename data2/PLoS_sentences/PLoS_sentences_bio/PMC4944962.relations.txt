@@ -1,1 +1,0 @@
-Version_of	9.3	68	1	SAS	45	0;;Developer_of	SAS Institute, Inc.	145	2	SAS	45	0;;

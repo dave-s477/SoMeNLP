@@ -1,8 +1,0 @@
-T1	Application_Usage_Analysis 9414 9421	Image J
-T2	Application_Usage_DataPreProcss 10008 10013	Excel
-T3	Application_Usage_Analysis 10723 10727	SPSS
-T4	OperatingSystem_Usage_Analysis 10737 10744	Windows
-T5	Version 10728 10732	13.0
-R1	Version_of Arg1:T5 Arg2:T3	
-T6	Developer 10754 10762	SPSS Inc
-R2	Developer_of Arg1:T6 Arg2:T3	
