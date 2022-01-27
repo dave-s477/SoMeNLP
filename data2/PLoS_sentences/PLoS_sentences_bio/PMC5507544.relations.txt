@@ -1,0 +1,1 @@
+Developer_of	Microsoft Corp.	82	3	Excel	74	2;;Developer_of	Microsoft Corp.	82	3	Word	65	1;;Developer_of	Microsoft Corp.	82	3	MSOffice	54	0;;Developer_of	QSR International	113	5	NVivo	105	4;;

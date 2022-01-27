@@ -1,0 +1,1 @@
+Developer_of	Microsoft	49	1	Excel	41	0;;Version_of	7.5	79	3	OriginPro	65	2;;Developer_of	OriginLab	85	4	OriginPro	65	2;;

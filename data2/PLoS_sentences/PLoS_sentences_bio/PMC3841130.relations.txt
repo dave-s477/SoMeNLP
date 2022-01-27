@@ -1,0 +1,1 @@
+Developer_of	Microsoft	58	0	Word	68	1;;Developer_of	Microsoft	58	0	Excel	77	2;;

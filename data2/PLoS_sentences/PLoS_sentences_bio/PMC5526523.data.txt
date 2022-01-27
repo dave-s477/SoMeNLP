@@ -1,0 +1,1 @@
+All analyses were performed with multiple imputation methods using STATA version 14 ( Stata Corp LP , College Station , TX , USA ) .

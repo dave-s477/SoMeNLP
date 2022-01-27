@@ -1,0 +1,48 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Version_of	1.03	8	1	PLINK	0	0;;Citation_of	[45]	39	2	PLINK	0	0;;
+
+
+
+
+
+
+
+URL_of	http://frodo.wi.mit.edu/	59	2	Primer	48	0;;Version_of	3	55	1	Primer	48	0;;
+
+
+
+
+
+Developer_of	SoftGenetics	74	2	Mutation Surveyor	47	0;;Version_of	3.10	67	1	Mutation Surveyor	47	0;;
+
+
+
+
+
+
+
+
+
+
+
+
+
+Developer_of	UCSC	39	0	Genome browser	44	1;;URL_of	http://genome.ucsc.edu/	61	2	Genome browser	44	1;;
+
+

@@ -1,0 +1,1 @@
+Version_of	5	110	2	SPM	106	1;;Specification_of	SPM	106	1	statistical parametric mapping	56	0;;Developer_of	Wellcome Department of Cognitive Neurology	114	3	SPM	106	1;;URL_of	www.fil.ion.ucl.ac.uk/spm	168	4	SPM	106	1;;Developer_of	Mathworks, Inc.	233	6	Matlab	224	5;;Release_of	14	279	7	Matlab	224	5;;

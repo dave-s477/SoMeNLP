@@ -1,0 +1,1 @@
+Version_of	11.0	62	1	SUDAAN	55	0;;Developer_of	RTI	69	2	SUDAAN	55	0;;Version_of	9.3	260	4	SAS	248	3;;Developer_of	SAS Institute	266	5	SAS	248	3;;Version_of	11.0.1	313	7	SUDAAN	298	6;;Developer_of	RTI International	322	8	SUDAAN	298	6;;

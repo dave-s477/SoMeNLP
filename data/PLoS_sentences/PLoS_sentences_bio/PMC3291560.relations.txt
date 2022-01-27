@@ -1,0 +1,3 @@
+Version_of	15.0	156	1	Minitab	144	0;;
+Version_of	15.0	102	1	Minitab	90	0;;
+Version_of	15.0	51	1	Minitab	39	0;;

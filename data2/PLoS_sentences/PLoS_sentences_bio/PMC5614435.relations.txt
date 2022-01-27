@@ -1,0 +1,1 @@
+Version_of	14	57	1	STATA	43	0;;Citation_of	[46]	60	2	STATA	43	0;;

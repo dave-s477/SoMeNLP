@@ -1,0 +1,1 @@
+Developer_of	GraphPad	133	0	Prism	142	1;;Version_of	5.0 d	148	2	Prism	142	1;;

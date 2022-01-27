@@ -1,0 +1,1 @@
+Version_of	15	38	1	SPSS	28	0;;Developer_of	SPSS Inc	43	2	SPSS	28	0;;

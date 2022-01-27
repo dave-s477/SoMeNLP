@@ -1,0 +1,3 @@
+
+
+Version_of	1.0	30	1	GenomePop	17	0;;URL_of	http://webs.uvigo.es/acraaj/GenomePop.htm	54	2	GenomePop	17	0;;License_of	GNU GPL	229	7	GenomePop	17	0;;

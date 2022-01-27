@@ -1,0 +1,5 @@
+Abbreviation_of	PEPIS	106	1	Pipeline for estimating EPIStatic genetic effects	54	0;;
+URL_of	http://bioinfo.noble.org/PolyGenic_QTL/	37	1	PEPIS	4	0;;
+AlternativeName_of	Pipeline for estimating EPIStatic genetic effects	322	3	PEPIS	314	2;;
+
+URL_of	http://bioinfo.noble.org/PolyGenic_QTL/	79	1	PEPIS	4	0;;

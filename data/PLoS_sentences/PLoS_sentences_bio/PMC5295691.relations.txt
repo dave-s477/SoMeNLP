@@ -1,0 +1,1 @@
+Abbreviation_of	SPSS	88	1	Statistical Package for the Social Sciences	42	0;;Version_of	19.0	103	2	Statistical Package for the Social Sciences	42	0;;Developer_of	IBM Corp	119	3	Statistical Package for the Social Sciences	42	0;;

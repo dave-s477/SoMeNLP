@@ -1,0 +1,1 @@
+Specification_of	SPSS	263	1	Software Package for Statistical Analysis	219	0;;Version_of	19.0	288	3	SPSS	263	1;;Citation_of	[24]	297	4	Software Package for Statistical Analysis	219	0;;

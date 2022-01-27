@@ -1,0 +1,33 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Version_of	8	38	1	SPM	34	0;;URL_of	http://www.fil.ion.ucl.ac.uk/spm	42	2	SPM	34	0;;
+
+
+
+Citation_of	[26]	144	1	Diffeomorphic Anatomical Registration Through Exponentiated Lie Algebra	64	0;;
+
+
+
+
+Version_of	8	99	1	SPM	95	0;;
+
+
+URL_of	http://www.restfmri.net/forum/REST_V1.8	91	2	REST	75	1;;PlugIn_of	AlphaSim	40	0	REST	75	1;;

@@ -1,0 +1,1 @@
+Developer_of	IBM	44	2	SPSS	32	0;;Version_of	17.0	37	1	SPSS	32	0;;Version_of	6.1	81	4	Mplus	75	3;;

@@ -1,0 +1,1 @@
+All analyses were conducted using STATA v 9 and all p - values refer to two - tailed tests .

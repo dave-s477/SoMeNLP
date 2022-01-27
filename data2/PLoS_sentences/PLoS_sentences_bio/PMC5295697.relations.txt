@@ -1,0 +1,1 @@
+Version_of	12	46	1	Stata	32	0;;

@@ -1,0 +1,46 @@
+
+
+
+
+
+
+
+Developer_of	SPSS Inc.	165	2	SigmaStat	136	1;;Developer_of	SPSS Inc.	165	2	SigmaPlot	124	0;;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Citation_of	[25]	256	1	PhylopythiaS	69	0;;
+
+Abbreviation_of	RAST	132	1	Rapid Annotation using Subsystem Technology	86	0;;URL_of	http://rast.nmpdr.org/	139	2	Rapid Annotation using Subsystem Technology	86	0;;
+URL_of	http://linux1.softberry.com/berry.phtml	89	1	FGENESB	79	0;;
+
+URL_of	http://www.ebi.ac.uk/interpro/	232	2	InterPro	209	1;;
+
+
+
+
+
+
+
+
+
+
+Developer_of	Definiens	149	1	ProteomeWeaver	123	0;;
+
+
+
+Version_of	3.3	105	1	Flex Analysis	86	0;;Developer_of	Bruker Daltonics	126	3	BioTools	115	2;;Developer_of	Matrix Science	164	5	MASCOT	155	4;;URL_of	http://www.matrixscience.com/	200	7	MASCOT	155	4;;Release_of	2016	193	6	MASCOT	155	4;;

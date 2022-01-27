@@ -1,0 +1,1 @@
+Developer_of	StataCorp	8	1	STATA	0	0;;Version_of	13.1	62	3	STATA	0	0;;Extension_of	IC	59	2	STATA	0	0;;

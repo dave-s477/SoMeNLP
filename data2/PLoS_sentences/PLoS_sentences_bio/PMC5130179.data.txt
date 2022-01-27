@@ -1,0 +1,2 @@
+All images were acquired through the Matlab Image Acquisition Toolbox ( Mathworks , Matlab v 2011b ) at 2 frames / s ( 500 ms exposure ) at 360x 260 pixel ( px ) resolutions ( using 4x 4 hardware binning ) .
+The images were subsequently processed and analyzed on a pixel - by - pixel basis using the Matlab Image Processing Toolbox ( Mathworks , Matlab v 2011b ) using script modified from Theyel and colleagues [20] .

@@ -1,0 +1,1 @@
+Version_of	21	126	1	SPSS	111	0;;Developer_of	IBM	131	2	SPSS	111	0;;

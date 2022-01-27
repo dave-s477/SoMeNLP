@@ -1,0 +1,10 @@
+
+
+License_of	BSD license	91	1	PhysiCell	4	0;;URL_of	http://PhysiCell.MathCancer.org	106	2	PhysiCell	4	0;;URL_of	http://PhysiCell.sf.net	142	3	PhysiCell	4	0;;
+
+
+
+
+URL_of	https://sourceforge.net/projects/physicell/files/PhysiCell/	63	1	virtual appliance	28	0;;
+Version_of	1.2.2	60	1	PhysiCell	50	0;;URL_of	https://github.com/MathCancer/PhysiCell/releases/latest	101	2	PhysiCell	50	0;;
+License_of	BSD license	47	1	PhysiCell	0	0;;

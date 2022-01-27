@@ -1,0 +1,1 @@
+Version_of	5	76	1	EPI INFO	59	0;;Developer_of	CDC	80	2	EPI INFO	59	0;;Developer_of	Microsoft	114	3	Excel	124	4;;

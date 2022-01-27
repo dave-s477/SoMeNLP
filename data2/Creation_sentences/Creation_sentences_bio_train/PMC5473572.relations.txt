@@ -1,0 +1,4 @@
+PlugIn_of	sourceR	13	0	R	26	1;;
+
+Version_of	3	117	2	GPL	111	1;;License_of	GPL	111	1	sourceR	30	0;;
+URL_of	http://fhm-chicas-code.lancs.ac.uk/millerp/sourceR	40	1	development version	4	0;;

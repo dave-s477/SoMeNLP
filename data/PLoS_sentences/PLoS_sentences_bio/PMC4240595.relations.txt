@@ -1,0 +1,3 @@
+
+Developer_of	IBM	49	0	SPSS Amos	53	1;;Version_of	21.0	63	2	SPSS Amos	53	1;;
+

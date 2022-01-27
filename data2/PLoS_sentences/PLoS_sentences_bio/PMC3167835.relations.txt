@@ -1,0 +1,1 @@
+Version_of	11.1	6	1	Stata	0	0;;

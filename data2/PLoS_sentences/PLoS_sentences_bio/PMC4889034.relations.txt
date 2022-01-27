@@ -1,0 +1,1 @@
+Version_of	13	50	1	Stata	42	0;;Citation_of	[48]	53	2	Stata	42	0;;Version_of	7	122	4	Mplus	114	3;;Citation_of	[46]	124	5	Mplus	114	3;;
