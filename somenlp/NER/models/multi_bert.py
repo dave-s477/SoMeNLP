@@ -1,3 +1,4 @@
+from matplotlib.pyplot import axis
 from nltk.probability import log_likelihood
 import torch
 from torch import nn
@@ -888,6 +889,139 @@ class BERTMultiTaskOpt2(BertPreTrainedModel):
                 loss += loss_fct(mention_type_logits.view(-1, self.num_labels['mention_type']), mention_type_labels.view(-1))
 
         return [loss, software_logits, soft_type_logits, mention_type_logits, outputs.hidden_states, outputs.attentions]
+
+
+
+class BERTMultiTaskSoftwarePurpose(BertPreTrainedModel):
+
+    _keys_to_ignore_on_load_unexpected = [r"pooler"]
+
+    def __init__(self, config):
+        super().__init__(config)
+        self.num_labels = config.num_labels
+
+        self.bert = BertModel(config, add_pooling_layer=False)
+        self.dropout = nn.Dropout(config.hidden_dropout_prob)
+        self.software_classifier = nn.Linear(config.hidden_size, config.num_labels['software'])
+        self.mention_type_classifier = nn.Linear(config.hidden_size + config.num_labels['software'], config.num_labels['mention_type'])
+        self.soft_type_classifier = nn.Linear(config.hidden_size + config.num_labels['software'] + config.num_labels['mention_type'], config.num_labels['soft_type'])
+        self.soft_purpose_classifier = nn.Linear(config.hidden_size + config.num_labels['software'] + config.num_labels['mention_type'] + config.num_labels['soft_type'], config.num_labels['soft_purpose'])
+        self.init_weights()
+
+    def forward(self, input_ids=None, attention_mask=None, token_type_ids=None, position_ids=None, head_mask=None, inputs_embeds=None, software_labels=None, soft_type_labels=None, mention_type_labels=None, soft_purpose_labels = None, sequence_lengths=None, output_attentions=None, output_hidden_states=None, return_dict=None, train_depth=4, teacher_forcing=False,):
+        return_dict = return_dict if return_dict is not None else self.config.use_return_dict
+
+        outputs = self.bert(
+            input_ids,
+            attention_mask=attention_mask,
+            token_type_ids=token_type_ids,
+            position_ids=position_ids,
+            head_mask=head_mask,
+            inputs_embeds=inputs_embeds,
+            output_attentions=output_attentions,
+            output_hidden_states=output_hidden_states,
+            return_dict=return_dict,
+        )
+
+        sequence_output = outputs[0]
+        sequence_output = self.dropout(sequence_output)
+
+        # logits
+
+        # layer -1 : classify software -- identify all software and additional info like Application, Version, Devleoper, URL, License, Citation, etc.
+        software_logits = self.software_classifier(sequence_output)
+        if not teacher_forcing or software_labels is None:
+            software_labels_one_hot = F.softmax(software_logits.detach(), dim=-1)
+            software_labels_one_hot = F.one_hot(torch.argmax(software_labels_one_hot, axis=2), num_classes=self.num_labels['software']).float()
+        else:
+            software_labels_one_hot = F.one_hot(software_labels, num_classes=self.num_labels['software']).float()
+        software_classified_sequence = torch.cat((sequence_output, software_labels_one_hot), dim=-1)
+
+
+        # layer -2 : classify mention_type -- identify all software_mention_types  like Usage, Creation, Deposition, Mention from the above sequence
+
+        mention_type_logits = self.mention_type_classifier(software_classified_sequence)
+        if not teacher_forcing or mention_type_labels is None:
+            mention_type_labels_one_hot = F.softmax(mention_type_logits.detach(), dim=-1)
+            mention_type_labels_one_hot = F.one_hot(torch.argmax(mention_type_labels_one_hot, axis=2), num_classes=self.num_labels['mention_type']).float()
+        else:
+            mention_type_labels_one_hot = F.one_hot(mention_type_labels, num_classes=self.num_labels['mention_type']).float()
+        mention_type_classified_sequence = torch.cat((sequence_output, software_labels_one_hot, mention_type_labels_one_hot), dim=-1)
+
+
+        # layer -3 : classify software_type -- identify all software_types  like Application. PlugIn, ProgrammingENvironment, and OperatingSystem
+
+        soft_type_logits = self.soft_type_classifier(mention_type_classified_sequence)
+        if not teacher_forcing or soft_type_labels is None:
+            soft_type_labels_one_hot = F.softmax(soft_type_logits.detach(), dim=-1)
+            soft_type_labels_one_hot = F.one_hot(torch.argmax(soft_type_labels_one_hot, axis = 2), num_classes= self.num_labels['soft_type']).float()
+        else:
+            soft_type_labels_one_hot = F.one_hot(mention_type_labels, num_classes=self.num_labels['soft_type']).float()
+        software_type_classified_sequence = torch.cat((sequence_output, software_labels_one_hot, mention_type_labels_one_hot), dim=-1)
+
+
+
+        # layer -4 : classify software_purpose -- identify all software_purposes like Analysis, DataCollection, PrecProcessing, Visualization, simulation, etc.
+
+        soft_purpose_logits = self.soft_purpose_classifier(software_type_classified_sequence)
+
+        
+
+        # loss
+        loss = 0
+        if software_labels is not None:
+            loss_fct = CrossEntropyLoss()
+            # Only keep active parts of the loss
+            if attention_mask is not None:
+                active_loss = attention_mask.view(-1) == 1
+                active_logits = software_logits.view(-1, self.num_labels['software'])
+                active_labels = torch.where(
+                    active_loss, software_labels.view(-1), torch.tensor(loss_fct.ignore_index).type_as(software_labels)
+                )
+                loss += loss_fct(active_logits, active_labels)
+            else:
+                loss += loss_fct(software_logits.view(-1, self.num_labels['software']), software_labels.view(-1))
+
+        if train_depth > 0 and soft_type_labels is not None:
+            loss_fct = CrossEntropyLoss()
+            # Only keep active parts of the loss
+            if attention_mask is not None:
+                active_loss = attention_mask.view(-1) == 1
+                active_logits = soft_type_logits.view(-1, self.num_labels['soft_type'])
+                active_labels = torch.where(
+                    active_loss, soft_type_labels.view(-1), torch.tensor(loss_fct.ignore_index).type_as(soft_type_labels)
+                )
+                loss += loss_fct(active_logits, active_labels)
+            else:
+                loss += loss_fct(soft_type_logits.view(-1, self.num_labels['soft_type']), soft_type_labels.view(-1))
+
+
+        if train_depth > 1 and mention_type_labels is not None:
+            loss_fct = CrossEntropyLoss()
+            # Only keep active parts of the loss
+            if attention_mask is not None:
+                active_loss = attention_mask.view(-1) == 1
+                active_logits = mention_type_logits.view(-1, self.num_labels['mention_type'])
+                active_labels = torch.where(
+                    active_loss, mention_type_labels.view(-1), torch.tensor(loss_fct.ignore_index).type_as(mention_type_labels)
+                )
+                loss += loss_fct(active_logits, active_labels)
+            else:
+                loss += loss_fct(mention_type_logits.view(-1, self.num_labels['mention_type']), mention_type_labels.view(-1))
+        
+       
+        if train_depth > 2 and soft_purpose_labels is not None:
+            loss_fct = CrossEntropyLoss()
+            # Only keep active parts of the los
+            if attention_mask is not None:
+                active_loss = attention_mask.view(-1) == 1
+                active_logits = soft_purpose_logits.view(-1, self.num_labels['soft_purpose'])
+                active_labels = torch.where(
+                    active_loss, soft_purpose_labels.view(-1), torch.tensor(loss_fct.ignore_index).type_as(soft_purpose_labels)
+                )
+                loss += loss_fct(active_logits, active_labels)
+
+        return [loss, software_logits, soft_type_logits, mention_type_logits, soft_purpose_logits, outputs.hidden_states, outputs.attentions]
 
 class BERTMultiTaskCRF(BertPreTrainedModel):
 

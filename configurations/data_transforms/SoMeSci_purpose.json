@@ -10,6 +10,23 @@
 "Application_Usage_Simulation" : "Simulation",
 "Application_Usage_Visualization" : "Visualization",
 "Application_Usage_Programming" : "Programming",
+"Application_Usage": "o",
+"Application_Creation": "o",
+"Application_Deposition": "o",
+"Application_Mention": "o",
+
+"PlugIn_Usage_Analysis" : "Analysis",
+"PlugIn_Usage_Modelling" : "Modelling" ,
+"PlugIn_Usage_Stimulation" : "Stimulation",
+"PlugIn_Usage_DataCollection" : "DataCollection" ,
+"PlugIn_Usage_DataPreProcss" : "DataPreProcss",
+"PlugIn_Usage_Simulation" : "Simulation",
+"PlugIn_Usage_Visualization" : "Visualization",
+"PlugIn_Usage_Programming" : "Programming",
+"PlugIn_Usage": "o",
+"PlugIn_Creation": "o",
+"PlugIn_Deposition": "o",
+"PlugIn_Mention": "o",
 
 
 "ProgrammingEnvironment_Usage_Analysis" : "Analysis", 
@@ -20,17 +37,8 @@
 "ProgrammingEnvironment_Usage_Simulation" : "Simulation",
 "ProgrammingEnvironment_Usage_Visualization" : "Visualization", 
 "ProgrammingEnvironment_Usage_Programming" : "Programming",
-
-
-"PlugIn_Usage_Analysis" : "Analysis",
-"PlugIn_Usage_Modelling" : "Modelling" ,
-"PlugIn_Usage_Stimulation" : "Stimulation",
-"PlugIn_Usage_DataCollection" : "DataCollection" ,
-"PlugIn_Usage_DataPreProcss" : "DataPreProcss",
-"PlugIn_Usage_Simulation" : "Simulation",
-"PlugIn_Usage_Visualization" : "Visualization",
-"PlugIn_Usage_Programming" : "Programming",
-
+"ProgrammingEnvironment_Usage": "o",
+"ProgrammingEnvironment_Mention": "o",
 
 "OperatingSystem_Usage_Analysis" : "Analysis",
 "OperatingSystem_Usage_Modelling" : "Modelling",
@@ -40,7 +48,8 @@
 "OperatingSystem_Usage_Simulation" : "Simulation",
 "OperatingSystem_Usage_Visualization" : "Visualization",
 "OperatingSystem_Usage_Programming" : "Programming" ,
-
+"OperatingSystem_Usage": "o",
+"OperatingSystem_Mention": "o",
 
 "Version": "O",
 "Developer": "O",
@@ -53,16 +62,5 @@
 "Extension": "O",
 
 
-"Version_of": "O",
-"Developer_of": "O",
-"URL_of": "O",
-"License_of": "O",
-"Citation_of": "O",
-"Abbreviation_of": "O",
-"AlternativeName_of": "O",
-"Release_of": "O",
-"Specification_of": "O",
-"PlugIn_of": "O",
-"Extension_of": "O"
-
+"SoftwareCoreference_Deposition": "o"
 }
