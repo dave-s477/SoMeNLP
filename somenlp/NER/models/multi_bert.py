@@ -293,7 +293,6 @@ class BertAttention(nn.Module):
         outputs = (attention_output,) + self_outputs[1:]  # add attentions if we output them
         return outputs
 
-
 class BertIntermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
