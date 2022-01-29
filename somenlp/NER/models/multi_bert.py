@@ -956,8 +956,8 @@ class BERTMultiTaskSoftwarePurpose(BertPreTrainedModel):
             soft_type_labels_one_hot = F.softmax(soft_type_logits.detach(), dim=-1)
             soft_type_labels_one_hot = F.one_hot(torch.argmax(soft_type_labels_one_hot, axis = 2), num_classes= self.num_labels['soft_type']).float()
         else:
-            soft_type_labels_one_hot = F.one_hot(mention_type_labels, num_classes=self.num_labels['soft_type']).float()
-        software_type_classified_sequence = torch.cat((sequence_output, software_labels_one_hot, mention_type_labels_one_hot), dim=-1)
+            soft_type_labels_one_hot = F.one_hot(soft_type_labels, num_classes=self.num_labels['soft_type']).float()
+        software_type_classified_sequence = torch.cat((sequence_output, software_labels_one_hot, soft_type_labels_one_hot), dim=-1)
 
 
 
