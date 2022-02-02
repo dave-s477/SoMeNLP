@@ -939,7 +939,7 @@ class BERTMultiTaskOpt2(BertPreTrainedModel):
         # layer -2 : classify mention_type -- identify all software_mention_types  like Usage, Creation, Deposition, Mention from the above sequence
 
         mention_type_logits = self.mention_type_classifier(software_classified_sequence)
-        if not teacher_forcing or soft_type_labels is None:
+        if not teacher_forcing or mention_type_labels is None:
             mention_type_labels_one_hot = F.softmax(mention_type_logits.detach(), dim=-1)
             mention_type_labels_one_hot = F.one_hot(torch.argmax(mention_type_labels_one_hot, axis=2), num_classes=self.num_labels['mention_type']).float()
         else:
@@ -950,7 +950,7 @@ class BERTMultiTaskOpt2(BertPreTrainedModel):
         # layer -3 : classify software_type -- identify all software_types  like Application. PlugIn, ProgrammingENvironment, and OperatingSystem
 
         soft_type_logits = self.soft_type_classifier(mention_type_classified_sequence)
-        if not teacher_forcing or soft_purpose_labels is None:
+        if not teacher_forcing or soft_type_labels is None:
             soft_type_labels_one_hot = F.softmax(soft_type_logits.detach(), dim=-1)
             soft_type_labels_one_hot = F.one_hot(torch.argmax(soft_type_labels_one_hot, axis = 2), num_classes= self.num_labels['soft_type']).float()
         else:
