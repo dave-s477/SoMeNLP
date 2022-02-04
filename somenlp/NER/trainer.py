@@ -103,7 +103,6 @@ class Trainer():
                                 software_labels=batch['software'],
                                 soft_type_labels=batch['soft_type'],
                                 mention_type_labels=batch['mention_type'],
-                                soft_purpose_labels=batch['soft_purpose'],
                                 sequence_lengths=batch['lengths'],
                                 train_depth=train_depth,
                                 teacher_forcing=True)
