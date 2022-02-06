@@ -173,20 +173,37 @@ class DataHandler():
                     self.encoding[k] = v_new
         else:
             print("Generating new encodings")
+
+            # create separate dict for encodings for tagtoINdex, tagToname, wordToname, characterToName
             tag2idx, tag2name, word2idx, word2name, char2idx, char2name = {}, {}, {}, {}, {}, {}
             if not tags_only:
                 for dataset, dataset_setup in self.data_config['sets'].items():
                     for sub_dataset in dataset_setup:
                         for f in sub_dataset['all_files']:
                                 with f[self.data_file_extension].open(mode='r') as in_f:
+
+                                    
                                     for line in in_f:
+
+                                        # example 1st line in file : 'Animat brains consist of 8 binary elements ...' 
+                                        #         2nd line in file : 'The sensors are directed upwards ...'
                                         for word in line.rstrip().split():
+
+                                            # example: first word in first line: word = 'Animat'
                                             if word not in word2idx:
+                                                # word2name => {0: 'Animat', 1: 'brains', 2: 'consist', 3: 'of', 4: '8', ..., 28:'The', 29:'are', 30:'directed', 31:'upwars', ...}
                                                 word2name[len(word2idx)] = word
+
+                                                # word2idx => {'Animat': 0, 'brains': 1, 'consist': 2, 'of': 3, '8': 4, ..., 'The':28, 'are':29, 'directed':30, 'upwards':31, ...}
                                                 word2idx[word] = len(word2idx)
+
                                             for char in word:
                                                 if char not in char2idx:
+
+                                                    # char2name => {0: 'A', 1: 'n', 2: 'i', 3: 'm', 4: 'a', 5: 't', 6: 'b', 7: 'r', 8: 's', 9: 'c', 10: 'o', 11: 'f', 12: '8', 13: 'y', ...}
                                                     char2name[len(char2idx)] = char
+
+                                                    # char2idx => {'A': 0, 'n': 1, 'i': 2, 'm': 3, 'a': 4, 't': 5, 'b': 6, 'r': 7, 's': 8, 'c': 9, 'o': 10, 'f': 11, '8': 12, 'y': 13, ...}
                                                     char2idx[char] = len(char2idx)
             if self.multi_task_mapping:
                 print("Considering a multi-task problem")
@@ -457,8 +474,20 @@ class DataHandler():
     def load_input(self):
         for dataset, dataset_setup in self.data_config['sets'].items():
             for sub_dataset in dataset_setup:
+
+                # creates a list of all sentences from all files like ['Animat brains consist of ...','The sensors are directed upwards ...', ... ]
                 sub_dataset['sentences'] = []
+
+                # creates a list of tags for repective token in a sentence like ['o o o o ...', 'o o o o o ...', ...]
                 sub_dataset['tags'] = []
+
+                # create a list of arry for each senetnce proly 1 array for one sentence , arry contains list of vectors , a vector for each word
+                # example: 
+                #     [  array([[20,6,0, ..., 0,0,0], [39,6,0, ...,  0,0,0],]), 
+                #        array([[10,3,0, ..., 0,0,0], [22,7,0, ...,  0,0,0],]), 
+                #        ..., 
+                #        array([...], [...],)
+                #     ]
                 sub_dataset['features'] = []
                 sub_dataset['relations'] = []
                 for file_config in sub_dataset['all_files']:
