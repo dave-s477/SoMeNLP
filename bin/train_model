@@ -8,6 +8,8 @@ from pathlib import Path
 from somenlp.utils import get_time_marker, str2bool, gpu_setup
 from somenlp.NER import main
 
+
+# parse arguments
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description = "Run BiLSTM-CRF for NER.")
     parser.add_argument("--model-config", default='', help="Full path to model configuration for training.")
@@ -19,8 +21,10 @@ if __name__ == "__main__":
     parser.add_argument("--save-dir", default='save', help="Location where to save output models.")
     args = parser.parse_args()
 
+    # get current name -- used for naming a directory in 'save'
     current_time = get_time_marker()
 
+    # check if model and data config files exist
     model_c_path = Path(args.model_config)
     data_c_path = Path(args.data_config)
 
@@ -28,16 +32,20 @@ if __name__ == "__main__":
         raise(RuntimeError("Model configuration file does not exist"))
     if not data_c_path.is_file():
         raise(RuntimeError("Data configuration file does not exist"))
+
+    # read contents of config files as  model_config and data_config
     with model_c_path.open(mode='r') as m_file, data_c_path.open(mode='r') as d_file:
         model_config = json.load(m_file)
         data_config = json.load(d_file)
 
+    # check if checkpoint already exists , if not traning will start a new session 
     if 'checkpoint' not in model_config['general'].keys():
         print("Model checkpoint not explicitly given --- assuming there is non and training from scratch.")
         model_config['general']['checkpoint'] = { 'model': '' }
 
+    # select gpu is avalable , else cpu
     print("Setting up cuda")
     device = gpu_setup.setup_cuda(args.gpu)
 
+    # pass contents of config files -- dict , time in dd-mm-yyyy_HH-mm-ss format, '.data.txt' , '.labels.txt', '.data.txt.features.npz', 'cpu / gpu', 'save'
     main(model_config, data_config, current_time, args.data_file_ext, args.label_file_ext, args.feature_file_ext, device, save_dir=args.save_dir.rstrip('/'))
-    
