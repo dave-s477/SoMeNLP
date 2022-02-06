@@ -48,5 +48,9 @@ if __name__ == "__main__":
     device = gpu_setup.setup_cuda(args.gpu)
 
     # pass contents of config files -- dict , time in dd-mm-yyyy_HH-mm-ss format, '.data.txt' , '.labels.txt', '.data.txt.features.npz', 'cpu / gpu', 'save'
+<<<<<<< HEAD
+    main(model_config, data_config, current_time, args.data_file_ext, args.label_file_ext, args.feature_file_ext, device, save_dir=args.save_dir.rstrip('/'))
+=======
     main(model_config, data_config, current_time, args.data_file_ext, args.label_file_ext, args.feature_file_ext, device, save_dir=args.save_dir.rstrip('/'))
     
+>>>>>>> master
