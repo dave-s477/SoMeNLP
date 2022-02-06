@@ -1,8 +1,18 @@
 from . import OutputHandler, DataHandler, ModelWrapper, Trainer, Tuner
 
-def main(model_config, data_config, time, data_file_extension, label_file_extension, feature_file_extension, device, save_dir='save'):    
+# pass contents of config files -- dict , time in dd-mm-yyyy_HH-mm-ss format, '.data.txt' , '.labels.txt', '.data.txt.features.npz', 'cpu / gpu', 'save'
+def main(model_config, data_config, time, data_file_extension, label_file_extension, feature_file_extension, device, save_dir='save'):  
+
+    # output handler : 1. creates 'save' dir  
+                    #  2. creates dir with name of model, in this case 'Gold-Multi-Opt2-SciBERT' 
+                    #  3. creates a sub dir with current time label,
+                    #  3. copies model and data conf into time labeled dir
     print("\nSetting up output handler")
+
+    # arguemts for OutputHandler : "Gold-Multi-Opt2-SciBERT" , time in dd-mm-yyyy_HH-mm-ss format , checkpoint --dict, 'save'
     output_handler = OutputHandler(model_config['general']['name'], time, model_config['general']['checkpoint'], save_dir=save_dir)
+
+    # copy model and data config files into dir : 'save\Gold-Multi-Opt2-SciBERT\dd-mm-yyyy_HH-mm-ss'
     output_handler.save_json(model_config, name='model_conf')
     output_handler.save_json(data_config, name='data_conf')
 
