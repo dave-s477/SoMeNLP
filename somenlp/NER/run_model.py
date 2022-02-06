@@ -17,11 +17,19 @@ def main(model_config, data_config, time, data_file_extension, label_file_extens
     output_handler.save_json(data_config, name='data_conf')
 
     print("\nSetting up data handler")
+    # model_config['model']['pretrained']['tokenizer'] selects 'scibert_scivocab_cased' tokenizer 
     tokenizer = model_config['model']['pretrained']['tokenizer'] if 'pretrained' in model_config['model'] and 'tokenizer' in model_config['model']['pretrained'] else None
     data_handler = DataHandler(data_config, data_file_extension, label_file_extension, feature_file_extension, output_handler=output_handler, checkpoint=model_config['general']['checkpoint'], batch_size=model_config['general']['batch_size'], max_word_length=model_config['general']['max_word_length'], max_sent_length=model_config['general']['max_sentence_length'], tokenizer=tokenizer)
+    
+    # load training data 
     data_handler.load_data_from_config()
+
+    # encode data  -- encode tag, word, and character
     data_handler.encoding()
+
+    # load data creates a list of all sentences , list of all corrosponding tags/labels , list of  features, list of relatons
     data_handler.load_input()
+    
     data_handler.data_loaders()
     if 'embedding' in model_config['model'] and model_config['model']['embedding']['file']:
         print("\nLoading word embedding")
