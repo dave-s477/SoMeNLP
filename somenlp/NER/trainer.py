@@ -90,6 +90,7 @@ class Trainer():
                                 attention_mask=batch['masks'], 
                                 software_labels=batch['software'],
                                 soft_type_labels=batch['soft_type'],
+                                mention_type_labels = batch['mention_type'],
                                 soft_purpose_labels=batch['soft_purpose'],
                                 sequence_lengths=batch['lengths'],
                                 train_depth=train_depth,
@@ -181,6 +182,7 @@ class Trainer():
                                     attention_mask=batch['masks'], 
                                     software_labels=batch['software'],
                                     soft_type_labels=batch['soft_type'],
+                                    mention_type_labels = batch['mention_type'],
                                     soft_purpose_labels=batch['soft_purpose'],
                                     sequence_lengths=batch['lengths'],
                                     train_depth=3,
@@ -188,7 +190,8 @@ class Trainer():
                                 logits = {
                                     'software': outputs[1],
                                     'soft_type': outputs[2],
-                                    'soft_purpose': outputs[3]
+                                    'mention_type': outputs[3],
+                                    'soft_purpose': outputs[4]
                                 }
                             elif len(self.data_handler.encoding['tag2idx']) == 3:
                                 outputs = self.model_w.model(
@@ -305,7 +308,8 @@ class Trainer():
                                 logits = {
                                     'software': outputs[1],
                                     'soft_type': outputs[2],
-                                    'soft_purpose': outputs[3]
+                                    'mention_type': outputs[3],
+                                    'soft_purpose': outputs[4]
                                 }
                             elif len(self.data_handler.encoding['tag2idx']) == 3:
                                 logits = {
