@@ -1126,7 +1126,6 @@ class BERTMultiTaskCRF(BertPreTrainedModel):
 
         return [loss, software_tag_seq, soft_type_tag_seq, mention_type_tag_seq, add_info_tag_seq, outputs.hidden_states, outputs.attentions]
 
-
 class BERTMultiTaskOpt2CRF(BertPreTrainedModel):
 
     _keys_to_ignore_on_load_unexpected = [r"pooler"]
@@ -1137,6 +1136,7 @@ class BERTMultiTaskOpt2CRF(BertPreTrainedModel):
 
         self.bert = BertModel(config, add_pooling_layer=False)
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
+        
         self.software_classifier = nn.Linear(config.hidden_size, config.num_labels['software'])
         self.mention_type_classifier = nn.Linear(config.hidden_size + config.num_labels['software'], config.num_labels['mention_type'])
         self.soft_type_classifier = nn.Linear(config.hidden_size + config.num_labels['software'] + config.num_labels['mention_type'], config.num_labels['soft_type'])
