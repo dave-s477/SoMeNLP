@@ -903,8 +903,8 @@ class BERTMultiTaskOpt2(BertPreTrainedModel):
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
 
         self.software_classifier = nn.Linear(config.hidden_size, config.num_labels['software'])
-        self.mention_type_classifier = nn.Linear(config.hidden_size + config.num_labels['software'], config.num_labels['soft_type'] )
-        self.soft_type_classifier = nn.Linear(config.hidden_size + config.num_labels['software'] + config.num_labels['soft_type'], config.num_labels['mention_type'])
+        self.soft_type_classifier= nn.Linear(config.hidden_size + config.num_labels['software'], config.num_labels['soft_type'] )
+        self.mention_type_classifier = nn.Linear(config.hidden_size + config.num_labels['software'] + config.num_labels['soft_type'], config.num_labels['mention_type'])
         self.soft_purpose_classifier = nn.Linear(config.hidden_size + config.num_labels['software'] +  config.num_labels['soft_type'] + config.num_labels['mention_type'], config.num_labels['soft_purpose'])
         self.init_weights()
 
@@ -951,7 +951,7 @@ class BERTMultiTaskOpt2(BertPreTrainedModel):
 
 
         # layer -3 : classify mention_type -- identify all software_menttion_types like creation, usage, deposition, etc
-        mention_type_logits = self.soft_type_classifier(software_type_classified_sequence)
+        mention_type_logits = self.mention_type_classifier(software_type_classified_sequence)
         if not teacher_forcing or soft_purpose_labels is None:
             mention_type_labels_one_hot = F.softmax(mention_type_logits.detach(), dim=-1)
             mention_type_labels_one_hot = F.one_hot(torch.argmax(mention_type_labels_one_hot, axis = 2), num_classes= self.num_labels['mention_type']).float()
