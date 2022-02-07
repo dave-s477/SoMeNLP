@@ -906,7 +906,7 @@ class BERTMultiTaskOpt2(BertPreTrainedModel):
         self.soft_purpose_classifier = nn.Linear(config.hidden_size + config.num_labels['software'] + config.num_labels['soft_type'], config.num_labels['soft_purpose'])
         self.init_weights()
 
-    def forward(self, input_ids=None, attention_mask=None, token_type_ids=None, position_ids=None, head_mask=None, inputs_embeds=None, software_labels=None, soft_type_labels=None, mention_type_labels=None, soft_purpose_labels = None, sequence_lengths=None, output_attentions=None, output_hidden_states=None, return_dict=None, train_depth=3, teacher_forcing=False,):
+    def forward(self, input_ids=None, attention_mask=None, token_type_ids=None, position_ids=None, head_mask=None, inputs_embeds=None, software_labels=None, soft_type_labels=None, mention_type_labels=None, soft_purpose_labels = None,add_info_labels=None, sequence_lengths=None, output_attentions=None, output_hidden_states=None, return_dict=None, train_depth=3, teacher_forcing=False,):
         return_dict = return_dict if return_dict is not None else self.config.use_return_dict
 
         outputs = self.bert(
