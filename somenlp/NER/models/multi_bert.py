@@ -957,7 +957,7 @@ class BERTMultiTaskOpt2(BertPreTrainedModel):
             mention_type_labels_one_hot = F.one_hot(torch.argmax(mention_type_labels_one_hot, axis = 2), num_classes= self.num_labels['mention_type']).float()
         else:
             mention_type_labels_one_hot = F.one_hot(mention_type_labels, num_classes=self.num_labels['mention_type']).float()
-        mention_type_classified_sequence = torch.cat((sequence_output, software_labels_one_hot, soft_type_labels_one_hot), dim=-1)
+        mention_type_classified_sequence = torch.cat((sequence_output, software_labels_one_hot, soft_type_labels_one_hot, mention_type_labels_one_hot), dim=-1)
 
         # layer -3 : classify software_purpose -- identify all software_purposes like Analysis, DataCollection, PrecProcessing, Visualization, simulation, etc.
         
