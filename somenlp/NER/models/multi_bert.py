@@ -960,7 +960,7 @@ class BERTMultiTaskOpt2(BertPreTrainedModel):
         mention_type_classified_sequence = torch.cat((sequence_output, software_labels_one_hot, soft_type_labels_one_hot), dim=-1)
 
         # layer -3 : classify software_purpose -- identify all software_purposes like Analysis, DataCollection, PrecProcessing, Visualization, simulation, etc.
-
+        print("Size of tensor", mention_type_classified_sequence.size())
         soft_purpose_logits = self.soft_purpose_classifier(mention_type_classified_sequence)
 
         
