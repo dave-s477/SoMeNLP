@@ -903,9 +903,9 @@ class BERTMultiTaskOpt2(BertPreTrainedModel):
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
 
         self.software_classifier = nn.Linear(config.hidden_size, config.num_labels['software'])
-        self.mention_type_classifier = nn.Linear(config.hidden_size + config.num_labels['software'], config.num_labels['mention_type'] )
-        self.soft_type_classifier = nn.Linear(config.hidden_size + config.num_labels['software'] + config.num_labels['mention_type'], config.num_labels['soft_type'])
-        self.soft_purpose_classifier = nn.Linear(config.hidden_size + config.num_labels['software'] +  config.num_labels['mention_type'] + config.num_labels['soft_type'], config.num_labels['soft_purpose'])
+        self.mention_type_classifier = nn.Linear(config.hidden_size + config.num_labels['software'], config.num_labels['soft_type'] )
+        self.soft_type_classifier = nn.Linear(config.hidden_size + config.num_labels['software'] + config.num_labels['soft_type'], config.num_labels['mention_type'])
+        self.soft_purpose_classifier = nn.Linear(config.hidden_size + config.num_labels['software'] +  config.num_labels['soft_type'] + config.num_labels['mention_type'], config.num_labels['soft_purpose'])
         self.init_weights()
 
     def forward(self, input_ids=None, attention_mask=None, token_type_ids=None, position_ids=None, head_mask=None, inputs_embeds=None, software_labels=None, soft_type_labels=None, mention_type_labels=None, soft_purpose_labels = None,add_info_labels=None, sequence_lengths=None, output_attentions=None, output_hidden_states=None, return_dict=None, train_depth=4, teacher_forcing=False,):
@@ -960,7 +960,7 @@ class BERTMultiTaskOpt2(BertPreTrainedModel):
         mention_type_classified_sequence = torch.cat((sequence_output, software_labels_one_hot, soft_type_labels_one_hot), dim=-1)
 
         # layer -3 : classify software_purpose -- identify all software_purposes like Analysis, DataCollection, PrecProcessing, Visualization, simulation, etc.
-
+        
         soft_purpose_logits = self.soft_purpose_classifier(mention_type_classified_sequence)
 
         
