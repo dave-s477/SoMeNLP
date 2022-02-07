@@ -69,7 +69,7 @@ class Trainer():
                 if 'hierarchy_depth' in self.model_w.config['model']['gen']:
                     train_depth = self._get_train_depth(ep, self.model_w.config['model']['gen']['hierarchy_depth'])
                 else:
-                    train_depth = 3
+                    train_depth = 4
                 print("Training multi-label model with max depth {}".format(train_depth))
             start = time.time()
             ep_loss, running_batch_loss, running_batch_count = 0, 0, 0
