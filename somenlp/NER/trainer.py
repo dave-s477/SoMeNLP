@@ -188,8 +188,7 @@ class Trainer():
                                 logits = {
                                     'software': outputs[1],
                                     'soft_type': outputs[2],
-                                    'mention_type': outputs[3],
-                                    'soft_purpose': outputs[4]
+                                    'soft_purpose': outputs[3]
                                 }
                             elif len(self.data_handler.encoding['tag2idx']) == 3:
                                 outputs = self.model_w.model(
@@ -205,7 +204,7 @@ class Trainer():
                                 logits = {
                                     'software': outputs[1],
                                     'soft_type': outputs[2],
-                                    'mention_type': outputs[3]
+                                    'soft_purpose': outputs[3]
                                 }
                             else:
                                 raise(RuntimeError("Unsupported data transformation configuration"))
@@ -306,14 +305,13 @@ class Trainer():
                                 logits = {
                                     'software': outputs[1],
                                     'soft_type': outputs[2],
-                                    'mention_type': outputs[3],
-                                    'soft_purpose': outputs[4]
+                                    'soft_purpose': outputs[3]
                                 }
                             elif len(self.data_handler.encoding['tag2idx']) == 3:
                                 logits = {
                                     'software': outputs[1],
                                     'soft_type': outputs[2],
-                                    'mention_type': outputs[3]
+                                    'soft_purpose': outputs[3]
                                 }
                             for k, v in logits.items():
                                 if self.model_w.model_type in ['MultiSciBERTCRF', 'MultiOpt2SciBERTCRF']:
