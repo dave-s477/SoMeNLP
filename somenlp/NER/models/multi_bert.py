@@ -1205,3 +1205,99 @@ class BERTMultiTaskOpt2CRF(BertPreTrainedModel):
             loss += neg_log_likelihood
 
         return [loss, software_tag_seq, soft_type_tag_seq, mention_type_tag_seq, outputs.hidden_states, outputs.attentions]
+
+class BERTMultiTaskCRF_softPurpose(BertPreTrainedModel):
+
+    _keys_to_ignore_on_load_unexpected = [r"pooler"]
+
+    def __init__(self, config):
+        super().__init__(config)
+        self.num_labels = config.num_labels
+
+        self.bert = BertModel(config, add_pooling_layer=False)
+        self.dropout = nn.Dropout(config.hidden_dropout_prob)
+
+        self.software_classifier = nn.Linear(config.hidden_size, config.num_labels['software'])
+        self.soft_type_classifier= nn.Linear(config.hidden_size + config.num_labels['software'], config.num_labels['soft_type'] )
+        self.mention_type_classifier = nn.Linear(config.hidden_size + config.num_labels['software'] + config.num_labels['soft_type'], config.num_labels['mention_type'])
+        self.soft_purpose_classifier = nn.Linear(config.hidden_size + config.num_labels['software'] +  config.num_labels['soft_type'] + config.num_labels['mention_type'], config.num_labels['soft_purpose'])
+        
+        self.software_crf = CRF(config.num_labels['software'], self.device)
+        self.soft_type_crf = CRF(config.num_labels['soft_type'], self.device)
+        self.mention_type_crf = CRF(config.num_labels['mention_type'], self.device)
+        self.soft_purpose_crf = CRF(config.num_labels['soft_purpose', self.device])
+
+        self.init_weights()
+
+    def update_device(self):
+        print("Updating device with {}".format(self.device))
+        self.software_crf.device = self.device 
+        self.mention_type_crf.device = self.device 
+        self.soft_type_crf.device = self.device 
+        self.soft_purpose_crf.device = self.device
+
+    def forward(self, input_ids=None, attention_mask=None, token_type_ids=None, position_ids=None, head_mask=None, inputs_embeds=None, software_labels=None, soft_type_labels=None, mention_type_labels=None, soft_purpose_labels=None, sequence_lengths=None, output_attentions=None, output_hidden_states=None, return_dict=None, train_depth=3, teacher_forcing=False,):
+        return_dict = return_dict if return_dict is not None else self.config.use_return_dict
+
+        outputs = self.bert(
+            input_ids,
+            attention_mask=attention_mask,
+            token_type_ids=token_type_ids,
+            position_ids=position_ids,
+            head_mask=head_mask,
+            inputs_embeds=inputs_embeds,
+            output_attentions=output_attentions,
+            output_hidden_states=output_hidden_states,
+            return_dict=return_dict,
+        )
+
+        sequence_output = outputs[0]
+        sequence_output = self.dropout(sequence_output)
+
+        software_logits = self.software_classifier(sequence_output)
+        software_tag_seq, _, _ = self.software_crf.viterbi_decode_batch(software_logits, sequence_lengths)
+        if not teacher_forcing or software_labels is None:
+            software_labels_one_hot = F.one_hot(software_tag_seq.detach(), num_classes=self.num_labels['software']).float()
+        else:
+            software_labels_one_hot = F.one_hot(software_labels, num_classes=self.num_labels['software']).float()
+        software_classified_sequence = torch.cat((sequence_output, software_labels_one_hot), dim=-1)
+
+
+        soft_type_logits = self.soft_type_classifier(software_classified_sequence)
+        soft_type_tag_seq, _, _ = self.soft_type_crf.viterbi_decode_batch(soft_type_logits, sequence_lengths)
+        if not teacher_forcing or mention_type_labels is None:
+            soft_type_labels_one_hot = F.one_hot(soft_type_tag_seq.detach(), num_classes = self.num_labels['soft_type']).float()
+        else:
+            soft_type_labels_one_hot = F.one_hot(soft_type_labels, num_classes = self.num_labels['soft_type']).float()
+        soft_type_classified_sequence = torch.cat((sequence_output, software_labels_one_hot, soft_type_labels_one_hot), dim=-1)
+
+
+        mention_type_logits = self.mention_type_classifier(soft_type_classified_sequence)
+        mention_type_tag_seq, _, _ = self.mention_type_crf.viterbi_decode_batch(mention_type_logits, sequence_lengths)
+        if not teacher_forcing or soft_purpose_labels is None:
+            mention_type_labels_one_hot = F.one_hot(mention_type_tag_seq.detach(), num_classes=self.num_labels['mention_type']).float()
+        else:
+            mention_type_labels_one_hot = F.one_hot(mention_type_labels, num_classes=self.num_labels['mention_type']).float()
+        mention_type_classified_sequence = torch.cat((sequence_output, software_labels_one_hot, soft_type_labels_one_hot, mention_type_labels_one_hot), dim=-1)
+
+        soft_purpose_logits = self.soft_purpose_classifier(mention_type_classified_sequence)
+        soft_purpose_tag_seq, _, _ = self.soft_purpose_crf.viterbi_decode_batch(soft_purpose_logits, sequence_lengths)
+        
+        loss = 0
+        if software_labels is not None:
+            log_likelihood = self.software_crf.crf_log_likelihood(software_logits, software_labels, sequence_lengths)
+            neg_log_likelihood = torch.mean(-log_likelihood)
+            loss += neg_log_likelihood
+        if train_depth > 0 and soft_type_labels is not None:
+            log_likelihood = self.soft_type_crf.crf_log_likelihood(soft_type_logits, soft_type_labels, sequence_lengths)
+            neg_log_likelihood = torch.mean(-log_likelihood)
+            loss += neg_log_likelihood
+        if train_depth > 1 and mention_type_labels is not None:
+            log_likelihood = self.mention_type_crf.crf_log_likelihood(mention_type_logits, mention_type_labels, sequence_lengths)
+            neg_log_likelihood = torch.mean(-log_likelihood)
+            loss += neg_log_likelihood
+        if train_depth > 2 and soft_purpose_labels is not None:
+            log_likelihood = self.soft_purpose_crf.crf_log_likelihood(soft_purpose_logits, soft_purpose_labels, sequence_lengths)
+            loss += neg_log_likelihood
+
+        return [loss, software_tag_seq, soft_type_tag_seq, mention_type_tag_seq, soft_purpose_tag_seq, outputs.hidden_states, outputs.attentions]
