@@ -2,6 +2,8 @@ import torch
 import torch.optim as optim
 import transformers
 
+from somenlp.NER.models.multi_bert import BERTMultiTask_softPurpose, BERTMultiTaskCRF_softPurpose
+
 from .models import BiLSTM_CRF, FeatureLSTM, CombinedLSTM, BERTMultiTask, BERTMultiTaskOpt2, BERTMultiTaskCRF, BERTMultiTaskOpt2CRF
 from somenlp.utils import set_dropout
 
@@ -166,6 +168,15 @@ class ModelWrapper():
             model_fct = BERTMultiTaskOpt2CRF
             self._load_multi_bert_crf(model_fct)
             self._setup_fine_tuning()
+        elif self.model_type == 'BERTMultiTask_softPurpose':
+            model_fct = BERTMultiTask_softPurpose
+            self._load_multi_bert(model_fct)
+            self._setup_fine_tuning
+        elif self.model_type == 'BERTMultiTaskCRF_softPurpose':
+            model_fct = BERTMultiTaskCRF_softPurpose
+            self._load_multi_bert_crf(model_fct)
+            self._setup_fine_tuning()
+
         else:
             raise(RuntimeError("Received unsupported model type: {}".format(self.model_type)))
         self.model.to(self.device)
