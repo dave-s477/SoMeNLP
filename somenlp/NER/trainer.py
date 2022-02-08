@@ -273,7 +273,7 @@ class Trainer():
                 self.model_w.set_optim(dataset['optimizer'])
                 if self.model_w.optim_grouped_params is not None:
                     self.model_w.set_scheduler((len(dataset['dataloader']) * dataset['epochs']), dataset['scheduler'])
-                self._train_model(dataset['dataloader'], dataset['epochs'])   # errolr line
+                self._train_model(dataset['dataloader'], dataset['epochs'])   
 
     def prediction(self, bio=True, summary=True):
         self.model_w.model.eval()

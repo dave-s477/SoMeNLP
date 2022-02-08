@@ -171,7 +171,7 @@ class ModelWrapper():
         elif self.model_type == 'BERTMultiTask_softPurpose':
             model_fct = BERTMultiTask_softPurpose
             self._load_multi_bert(model_fct)
-            self._setup_fine_tuning
+            self._setup_fine_tuning()
         elif self.model_type == 'BERTMultiTaskCRF_softPurpose':
             model_fct = BERTMultiTaskCRF_softPurpose
             self._load_multi_bert_crf(model_fct)
