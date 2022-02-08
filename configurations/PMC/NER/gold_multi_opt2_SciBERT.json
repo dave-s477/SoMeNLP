@@ -1,6 +1,6 @@
 {
     "general": {
-        "type": "BERTMultiTaskOpt2",
+        "type": "BERTMultiTask_softPurpose",
         "name": "Gold-BertMulti-soft-typeMentionPurpose",
         "multi_task": true,
         "checkpoint": {
