@@ -8,7 +8,7 @@
                 "data/Creation_sentences/Creation_sentences_bio_train"
             ],
             "name": "train_0",
-            "epochs": 24,
+            "epochs": 200,
             "optimizer": {
                 "reset": false,
                 "lr": 5e-6
