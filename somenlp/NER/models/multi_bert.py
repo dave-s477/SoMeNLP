@@ -799,7 +799,7 @@ class BERTMultiTask(BertPreTrainedModel):
 
         return [loss, software_logits, soft_type_logits, mention_type_logits, add_info_logits, outputs.hidden_states, outputs.attentions]
 
-class BERTMultiTaskOpt2_Original(BertPreTrainedModel):
+class BERTMultiTaskOpt2_original(BertPreTrainedModel):
 
     _keys_to_ignore_on_load_unexpected = [r"pooler"]
 
@@ -891,7 +891,7 @@ class BERTMultiTaskOpt2_Original(BertPreTrainedModel):
 
         return [loss, software_logits, soft_type_logits, mention_type_logits, outputs.hidden_states, outputs.attentions]
 
-class BERTMultiTaskOpt2(BertPreTrainedModel):
+class BERTMultiTask_softPurpose(BertPreTrainedModel):
 
     _keys_to_ignore_on_load_unexpected = [r"pooler"]
 
