@@ -1,7 +1,7 @@
 {
     "general": {
-        "type": "MultiOpt2SciBERT",
-        "name": "Gold-Multi-Opt2-SciBERT",
+        "type": "BERTMultiTask_softPurpose",
+        "name": "Gold-BertMulti-soft-typeMentionPurpose",
         "multi_task": true,
         "checkpoint": {
             "model": "",
