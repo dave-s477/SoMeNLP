@@ -1,0 +1,117 @@
+
+	====================
+	1. ROMAN LOGIIN
+	====================
+
+	ssh bk378@svserver.int.uni-rostock.de -p 222
+
+	pass: 
+
+	ssh roman
+	
+	pass:
+
+	
+	
+	
+	
+	========================
+	2. ACTIVATE/Deactivate venv
+	========================
+	
+	conda activate somenlp
+	
+	conda deactivate
+
+
+	==========================================
+	3. COPY FILES
+	==========================================
+	
+	
+	
+	-----------------------------------
+	3.1. copy files from one dir to another
+	-----------------------------------
+	
+		cp *.doc /home/tom/backup  --> copies all files with .doc extension to a 'backup' folder
+	
+	----------------------
+	3.2. REMOVE DIRECTORY:
+	----------------------
+	
+		rm -d dirname  removes empty directory
+		rm -r dirname  removes non-empty directory
+		
+	----------------
+	3.3. REMOVE FILE
+	----------------
+	
+		rm filename
+		
+	---------------
+	3.4. RENAME DIR
+	---------------
+		mv /home/user/oldname /home/user/newname
+	
+	
+	-------------------------------
+	3.5 FROM -LOCAL TO REMOTE-server
+	--------------------------------
+
+		scp -P 222 -r /folder/to/copy bk378@svserver.int.uni-rostock.de:/location/where/to/put
+	
+		scp -P 222 -r /home/beck/Desktop/baselineConfigs/ bk378@svserver.int.uni-rostock.de:~/
+		scp -P 222 -r /home/beck/Desktop/sw_purposeConfigs/ bk378@svserver.int.uni-rostock.de:~/
+	
+	-------------------------------
+	3.6 FROM REMOTE-server TO LOCAL
+	-------------------.----------
+	
+		scp username@remote:/file/to/send /where/to/put
+		scp -P 222 -r bk378@svserver.int.uni-rostock.de:~/SoMeNLP/logs/ ~/Desktop/
+	
+	=================================
+	4. READ LOG FILE with tensorboard
+	==================================
+	
+	tensorboard --logdir the_directory
+	
+	
+	tensorboard --logdir logs/                             for log file located at Desktop/logs/ , run the command at Desktop
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	True obedience is to obey without knowing why
+
+	==============================================================================================
+	
+	********PURPOSE CONFIGS********
+	-------------------------------
+	
+	cp sw_purposeConfigs/multi_bert.py SoMeNLP/somenlp/NER/models/
+	cp sw_purposeConfigs/trainer.py SoMeNLP/somenlp/NER/
+	cp sw_purposeConfigs/gold_data_multi_opt2_SciBERT.json SoMeNLP/configurations/PMC/NER/
+	
+	*******BASELINE CONFIGS********
+	-------------------------------
+	
+	cp baselineConfigs/multi_bert.py SoMeNLP/somenlp/NER/models/
+	cp baselineConfigs/trainer.py SoMeNLP/somenlp/NER/
+	cp baselineConfigs/gold_data_multi_opt2_SciBERT.json SoMeNLP/configurations/PMC/NER/
+	==============================================================================================
+
+
+	
+	
