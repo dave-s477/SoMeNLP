@@ -1,7 +1,7 @@
 {
     "general": {
         "type": "BERTMultiTask_softPurpose",
-        "name": "Gold-BertMulti-soft-typeMentionPurpose",
+        "name": "Gold-BertMulti-soft-type-Mention-Purpose-woSenetences",
         "multi_task": true,
         "checkpoint": {
             "model": "",
