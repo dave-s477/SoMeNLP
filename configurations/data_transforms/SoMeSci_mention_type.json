@@ -9,7 +9,7 @@
     "Application_Usage_Simulation": "Usage",
     "Application_Usage_Visualization": "Usage",
     "Application_Usage_Programming": "Usage",
-    "Application_Usage": "Usage",
+
     "Application_Creation": "Creation",
     "Application_Deposition": "Deposition",
     "Application_Mention": "Mention",
@@ -22,7 +22,7 @@
     "PlugIn_Usage_Simulation": "Usage",
     "PlugIn_Usage_Visualization": "Usage",
     "PlugIn_Usage_Programming": "Usage",
-    "PlugIn_Usage": "Usage",
+
     "PlugIn_Creation": "Creation",
     "PlugIn_Deposition": "Deposition",
     "PlugIn_Mention": "Mention",
@@ -46,7 +46,7 @@
     "OperatingSystem_Usage_Simulation": "Usage",
     "OperatingSystem_Usage_Visualization": "Usage",
     "OperatingSystem_Usage_Programming": "Usage",
-    "OperatingSystem_Usage": "Usage",
+
     "OperatingSystem_Mention": "Mention",
 
     "Version": "O",
