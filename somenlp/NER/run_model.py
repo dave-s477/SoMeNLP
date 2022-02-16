@@ -1,7 +1,7 @@
 from . import OutputHandler, DataHandler, ModelWrapper, Trainer, Tuner
 
 # pass contents of config files -- dict , time in dd-mm-yyyy_HH-mm-ss format, '.data.txt' , '.labels.txt', '.data.txt.features.npz', 'cpu / gpu', 'save'
-def main(model_config, data_config, time, data_file_extension, label_file_extension, feature_file_extension, device, save_dir='save'):  
+def main(model_config, data_config, time, data_file_extension, label_file_extension, feature_file_extension, device, bef, aft, save_dir='save'):  
 
     # output handler : 1. creates 'save' dir  
                     #  2. creates dir with name of model, in this case 'Gold-Multi-Opt2-SciBERT' 
@@ -28,7 +28,7 @@ def main(model_config, data_config, time, data_file_extension, label_file_extens
     data_handler.encoding()
 
     # load data creates a list of all sentences , list of all corrosponding tags/labels , list of  features, list of relatons
-    data_handler.load_input()
+    data_handler.load_input(bef, aft)
     
     data_handler.data_loaders()
     if 'embedding' in model_config['model'] and model_config['model']['embedding']['file']:

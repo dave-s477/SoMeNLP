@@ -274,8 +274,6 @@ class DataHandler():
         text_prepro = art.get_tokenized_sentences(text_in)
         return text_prepro
     
-    
-
     def _read_text_file(self, path, bef, aft, read_empty=False):
 
         def contextWindow(text, bef, aft):
@@ -583,30 +581,20 @@ class DataHandler():
         
         return input_ids, tags_ids, attention_masks, length
 
-    def load_input(self):
+    def load_input(self, bef, aft):
         for dataset, dataset_setup in self.data_config['sets'].items():
             for sub_dataset in dataset_setup:
 
-                # creates a list of all sentences from all files like ['Animat brains consist of ...','The sensors are directed upwards ...', ... ]
                 sub_dataset['sentences'] = []
-
-                # creates a list of tags for repective token in a sentence like ['o o o o ...', 'o o o o o ...', ...]
                 sub_dataset['tags'] = []
-
-                # create a list of arry for each senetnce proly 1 array for one sentence , arry contains list of vectors , a vector for each word
-                # example: 
-                #     [  array([[20,6,0, ..., 0,0,0], [39,6,0, ...,  0,0,0],]), 
-                #        array([[10,3,0, ..., 0,0,0], [22,7,0, ...,  0,0,0],]), 
-                #        ..., 
-                #        array([...], [...],)
-                #     ]
                 sub_dataset['features'] = []
                 sub_dataset['relations'] = []
+                
                 for file_config in sub_dataset['all_files']:
                     if self.data_file_extension:
-                        sub_dataset['sentences'].extend(self._read_text_file(file_config[self.data_file_extension]))
+                        sub_dataset['sentences'].extend(self._read_text_file(file_config[self.data_file_extension], bef, aft))
                     if self.label_file_extension:
-                        sub_dataset['tags'].extend(self._read_text_file(file_config[self.label_file_extension]))
+                        sub_dataset['tags'].extend(self._read_text_file(file_config[self.label_file_extension], bef , aft))
                     if self.feature_file_extension:
                         sub_dataset['features'].extend(self._read_feature_file(file_config[self.feature_file_extension]))
                     if self.relation_file_extension:
