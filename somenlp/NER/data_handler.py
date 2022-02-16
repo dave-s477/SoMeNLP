@@ -273,8 +273,120 @@ class DataHandler():
             text_in = in_f.read()
         text_prepro = art.get_tokenized_sentences(text_in)
         return text_prepro
+    
+    
 
-    def _read_text_file(self, path, read_empty=False):
+    def _read_text_file(self, path, bef, aft, read_empty=False):
+
+        def contextWindow(text, bef, aft):
+            # 0B, OA --- no change
+            if (bef == 0) and (aft == 0):
+                return text
+            
+            # 0B, 1A --- 2 conditions  
+            elif (bef == 0) and (aft == 1):
+                contxt_txt = []
+                for i in range(len(text)):
+                    # 0B, 1A
+                    if (i >= 0) and (i < len(text)-1):
+                        contxt_txt.append(text[i] + text[i+1]) 
+                    # 0B, 0A
+                    elif i == len(text)-1:
+                        contxt_txt.append(text[i]) 
+                return contxt_txt
+                
+            #OB, 2A --- 3 conditions
+            elif (bef == 0) and (aft == 2):
+                contxt_txt = []
+                for i in range(len(text)):
+                    #OB, 2A
+                    if (i >= 0) and (i <len(text)-2):
+                        contxt_txt.append(text[i] + text[i+1]+text[i+2])
+                    elif i == (len(text)-2):
+                        contxt_txt.append(text[i] + text[i+1])
+                    elif i == (len(text)-1):
+                        contxt_txt.append(text[i])
+                return contxt_txt
+            #1B, 0A --- 2 conditions
+            elif (bef == 1) and (aft == 0):
+                contxt_txt = []
+                for i in range(len(text)):
+                    #0B, 0A
+                    if (i == 0):
+                        contxt_txt.append(text[i])
+                    elif (i >0):
+                        contxt_txt.append(text[i-1]+text[i])
+                return contxt_txt
+        
+            #1B, 1A --- 3 conditions 
+            elif ( bef == 1 ) and ( aft == 1):
+                contxt_txt = []
+                for i in range(len(text)):
+                    if i == 0:   # 0B, 1A
+                        contxt_txt.append(text[i] + text[i+1])
+                    elif (i > 0) and ( i < len(text)-1):  # 1B ,1A
+                        contxt_txt.append(text[i-1]+text[i]+text[i+1])
+                    elif (i == len(text)-1):  #1B, 0A
+                        contxt_txt.append(text[i-1]+text[i])
+                return contxt_txt
+        
+            #1B, 2A --- 4 conditions
+            elif (bef ==1 ) and (aft == 2):
+                contxt_txt = []
+                for i in range(len(text)):
+                    if i ==0:
+                        contxt_txt.append(text[i]+text[i+1]+text[i+2])                #0B, 2A
+                    elif (i > 0) and (i < len(text)-2):
+                        contxt_txt.append(text[i-1]+text[i]+text[i+1]+text[i+2])     #1B, 2A
+                    elif (i == len(text)-2):
+                        contxt_txt.append(text[i-1]+text[i]+text[i+1])               #1B, 1A
+                    elif i == (len(text)-1):
+                        contxt_txt.append(text[i-1]+text[i])                         #1B,0A
+                return contxt_txt
+    
+            #2B, 0A   -- 3 cases 
+            elif( bef ==2) and ( aft == 0):
+                contxt_txt = []
+                for i in range(len(text)):
+                    if i == 0:       
+                        contxt_txt.append(text[i])         #0B, 0A
+                    elif i == 1:
+                        contxt_txt.append(text[i-1]+text[i])  #1B, 0A
+                    elif i > 1:
+                        contxt_txt.append(text[i-2]+text[i-1]+text[i]) #2B, 0A
+                return contxt_txt
+        
+            #2B, 1A -- 3 cases
+            elif ( bef == 2 ) and (aft == 1):
+                contxt_txt = []
+                for i in range(len(text)):
+                    if i ==0: 
+                        contxt_txt.append(text[i]+text[i+1])                     #0B, 1A
+                    elif i ==1:
+                        contxt_txt.append(text[i-1]+text[i]+text[i+1])           #1B, 1A
+                    elif (i > 1) and (i < len(text)-1):
+                        contxt_txt.append(text[i-2]+text[i-1]+text[i]+text[i+1]) # 2B, 1A
+                    elif i == len(text)-1:
+                        contxt_txt.append(text[i-2]+text[i-2]+text[i])           #2B, 0A
+                return contxt_txt
+                
+            #2B, 2A --- 5 conditions
+            elif (bef == 2) and (aft == 2):        
+                contxt_txt = []        
+                for i in range(len(text)):    
+            
+                    if i == 0:    # 0B, 2A
+                        contxt_txt.append(text[i] + text[i+1] + text[i+2]) 
+                    elif i == 1:  # 1B, 2A
+                        contxt_txt.append(text[i-1] + text[i] + text[i+1] + text[i+2]) 
+                    elif (i >=2) and (i < len(text)-2):   # 2B , 2A 
+                        contxt_txt.append(text[i-2] + text[i-1] + text[i] + text[i+1] + text[i+2]) 
+                    elif  (i == len(text)-2):             #2B, 1A
+                        contxt_txt.append(text[i-2] + text[i-1] + text[i] + text[i+1])
+                    elif i == len(text)-1:                #2B, 0A  
+                        contxt_txt.append(text[i-2] + text[i-1] + text[i])            
+                return contxt_txt
+
         text = []
         with path.open(mode='r') as in_f:
             for line in in_f:
@@ -283,7 +395,7 @@ class DataHandler():
                     text.append(clean_line)
                 elif read_empty:
                     text.append([])
-        return text
+        return contextWindow(text, bef, aft)
 
     def _read_feature_file(self, path):
         features = np.load(str(path), allow_pickle=True)
