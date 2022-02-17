@@ -19,8 +19,8 @@ if __name__ == "__main__":
     parser.add_argument("--label-file-ext", default='.labels.txt', help="Extension for recognizing label files.")
     parser.add_argument("--gpu", default=True, type=str2bool, help="Whether to use a GPU, default option decides automatically on the GPU with least usage if one is available.")
     parser.add_argument("--save-dir", default='save', help="Location where to save output models.")
-    parser.add_argument("--left-context", default=0)
-    parser.add_argument("--right-context", default=1)
+    parser.add_argument("--left-context", default=2)
+    parser.add_argument("--right-context", default=2)
     args = parser.parse_args()
 
     # get current name -- used for naming a directory in 'save'
