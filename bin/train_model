@@ -5,8 +5,6 @@ import json
 
 from pathlib import Path
 
-from parso import parse
-
 from somenlp.utils import get_time_marker, str2bool, gpu_setup
 from somenlp.NER import main
 
