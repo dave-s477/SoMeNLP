@@ -273,27 +273,25 @@ class DataHandler():
             text_in = in_f.read()
         text_prepro = art.get_tokenized_sentences(text_in)
         return text_prepro
-    
-    def _read_text_file(path, bef, aft, read_empty=False):
-    
-    
+
+    def _read_text_file(self, path, bef, aft, read_empty=False):
+
+        def add_neighbours(*sentcs):
+        
+            # unpack list of sentcs passed
+            lis_sents = list(sentcs)
+        
+            joined_tokens = []
+
+            for i in range(len(lis_sents)):
+            
+                joined_tokens.extend(lis_sents[i].split())
+            
+                joined_sent = ' '.join(joined_tokens)
+        
+            return joined_sent
+
         def contextWindow(text, bef, aft):
-
-            def add_neighbours(*sentcs):
-            
-                # unpack list of sentcs passed
-                lis_sents = list(sentcs)
-            
-                joined_tokens = []
-
-                for i in range(len(lis_sents)):
-                
-                    joined_tokens.extend(lis_sents[i].split())
-                
-                    joined_sent = ' '.join(joined_tokens)
-            
-                return joined_sent
-
             # 0B, OA --- no change
             if (bef == 0) and (aft == 0):
                 return text
@@ -424,7 +422,7 @@ class DataHandler():
                         contxt_txt.append(add_neighbours(text[i-2], text[i-1], text[i]))      
                         
                 return contxt_txt
-    
+
         text = []
         with path.open(mode='r') as in_f:
             for line in in_f:
@@ -433,7 +431,6 @@ class DataHandler():
                     text.append(clean_line)
                 elif read_empty:
                     text.append([])
-                    
         return contextWindow(text, bef, aft)
 
     def _read_feature_file(self, path):
@@ -626,16 +623,26 @@ class DataHandler():
         for dataset, dataset_setup in self.data_config['sets'].items():
             for sub_dataset in dataset_setup:
 
+                # creates a list of all sentences from all files like ['Animat brains consist of ...','The sensors are directed upwards ...', ... ]
                 sub_dataset['sentences'] = []
+
+                # creates a list of tags for repective token in a sentence like ['o o o o ...', 'o o o o o ...', ...]
                 sub_dataset['tags'] = []
+
+                # create a list of arry for each senetnce proly 1 array for one sentence , arry contains list of vectors , a vector for each word
+                # example: 
+                #     [  array([[20,6,0, ..., 0,0,0], [39,6,0, ...,  0,0,0],]), 
+                #        array([[10,3,0, ..., 0,0,0], [22,7,0, ...,  0,0,0],]), 
+                #        ..., 
+                #        array([...], [...],)
+                #     ]
                 sub_dataset['features'] = []
                 sub_dataset['relations'] = []
-                
                 for file_config in sub_dataset['all_files']:
                     if self.data_file_extension:
                         sub_dataset['sentences'].extend(self._read_text_file(file_config[self.data_file_extension], bef, aft))
                     if self.label_file_extension:
-                        sub_dataset['tags'].extend(self._read_text_file(file_config[self.label_file_extension], bef , aft))
+                        sub_dataset['tags'].extend(self._read_text_file(file_config[self.label_file_extension], bef, aft))
                     if self.feature_file_extension:
                         sub_dataset['features'].extend(self._read_feature_file(file_config[self.feature_file_extension]))
                     if self.relation_file_extension:
