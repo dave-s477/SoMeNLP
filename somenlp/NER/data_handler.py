@@ -274,10 +274,12 @@ class DataHandler():
         text_prepro = art.get_tokenized_sentences(text_in)
         return text_prepro
 
-    def _read_text_file(self, path, bef, aft, read_empty=False):
+    def _read_text_file(self, path, bef, aft, context_is_paragrapgh):
 
         def add_neighbours(*sentcs):
-        
+            
+            ''' adds adjusent centences to create a context'''
+
             # unpack list of sentcs passed
             lis_sents = list(sentcs)
         
@@ -286,16 +288,32 @@ class DataHandler():
             for i in range(len(lis_sents)):
             
                 joined_tokens.extend(lis_sents[i].split())
-            
                 joined_sent = ' '.join(joined_tokens)
         
             return joined_sent
 
         def contextWindow(text, bef, aft):
+
+            ''' txt is list of sentences in a paragrapgh '''
+            #xB, yA   --- where  x,y > len(text)
+            if (bef >= len(text)-1) or (aft >= len(text)-1):
+
+                # reset the context within paragrapgh , returns the whole paragrapgh 
+
+                bef = len(text)- 1
+                aft = len(text)- 1
+
+                contxt_txt = []        
+
+                for i in range(len(text)):  
+
+                    contxt_txt.append( ' '.join(text))
+
+                return contxt_txt
+                
             # 0B, OA --- no change
-            if (bef == 0) and (aft == 0):
+            elif (bef == 0) and (aft == 0):
                 return text
-            
             # 0B, 1A --- 2 conditions  
             elif (bef == 0) and (aft == 1):
                 contxt_txt = []
@@ -303,13 +321,13 @@ class DataHandler():
                     # 0B, 1A
                     if (i >= 0) and (i < len(text)-1):
                         contxt_txt.append( add_neighbours(text[i], text[i+1])) 
-                        
+
                     # 0B, 0A
-                    elif i == len(text)-1:
+                    elif (i == len(text)-1):
                         contxt_txt.append(text[i]) 
-                        
+
                 return contxt_txt
-                
+
             #OB, 2A --- 3 conditions
             elif (bef == 0) and (aft == 2):
                 contxt_txt = []
@@ -317,16 +335,15 @@ class DataHandler():
                     #OB, 2A
                     if (i >= 0) and (i <len(text)-2):
                         contxt_txt.append( add_neighbours(text[i], text[i+1], text[i+2]))
-                        
+
                     elif i == (len(text)-2):
                         contxt_txt.append( add_neighbours(text[i], text[i+1] ))
-                        
+
                     elif i == (len(text)-1):
                         contxt_txt.append(text[i])
-                        
+
                 return contxt_txt
-            
-            
+
             #1B, 0A --- 2 conditions
             elif (bef == 1) and (aft == 0):
                 contxt_txt = []
@@ -334,43 +351,43 @@ class DataHandler():
                     #0B, 0A
                     if (i == 0):
                         contxt_txt.append(text[i])
-                        
+
                     elif (i >0):
                         contxt_txt.append(add_neighbours(text[i-1], text[i]))
-                        
+
                 return contxt_txt
-        
+
             #1B, 1A --- 3 conditions 
             elif ( bef == 1 ) and ( aft == 1):
                 contxt_txt = []
                 for i in range(len(text)):
                     if i == 0:   # 0B, 1A
                         contxt_txt.append(add_neighbours (text[i], text[i+1]))
-                        
-                    elif (i > 0) and ( i < len(text)-1):  # 1B ,1A
+
+                    elif (i >= 1) and ( i < len(text)-1):  # 1B ,1A
                         contxt_txt.append(add_neighbours(text[i-1], text[i], text[i+1]))
-                        
+
                     elif (i == len(text)-1):  #1B, 0A
                         contxt_txt.append(add_neighbours(text[i-1], text[i]))
                 return contxt_txt
-        
+
             #1B, 2A --- 4 conditions
             elif (bef ==1 ) and (aft == 2):
                 contxt_txt = []
                 for i in range(len(text)):
                     if i ==0:
                         contxt_txt.append(add_neighbours(text[i], text[i+1], text[i+2]))  #0B, 2A
-                        
+
                     elif (i > 0) and (i < len(text)-2):
                         contxt_txt.append(add_neighbours(text[i-1], text[i], text[i+1],text[i+2]))     #1B, 2A
-                        
+
                     elif (i == len(text)-2):
                         contxt_txt.append(add_neighbours(text[i-1], text[i],text[i+1]))               #1B, 1A
-                        
+
                     elif i == (len(text)-1):
                         contxt_txt.append(add_neighbours(text[i-1], text[i]))                         #1B,0A
                 return contxt_txt
-        
+
             #2B, 0A   -- 3 cases 
             elif( bef ==2) and ( aft == 0):
                 contxt_txt = []
@@ -382,56 +399,240 @@ class DataHandler():
                     elif i > 1:
                         contxt_txt.append(add_neighbours(text[i-2], text[i-1], text[i]))  #2B, 0A
                 return contxt_txt
-        
+
             #2B, 1A -- 3 cases
             elif ( bef == 2 ) and (aft == 1):
                 contxt_txt = []
                 for i in range(len(text)):
                     if i ==0: 
                         contxt_txt.append(add_neighbours(text[i], text[i+1]) )                     #0B, 1A
-                        
+
                     elif i ==1:
                         contxt_txt.append(add_neighbours(text[i-1], text[i], text[i+1]) )          #1B, 1A
-                        
+
                     elif (i > 1) and (i < len(text)-1):
                         contxt_txt.append(add_neighbours(text[i-2], text[i-1], text[i], text[i+1]))  # 2B, 1A
-                        
+
                     elif i == len(text)-1:
                         contxt_txt.append(add_neighbours(text[i-2], text[i-2], text[i]))           #2B, 0A
-                        
+
                 return contxt_txt
-                
+
             #2B, 2A --- 5 conditions
             elif (bef == 2) and (aft == 2):        
                 contxt_txt = []        
                 for i in range(len(text)):    
-            
+
+                    #print(f' there are {len(text)} sentences in {text}')
+
                     if i == 0:    # 0B, 2A
                         contxt_txt.append(add_neighbours(text[i] , text[i+1] , text[i+2]))  
-                        
+
                     elif i == 1:  # 1B, 2A
                         contxt_txt.append(add_neighbours(text[i-1] , text[i] , text[i+1] , text[i+2]))
-                        
-                    elif (i >=2) and (i < len(text)-2):   # 2B , 2A 
+
+                    elif (i >=1) and (i < len(text)-2):   # 2B , 2A 
                         contxt_txt.append(add_neighbours(text[i-2], text[i-1], text[i], text[i+1], text[i+2]))
-                        
+
                     elif (i == len(text)-2):             #2B, 1A
                         contxt_txt.append(add_neighbours(text[i-2], text[i-1], text[i], text[i+1]))
-                        
+
                     elif i == len(text)-1:                #2B, 0A  
-                        contxt_txt.append(add_neighbours(text[i-2], text[i-1], text[i]))      
-                        
+                        contxt_txt.append(add_neighbours(text[i-2], text[i-1], text[i]))
+
                 return contxt_txt
 
-        text = []
+            #3B, 3A --- 7 conditions
+            elif (bef == 3) and (aft == 3):
+
+                contxt_txt = []        
+                for i in range(len(text)):
+
+                    if i == 0:  #0B, 3A
+                        contxt_txt.append(add_neighbours(text[i] , text[i+1] , text[i+2] , text[i+3] ))
+
+                    elif i ==1: #1B, 3A
+                        contxt_txt.append(add_neighbours(text[i-1] , text[i] , text[i+1] , text[i+2] , text[i+3] ))
+
+                    elif i ==2: #2B, 3A
+                        contxt_txt.append(add_neighbours(text[i-2] , text[i-1] , text[i] , text[i+1] , text[i+2] ,text[i+3] ))
+
+                    elif (i >=3) and (i < len(text)-3): #3B, 3A
+                        contxt_txt.append(add_neighbours(text[i-3], text[i-2] , text[i-1] , text[i] , text[i+1] , text[i+2] , text[i+3] ))
+
+                    elif (i == len(text)-3): #3B, 2A
+                        contxt_txt.append(add_neighbours(text[i-3], text[i-2] , text[i-1] , text[i] , text[i+1] , text[i+2] ))
+
+                    elif (i == len(text)-2): #3B, 1A
+                        contxt_txt.append(add_neighbours(text[i-3], text[i-2] , text[i-1] , text[i] , text[i+1]))
+
+                    elif (i == len(text)-1): #3B, 0A
+                        contxt_txt.append(add_neighbours(text[i-3], text[i-2] , text[i-1] , text[i] ))
+
+                return contxt_txt
+
+            elif (bef == 0) and (aft == 3):
+
+                contxt_txt = []        
+                for i in range(len(text)):
+
+                    if (i >= 0) and (i < len(text)-3): #0B3A
+                        contxt_txt.append(add_neighbours(text[i] , text[i+1] , text[i+2] , text[i+3] ))
+
+                    elif (i == len(text)-3):  # 0B2A
+                        contxt_txt.append(add_neighbours(text[i] , text[i+1] , text[i+2]))  
+
+                    elif (i == len(text)-2):  #0B1A
+                        contxt_txt.append(add_neighbours(text[i] , text[i+1]))
+
+                    elif (i == len(text)-1):
+                        contxt_txt.append(text[i])  
+
+                return contxt_txt
+
+            elif (bef == 1) and (aft == 3):
+                contxt_txt = []        
+                for i in range(len(text)):
+
+                    if (i == 0): #0B3A
+                        contxt_txt.append(add_neighbours(text[i] , text[i+1] , text[i+2] ,  text[i+3] ))
+
+                    elif (i > 0) and(i < len(text)-3):  # 1B3A
+                        contxt_txt.append(add_neighbours(text[i-1] , text[i] , text[i+1] , text[i+2], text[i+3] ))  
+
+                    elif (i == len(text)-3):  #1B2A
+                        contxt_txt.append(add_neighbours(text[i] , text[i+1], text[i+2]))
+
+                    elif (i == len(text)-2):  #1B1A
+                        contxt_txt.append(add_neighbours(text[i-1] , text[i] , text[i+1]))
+
+                    elif (i == len(text)-1):  #1B0A
+                        contxt_txt.append(add_neighbours(text[i-1] , text[i]))
+
+                return contxt_txt
+
+            elif (bef == 2) and (aft == 3):
+
+                contxt_txt = []        
+                for i in range(len(text)):
+
+                    if (i == 0): #0B3A
+                        contxt_txt.append(add_neighbours(text[i] , text[i+1] , text[i+2] ,  text[i+3] ))
+
+                    elif (i == 1):  # 1B3A
+                        contxt_txt.append(add_neighbours(text[i-1] , text[i] , text[i+1] , text[i+2], text[i+3] ))  
+
+                    elif (i > 1) and (i < len(text)-3):  #2B3A
+                        contxt_txt.append(add_neighbours(text[i-2], text[i-1], text[i] , text[i+1], text[i+2],text[i+3]))
+
+                    elif (i == len(text)-3):  #2B2A
+                        contxt_txt.append(add_neighbours(text[i-2], text[i-1] , text[i] , text[i+1], text[i+2]))
+
+                    elif (i == len(text)-2):  #2B1A
+                        contxt_txt.append(add_neighbours(text[i-2], text[i-1] , text[i] , text[i+1]))
+
+                    elif (i == len(text)-1): #2B0A
+                        contxt_txt.append(add_neighbours(text[i-2], text[i-1] , text[i]))
+
+                return contxt_txt
+
+            elif (bef == 3) and (aft == 2):
+
+                contxt_txt = []        
+                for i in range(len(text)):
+
+                    if (i == 0): #0B2A
+                        contxt_txt.append(add_neighbours(text[i] , text[i+1] , text[i+2]))
+
+                    elif (i == 1):  # 1B2A
+                        contxt_txt.append(add_neighbours(text[i-1] , text[i] , text[i+1] , text[i+2]))  
+
+                    elif (i > 1) and (i < len(text)-3):  #2B2A
+                        contxt_txt.append(add_neighbours(text[i-2], text[i-1], text[i] , text[i+1], text[i+2]))
+
+                    elif (i == len(text)-3):  #3B2A
+                        contxt_txt.append(add_neighbours(text[i-3], text[i-2], text[i-1] , text[i] , text[i+1], text[i+2]))
+
+                    elif (i == len(text)-2):  #3B1A
+                        contxt_txt.append(add_neighbours(text[i-3], text[i-2], text[i-1] , text[i] , text[i+1]))
+
+                    elif (i == len(text)-1): #3B0A
+                        contxt_txt.append(add_neighbours(text[i-3] , text[i-2], text[i-1] , text[i]))
+
+                return contxt_txt 
+
+            elif (bef == 3) and (aft == 1):
+
+                contxt_txt = []        
+                for i in range(len(text)):
+
+                    if (i == 0): #0B1A
+                        contxt_txt.append(add_neighbours(text[i] , text[i+1]))
+
+                    elif (i == 1):  # 1B1A
+                        contxt_txt.append(add_neighbours(text[i-1] , text[i] , text[i+1]))
+
+                    elif (i == 2):  # 2B1A
+                        contxt_txt.append(add_neighbours(text[i-2], text[i-1] , text[i] , text[i+1]))  
+
+                    elif (i > 2) and (i < len(text)-1):  #3B1A
+                        contxt_txt.append(add_neighbours(text[i-3] , text[i-2], text[i-1], text[i] , text[i+1]))
+
+                    elif (i == len(text)-1):  #3B0A
+                        contxt_txt.append(add_neighbours(text[i-3], text[i-2], text[i-1] , text[i] ))
+
+                return contxt_txt
+
+            elif (bef == 3) and (aft == 0):
+                contxt_txt = []        
+                for i in range(len(text)):
+
+                    if (i == 0): #0B0A
+                        contxt_txt.append(text[i])
+
+                    elif (i == 1):  # 1B0A
+                        contxt_txt.append(add_neighbours(text[i-1] , text[i] ))
+
+                    elif (i > 1) and ( i < len(text)-1):  # 2B0A
+                        contxt_txt.append(add_neighbours(text[i-2], text[i-1] , text[i]))  
+
+                    elif (i == len(text)-1):  #3B0A
+                        contxt_txt.append(add_neighbours(text[i-3], text[i-2], text[i-1] , text[i] ))
+
+                return contxt_txt
+
+        txt_with_context = []
         with path.open(mode='r') as in_f:
-            for line in in_f:
-                clean_line = line.rstrip()
-                if clean_line:
-                    text.append(clean_line)
-                elif read_empty:
-                    text.append([])
-        return contextWindow(text, bef, aft)
+
+            # read content as txt
+            txt = in_f.read()
+
+            #create paraggraphs
+            par_list = txt.split('\n\n')
+
+            for par_ in par_list:
+
+                # list of sentences in the paragrapgh
+                snt_lst_ = par_.split('\n')
+
+                # remove empty strings
+                snt_lst_ = list(filter(None, snt_lst_))
+
+                # read the whole paragrapgh  if context is set to the whole paragrapgh  or context is wider than paragrapgh  ... 
+                if context_is_paragrapgh:
+
+                    bef = len(snt_lst_) - 1
+                    aft = len(snt_lst_) - 1
+                    sen_contkx = contextWindow(snt_lst_, bef, aft)
+                
+                else:
+
+                    sen_contkx = contextWindow(snt_lst_, bef, aft)
+
+                txt_with_context.extend(sen_contkx)
+
+        return txt_with_context
+
 
     def _read_feature_file(self, path):
         features = np.load(str(path), allow_pickle=True)
@@ -619,7 +820,7 @@ class DataHandler():
         
         return input_ids, tags_ids, attention_masks, length
 
-    def load_input(self, bef, aft):
+    def load_input(self, bef, aft, context_is_paragrapgh):
         for dataset, dataset_setup in self.data_config['sets'].items():
             for sub_dataset in dataset_setup:
 
@@ -640,9 +841,9 @@ class DataHandler():
                 sub_dataset['relations'] = []
                 for file_config in sub_dataset['all_files']:
                     if self.data_file_extension:
-                        sub_dataset['sentences'].extend(self._read_text_file(file_config[self.data_file_extension], bef, aft))
+                        sub_dataset['sentences'].extend(self._read_text_file(file_config[self.data_file_extension], bef, aft, context_is_paragrapgh))
                     if self.label_file_extension:
-                        sub_dataset['tags'].extend(self._read_text_file(file_config[self.label_file_extension], bef, aft))
+                        sub_dataset['tags'].extend(self._read_text_file(file_config[self.label_file_extension], bef, aft, context_is_paragrapgh))
                     if self.feature_file_extension:
                         sub_dataset['features'].extend(self._read_feature_file(file_config[self.feature_file_extension]))
                     if self.relation_file_extension:
