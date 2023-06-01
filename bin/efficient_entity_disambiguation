@@ -18,15 +18,16 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description = "Disambiguate entity names")
     parser.add_argument("--config", required=True, help="Config for disambiguation")
     parser.add_argument("--ncores", default=1, help="Number of cores for parallel computing.")
-    parser.add_argument("--in-path", required=True, help="Path to input dir.")
+    parser.add_argument("--in-paths", required=True, nargs='+', help="Paths to input directories")
     parser.add_argument("--sample-overview", required=True, help="Sample overview.")
     parser.add_argument("--save-path", required=True, help="Path for saving intermediate results")
     parser.add_argument("--row", required=True, help="Row selection for distances")
     args = parser.parse_args()
 
-    args.in_path = args.in_path.rstrip('/')
-    if not os.path.isdir(args.in_path):
-        raise(RuntimeError("Input path does not exist"))
+    args.in_paths = [x.rstrip('/') for x in args.in_paths]
+    for p in args.in_paths:
+        if not os.path.isdir(p):
+            raise(RuntimeError("Got a non existing input path"))
 
     args.save_path = args.save_path.rstrip('/')
     if not os.path.isdir(args.save_path):
@@ -41,7 +42,7 @@ if __name__ == "__main__":
     print(args.save_path)
     sample_set = None
     print("Getting Samples")
-    sample_set = ReducedSampleSet(args.in_path, args.sample_overview, args.save_path)
+    sample_set = ReducedSampleSet(args.in_paths, args.sample_overview, args.save_path)
 
     print("Expanding samples")
     expanded_samples = []

@@ -11,7 +11,7 @@ import math
 import numpy as np
 import nltk
 import itertools
-nltk.download('stopwords')
+#nltk.download('stopwords')
 
 from functools import partial
 from nltk.corpus import stopwords
@@ -40,13 +40,13 @@ def remove_spaces(s):
     return replace_regex.sub(r'\g<to_keep>', s)
 
 class ReducedSampleSet():
-    def __init__(self, in_path, overview_file, save_path='/tmp'):
+    def __init__(self, in_paths, overview_file, save_path='/tmp'):
         self.output_path = '{}/reduced_features.json'.format(save_path)
         if os.path.isfile(self.output_path):
             self._load()
         else:
             self._sample_overview(overview_file)
-            self._generate(in_path)
+            self._generate(in_paths)
 
     def _sample_overview(self, overview_file):
         self.sample_overview = {}
@@ -63,35 +63,36 @@ class ReducedSampleSet():
         with open(self.output_path, 'w') as j_out:
             json.dump(self.sample_set, j_out, indent=4)
 
-    def _generate(self, in_path):
+    def _generate(self, in_paths):
         file_count = 0
         self.sample_set = {}
         print("Gathering files..")
-        file_list = Path(in_path).rglob('*.linking')
-        for f in file_list:
-            file_count += 1
-            if file_count % 10000 == 0:
-                print("At file {}".format(file_count))
-            with f.open() as f_in:
-                entities = json.load(f_in)
-            for entity in entities:
-                name = entity.pop("mention")
-                if name not in self.sample_set:
-                    self.sample_set[name] = {
-                        "mention": name,
-                        "string": remove_spaces(name),
-                        "norm": normalize(name),
-                        "contexts": []
-                    }
-                if len(self.sample_set[name]['contexts']) < 5:
-                    self.sample_set[name]['contexts'].append(copy.deepcopy(entity))
-                else:
-                    keep_val = random.random()
-                    occurrence_num = self.sample_overview[name] if name in self.sample_overview else 1000
-                    if keep_val <= 1 / occurrence_num:
-                        #print("Replace a value of {} with {} and num {}".format(name, keep_val, self.sample_overview[name]))
-                        keep_pos = random.randint(0, 4)
-                        self.sample_set[name]['contexts'][keep_pos] = copy.deepcopy(entity)
+        for p in in_paths:
+            file_list = Path(p).rglob('*.linking')
+            for f in file_list:
+                file_count += 1
+                if file_count % 10000 == 0:
+                    print("At file {}".format(file_count))
+                with f.open() as f_in:
+                    entities = json.load(f_in)
+                for entity in entities:
+                    name = entity.pop("mention")
+                    if name not in self.sample_set:
+                        self.sample_set[name] = {
+                            "mention": name,
+                            "string": remove_spaces(name),
+                            "norm": normalize(name),
+                            "contexts": []
+                        }
+                    if len(self.sample_set[name]['contexts']) < 5:
+                        self.sample_set[name]['contexts'].append(copy.deepcopy(entity))
+                    else:
+                        keep_val = random.random()
+                        occurrence_num = self.sample_overview[name] if name in self.sample_overview else 1000
+                        if keep_val <= 1 / occurrence_num:
+                            #print("Replace a value of {} with {} and num {}".format(name, keep_val, self.sample_overview[name]))
+                            keep_pos = random.randint(0, 4)
+                            self.sample_set[name]['contexts'][keep_pos] = copy.deepcopy(entity)
         self._save()
 
 # class IterDataset(IterableDataset):
